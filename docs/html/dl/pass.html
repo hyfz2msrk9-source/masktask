@@ -1,0 +1,49 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+  $path = "../../";
+}else{
+  $customer_flg = 0;
+  $path = "../";
+}
+$image_path = "../" . $path . "help-images/view/";
+include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+
+<?php if($customer_flg): ?>
+<h2><span>配布メールを受け取った方（ダウンロード）</span></h2>
+<?php else:?>
+<h2><span>ファイルのダウンロード</span></h2>
+<?php  endif; ?>
+
+<h3><a name="13-4"></a>指定パスワードを求められる場合</h3>
+
+
+<p>予め送信者によって指定されたパスワードを使用し、ダウンロード画面を開きます。<br />
+  <span class="attention">URLへのアクセス後にいきなりパスワードの入力画面が表示される場合は、メールの送信者によってパスワードが指定されています。<br />
+  パスワードが不明な場合は、メールの送信者までご確認ください。</span>
+</p>
+
+<p>メールや電話等でメールの送信者から案内されたパスワードを入力し、[送信]ボタンをクリックします。<br />
+  <img src="<?php echo $image_path; ?>selfpass.png" class="view" alt="指定パスワードを求められる場合：パスワード送信" /><br /><br />
+
+  例）パスワードをメールで案内された場合<br />
+  <img src="<?php echo $image_path; ?>13-4-2.gif" class="view" alt="指定パスワードを求められる場合：メールで指定パスワード" />
+</p>
+
+<dl>
+  <dt>正しいパスワードを入力した場合</dt>
+  <dd>ファイルのダウンロード画面が開きます。<br />
+  ダウンロードしたいファイルのファイル名か、表の右端に表示されたダウンロードボタンをクリックしてください。ダウンロードが開始されます。<br />
+    <img src="<?php echo $image_path; ?>download-marked.png" class="view" alt="指定パスワードを求められる場合のファイルダウンロード:正しいメールアドレスを入力した場合" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>誤ったパスワードを入力した場合</dt>
+  <dd>エラーメッセージが表示され、ファイルのダウンロード画面に進めません。<br />
+    <img src="<?php echo $image_path; ?>error-selfpass.png" class="view" alt="指定パスワードを求められる場合のファイルダウンロード:誤ったパスワードを入力した場合" /><br />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

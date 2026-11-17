@@ -1,0 +1,94 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>アドレス帳</span></h2>
+<h3><a name="6-5"></a>アドレスのグループ変更</h3>
+<p>
+  メールアドレスの所属グループを変更する場合は、変更したいメールアドレスを選択し、[所属グループを変更]ボタンをクリックします。<br />
+  まとめて変更を行う場合は、複数のメールアドレスを選択することが可能です。<br />
+  <img src="../../help-images/view/6-5_1.gif" class="view" alt="グループ変更" />
+</p>
+
+<p>
+  所属グループ変更画面が表示されます。メールアドレスを所属させるグループを選択し、[↓]ボタンをクリックしてください。<br />下部の「選択グループ」に選択したグループが表示されます。<br />
+  所属グループは複数選択することで、複数のグループに所属させることが可能です。<br />
+  <img src="../../help-images/view/6-5_1_1.gif" class="view" alt="グループ変更" />
+</p>
+
+<p>
+  「選択グループ」は所属させるグループを表示しています。<br />
+  グループを変更する場合は[×除外]リンクをクリックすると選択グループから除外されます。<br />
+  選択グループに何も入っていない場合は「未分類」となります。<br />
+  所属グループの変更に問題がなければ、[所属グループを変更する]ボタンをクリックしてください。<br />
+  所属グループが変更されます。
+  <img src="../../help-images/view/6-5_1_2.gif" class="view" alt="グループ変更" />
+</p>
+<h3><a name="6-10"></a>別の部署グループにコピー<span class="attention">(※ 部署アドレス帳のみの機能です)</span></h3>
+<p>
+  部署のアドレス帳を選択した場合は、[別の部署グループにコピー]ボタンが表示されます。<br />
+  <img src="../../help-images/view/copy_to_other_section_group_button.png" class="view" alt="別の部署グループにコピー：ボタン" /><br />
+  アドレスのグループ変更と同様に、メールアドレスを所属させる部署グループを選択し、[↓]ボタンをクリックしてください。<br />
+  部署グループの変更に問題がなければ、[別の部署グループにコピー]ボタンをクリックしてください。<br />
+  部署グループを複数選択すると、それぞれの部署グループにアドレスが追加されます。<br />
+  <img src="../../help-images/view/copy_to_other_section_group_window.png" class="view" alt="別の部署グループにコピー：ウィンドウ" />
+</p>
+
+<h3><a name="6-6"></a>グループの追加</h3>
+<p>
+  グループ一覧の下部にある[グループ追加]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/6-6_1.gif" class="view" alt="グループの追加" />
+</p>
+
+<p>
+  グループ一覧に新しいグループ入力欄が表示されます。<br />
+  <img src="../../help-images/view/6-6_2.gif" class="view" alt="新規グループ入力欄" />
+</p>
+
+<p>
+  グループ名を入力後、<img src="../../help-images/ico-save.gif" alt="保存" />(保存ボタン)をクリックしてください。<br />
+  入力をキャンセルしたい場合は、<img src="../../help-images/ico-cancel.gif" alt="キャンセル" />[キャンセル]ボタンをクリックしてください。
+</p>
+
+<h3><a name="6-7"></a>グループの編集</h3>
+<p>
+  グループ一覧の各グループ横の<img src="../../help-images/ico-group-edit.gif" alt="編集" />[編集]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/6-7_1.gif" class="view" alt="グループ一覧" />
+</p>
+
+<p>
+  該当のグループ名が編集モードに切り替わります。<br />
+  <img src="../../help-images/view/6-7_2.gif" class="view" alt="編集入力欄" />
+</p>
+
+<p>
+  グループ名を編集後、<img src="../../help-images/ico-save.gif" alt="保存" />[保存]ボタンをクリックしてください。<br />
+  編集をキャンセルしたい場合は、<img src="../../help-images/ico-cancel.gif" alt="キャンセル" />[キャンセル]ボタンをクリックしてください。
+</p>
+
+<h3><a name="6-8"></a>グループの削除</h3>
+<p>
+  グループ一覧の各グループ横の<img src="../../help-images/ico-group-del.gif" alt="削除" />[削除]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/6-7_1.gif" class="view" alt="グループ一覧" />
+</p>
+
+<p>
+  グループ削除の確認メッセージが表示されます。よろしければ[OK]ボタンをクリックしてください。<br />
+  グループが削除されます。削除されたグループ内のアドレスは全て未分類に移動します。<br />
+  <img src="../../help-images/view/6-8_1.gif" class="view" alt="グループ削除確認メッセージ" />
+</p>
+
+<h3><a name="6-9"></a>グループ並び順の変更</h3>
+<p>
+  各グループ名をドラッグし、並び替えたい順序にドロップを行うことで、グループの並び替えが可能です。<br />
+  並び替えたいグループ名の上にマウスポインタを置いてください。<br />
+  <img src="../../help-images/view/6-9_1.gif" class="view" alt="並び順変更：並び替えるグループ名を選択" />
+</p>
+
+<p>
+  そのまま並び替えたい位置までドラックしてください。<br />
+  <img src="../../help-images/view/6-9_2.gif" class="view" alt="並び順変更：グループ名をドラッグする" /><br />
+  <img src="../../help-images/view/6-9_3.gif" class="view" alt="並び順変更：並び替えが完了" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

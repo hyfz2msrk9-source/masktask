@@ -1,0 +1,376 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+<h2><span>文件一覽</span></h2>
+<h3><a name="4-3"></a>發送文件</h3>
+<p>
+  是把上傳的文件發送給指定的人的功能。<br />
+  最大可以10個文件，10個收信人同時發送。（同時發送文件數，收信人數可以通過管理員來更改設定。）<br />
+  每次發送都可以設置安全設定。可以根據發送情況設定各種各樣的安全設置來確保安全性。
+</p>
+<p>
+  在文件一覽裡點擊想發送的文件右側的[發送]按鈕。<br />
+  <img src="../../../images-tcn/icon_send.gif" class="view" alt="文件一覽：發送文件" />
+</p>
+
+<p>
+  移動到登錄文件通知頁面。<br />
+  輸入專案、選擇、按照各種需要設定安全設置。<br />
+  <img src="../../help-images/view-tcn/send_form.png" class="view" alt="登錄文件通知頁面" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th class="bRnone"></th><th class="bLnone">[從自己的郵箱發送]</th>
+      <td>
+        在本管理器內，可把資料夾僅發送給想要發送的人。
+        僅在從本管理器發送郵件功能可正常使用的情況下，才可以使用此功能。(<a href="send-tcn.html#4-3-3">→從自己的郵箱發送</a>)
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"></th><th class="bLnone">[接收及發送郵件]</th>
+      <td>
+        可以同時發送接收和登錄文件的通知。
+        僅在通知有登錄資料夾及資料夾的收集發送郵件功能正常使用情況下，才可以使用此功能。(<a href="send-collect-tcn.html#4-3-4">→接收及發送郵件</a>)
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"></th><th class="bLnone">[從本管理器發送郵<br/>件收集的分發]</th>
+      <td>
+        您可以從自己的郵箱發送和接收通知和註冊表文件。
+        僅在通知有登錄資料夾及資料夾的收集發送郵件從自己的郵箱功能正常使用情況下，才可以使用此功能。(<a href="send-collect-tcn.html#send-collect-mailer">→從本管理器發送郵件收集的分發</a>)
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">收件人</th>
+      <td>
+        輸入收件人或從地阯簿添加。最多可以設置10個項目。（號碼可能已被管理員更改，詳情請聯係管理員。）<br />
+        輸入收件人，然後單擊[追加收件人]按鈕。或者，單擊[>>從郵箱地址簿裡選擇]從您的地阯簿添加。<br />
+        要刪除添加的收件人，請單擊每個收件人右側的[×刪除]按鈕。<br />
+        <img src="../../help-images/view-tcn/3-3_3.png" class="view" alt="" /><br />
+        <img src="../../help-images/view-tcn/3-3_4.png" class="view" alt="" /><br />
+        在郵箱地址簿裡選擇的畫面中，從郵箱地址簿一覽表中點擊選擇或者打鉤選擇您要添加的郵箱地址，然後點擊[↓]按鈕就追加完畢了。<br />
+        <img src="../../help-images/view-tcn/3-3_5.gif" class="view" alt="" /><br />
+        郵箱地址沒有問題的話請點擊[追加收件人]按鈕。<br />
+        追加郵箱地址到文件發送頁面裡。<br /><br />
+        收件人中有未曾登錄過的郵箱地址時，在文件登錄完畢的通知頁面裡可以追加該郵箱地址到郵箱地址簿。<br />
+        （會登錄在「未分類」群裡。<a  href="../address/group-tcn.html#6-5">→請在郵寄地址群</a>變更裡進行群設置。）
+        <br /><br />
+        如果郵件地址已經登記、向輸入候被郵件地址，地址簿就預測。<br />
+        單擊輸入的郵件地址。單擊的郵件地址的地址被表示。
+        <img src="../../help-images/view-tcn/yosoku-1.gif" class="view" alt="" /><br /><br />
+        此外，如果您在郵件地址輸入字段中輸入多個由<span class="attention nowrap" style="font-weight:bold;">逗號（,）</span>分隔的電子郵件地址，或者輸入名稱為<span class="attention nowrap" style="font-weight:bold;">名稱&lt;郵件地址&gt;</span>的郵件地址，則可以添加可以自動添加的“名稱” 我們可以檢測候選人的“郵件地址”並添加選中的郵件地址。
+        <img src="../../help-images/view-tcn/detect-address.png" class="view" alt="地址選擇：候選檢測" />
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">文件名</th>
+      <td>
+        要發送的文件。最多可以設置10個項目。（號碼可能已被管理員更改，詳情請聯係管理員。）<br />
+        請點擊[>>追加別的文件]來進行文件的追加。<br />
+        要刪除已追加的文件請點擊各文件右側的[×刪除]。<br />
+        <img src="../../help-images/view-tcn/3-3_6.png" class="view" alt="ファイル名" /><br />
+        選擇想要追加的文件所在的資料夾。<br />
+        選擇資料夾後會顯示資料夾內的文件，請選擇您要追加的文件。<br />
+        如果您把光標懸停在一個文件名上，您可以顯示整個文件名。<br />
+        請選擇您要追加的文件並點擊[↓]按鈕，該文件會顯示在頁面下部的已追加文件內。<br />
+        <img src="../../help-images/view-tcn/3-3_7.png" class="view" alt="ファイルの追加画面" /><br />
+        想要刪除已追加文件裡的文件請點擊文件名右側的[×刪除]。<br />
+        點擊[文件追加]按鈕進行文件的追加。<br />
+        <img src="../../help-images/view-tcn/3-3_7-2.png" class="view" alt="ファイルの追加2" />
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">寄件者</th>
+      <td>
+        可以根據情況變更發送人及發送人郵箱地址來發送郵件。可以在(<a href="../config/from-tcn.html">→設定發送人</a>)裡進行發送人的登錄。<br />
+        寄件者設定功能為無效時不顯示寄件者。
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">郵件件名</th>
+      <td>發送文件時送信郵件的件名。</td>
+    </tr>
+    <tr>
+      <th colspan="2">郵件正文</th>
+      <td>
+        發送文件時送信郵件的正文。請輸入必填專案。(<a href="send-tcn.html#4-3-1">→關於郵件正文</a>)<br />
+        <img src="../../help-images/view-tcn/3-3_8.gif" class="view" alt="メール本文" />
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">安全設置</th>
+      <td>
+        發送文件時的安全設置。請按照您的需要設定安全設置。(<a href="send-tcn.html#4-3-2">→關於安全設置</a>)
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">字符編碼</th>
+      <td>妳能選擇文字編碼。</td>
+    </tr>
+    <tr>
+      <th colspan="2">發送待機設定</th>
+      <td>
+        送信待機功能為有效時才顯示該項目。<br />
+        送信待機功能是指即使發送文件後也顯示送信待機狀態，在一定時間內無法進行文件下載的功能。<br />
+        預先設定時間的情況下，在所設定的時間內會顯示為送信待機狀態。<br />
+
+        發送待機功能被設置有效時才會顯示該項目。 <br />
+        發送待機功能即使將發送文件發送之後仍處於發送待機狀態，一段時間之內將無法使用文件下載功能。 <br />
+        如果預先設定執行時間，將在設定時間發送。 <br />
+        <img src="../../help-images/view-tcn/standbymail-1.gif" alt="送信待機機能：予め設定されている場合" class="view" /><br />
+        用戶可任意設定時，選擇“使用發送待機”，設定時間。不能設定比初期值小的時間。<br />
+        <img src="../../help-images/view-tcn/standbymail-2.gif" alt="送信待機機能：任意で設定が可能な場合" class="view" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  您輸入的內容沒有問題的話,請點擊[確認郵件]按鈕。<br />
+  移動到登錄文件的通知（確認）頁面。<br />
+  <br />
+  管理員設置上級時<span class="attention">(*可選設定)</span>,在確認頁面上,
+  還將顯示“上級信息”或“選擇上級”區域。
+  如果顯示“選擇上級”區域,請選擇上級以請求批准。
+  批准請求電子郵件到達上級。 <br />
+  獲得上級許可後,使用郵件發送文件。如果上級駁回,則不發送。
+  您可以在上級確認一覽中查看批准狀態。(<a href="../superior/index-tcn.html#7">→上級確認一覽</a>)<br />
+  <img src="../../help-images/view-tcn/send_confirm.png" class="view" alt="登録ファイルの通知確認画面" />
+</p>
+
+<p>
+  確認輸入、設定的內容無誤後,請點擊[發送郵件]按鈕。<br />
+  移動到登錄文件的通知（成功）頁面。文件發送成功。<br />
+  <img src="../../help-images/view-tcn/3-3_10.gif" class="view" alt="登録ファイルの通知完了画面" />
+</p>
+
+<p>
+  有設定上級時，通過上級批准後送信。<br />
+  <img src="../../help-images/view-tcn/3-3_12.gif" class="view" alt="上長が設定されているときの登録ファイルの通知完了画面" />
+</p>
+
+<p>
+  設定有發送待機功能時。到指定時間後會自動發送。<br />
+  <img src="../../help-images/view-tcn/standbymail-3.gif" class="view" alt="送信機能待機が設定されているときの登録ファイルの通知完了画面" />
+</p>
+
+<p>
+  將可變文字[##ulr##]或[##mail##]等等，變換至下載URL或各收信人的郵箱地址。
+</p>
+
+<h4><a name="4-3-1"></a>關於郵件正文</h4>
+<p class="h4-p">
+  製作分發資料夾的郵件正文時，可通過插入變換分發資料夾時需要的下載URL、有效期、各收件人名及郵寄地址等等的可變文字，達到更加自由的郵件正文製作。<br />
+  另外，可以通過文本插入功能作成經常使用的文本，簽名等來提高郵件正文製作效率。<br />
+  <img src="../../help-images/view-tcn/3-3-1_1.gif" class="view" alt="メール本文の詳細" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[插入文本]</th>
+      <td>
+        插入事先寫好的範文。請點擊[插入文本]按鈕。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />文本</th>
+      <td>
+        選擇後在郵件正文中插入使用者事先寫好的文本。<br />
+        只有在有文本的情況下才可以進行選擇。沒有文本的話不顯示。<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />簽名</th>
+      <td>
+        選擇後在郵件正文中插入用戶事先寫好的簽名。只有在有簽名的情況下才可以進行選擇，沒有簽名的話則不顯示。<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />可變文字</th>
+      <td>
+        在郵件正文輸入後，各收件人也將相應變換。<br />
+        點擊各可變文字的左方的“插入”鍵，插入郵件正文。<br />
+        <img src="../../help-images/view-tcn/3-3-1_4.gif" class="view" alt="変換文字" /><br />
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>[##name##]</th>
+              <td>變換為各收件人名。</td>
+            </tr>
+            <tr>
+              <th>[##mail##]</th>
+              <td>變換為各收件人郵箱地址。</td>
+            </tr>
+            <tr>
+              <th>[##addr_list##]</th>
+              <td>變換為目的地列表。</td>
+            </tr>
+            <tr>
+              <th>[##file_list##]</th>
+              <td>變換為要分發的文件列表。<br />※這在文件夾發布中不存在。</td>
+            </tr>
+            <tr>
+              <th>[##url##]</th>
+              <td>變換為文件下載URL。</td>
+            </tr>
+            <tr>
+              <th>[##dl_limit##]</th>
+              <td> 變換為文件對各收件人所開放的有效期限</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="4-3-2"></a>關於安全設定</h4>
+<p class="h4-p">
+  可以在每份文件發送時設置安全設定。根據文件的發送狀況進行安全設置。<br />
+  <img src="../../help-images/view-tcn/send_security.png" class="view" alt="セキュリティ設定" />
+</p>
+
+<dl>
+  <dt>通過SSL通信進行加密</dt>
+  <dd>通過EVSSL進行通信加密。基本功能(※ 只有SSL通信時顯示)。</dd>
+
+  <dt>下載有效期限</dt>
+  <dd>設定文件的下載有效期限。超過有效期限的文件無法下載。</dd>
+
+  <dt>下載次數</dt>
+  <dd>設定文件下載次數。超過下載次數的文件無法下載。</dd>
+
+  <dt>不加鎖</dt>
+  <dd>不設定密碼鎖</dd>
+
+  <dt>設置臨時密碼鎖</dt>
+  <dd>設置臨時密碼。採用限定郵箱地址的臨時密碼，確保了高安全性。</dd>
+
+  <dt>設置指定密碼鎖</dt>
+  <dd>使用者可以自由指定密碼。請告知收件人指定的密碼。</dd>
+
+  <dt>在文件上設置zip密碼</dt>
+  <dd>壓縮成zip文件，可自由指定密碼。</dd>
+
+  <dt>開封確認</dt>
+  <dd>文件發送後，有人點擊下載URL就會把開封通知郵件到用戶。</dd>
+
+  <dt>下載確認</dt>
+  <dd> 文件發送後，文件被下載後會聯繫用戶下載通知。</dd>
+
+  <dt>自動刪除文件</dt>
+  <dd>
+    下載截止日期將自動刪除已過期文件。
+    自動刪除是只進行個人文件，沒有做過共享文件。
+    此外，它不會自動即使無限期設置下載過期日期刪除。
+  </dd>
+</dl>
+
+<h4><a name="4-3-3"></a>從自己的郵箱發送</h4>
+<p class="h4-p">
+  這是上傳資料夾，在本管理器發送資料夾的功能。<br />
+  一次最多可處理10個資料夾，可同時往收件人、CC、BCC各自發送最多10個。安全性設置可在每次操作時設定。<br />
+  根據想要分發的情況，可以進行各種安全性設置，確保高安全性。<br />
+  僅本管理器的發信功能可正常使用的情況下，才可以使用此功能。
+</p>
+<p class="h4-p">
+  文件一覽裡，點擊想要發送的文件右側的[發送]按鈕。<br />
+  移動到登錄資料夾的通知頁面。從本管理器發送郵件時，請點擊[從自己的郵箱發送]按鍵。<br />
+  <img src="../../help-images/view-tcn/3-3-3_1.png" class="view" alt="自分のメーラーから送信するボタン" />
+</p>
+<p class="h4-p">
+  輸入專案、選擇、根據各種狀況設定安全性設置。<br />
+  <img src="../../help-images/view-tcn/send-mailer_form.png" class="view" alt="自分のメーラーから送信する場合の登録ファイル通知画面" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th>發送郵件</th>
+      <td>
+        分發資料夾時的默認功能開啟時，從管理器發送郵件時的登錄資料夾通知頁面，顯示預設值。<br />
+        這時將顯示[發送郵件]的按鍵，點擊此按鍵後，進入網路資料夾發出的“發送通知郵件”頁面。
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <img src="../../help-images/no-s-1.gif" alt="1" />收件人<br /><br />
+        <img src="../../help-images/no-s-2.gif" alt="2" />Cc.<br /><br />
+        <img src="../../help-images/no-s-3.gif" alt="3" />Bcc.
+      </th>
+      <td>
+        輸入收件人、Cc.、Bcc.或從地阯簿添加。最多可以設置10個項目。（號碼可能已被管理員更改，詳情請聯係管理員。）<br />
+        輸入收件人、Cc.、Bcc.，然後單擊[追加收件人]按鈕。或者，單擊[>>從郵箱地址簿裡選擇]從您的地阯簿添加。<br />
+        要刪除添加的收件人、Cc.、Bcc.，請單擊每個收件人、Cc.、Bcc.右側的[×刪除]按鈕。<br />
+        <img src="../../help-images/view-tcn/3-3-3_5.png" class="view" alt="宛先" /><br />
+        <img src="../../help-images/view-tcn/3-3-3_3.png" class="view" alt="アドレス帳から宛先を追加" /><br />
+
+        在郵箱地址簿選擇頁面中，請在郵箱地址一覽中把點擊選擇或打鉤選擇您要追加的郵箱地址，添加至收件人（Cc,Bcc)。<br />
+        <img src="../../help-images/view-tcn/3-3_5.gif" class="view" alt="アドレスの選択" /><br />
+        請點擊[↓]按鈕在收信人欄中追加郵箱地址。<br />
+        郵箱地址沒有問題的話請點擊[追加收件人]按鈕。文件發送頁面追加郵箱地址。
+        <br /><br />
+        如果郵件地址已經登記、向輸入候被郵件地址，地址簿就預測。<br />
+        單擊輸入的郵件地址。單擊的郵件地址的地址被表示。
+        <img src="../../help-images/view-tcn/yosoku-1.gif" class="view" alt="アドレスの選択:予測表示" /><br /><br />
+        此外，如果您在郵件地址輸入字段中輸入多個由<span class="attention nowrap" style="font-weight:bold;">逗號（,）</span>分隔的電子郵件地址，或者輸入名稱為<span class="attention nowrap" style="font-weight:bold;">名稱&lt;郵件地址&gt;</span>的郵件地址，則可以添加可以自動添加的“名稱” 我們可以檢測候選人的“郵件地址”並添加選中的郵件地址。
+        <img src="../../help-images/view-tcn/detect-address.png" class="view" alt="地址選擇：候選檢測" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />文件名</th>
+      <td>
+        要發送的文件。最多可以設置10個項目。（號碼可能已被管理員更改，詳情請聯係管理員。）<br />
+        請點擊[>>追加別的文件]來進行文件的追加。<br />
+        要刪除已追加的文件請點擊各文件右側的[×刪除]。<br />
+        <img src="../../help-images/view-tcn/3-3_6.png" class="view" alt="ファイル名" /><br />
+        選擇想要追加的文件所在的資料夾。<br />
+        選擇資料夾後會顯示資料夾內的文件，請選擇您要追加的文件。<br />
+        如果您把光標懸停在一個文件名上，您可以顯示整個文件名。<br />
+        請選擇您要追加的文件並點擊[↓]按鈕，該文件會顯示在頁面下部的已追加文件內。<br />
+        <img src="../../help-images/view-tcn/3-3_7.png" class="view" alt="ファイルの追加画面" /><br />
+        想要刪除已追加文件裡的文件請點擊文件名右側的[×刪除]。<br />
+        點擊[文件追加]按鈕進行文件的追加。<br />
+        <img src="../../help-images/view-tcn/3-3_7-2.png" class="view" alt="ファイルの追加2" /><br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />寄件者</th>
+      <td>
+        可以根據情況變更發送人及發送人郵箱地址來發送郵件。可以在(<a href="../config/from-tcn.html">→寄件者設定</a>)裡進行發送人的登錄。
+        寄件者設定功能為無效時不顯示寄件者。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />安全性設定</th>
+      <td>
+        發送文件時的安全設置。請按照您的需要設定安全設置。(<a href="send-tcn.html#4-3-2">→關於安全設置</a>)
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="h4-p">
+  您輸入的內容沒有問題的話,請點擊[確認郵件]按鈕。<br />
+  移動到登錄文件的通知（確認）頁面。
+</p>
+<p class="h4-p">
+  管理員設置上級時<span class="attention">（*可選設定）</span>,在確認頁面上,
+  還將顯示“上級信息”或“選擇上級”區域。
+  如果顯示“選擇上級”區域,請選擇上級以請求批准。
+  批准請求電子郵件到達上級。
+  在您的上級批准請求之前，無法從URL下載文件。 <br />
+  您可以在上級確認一覽中查看批准狀態。(<a href="../superior/index-tcn.html">→上級確認一覽</a>)<br />
+  <br /><br />
+  輸入、設定內容沒有錯誤的話,請點擊[完成新建郵件準備工作]按鈕。<br />
+  <img src="../../help-images/view-tcn/send-mailer_confirm.png" class="view" alt="登録ファイルの通知確認画面" />
+</p>
+<p class="h4-p">
+  移至郵件軟件的登錄文件通知（完了）頁面。
+  做好了發送通過電子郵件分發文件的準備。<br />
+  頁面將顯示用於下載的URL。請把這些URL記載在郵件上，並從自己的郵箱給設定的收件人、Cc、Bcc，發送郵件。<br />
+  點擊[啟動自己的郵箱]按鍵，啟動平時使用的管理器。<br />
+  <img src="../../help-images/view-tcn/3-3-3_9.gif" class="view" alt="登録ファイルの通知完了画面" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

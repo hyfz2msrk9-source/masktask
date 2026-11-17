@@ -1,0 +1,48 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-en/";
+  include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+
+<h2><span>Download files</span></h2>
+<h3><a name="13-5"></a>In case you cannot download files</h3>
+
+<p>If the messages as follows are displayed, you cannot download files. Please ask for sender the Email and files.</p>
+
+
+<dl>
+  <dt>Downloads of this file exceed the prescribed number</dt>
+  <dd>
+    You cannot download files because downloads of this file exceed the prescribed number.<br />
+    <img src="<?php echo $image_path; ?>error-over.png" class="view" alt="Downloads of this file exceed the prescribed number" />
+  </dd>
+
+  <dt>This file's download expiry date has passed.</dt>
+  <dd>
+    You cannot download files because the file’s download expiry date has passed.<br />
+    <img src="<?php echo $image_path; ?>error-limit.png" class="view" alt="This file's download expiry date has passed" />
+  </dd>
+
+
+
+  <dt>Download of this file has been canceled.</dt>
+  <dd>
+    You cannot download files because the file are deleted or canceled to distribute by the sender.<br />
+    <img src="<?php echo $image_path; ?>error-stop.png" class="view" alt="Download of this file has been canceled" />
+  </dd>
+
+  <dt>The URL is incorrect.</dt>
+  <dd>
+    You cannot download files because the URL to download files that is informed you is incorrect and you cannot access the download screen.<br />
+    <img src="<?php echo $image_path; ?>error-url.png" class="view" alt="The URL is incorrect" />
+  </dd>
+
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

@@ -1,0 +1,103 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+<h2><span>目錄</span></h2>
+<p>使用者畫面的目錄。<br />
+  <img src="../../help-images/view-tcn/menu.png" class="view" alt="使用者目錄" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Logo</th>
+      <td>
+        WebFile的Logo。
+      </td>
+    </tr>
+    <tr>
+      <th>幫助</th>
+      <td>
+        開啟目前操作畫面的幫助頁面。
+      </td>
+    </tr>
+    <tr>
+      <th>支持</th>
+      <td>
+        可發送詢問郵件至專用支持。
+      </td>
+    </tr>
+    <tr>
+      <th>文件一覽</th>
+      <td>
+        上傳的文件一覽。<br />
+        可進行文件分發、資料夾移動等已上傳文件的操作。
+      </td>
+    </tr>
+    <tr>
+    <th>接收（收集）</th>
+      <td>
+        收集的文件一覽。<br />
+        可進行文件收取、保存至文件一覽等收取文件的操作。
+      </td>
+    </tr>
+    <tr>
+      <th>待機郵件一覽</th>
+      <td>
+        待機郵件一覽。
+      </td>
+    </tr>
+    <tr>
+    <th>郵箱地址簿</th>
+      <td>
+        管理地址簿。
+      </td>
+    </tr>
+    <tr>
+      <th>上級確認一覽<br /><span class="attention">（*選項）</span></th>
+      <td>
+        上級確認待機郵件、已審核、已駁回郵件一覽。
+      </td>
+    </tr>
+    <tr>
+      <th>日誌</th>
+      <td>
+        使用者操作歷史、文件歷史一覽。
+      </td>
+    </tr>
+    <tr>
+      <th>設定</th>
+      <td>
+        可進行個人化設定。可編輯範本及簽名。
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>將游標移至帳號名稱時，會開啟子目錄。<br />
+  <img src="../../help-images/view-tcn/logout.png" class="view" alt="使用者子目錄" />
+</p>
+
+<table>
+<tbody>
+<tr>
+<th>個人資訊</th>
+  <td>
+    使用者個人檔案。可確認已註冊姓名及郵件地址。
+  </td>
+</tr>
+<tr>
+  <th>更改密碼</th>
+  <td>
+    可變更密碼。
+  </td>
+</tr>
+<tr>
+  <th>退出</th>
+  <td>
+    退出。
+  </td>
+</tr>
+</tbody>
+</table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

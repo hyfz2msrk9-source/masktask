@@ -1,0 +1,73 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>File list</span></h2>
+<h3><a name="4-6"></a>Display thumbnail image function</h3>
+<p>
+  By display thumbnail image function, it is easy to manage the image files. If there are image files in the folder you are using, you can resister to the file as a thumbnail image in the folder.<br />
+
+  When the folder publication function is available and the display the thumbnail image function is on, and if there are some files with thumbnail in the folder to be published, you can distribute files with thumbnail image. It is not able to distribute files with thumbnail in the shared folder, because the folder publication does not have this function.（→<a href="group-en.html#4-4">Group sharing folder function</a>）
+</p>
+
+<p>
+  People who received their files can see the files with thumbnail image. So, you attach a thumbnail image that receiver can image the file contents easily.<br />
+  An image file you attached to another files as a thumbnail image in a folder cannot be distributed by the folder publication function.
+</p>
+
+<p>
+  When you distribute each files with not a whole folder, even if the files have thumbnail image, receiver can not see the file with thumbnail image.<br />
+  <img src="../../help-images/view-en/4-6_1.gif" class="view" alt="file list：display thumbnail image" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" /><img src="../../help-images/icon_changenm.gif" alt="change faile name and thumnail image setting" /></th>
+      <td>
+        This is a button to change the file name and set thumbnail image. <br />
+        When you change file name, please enter new file name and click [Set edited Values] button.
+        （→<a href="index-en.html#4-1-3">About file list</a>）<br />
+        When the folder publication function is available and the display the thumbnail image function is on, you can resister and edit the thumbnail image. To set the thumbnail image, please select the thumbnail you want to display.<br />
+        <img src="../../help-images/view-en/4-6_2.gif" class="view" alt="edit file and display thumbnail" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" /><img src="../../help-images/thumbnail-icon.gif" alt="the thumnail image is setted" /></th>
+      <td>
+        Thumbnail image is set to the file. <br />
+        If you click this icon you can see the thumbnail image.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" /><img src="../../help-images/thumbnail-none.gif" alt="no thumbnail" /></th>
+      <td>No thumbnail image set to this file.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Display thumbnail<br /> image</th>
+      <td>
+        It is that whether the display thumbnail image is available.<br />
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>Display thumbnail<br /> image：ON</th>
+              <td>
+                 The folder publication function is available and the display the thumbnail image function is on.<br />
+                You can distribute files with thumbnail image when you published folder.
+              </td>
+            </tr>
+            <tr>
+              <th>Display thumbnail<br /> image：OFF</th>
+              <td>
+                The folder publication function is available and the display the thumbnail image function is off. <br />
+                You cannot distribute files with thumbnail image when you published folder.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

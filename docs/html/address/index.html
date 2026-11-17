@@ -1,0 +1,177 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>アドレス帳</span></h2>
+
+<p>
+  アドレス帳では、宛先の登録や編集、削除の操作ができます。<br />
+  アドレス帳に宛先を登録しておくことで、ファイルの配布や収集時に入力の手間を省くことができます。<br />
+</p>
+
+<p>
+  メニュー：アドレス帳をクリックしてください。<br />
+  <img src=" ../../../images/sysmenu_address.gif" class="view" alt="メニュー：アドレス帳" />
+</p>
+
+<h3><a name="6-1"></a>アドレス帳一覧</h3>
+<p>
+  メニュー：アドレス帳をクリックすると、アドレス帳一覧画面へ遷移します。<br />
+  <img src="../../help-images/view/6-1_1.png" class="view" alt="アドレス帳画面" />
+</p>
+
+<p>
+  左側にグループ一覧を表示しています。クリックすると、登録されたグループごとのアドレスが右側に表示されます。<br />
+  現在表示しているグループは、背景色が変わり、<img src="../../help-images/ico-group-active.gif" alt="表示グループ" />マークが付きます。
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />CSVファイルで<br />アドレスを追加・<br />CSVファイルで<br />アドレスをダウンロード</th>
+      <td>
+        CSVファイルを使用し、新しくアドレスを追加、または追加したアドレスをダウンロードします。<br />
+        (→<a href="change.html#6-2-2">CSVファイルからの追加・ダウンロード</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />個人／共通／部署</th>
+      <td>
+        個人で使用するアドレスと、メンバー全員で使用するアドレスと、部署メンバー全員で使用するアドレスの切替を行います。<br />
+        共有を表示しないよう設定されている場合は、共有以外のアドレス帳が表示されます。<br />
+        部署アドレス帳を表示しないよう設定されている場合は、部署アドレス帳以外のアドレス帳が表示されます。<br />
+        共有アドレス帳と部署アドレス帳を表示しないよう設定されている場合は、個人のみ表示されます。<br />
+        部署アドレス帳を選択した場合は、グループは部署ごとに表示されます。<br />
+        <img src="../../help-images/view/address_group_list.png" class="view" alt="アドレス帳グループ一覧" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />グループ追加</th>
+      <td>グループ追加エリアを表示します。(→<a href="group.html#6-6">グループの追加</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />アドレス追加</th>
+      <td>アドレス追加エリアを表示します。(→<a href="change.html#6-2">アドレスの追加</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />アドレス編集</th>
+      <td>
+        アドレス一覧から編集したいアドレスを選択後、アドレス編集エリアを表示します。編集するアドレスは１つしか行えません。(→<a href="change.html#6-3">アドレスの編集</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />アドレス削除</th>
+      <td>
+        アドレス一覧から削除したいアドレスを選択後、アドレスを削除します。<br />
+        (→<a href="change.html#6-4">アドレスの削除</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />所属グループを変更</th>
+      <td>
+        登録されているメールアドレスの所属グループを変更します。(→<a href="group.html#6-5">アドレスのグループ変更</a>)<br />
+        部署アドレス帳を選択した場合は、[別の部署グループにコピー]ボタンも表示されます。(→<a href="group.html#6-10">別の部署グループにコピー</a>)
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />アドレス全削除</th>
+      <td>
+        アドレス一覧から全てのアドレスを削除します。(→<a href="change.html#6-4">アドレスの削除</a>)</td>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />メールアドレス一覧</th>
+      <td>
+        登録されているメールアドレスの一覧を表示します。
+        <table class="data">
+          <tr>
+            <th>名前(カナ)</th>
+            <td>アドレスが登録されている方の名前(カナ)です。タイトルをクリックするとお名前でソートが可能です。</td>
+          </tr>
+          <tr>
+            <th>グループ</th>
+            <td>アドレスの分類グループです。タイトルをクリックするとグループ名でソートが可能です。</td>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <td>メールアドレスです。タイトルをクリックするとメールアドレスでソートが可能です。</td>
+          </tr>
+          <?php if(SMS_PASS_FLG>0): ?>
+          <tr>
+            <th>電話番号</th>
+            <td>電話番号です。タイトルをクリックするとメールアドレスでソートが可能です。</td>
+          </tr>
+          <tr>
+            <th>別経路用<br>メールアドレス</th>
+            <td>別経路用メールアドレスです。タイトルをクリックするとメールアドレスでソートが可能です。</td>
+          </tr>
+          <?php endif; ?>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />アドレス検索</th>
+      <td>
+        <table class="data">
+          <tbody>
+            <tr>
+              <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+              <td>
+                虫眼鏡アイコンで、検索フォームを開きます。<br />
+                <img src="../../help-images/view/6-1_2-s.gif" class="view" alt="検索フォーム" />
+                <table class="data-s">
+                  <tbody>
+                    <tr>
+                      <td>項目のプルダウン</td>
+                      <td>：検索する項目を選択します。</td>
+                    </tr>
+                    <tr>
+                      <td>[検索]欄</td>
+                      <td>：検索する文言を入力します。</td>
+                    </tr>
+                    <tr>
+                      <td>[検索]ボタン</td>
+                      <td>：検索を開始します。</td>
+                    </tr>
+                    <tr>
+                      <td>[クリア]ボタン</td>
+                      <td>：検索を解除します。</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+              <td>1ページに表示する一覧の件数を変更します。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+              <td>先頭ページに移動します。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+              <td>1ページ前に移動します。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+              <td>入力されたページに移動します。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+              <td>1ページ次に移動します。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+              <td>最終ページに移動します。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/load.png" alt="一覧を最新の状態にする" /></th>
+              <td>一覧画面を最新の状態に更新します。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,20 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>運営からのお知らせ</span></h2>
+
+<p>
+    メニュー：お知らせをクリックすると、WebFile運営からのお知らせが、最新の物から順に表示されます。<br />
+    主に、新機能の使い方や、便利な利用例などが確認できます。<br />
+  <img src="../../help-images/view/menu_kpnews.png" class="view" alt="メニュー：お知らせ" /><br />
+<img src="./../..//help-images/view/kp_news.png" class="view" alt="運営からのお知らせ一覧">
+</p>
+<p>
+お知らせのタイトルをクリックすると、お知らせの詳細を確認できます。<br />
+複数のお知らせがある場合、前後のお知らせに詳細画面上の矢印ボタンから移動できます。<br />
+<img src="./../../help-images/view/kp_news_detail.png" class="view" alt="運営からのお知らせ詳細"><br />
+未読のお知らせは、ファイル一覧を開いた際にも自動的に表示されます。
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

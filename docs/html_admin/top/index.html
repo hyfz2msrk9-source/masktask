@@ -1,0 +1,78 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+<h2><span>メニュー</span></h2>
+<p>管理者画面のメニューです。</p>
+<img src="../../images/view/menu.png" class="view" style="max-width: 90%" />
+
+<table>
+    <tr>
+        <th class="title">項目</th>
+        <th class="title">説明</th>
+    </tr>
+    <tr>
+        <th>ユーザ管理</th>
+        <td>ユーザを管理します。</td>
+    </tr>
+    <tr>
+        <th>ログ管理</th>
+        <td>ユーザや管理者のログを、ダウンロードしたり削除したりします。</td>
+    </tr>
+    <tr>
+        <th>
+            ウイルススキャンログ<span class="attention">(※オプション)</span>
+        </th>
+        <td>
+            ウイルススキャンにより検出されたファイルの一覧を表示します。（※オプション機能です。お申込みがない場合は、ボタンが表示されません。）
+        </td>
+    </tr>
+    <tr>
+        <th>アーカイブシステム<span class="attention">(※オプション)</span></th>
+        <td>
+            ユーザが配布・受信したファイルを、保管、ダウンロードすることができます。
+        </td>
+    </tr>
+    <tr>
+        <th>上長承認設定<span class="attention">(※オプション)</span></th>
+        <td>
+            上長承認機能の各ユーザ毎に上長の設定を行います。(※オプション機能です。お申し込みがない場合はボタンが表示されません。)
+        </td>
+    </tr>
+    <tr>
+        <th>グループ共有機能<span class="attention">(※オプション)</span></th>
+        <td>
+            グループに所属しているユーザで、ファイルを共有できる機能です。(※オプション機能です。お申し込みがない場合はボタンが表示されません。)
+        </td>
+    </tr>
+    <tr>
+        <th>各種設定</th>
+        <td>各種機能の設定を行います。</td>
+    </tr>
+    <tr>
+      <th>運営からのお知らせ</th>
+      <td>運営からのお知らせを確認できます。</td>
+    </tr>
+    <tr>
+        <th>ログイン中アカウント名</th>
+        <td>現在ログインしている管理者のアカウントが表示されます。クリックすると個人設定のサブメニューが開きます。</td>
+    </tr>
+</table>
+
+<p>
+    メニューのユーザ管理、グループ共有機能(※オプション)、各種設定、ログイン中アカウント名にマウスのカーソルを合わせると、各メニューのサブメニューが表示されます。<br />
+    サブメニュー内のリンクをクリックすると、直接その画面に遷移します。<br />
+</p>
+<div class="schreenshot-row">
+    <img src="../../images/view/menu_user.png" class="view" alt="ユーザ管理のサブメニュー"/>
+    <img src="../../images/view/menu_share.png" class="view"alt="グループ共有のサブメニュー" />
+    <img src="../../images/view/menu_config.png" class="view" alt="各種設定のサブメニュー"/>
+    <img src="../../images/view/menu_account.png" class="view" alt="個人設定"/>
+</div>
+
+<style>
+    .schreenshot-row {
+        display: flex;
+        align-items: flex-start;
+    }
+</style>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

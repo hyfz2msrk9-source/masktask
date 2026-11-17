@@ -1,0 +1,305 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+<h2><span>文件一覽</span></h2>
+<p>
+  在文件一覽中您可以操作文件一覽、文件發送、文件上傳、文件下載、文件消除、新建資料夾、資料夾編輯、資料夾消除、文件的資料夾移動、文件詳細、文件名變更等。<br />
+  目錄：點擊文件一覽。<br />
+<img src="../../../images-tcn/sysmenu_top.gif" class="view" alt="目錄：文件一覽" />
+</p>
+
+<h3><a name="4-1"></a>文件一覽頁面</h3>
+<p>
+  目錄：點擊文件一覽可以移動到文件一覽頁面。顯示已上傳的文件一覽。<br />
+  在文件一覽頁面能夠操作各文件。另外，顯示可利用容量。<br />
+  <img src="../../help-images/view-tcn/3-1.gif" class="view" alt="文件一覽頁面" />
+</p>
+<table>
+  <tr>
+    <th><img src="../../help-images/no-s-1.gif" alt="1" />使用容量</th>
+    <td>
+      顯示可使用的用量。<br />
+      <span class="bold">「基本容量」＋「擴展容量」</span>。<br />
+      *低於使用者設定的擴展容量時，系統的擴展容量的剩餘容量為<span class="bold">[基本容量+系統的擴展容量的剩餘容量]</span>。<br />
+      <span class="attention">[注意]</span>顯示共用資料夾時,不反映於擴張容量，顯示管理員設定的容量。
+      <table class="table-s">
+        <tr>
+          <th>基本容量</th>
+          <td>使用者設定的確保最低限度的容量。</td>
+        </tr>
+        <tr>
+          <th>擴展容量</th>
+          <td>全體使用者有容量未使用時（未分配時），可分配給每個用戶使用（擴展）的容量。</td>
+        </tr>
+      </table>
+      如右圖的顯示表，用圖表表示使用容量。（管理員也可以設置為「不顯示」。）
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-2.gif" alt="2" />資料夾一覽</th>
+    <td>
+      顯示註冊爲最喜歡的文件夾、共享文件夾和個人文件夾。（<a href="index-tcn.html#4-1-1">→關於資料夾</a>）
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-3.gif" alt="3" />關於文件</th>
+    <td>
+      顯示已上傳的文件。（<a href="index-tcn.html#4-1-4">→關於文件</a>）
+    </td>
+  </tr>
+</table>
+
+<h4><a name="4-1-1"></a>關於資料夾</h4>
+<p class="h4-p">
+  文件一覽的上方有現在的資料夾和資料夾的操作按鈕。<br />
+  顯示除首位以外的資料夾時。關於其操作請參考以下。<br />
+  關於共用資料夾請參考<a href="index-tcn.html#4-1-3">關於資料夾</a>，或者<a href="group-tcn.html#4-4">群共用功能</a>。<br />
+  <img src="../../help-images/view-tcn/3-1-1.gif" class="view" alt="現在のフォルダとフォルダの操作ボタン" />
+</p>
+<dl>
+  <dt>現在的資料夾</dt>
+  <dd>
+    現在的資料夾。選擇其他資料夾就會移動到資料夾選擇頁面。<br />
+    <img src="../../help-images/view-tcn/3-1-1_2.gif" class="view" alt="現在のフォルダ" />
+  </dd>
+
+  <dt>[更改資料夾名]</dt>
+  <dd>
+    變更現在的資料夾名。共用的資料夾名無法變更。<br />
+    <img src="../../help-images/view-tcn/3-1-1_3.gif" class="view" alt="フォルダ名変更画面" />
+  </dd>
+
+  <dt>[刪除資料夾]</dt>
+  <dd>
+    刪除現在的資料夾。一旦刪除資料夾，該資料夾中的資料夾及文件會全部消失。請慎重操作。共用的資料夾無法刪除。<br />
+    <img src="../../help-images/view-tcn/3-1-1_4.gif" class="view" alt="フォルダ削除画面" />
+  </dd>
+
+  <dt>[新建資料夾]</dt>
+  <dd>
+    添加新的資料夾。無法添加共用資料夾。<br />
+    <img src="../../help-images/view-tcn/3-1-1_5.gif" class="view" alt="フォルダ作成画面" />
+  </dd>
+
+  <dt>資料夾移動</dt>
+  <dd>
+    滑鼠拖動資料夾至想移動到的資料夾上鬆開滑鼠，就可以移動資料夾。<br />
+    最喜歡的文件夾列表不支持這個功能。<br />
+    <img src="../../help-images/view-tcn/3-1-1_6.gif" class="view" alt="フォルダの移動" />
+  </dd>
+</dl>
+
+<h4><a name="4-1-2"></a>新建文件夹</h4>
+<p class="h4-p">
+  添加新的文件夾。選擇新文件夾作成的位置，輸入新建的文件夾名。<br />
+  請單擊[追加]按鈕。<br />
+  <img src="../../help-images/view-tcn/folder-add-1.gif" class="view" alt="フォルダ作成" />
+</p>
+
+<p class="h4-p">
+  追加了文件夾。請單擊各按鈕。<br />
+  <img src="../../help-images/view-tcn/folder-add-2.gif" class="view" alt="フォルダ作成" />
+</p>
+
+<dl>
+  <dt>移動到較高文件夾</dt>
+  <dd>
+    移動到較高文件夾。<br />
+    移動到在Top內製作時文件夾，Top的文件夾。<br />
+    <img src="../../help-images/view-tcn/folder-add-3.gif" class="view" alt="フォルダ作成-上位フォルダへ移動する" />
+  </dd>
+
+  <dt>移動到創建文件夾</dt>
+  <dd>
+    移動到製作的文件夾。<br />
+    <img src="../../help-images/view-tcn/folder-add-4.gif" class="view" alt="フォルダ作成-作成フォルダへ移動する" />
+  </dd>
+
+  <dt>創建額外的文件夾</dt>
+  <dd>
+    創建額外的文件夾<br />
+    請單擊[創建額外的文件夾]按鈕。嚮作成畫麵變遷。
+  </dd>
+</dl>
+
+
+<h4><a name="4-1-3"></a>關於資料夾</h4>
+<p class="h4-p">
+  文件一覽頁面的左側是資料夾一覽。<br />
+  關於資料夾的種類，功能，圖示等請參考下面。<br />
+  <img src="../../help-images/view-tcn/3-1-2.gif" class="view" alt="フォルダ一覧" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />最喜歡的文件夾</th>
+      <td>
+        點擊文件夾名稱右側的圖標，可將其註冊或刪除爲最喜愛的文件夾。<br />
+        註冊爲最喜愛的文件夾的文件夾用<img src="../../../images/ico-favorite-on.svg" alt="favorite-on" class="favorite-icon"/>標記，其他文件夾用<img src="../../../images/ico-favorite.svg" alt="favorite-off" class="favorite-icon"/>標記。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />共用資料夾</th>
+      <td>
+        在這裡顯示的資料夾是共用資料夾。<br />
+        可以在設定的群中共用文件。在群共用功能裡如果沒有群所屬的話不會顯示「▼共用資料夾」。<br />
+        關於群共用功能請參考<a href="group-tcn.html#4-4">4-4.群共用功能</a>。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />共用資料夾查找</th>
+      <td>
+        檢索共用資料夾。在群共用功能裡，如果沒有群所屬或者共用資料夾檢索功能設定為無效時不顯示。
+      </td>
+    </tr>
+    <tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />個人資料夾</th>
+      <td>
+        在這裡顯示的資料夾是使用者個人使用的資料夾。<br />
+        可以自由的新增、編輯、刪除資料夾。在群共用功能裡如果沒有群所屬的話上面不會顯示「▼個人資料夾」，所顯示的資料夾全都是個人資料夾。
+      </td>
+    </tr>
+      <th><img src="../../help-images/folder_open.gif" alt="現在選択中の個人フォルダ" /><span class="normalWeight">(資料夾名)</span></th>
+      <td>
+        現在選擇的個人資料夾內的資料夾。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/folder_close.gif" alt="現在選択していない個人フォルダ" /><span class="normalWeight">(資料夾名)</span></th>
+      <td>
+        現在沒有選擇的個人資料夾內的資料夾。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/sfolder_open.gif" alt="現在選択中の共有フォルダ内フォルダ" /><span class="normalWeight">(資料夾名)</span></th>
+      <td>
+        現在選擇的共用資料夾內的資料夾。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/sfolder_close.gif" alt="現在選択していない共有フォルダ内フォルダ" /><span class="normalWeight">(資料夾名)</span></th>
+      <td>
+        現在沒有選擇的共用資料夾內的資料夾。
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="4-1-4"></a>關於文件</h4>
+<p class="h4-p">文件一覽頁面的右側是文件一覽。關於功能和按鍵請參考下面。<br />
+  <img src="../../help-images/view-tcn/3-1-3.gif" class="view" alt="ファイル一覧" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />文件名</th>
+      <td>已上傳的文件名。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />登錄日</th>
+      <td>
+        文件上傳的年月日或時分秒。<br />
+        文件上傳當天是顯示時分秒，第二天開始顯示年月日。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />大小</th>
+      <td>已上傳的文件大小。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />通知</th>
+      <td>資料夾分發及通知的人數。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_up-tcn.gif" alt="アップロード" /></th>
+      <td>
+        文件上傳按鈕。（<a href="upload-tcn.html#4-2">→文件上傳</a>）
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_folder_dl-tcn.gif" alt="一括ダウンロード" /></th>
+      <td>
+        將現在打開的資料夾內的文件全部下載的按鈕。<br />
+        注意：資料夾內全部下載只有一部分的環境可以使用。<br />
+        <img src="../../help-images/view-tcn/3-1-3_2.gif" class="view" alt="フォルダ一括ダウンロード画面" /><br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_changenm.gif" alt="ファイル名変更とサムネイルの指定" /></th>
+      <td>
+        文件名變更和圖示指定用的按鈕。<br />
+        變更文件名需要輸入新的文件名後點擊[編輯確認]按鈕。資料夾公開功能為有效並且圖示功能為ON時，您可以登錄圖示或編輯圖示。（<a href="thumbnail-tcn.html#4-6">→圖示指示功能</a>）
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_detail.gif" alt="ファイル詳細" /></th>
+      <td>
+        文件的詳細按鈕。點擊後顯示備忘錄和登錄日詳細。<br />
+        想關閉詳細時請點擊。(<img src="../../help-images/icon_close-tcn.gif" alt="詳細閉じる" />)<br />
+        另外，點擊「點擊進行編輯...」按鈕可以編輯備忘錄。如果已經登錄了備忘錄，只要點擊備忘錄上的文字就可以進行編輯。<br />
+        <img src="../../help-images/view-tcn/3-1-3_3.gif" class="view" alt="ファイル詳細画面" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_sanitization-tcn.gif" alt="無害化" />(選項功能)</th>
+      <td>
+        [無害化]按鈕。將對尚未無害化的文件進行無害化。(<a href="#sanitize">→無害化</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_send-tcn.gif" alt="配布" /></th>
+      <td>
+        「發送」按鈕。可以進行文件發送。（<a href="send-tcn.html#4-3">→文件的發送</a>）
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_dl-tcn.gif" alt="ダウンロード" /></th>
+      <td>
+        [下載]按鈕。可以下載文件。<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_delete-tcn.gif" alt="削除" /></th>
+      <td>
+        [刪除]按鈕。可以刪除文件。<br />
+        文件刪除後，會從系統上消失。已給過文件發送通知的人無法再進行下載。請慎重操作。
+      </td>
+    </tr>
+  </tbody>
+</table>
+<dl>
+  <dt>選擇的文件進行操作</dt>
+  <dd>
+    在選擇裡打鉤可以把所選的文件一起操作。<br />
+     點擊[分發]按鈕來分發文件。選擇目標文件夾，點擊[移動]按鈕，將文件移動到另一個文件夾。點擊[下載]來下載文件。點擊[刪除]刪除文件。<br />
+    <img src="../../help-images/view-tcn/3-1-3_4.gif" class="view" alt="選択中のファイル操作" />
+  </dd>
+  <dt id="dragdrop">文件上傳（拖放）</dt>
+  <dd>
+    在有寫入權限的資料夾中，可以通過將文件拖放到文件一覽區域來上傳文件。<br />
+    <img src="../../help-images/view-tcn/drag-new-file.png" class="view" alt="將新文件拖到一覽上"><br />
+    <img src="../../help-images/view-tcn/drop-new-file.png" class="view" alt="將新文件拖放到一覽上即可上傳">
+  </dd>
+  <dt>文件移動（滑鼠拖動&amp;放入）</dt>
+  <dd>用滑鼠拖動&放入來移動文件。把資料夾內想移動的文件名拖至想移動到的資料夾中放入。<br />
+    最喜歡的文件夾列表不支持這個功能。<br />
+    <img src="../../help-images/view-tcn/3-1-4.gif" class="view" alt="ファイルの移動" />
+  </dd>
+  <dt>文件檢索</dt>
+  <dd>您可以通過輸入文件名的一部分作爲關鍵詞來搜索已註冊的文件。<br />
+    輸入關鍵詞並點擊[查找]按鈕。<br />
+    通過打開一個空格，您也可以輸入多個關鍵詞。<br />
+    <img src="../../help-images/view-tcn/3-1-5.gif" class="view" alt="ファイルの検索" />
+  </dd>
+  <dt id="sanitize">無害化（選項功能）</dt>
+  <dd>
+    對上傳的文件進行無害化處理，去除其中可能包含的有害宏功能部分。<br />
+    根据管理员的设置，可能会同时保留原始文件和无害化后的文件，或者仅保存无害化后的文件。<br />
+    如果設定為保留無害化前的文件，文件名會自動添加「_無害化前」。<br />
+    <img style="width:500px" src="../../help-images/view-tcn/3-1-6.gif" class="view" alt="無害化" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

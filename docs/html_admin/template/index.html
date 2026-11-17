@@ -1,0 +1,52 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+    <h2><span>テンプレート編集</span></h2>
+
+     <img src="../../images/view/5-1.gif" class="view"  alt="テンプレート編集" />
+
+
+    <h3>テンプレート編集</h3>
+    <p>ファイル配布、収集時に使用する、メール本文のサンプルテンプレートや、メールヘッダ・フッタを編集することができます。各テンプレートの[編集]ボタンをクリックしてください。</p>
+     <dl>
+         <dt><img src="../../images/no-s-1.gif" />配布用テンプレート</dt>
+         <dd>
+           ファイル配布時のメール本文[サンプル文を挿入する]ボタンをクリックし、挿入される文章です。<br />
+            <img src="../../images/view/5-2.gif" class="view" alt="テンプレート編集：配布用テンプレート"  />
+         </dd>
+
+         <dt><img src="../../images/no-s-2.gif" />収集用テンプレート</dt>
+         <dd>
+           ファイル収集時のメール本文[サンプル文を挿入する]ボタンをクリックし、挿入される文章です。<br />
+            <img src="../../images/view/5-3.gif" class="view"  alt="テンプレート編集：収集用テンプレート" />
+         </dd>
+
+         <dt><img src="../../images/no-s-3.gif" />配布・収集用テンプレート</dt>
+         <dd>
+           ファイル配布・収集時のメール本文[サンプル文を挿入する]ボタンをクリックし、挿入される文章です。<br />
+            <img src="../../images/view/5-4.gif" class="view"  alt="テンプレート編集：配布・収集用テンプレート" />
+         </dd>
+         <dt><img src="../../images/no-s-4.gif" />ヘッダー用テンプレート</dt>
+         <dd>
+           「ヘッダを付加する」設定にしている場合、Webシステムから送信するメールに付加されるヘッダです。<br />
+            <img src="../../images/view/5-5.gif" class="view" alt="テンプレート編集：ヘッダー用テンプレート" />
+         </dd>
+         <dt><img src="../../images/no-s-5.gif" />フッター用テンプレート</dt>
+         <dd>
+           「フッタを付加する」設定にしている場合、Webシステムから送信するメールに付加されるヘッダです。<br />
+            <img src="../../images/view/5-6.gif" class="view" alt="テンプレート編集：フッター用テンプレート" />
+         </dd>
+
+
+        </dl>
+
+    <p>各テンプレートの内容を編集し、[確認]ボタンをクリックしてください。内容が正しければ、[変更する]ボタンをクリックし、編集を完了します。</p>
+            <img src="../../images/view/5-7.gif" class="view" alt="テンプレート編集完了"/>
+
+
+
+    <h3><a name="5-2"></a>メールヘッダ・フッタ</h3>
+    <p>配布・収集・パスワード取得など、利用者から第三者に提供されるメールに挿入される固定ヘッダ・フッタを、付加したり、付加しなかったりを、設定することができます。
+現在の設定が表示されています。ヘッダ・フッタそれぞれの設定をし、[更新する]ボタンをクリックしてください。設定を完了します。</p>
+            <img src="../../images/view/5-8.gif" class="view" alt="テンプレート編集：メールヘッダ・フッタ"/>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

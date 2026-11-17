@@ -1,0 +1,204 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+          <h2><span>文件一覽</span></h2>
+          <h3><a name="4-5"></a>資料夾公開功能</h3>
+          <p>
+            資料夾公開功能是，包括用戶所作成的個人資料夾裡的文件一起送信的功能。<br />
+            可以把新建的資料夾整個送信給指定用戶。<br />
+            共用資料夾不具有資料夾公開功能。請注意。<br />
+            當縮略圖顯示功能開啟時，如果您公開的個人資料夾內有帶縮略圖的文件，您可以把縮略圖一起發送給指定用戶。收信方可以在收到的資料夾上看到附帶的縮略圖。為了讓資料夾裡的內容更明瞭請附加明瞭的縮略圖。<br />
+            並且，資料夾內的文件如果是使用了縮略圖的圖片文件，則不能利用資料夾公開功能發送，請注意！<br />
+            資料夾公開功能可以每次設置安全性設定。根據需要公開的情況可以各種各樣的安全性設定，確保了高安全性。
+          </p>
+
+          <p>
+            請在文件一覽裡選擇想要公開的資料夾，點擊頁面右側的[資料夾公開]按鈕。<br />
+            <img src="../../help-images/view-tcn/3-5_1.gif" class="view" alt="ファイル一覧：フォルダ公開" />
+          </p>
+
+          <p>
+            移動到登錄文件的通知頁面。<br />
+            輸入專案、選擇、根據情況設定安全性設置。<br />
+            <img src="../../help-images/view-tcn/3-5_2.png" class="view" alt="フォルダ公開画面" />
+          </p>
+
+          <table>
+            <tbody>
+              <tr>
+                <th class="bRnone"><img src="../../help-images/no-s-1.gif" alt="1" /></th><th class="bLnone">[從自己的郵箱發送]</th>
+                <td>
+                  用自己的郵箱發送資料夾公開的通知。<br />
+                  (<a href="send-tcn.html#4-3-3">→從自己的郵箱發送</a>)
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-2.gif" alt="2" />收件人</th>
+                <td>
+                  輸入收件人或從地阯簿添加。最多可以設置10個項目。（號碼可能已被管理員更改，詳情請聯係管理員。）<br />
+                  輸入收件人，然後單擊[追加收件人]按鈕。或者，單擊[>>從郵箱地址簿裡選擇]從您的地阯簿添加。<br />
+                  要刪除添加的收件人，請單擊每個收件人右側的[×刪除]按鈕。<br />
+                  <img src="../../help-images/view-tcn/3-3_3.png" class="view" alt="宛先" /><br />
+                  <img src="../../help-images/view-tcn/3-3_4.png" class="view" alt="アドレス帳から宛先を追加" /><br />
+                  在郵箱地址簿裡選擇的畫面中，從郵箱地址簿一覽表中點擊選擇或者打鉤選擇您要添加的郵箱地址，然後點擊[↓]按鈕就追加完畢了。<br />
+                  <img src="../../help-images/view-tcn/3-3_5.gif" class="view" alt="アドレスの選択" /><br />
+                  郵箱地址沒有問題的話請點擊[追加收件人]按鈕。<br />
+                  追加郵箱地址到文件發送頁面裡。<br /><br />
+                  收件人中有未曾登錄過的郵箱地址時，在文件登錄完畢的通知頁面裡可以追加該郵箱地址到郵箱地址簿。<br />
+                  （會登錄在「未分類」群裡。<a href="../address/group-tcn.html#6-5">→更改郵箱地址組</a>裡進行群設置。）
+                  <br /><br />
+                  如果郵件地址已經登記、向輸入候被郵件地址，地址簿就預測。<br />
+                  單擊輸入的郵件地址。單擊的郵件地址的地址被表示。
+                  <img src="../../help-images/view-tcn/yosoku-1.gif" class="view" alt="アドレスの選択:予測表示" /><br /><br />
+                  此外，如果您在郵件地址輸入字段中輸入多個由<span class="attention nowrap" style="font-weight:bold;">逗號（,）</span>分隔的電子郵件地址，或者輸入名稱為<span class="attention nowrap" style="font-weight:bold;">名稱&lt;郵件地址&gt;</span>的郵件地址，則可以添加可以自動添加的“名稱” 我們可以檢測候選人的“郵件地址”並添加選中的郵件地址。
+                  <img src="../../help-images/view-tcn/detect-address.png" class="view" alt="地址選擇：候選檢測" />
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-3.gif" alt="3" />公開資料夾名</th>
+                <td>
+                  發送的資料夾。可以把資料夾裡的內容一起發送。<br />
+                  這裡不能變更其他資料夾或追加其他資料夾。請注意。<br />
+                  <img src="../../help-images/view-tcn/3-5_3.gif" class="view" alt="公開フォルダ名" />
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-4.gif" alt="4" />寄件者</th>
+                <td>
+                  可以根據情況變更發送人及發送人郵箱地址來發送郵件。可以在(<a href="../config/from-tcn.html">→寄件者設定</a>)裡進行發送人的登錄。<br />
+                  寄件者設定功能為無效時不顯示寄件者。
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-5.gif" alt="5" />郵件件名</th>
+                <td>
+                  郵件的件名。
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-6.gif" alt="6" />郵件正文</th>
+                <td>
+                  郵件的正文。請輸入必填專案。(<a href="send-tcn.html#4-3-1">→關於郵件正文</a>)
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-7.gif" alt="7" />安全性設定</th>
+                <td>
+                  安全設置。請按照您的需要設定安全設置。(<a href="folder-tcn.html#4-5-1">→關於資料夾公開的安全性設置</a>)
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-8.gif" alt="8" />字符編碼</th>
+                <td>妳能選擇文字編碼。</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            您輸入的內容沒有問題的話,請點擊[確認郵件]按鈕。<br />
+            移動到登錄文件的資料夾公開（確認）頁面。<br />
+            <br />
+            管理員設置上級時<span class="attention">(*可選設定)</span>,在確認頁面上,
+            還將顯示“上級信息”或“選擇上級”區域。
+            如果顯示“選擇上級”區域,請選擇上級以請求批准。
+            批准請求電子郵件到達上級。 <br />
+            獲得上級許可後,發送資料夾公開的通知。如果上級駁回,則不發送。
+            您可以在上級確認一覽中查看批准狀態。(<a href="../superior/index-tcn.html">→上級確認一覽</a>)<br />
+            <br />
+            確認輸入、設定的內容無誤後,請點擊[發送郵件]按鈕。<br />
+            <img src="../../help-images/view-tcn/3-5_4.gif" class="view" alt="フォルダ公開確認画面" />
+          </p>
+
+          <p>
+            移動到登錄文件的通知（完成）頁面。資料夾公開成功。<br />
+            <img src="../../help-images/view-tcn/3-3_10.gif" class="view" alt="フォルダ公開完了画面" />
+          </p>
+
+          <h4><a name="4-5-1"></a>關於資料夾公開的安全性設置</h4>
+          <p class="h4-p">
+            <img src="../../help-images/view-tcn/3-5-1_1.gif" class="view" alt="フォルダ公開セキュリティ設定" />
+          </p>
+
+          <dl>
+            <dt>通過SSL通信進行加密</dt>
+            <dd>通過EVSSL進行通信加密。基本功能(※ 只有SSL通信時顯示)。</dd>
+
+            <dt>資料夾公開的有效期限</dt>
+            <dd>
+              設定公開資料夾的下載有效期限。超過有效期限後無法下載。
+            </dd>
+
+            <dt>不加鎖</dt>
+            <dd>不設定密碼鎖。</dd>
+
+            <dt>設置臨時密碼鎖</dt>
+            <dd>
+              設置臨時密碼。採用限定郵箱地址的臨時密碼，確保了高安全性。
+            </dd>
+
+            <dt>設置指定密碼鎖</dt>
+            <dd>使用者可以自由指定密碼。請告知收件人指定的密碼。</dd>
+
+            <dt>開封確認</dt>
+            <dd>有人點擊下載URL就會把開封通知郵件到用戶。</dd>
+
+            <dt>下載確認</dt>
+            <dd>文件被下載後會聯繫用戶下載通知。</dd>
+          </dl>
+
+          <h4><a name="4-5-2"></a>關於公開資料夾資訊</h4>
+
+          <p>
+            在文件一覽裡選擇想要發送的資料夾，點擊畫面右側的[資料夾公開信息]按鈕。<br />
+            <img src="../../help-images/view-tcn/3-5_1b.gif" class="view" alt="ファイル一覧：フォルダ公開情報" />
+          </p>
+
+          <p class="h4-p">
+            公開資料夾資訊裡顯示現在的公開資料夾的狀況。<br />
+            <img src="../../help-images/view-tcn/3-5-2_1.gif" class="view" alt="フォルダ公開情報画面" />
+          </p>
+
+          <table>
+            <tbody>
+              <tr>
+                <th><img src="../../help-images/no-s-1.gif" alt="1" />收件人</th>
+                <td>將顯示把資料夾公開的分發人的郵箱地址及姓名。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-2.gif" alt="2" />發送日期〜有效期限</th>
+                <td>顯示發送開始日期到有效期限。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-3.gif" alt="3" />密碼</th>
+                <td>
+                  顯示資料夾公開時的密碼設置頁面。
+                  <table class="data">
+                    <tbody>
+                      <tr>
+                        <th colspan="2">關於密碼</th>
+                      </tr>
+                      <tr>
+                        <th>無</th>
+                        <td>選定“不加密”時顯示。</td>
+                      </tr>
+                      <tr>
+                        <th>一次性（臨時）</th>
+                        <td>選定“一次密碼加密”時顯示。</td>
+                      </tr>
+                      <tr>
+                        <th><img src="../../help-images/icon_unlock-tcn.gif" alt="変更" /></th>
+                        <td>使用者可以通過鍵入指定的密碼，變更原密碼。</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-4.gif" alt="4" /><img src="../../help-images/icon_stop-tcn.gif" alt="停止" /></th>
+                <td>可以中止資料夾的公開。</td>
+              </tr>
+            </tbody>
+          </table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

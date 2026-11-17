@@ -1,0 +1,41 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+$path = "../../";
+}else{
+$customer_flg = 0;
+$path = "../";
+}
+$image_path = "../" . $path . "help-images/view-cn/";
+include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+
+<h2><span>关于文件下载</span></h2>
+<h3><a name="13-2"></a>遇到需要输入邮箱地址时</h3>
+<p>
+	点击访问邮件内的下载URL链接时，遇到要求输入邮箱地址的情况。<br />
+	是为了确认是否是指定的用户在进行下载。<span class="attention">请输入收到邮件的人的邮箱地址。
+</p>
+<p>
+	如果输入其他人的邮箱地址，或把邮件转发后输入转发收件人的邮箱地址是无法下载数据的。如果遇到这种情况请输入最初收到通知邮件的人的转发前的邮箱地址。
+</p>
+
+<p>
+	比如，用「○○＠sample.co.jp」的邮箱地址收到邮件，自动转发给「▲▲@mailaddress.com」后确认过邮件的，请输入「○○＠sample.co.jp」的邮箱地址。<br />
+	<img src="<?php echo $image_path; ?>mailer.png" class="view" alt="メールアドレスの入力を求められる場合のファイルダウンロード" />
+</p>
+
+<h5><span class="line">输入正确的邮箱地址</span></h5>
+<p class="h4-p">
+	输入正确的邮箱地址后，移动到下载页面。<br />
+	点击文件名或屏幕右侧的下载按钮即可下载文件。<br />
+	<img src="<?php echo $image_path; ?>download.png" class="view" alt="メールアドレスの入力を求められる場合のファイルダウンロード:正しいメールアドレスを入力した場合" />
+</p>
+
+<h5><span class="line">输入错误的邮箱地址时</span></h5>
+<p class="h4-p">
+	系统显示错误提示，无法进入下载页面。<br />
+	<img src="<?php echo $image_path; ?>mailer-error-mail.png" class="view" alt="メールアドレスの入力を求められる場合のファイルダウンロード:誤ったメールアドレスを入力した場合" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

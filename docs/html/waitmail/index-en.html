@@ -1,0 +1,114 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>Mail standby</span></h2>
+<p>
+  A standby mail list is a list of the mail which has not been transmitted yet in the state of standby.
+  If the transmission standby time set up when sending e-mail passes, e-mail will be sent automatically.<br /><br />
+  Please click Menu:Mail standby.<br />
+  <img src="../../../images-en/sysmenu_waitmail.gif" alt="menu：standby mail" class="view" />
+</p>
+
+<p>
+  The following screens are lists of standby mail.<br />
+  <img src="../../help-images/view-en/standbymail-5.gif" alt="standby mail list" class="view" />
+</p>
+
+<table>
+  <tr>
+    <th><img src="../../help-images/no-s-1.gif" alt="1" />Operation</th>
+    <td>
+      The kind of mail to send is displayed.
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-2.gif" alt="2" />Address</th>
+    <td>
+      The address of the mail to send is displayed.
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-3.gif" alt="3" />File name</th>
+    <td>
+      The name of the file sent to the mail to send is displayed.
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-4.gif" alt="4" />Subject name</th>
+    <td>
+      The subject name of the mail to send is displayed.
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-5.gif" alt="5" />Transmitting schedule time</th>
+    <td>
+      The time when e-mail is transmitted is displayed.
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-6.gif" alt="6" />Transmitting state</th>
+    <td>
+      The state of e-mail is displayed.
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-7.gif" alt="7" />Details</th>
+    <td>
+      The edit and the check of e-mail under transmission standby are performed.
+    </td>
+  </tr>
+</table>
+
+<a name="detail"></a>
+<h3>Details of standby mail </h3>
+<p>
+  Please click the [Detail] button of mail to check from a list.<br />
+  <img src="../../help-images/view-en/standbymail-6.gif" alt="Standby mail：detail button" class="view" />
+</p>
+
+<p>
+  The detailed screen of e-mail is displayed.<br />
+  On a detailed screen, edit of e-mail, deletion, and transmitting stop release are performed. <br />
+  <img src="../../help-images/view-en/wait_detail.png" alt="Standby mail：detail" class="view" />
+</p>
+
+<a name="edit"></a>
+<h3>Standby mail edit </h3>
+
+<p>
+  Please click [Edit] button.An edit display is displayed.<br />
+  <img src="../../help-images/view-en/standbymail-7-2.gif" alt="Standby mail：edit buton" class="view" />
+</p>
+
+<p>
+  The edit display of e-mail is displayed.<br />
+  Please change the contents, when you edit e-mail. If it clicks [Confirm] button, it will change to a confirmation screen.<br />
+  If a check is completed, it will change to a standby mail list.If transmission standby time is set up, it will be updated at the set-up time.<br />
+  <img src="../../help-images/view-en/wait_form.png" alt="Standby mail：edit" class="view" />
+</p>
+
+<a name="release"></a>
+<h3>Standby mail stop release</h3>
+<p>
+  If it changes from a menu etc. to other screens during edit of standby mail, the standby mail under edit will be in a transmitting halt condition.<br />
+  In transmitting stop release, the standby mail which was in the transmitting halt condition is canceled.<br />
+  Please Click [Transmitting schedule time] button.<br />
+  <img src="../../help-images/view-en/standbymail-8-2.gif" alt="Standby mail：stop is cancel" class="view" />
+</p>
+
+<p>
+  It changes on a transmitting stop release screen.<br />
+  If you may cancel, please click a [Release] button. Transmitting stop release is completed.<br />
+  <img src="../../help-images/view-en/standbymail-9.gif" alt="Standby mail：stop is cancel 2" class="view" />
+</p>
+
+<a name="del"></a>
+<h3>Standby mail deletion</h3>
+<p>
+  Please click [delete] button.The dialog box of standby mail deletion is displayed.<br />
+  Please click the [OK] button, if you may delete. Standby mail is deleted.<br />
+  <img src="../../help-images/view-en/standbymail-10.gif" alt="Standby mail：delete" class="view" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

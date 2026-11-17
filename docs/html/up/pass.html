@@ -1,0 +1,50 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+  $path = "../../";
+}else{
+  $customer_flg = 0;
+  $path = "../";
+}
+$image_path = "../" . $path . "help-images/view/";
+include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+
+<?php if($customer_flg): ?>
+  <h2><span>収集メールを受け取った方（アップロード）</span></h2>
+<?php else:?>
+  <h2><span>ファイルのアップロード</span></h2>
+<?php endif; ?>
+<h3>指定パスワードを求められる場合</h3>
+
+
+<p>あらかじめ送信者によって指定されたパスワードを解除し、アップロード画面を開きます。<br />
+  <span class="attention">メールアドレスの入力ではなく、いきなりパスワードを要求される場合は、メールの送信者が指定した固定パスワードが設定されています。<br />
+    パスワードが不明な場合は、メールの送信者まで、ご確認ください。</span>
+</p>
+
+<p>メールや電話等で、メールの送信者から案内されたパスワードを入力します。<br />
+  <img src="<?php echo $image_path; ?>upload_selfpass.png" class="view" alt="指定パスワードを求められる場合：パスワード送信" /><br /><br />
+
+  例）パスワードをメールで案内された場合<br />
+  <img src="<?php echo $image_path; ?>13-4-2.gif" class="view" alt="指定パスワードを求められる場合：メールで指定パスワード" />
+
+</p>
+
+<dl>
+  <dt>正しいパスワードを入力した場合</dt>
+  <dd>ファイルのアップロード画面へのリンクが表示されます。<br />
+    [ファイルアップロード]をクリックすると、アップロード画面に遷移し、アップロードが可能です。<br />
+    <img src="<?php echo $image_path; ?>upload.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルアップロード:正しいパスワードを入力した場合" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>誤ったパスワードを入力した場合</dt>
+  <dd>エラーメッセージが表示され、アップロード画面に進めません。<br />
+
+    <img src="<?php echo $image_path; ?>error-selfpass.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルアップロード:誤ったパスワードを入力した場合" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

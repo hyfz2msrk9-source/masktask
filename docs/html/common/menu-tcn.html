@@ -1,0 +1,250 @@
+<?php
+   if ($customer_flg) {
+   $path = $path."customer/";
+   }
+?>
+<div id="sideMenu">
+  <ul class="index-1">
+    <li>
+      <a href="<?php echo $path; ?>index-tcn.html">關於本說明書</a>
+    </li>
+    <?php if (!$customer_flg): ?>
+    <li>
+      <a href="<?php echo $path; ?>login/index-tcn.html">登錄</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>login/index-tcn.html#2-1">登錄</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/index-tcn.html#2-2">退出</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/index-tcn.html#2-3">忘記帳號或密碼</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/index-tcn.html#2-6">雙因素認證</a>
+  </li>
+  <li>
+      <a href="<?php echo $path; ?>login/index-tcn.html#2-7">Google SSO身份驗證</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/index-tcn.html#2-8">[##SAML_NAME##]</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/index-tcn.html#2-4-2">Windows綜合驗證</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/index-tcn.html#2-5">用戶身分驗證</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/lock-tcn.html">帳號鎖定</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/news-tcn.html">通知</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/login-error-tcn.html">登錄錯誤</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>top/menu-tcn.html">目錄</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>top/index-tcn.html">文件一覽</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>top/index-tcn.html#4-1">文件一覽頁面</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>top/upload-tcn.html">文件的上傳</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>top/send-tcn.html">發送文件</a>
+    <ul class="index-3">
+      <li>
+        <a href="<?php echo $path; ?>top/send-tcn.html#4-3-1">關於郵件正文</a>
+      </li>
+      <li>
+        <a href="<?php echo $path; ?>top/send-tcn.html#4-3-2">關於安全設定</a>
+      </li>
+      <li>
+        <a href="<?php echo $path; ?>top/send-tcn.html#4-3-3">從自己的郵箱發送</a>
+      </li>
+      <li>
+        <a href="<?php echo $path; ?>top/send-collect-tcn.html#4-3-4">接收及發送郵件</a>
+      </li>
+      <li>
+        <a href="<?php echo $path; ?>top/send-collect-tcn.html#4-3-5">關於接收及分發郵件的正文</a>
+      </li>
+      <li>
+        <a href="<?php echo $path; ?>top/send-collect-tcn.html#4-3-6">關於接收及分發郵件的安全性設置</a>
+      </li>
+      <li>
+        <a href="<?php echo $path; ?>top/send-collect-tcn.html#send-collect-mailer">從本管理器發送郵件收集的分發</a>
+      </li>
+      <li>
+        <a href="<?php echo $path; ?>top/send-status-tcn.html#4-3-8">文件發送狀況確認</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>top/group-tcn.html">組共用功能</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>top/folder-tcn.html">資料夾公開功能</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>top/thumbnail-tcn.html">縮略圖顯示功能</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>collecting/index-tcn.html">接收(收集)</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>collecting/index-tcn.html#5-1">收集文件一覽</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>collecting/collect-tcn.html#5-2">文件收信</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>collecting/collect-tcn.html#collect-mailer">文件收信（從郵箱發送）</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>collecting/save-tcn.html#5-3">文件保管</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>waitmail/index-tcn.html">待機郵件一覽</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>address/index-tcn.html">郵箱地址簿</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>address/index-tcn.html#6-1">郵箱地址簿一覽</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>address/change-tcn.html#6-2">追加郵箱地址</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>address/change-tcn.html#6-3">編輯郵箱地址</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>address/change-tcn.html#6-4">刪除郵箱地址</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>address/group-tcn.html#6-5">更改郵箱地址組</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>address/group-tcn.html#6-6">追加組</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>address/group-tcn.html#6-7">編輯組</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>address/group-tcn.html#6-8">刪除組</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>address/group-tcn.html#6-9">變更組的排列順序</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>superior/index-tcn.html">
+  上級確認一覽<span style="font-size:90%; font-weight:normal;">(※選項功能)</span>
+      </a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>superior/index-tcn.html#7-1">用戶的上級確認功能</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>superior/index-tcn.html#7-2">上級的確認功能</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>log/index-tcn.html">日誌</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>config/index-tcn.html">設定</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>config/template-tcn.html">文本</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>config/sign-tcn.html">簽名</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>config/user-tcn.html">組共用</a>
+    <ul class="index-3">
+      <li>
+        <a href="<?php echo $path; ?>config/user-tcn.html#9-3-1">用戶管理</a>
+      </li>
+      <li>
+        <a href="<?php echo $path; ?>config/user-tcn.html#9-3-2">IP制限</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>config/from-tcn.html">寄件者設定</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>config/mailsend-tcn.html">郵件分發設定</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>profile/index-tcn.html">個人資訊</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>support/index-tcn.html">支援</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>help/index-tcn.html">幫助</a>
+    </li>
+    <?php endif;?>
+    <li>
+      <a href="<?php echo $path; ?>dl/index-tcn.html">文件下載</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>dl/index-tcn.html#13-1">關於文件下載</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>dl/onetime-pass-tcn.html">遇到需要輸入臨時密碼時</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>dl/onetimesms-pass-tcn.html">遇到需要輸入臨時密碼時（另一條路線）</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>dl/pass-tcn.html">遇到需要輸入指定密碼時</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>dl/mail-address-tcn.html">遇到需要輸入郵箱地址時</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>dl/error-tcn.html">無法下載時</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>up/index-tcn.html">上傳文件</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>up/index-tcn.html#14-1">標準上傳</a>
+  </li>
+
+  <li>
+     <a href="<?php echo $path; ?>up/onetime-pass-tcn.html">遇到需要輸入臨時密碼時</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>up/pass-tcn.html">遇到需要輸入指定密碼時</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>up/error-tcn.html">遇到無法上傳時</a>
+  </li>
+      </ul>
+    </li>
+  </ul>
+</div><!-- sidemenu -->

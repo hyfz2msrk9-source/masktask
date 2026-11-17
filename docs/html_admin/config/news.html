@@ -1,0 +1,35 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+    <h2><span>各種設定</span></h2>
+    <h3>運営からのお知らせ</h3>
+    <p>
+      運営からのお知らせを表示するかどうかの設定です。
+      (→<a href="../kp_news/index.html">運営からのお知らせ</a>)
+      <img src="../../images/view/config_kp_news.png" class="view" alt="運営からのお知らせ表示設定" />
+    </p>
+    <h3>お知らせ機能</h3>
+    <p>
+      お知らせ機能は、ユーザ全員のログイン時、お知らせを表示させる機能です。<br />
+    タイトルをクリックすると、ユーザは詳細を見ることができます。<br />
+      <img src="../../images/view/9-5.gif" class="view" alt="ログイン画面：お知らせ表示" />
+  </p>
+
+    <h4><a name="news-add"></a>お知らせの追加</h4>
+    <p class="h4-p">
+      お知らせを作成します。[お知らせ追加]ボタンをクリックしてください。お知らせ追加画面へ遷移します。<br />
+        <img src="../../images/view/10-3-8.gif" class="view" alt="お知らせ設定画面" /><br />
+        各項目を入力し、[追加する]ボタンをクリックしてください。<br />
+  <span class="attention">英語、中国語の項目を未入力とした場合、英語、中国語画面にも、日本語の「タイトル」と「本文」が表示されます。</span><br />
+        <img src="../../images/view/9-5-2.gif" class="view" alt="お知らせ追加画面" />
+    </p>
+
+    <h4><a name="news-edit"></a>お知らせの編集・削除</h4>
+    <p class="h4-p">
+      お知らせを編集、削除します。<br />
+        <img src="../../images/view/9-5-3.gif" class="view" alt="お知らせに関する設定画面：編集、削除" /><br />
+      [編集]ボタンをクリックすると、編集画面に遷移しますので、任意の項目を編集し、[更新する]ボタンをクリックしてください。<br /><br />
+    [削除]ボタンをクリックすると、確認画面に遷移します。<br />
+    [削除する]ボタンをクリックすると、削除されます。<span class="attention">削除したお知らせは、ユーザのログイン画面でも表示されなくなりますので、ご注意ください。</span>
+    </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

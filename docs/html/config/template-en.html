@@ -1,0 +1,234 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>Settings</span></h2>
+<h3><a name="9-1"></a>Template</h3>
+<p>
+  You can create or edit email templates for mail.<br />
+  <img src="../../help-images/view-en/9-1_1.gif" class="view" alt="settings：mail template" />
+</p>
+
+<p>
+  Email template list will appear.<br />
+  <img src="../../help-images/view-en/9-1_2.gif" class="view" alt="Email template" />
+</p>
+
+<h4><a name="9-1-1"></a>Template Creation and Editing</h4>
+<p class="h4-p">
+  You can create or edit email templates.<br />
+  To create a new template, click the [Add] button.<br />
+  To edit an existing template, click the [Details] button for the template you want to edit.<br />
+  <img src="../../help-images/view-en/9-1-1_1.gif" class="view" alt="templete：create" />
+</p>
+
+<p class="h4-p">
+  ＊For Editing<br />
+  Click the [Edit] button at the bottom of the Email Template Details screen to enable editing.<br />
+  <img src="../../help-images/view-en/9-1-1_2.gif" class="view" alt="templete：edit" />
+</p>
+
+<p class="h4-p">
+    You will be taken to the email template creation and editing screen.
+    Please fill in the required fields and click the [Save] button.<br />
+  <img src="../../help-images/view-en/9-1-1_3.gif" class="view" alt="mail template:create and edit" />
+  <img src="../../help-images/view-en/9-1-1_4.gif" class="view" alt="mail template:create and edit 2" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />Template name</th>
+      <td>
+        This is the name of the email template.<br />
+        It will not be included in the email.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />Type</th>
+      <td>
+        Select the feature where the template will be used.
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>Distribution</th>
+              <td>Available for Distribution and Folder publication.</td>
+            </tr>
+            <tr>
+              <th>Collection</th>
+              <td>Available for Collection and Gathering.</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Email subject</th>
+      <td>
+        It will be inserted into the email subject line.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Email text</th>
+      <td>
+        It will be inserted into the body of the email.
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>[##mail##]</th>
+              <td>Change into Email each address that Emails are sent to. </td>
+            </tr>
+            <tr>
+              <th>[##name##]</th>
+              <td>Change into each name that Emails are sent to.</td>
+            </tr>
+            <tr>
+              <th>[##addr_list##]</th>
+              <td>Change into the destination list.</td>
+            </tr>
+            <tr>
+              <th>[##dl_limit##]</th>
+              <td>Change into the term of validity of downloading files.</td>
+            </tr>
+            <tr>
+              <th>[##url##]</th>
+              <td>Change into file download URL for each addresses.</td>
+            </tr>
+            <tr>
+              <th>[##file_list##]</th>
+              <td>Change into the sent file list. </td>
+            </tr>
+            <tr>
+              <th>[##upload##]</th>
+              <td>Change into file upload URL for each addresses.</td>
+            </tr>
+            <tr>
+              <th>[##up_limit##]</th>
+              <td>Change into the term of validity of uploading files.</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />Security settings<br />　Download</th>
+      <td>
+        These are the security settings for file downloads.
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>Download expiry date</th>
+              <td>You can set the period during which the file is available for download.</td>
+            </tr>
+            <tr>
+              <th>Maximum number of downloads</th>
+              <td>You can set the maximum number of times the file can be downloaded.</td>
+            </tr>
+            <tr>
+              <th>Do not set a password</th>
+              <td>Anyone with the URL can download the file.</td>
+            </tr>
+            <tr>
+              <th>Set a one-time password</th>
+              <td>When accessing the URL, a one-time password that can be used only once will be sent to the recipient.</td>
+            </tr>
+            <tr>
+              <th>Set a one-time password<br />(Send via a different route)</th>
+              <td>The one-time password can be sent to an alternative email address or phone number via SMS, instead of the intended recipient.</td>
+            </tr>
+            <tr>
+              <th>Set a specified password</th>
+              <td>You can set a password that will be required to download the file.</td>
+            </tr>
+            <tr>
+              <th>Access Notification</th>
+              <td>You will receive a notification each time the download URL is accessed.</td>
+            </tr>
+            <tr>
+              <th>Download Notification</th>
+              <td>You will receive a notification when the file is actually downloaded.</td>
+            </tr>
+            <tr>
+              <th>Automatic File Deletion</th>
+              <td>The file will be automatically deleted after the download period expires.</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+      <tr>
+        <th><img src="../../help-images/no-s-6.gif" alt="6" />Security settings<br />　Upload</th>
+        <td>
+          These are the security settings for file uploads.
+          <table class="data">
+            <tbody>
+              <tr>
+                <th>Upload expiry date</th>
+                <td>You can set the period during which the upload URL is valid.</td>
+              </tr>
+              <tr>
+                <th>Do not set a password</th>
+                <td>Anyone can upload files without a password.</td>
+              </tr>
+              <tr>
+                <th>Set a one-time password</th>
+                <td>A one-time password required for uploading will be generated.</td>
+              </tr>
+              <tr>
+                <th>Set a specified password</th>
+                <td>You can set a password that will be required to upload files.</td>
+              </tr>
+              <tr>
+                <th>Upload Notification</th>
+                <td>The uploader will receive a notification with file information each time a file is uploaded.</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/no-s-7.gif" alt="7" />Character Encoding</th>
+        <td>
+          You can switch between ISO-2022-JP and UTF-8.
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+<h4><a name="9-1-2"></a>Template Duplicate And Delete </h4>
+<p class="h4-p">
+  Click the [Details] button for the target email template.<br />
+  <img src="../../help-images/view-en/9-1-2_1.gif" class="view" alt="Email template" />
+</p>
+
+<p class="h4-p">
+  ＊For duplication<br />
+  Review the content and click the [Duplicate] button.<br />
+  After that, you can create a new template using the same steps as editing an email template.
+  <img src="../../help-images/view-en/9-1-2_4.gif" class="view" alt="Email Template Duplication" />
+</p>
+
+<p class="h4-p">
+  ＊For deletion<br />
+  Review the content and click the [Delete] button.<br />
+  <img src="../../help-images/view-en/9-1-2_2.gif" class="view" alt="Email Template Deletion" />
+</p>
+
+<p class="h4-p">
+  When you click [Delete] button, message dialogue to confirm will appear. Please click [OK] button, the template you made is deleted.
+  <img src="../../help-images/view-en/9-1-2_3.gif" class="view" alt="the message of deleting mail tenplate" />
+</p>
+
+<h4><a name="9-1-3"></a>Calling a Template</h4>
+<p class="h4-p">
+  You can select the created template from the [Template] on the email creation screen.<br />
+  <img src="../../help-images/view-en/9-1-3_1.gif" class="view" alt="Email Template" />
+</p>
+
+<p class="h4-p">
+  The selected template will be applied to the email creation screen.<br />
+  <img src="../../help-images/view-en/9-1-3_2.gif" class="view" alt="Email Template" />
+  <img src="../../help-images/view-en/9-1-3_3.gif" class="view" alt="Email Template 2" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

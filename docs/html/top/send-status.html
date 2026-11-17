@@ -1,0 +1,67 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>ファイル一覧</span></h2>
+<h3>ファイルの配布</h3>
+<h4><a name="4-3-8"></a>ファイルの配布状況を確認する</h4>
+<p>
+  ファイルの配布状況は、「ファイル一覧」画面→ファイル一覧→「通知」から確認できます。<br />
+  「通知」欄の通知人数をクリックすると、新しいウィンドウに一覧が表示されます。<br />
+  <img src="../../help-images/view/3-3-7_1.gif" class="view" alt="ファイル一覧：通知" /> <br />
+  <img src="../../help-images/view/top_notice-personal.png" class="view" alt="ファイル通知情報画面" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />一覧表切り替え</th>
+      <td>
+        <img src="../../help-images/view/3-3-7_3.gif" class="view" alt="一覧表切替" /><br />
+        通常の配布画面から送信した一覧と、メーラーから配布機能を利用して送信した一覧の表示を切り替えます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />送信日時</th>
+      <td>配布メールの送信日時(通知日)を表示しています。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />送信先</th>
+      <td>
+        配布メールの送信先(宛先)を表示しています。<br />
+        送信時に名前を入力されていた場合は「名前」が、名前を入力されていなかった場合は、「メールアドレス」が表示されます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />有効期限</th>
+      <td>配布ファイルのダウンロード有効期限を表示しています。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />自動削除</th>
+      <td>ファイルの自動削除の設定を表示しています。「行う」の場合は、ダウンロード有効期限が切れた後に削除されます。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />ダウンロード回数</th>
+      <td>配布したファイルがダウンロードされた回数を表示しています。分母は、ダウンロード制限回数です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />最終ダウンロード日時</th>
+      <td>配布したファイルが最後にダウンロードされた日時を表示しています。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_distop.gif" alt="配布停止" /></th>
+      <td>
+        ファイルの配布を停止します。<br />
+        配布を停止すると、配布URL からファイルをダウンロードすることが出来ません。また、一度停止すると、再び有効に戻すことはできません。<br />
+        [配布停止]ボタンをクリックすると、ファイルの配布停止画面へ遷移します。<br />
+        <img src="../../help-images/view/3-3-7_4.gif" class="view" alt="ファイルの配布を停止する画面" /><br />
+        <p class="section">
+          　[配信する]ボタンをクリックすると、ファイルの配布を停止します。<br />
+          　ファイルの停止を行うと、[配布停止]ボタンを再びクリックすることができなくなります。
+        </p>
+        <img src="../../help-images/view/3-3-7_5.gif" class="view" alt="配布停止ボタン" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

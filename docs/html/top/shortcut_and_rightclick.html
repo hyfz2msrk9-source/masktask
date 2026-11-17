@@ -1,0 +1,87 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>ショートカットと右クリック機能について</span></h2>
+<h3>ショートカットについて</h3>
+<p>操作できるショートカットは以下です。</p>
+<table>
+  <tr>
+    <th>ショートカット</th>
+    <th>操作</th>
+  </tr>
+  <tr>
+    <td>command/ctrl + a</td>
+    <td>ファイルの全選択</td>
+  </tr>
+  <tr>
+    <td>ファイル選択後、shift + クリック</td>
+    <td>shift + クリックされた範囲まで選択</td>
+  </tr>
+  <tr>
+    <td>command/ctrl + クリック</td>
+    <td>command/ctrl + クリックされた複数ファイルを選択/選択解除</td>
+  </tr>
+  <tr>
+    <td>command/ctrl + c</td>
+    <td>ファイル名のコピー（タブ区切り）</td>
+  </tr>
+</table>
+
+<h3>右クリック機能について</h3>
+<p>複数ファイルを選択時、権限のないファイルが一つでも含まれている場合<br/>
+以下のように操作項目が無効になりクリックできなくなります。</p>
+<img src="../../help-images/view/shortcut_rightclick_disabled.png" class="view" alt="権限のない操作が無効になっている例" />
+
+<p>右クリックから操作できる機能は以下です。</p>
+<table>
+  <tr>
+    <th></th>
+    <th>1つのファイルを選択</th>
+    <th>複数のファイルを選択</th>
+  </tr>
+  <tr>
+    <td>配布</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">◯</td>
+  </tr>
+  <tr>
+    <td>ファイル編集</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">×</td>
+  </tr>
+  <tr>
+    <td>ダウンロード</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">◯</td>
+  </tr>
+  <tr>
+    <td>プレビュー</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">×</td>
+  </tr>
+  <tr>
+    <td><a href="./index.html#sanitize">無害化(オプション)</a></td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">×</td>
+  </tr>
+  <tr>
+    <td>メモ</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">×</td>
+  </tr>
+  <tr>
+    <td>コピー</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">◯</td>
+  </tr>
+  <tr>
+    <td>削除</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">◯</td>
+  </tr>
+</table>
+
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

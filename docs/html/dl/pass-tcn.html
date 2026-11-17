@@ -1,0 +1,42 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+  $path = "../../";
+}else{
+  $customer_flg = 0;
+  $path = "../";
+}
+$image_path = "../" . $path . "help-images/view-tcn/";
+include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+
+<h2><span>文件下載</span></h2>
+<h3><a name="13-4"></a>遇到需要輸入指定密碼時</h3>
+
+<p>
+	輸入寄件者預先指定的密碼，解除加密後打開下載頁面。<br />
+	<span class="attention">遇到不需要輸入郵箱地址，直接要求輸入密碼的情況，是郵件的寄件者設定了指定密碼。<br />
+	如果不知道密碼，請聯繫郵件寄件者確認。</span>
+</p>
+
+<p>
+	使用郵件或電話拿到郵件寄件者所指定的密碼並輸入，點擊[發送]按鈕。<br />
+	<img src="<?php echo $image_path; ?>selfpass.png" class="view" alt="指定パスワードを求められる場合：パスワード送信" /><br /><br />
+</p>
+
+<dl>
+	<dt>輸入正確的密碼後</dt>
+	<dd>會打開文件下載頁面。<br />
+		點擊文件名或屏幕右側的下載按鈕即可下載文件。<br />
+		<img src="<?php echo $image_path; ?>download-marked.png" class="view" alt="メールアドレスの入力を求められる場合のファイルダウンロード:正しいメールアドレスを入力した場合" />
+	</dd>
+</dl>
+
+<dl>
+	<dt>輸入錯誤的郵箱地址時</dt>
+	<dd>系統顯示錯誤提示，無法進入文件下載頁面。<br />
+		<img src="<?php echo $image_path; ?>error-selfpass.png" class="view" alt="メールアドレスの入力を求められる場合のファイルダウンロード:誤ったメールアドレスを入力した場合" /><br />
+	</dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

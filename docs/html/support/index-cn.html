@@ -1,0 +1,37 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+          <h2><span>支持</span></h2>
+          <h3>发邮件到技术支持</h3>
+          <p>
+            发送意见或提问到支持。
+          </p>
+
+          <p>
+            目录：点击技术支持。<br />
+            <img src="../../help-images/view-cn/menu_support.png" class="view" alt="目录：支持" />
+          </p>
+          <p>
+            输入询问内容，点击[邮件确认]按钮。移动至技术支持确认页面。<br />
+            确认内容无误请点击[发送邮件]按钮发送邮件至技术支持。<br />
+            <img src="../../help-images/view-cn/11_1.gif" class="view" alt="支持" />
+          </p>
+
+          <h3>常用提问</h3>
+          <p>关于经常遇到的问题的介绍。</p>
+
+          <h4>文件发送时，显示[收件人邮箱地址错误]。</h4>
+          <p class="h4-p">
+            在文件发送时，可能会出现显示[收件人邮箱地址错误]的错误提示，修改邮箱地址再次发送还是显示[收件人邮箱地址错误]的情况。<br />
+            <img src="../../help-images/view-cn/12.png" class="view" alt="エラー：送信メールアドレスが正しくありません、と何度も表示される" />
+          </p>
+
+          <p class="h4-p">
+            请在表格内键入发件人邮箱地址，并点击“追加收件人”按键，则此邮箱地址成功保存在表格下面。<br />
+            在表格内键入邮箱地址后，可以不点击“新增收件人”按键，点击表格下面的“邮件确认”键，进行同样的追加。<br />
+            当多次显示“发件人邮箱地址有误”的错误消息后，有可能对新增的错误邮箱地址进行删除。<br />
+            点击想要删除的邮箱地址右侧的[×删除]，删除此邮箱地址。
+          </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

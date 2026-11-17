@@ -1,0 +1,29 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<?php
+?>
+<h2><span>設定</span></h2>
+<p>
+  現在のアカウント設定です。<br />
+  メール本文のテンプレート、署名を作成することができます。<br />
+  また、グループ管理者ユーザのみグループ共有に関する設定が表示されます。<br />
+  メニュー：設定をクリックしてください。<br />
+  <img src="../../../images/sysmenu_config.gif" class="view" alt="メニュー：設定" />
+</p>
+
+<p>
+  設定画面が表示されます。<br />
+  <img src="../../help-images/view/9_1.gif" class="view" alt="グループ管理者の設定画面" />
+</p>
+
+<p>
+  送信者設定機能が無効になっている場合や、<?php echo API_CLIENT_NAME; ?>の使用権限がない場合は、それらの設定は表示されません。<br />
+  また、グループ管理者に設定されていないユーザの画面は以下になります。<br />
+  <img src="../../help-images/view/9_2.gif" class="view" alt="グループ管理者以外のユーザの設定画面" />
+</p>
+
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

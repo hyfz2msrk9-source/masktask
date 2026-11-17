@@ -1,0 +1,39 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+          <h2><span>接收（收集）</span></h2>
+          <h3><a name="5-3"></a>文件保管</h3>
+          <p>
+            通過接收功能，可在文件一覽內對上傳完畢的文件進行保存。<br />
+            保存期間內，可無限次上傳此文件。保存後，原來發送文件的收集申請郵件的寄件者，則不能再上傳此文件。
+          </p>
+
+          <div class="caption-big">保存資料夾指定功能的設定為有效的情況</div>
+          <p><img src="../../help-images/view-tcn/5-3_1-1.gif" class="view" alt="収集ファイル一覧：フォルダ指定有効" /></p>
+          <p>
+            只要「保存方資料夾指定功能」的設定有效，收集郵件可對指定資料夾進行保存。<br />
+            請點擊指定資料夾名。<br /><br />
+            點擊指定資料夾名，把文件移動到文件一覽的指定資料夾。<br />
+            <img src="../../help-images/view-tcn/5-3_4.gif" class="view" alt="収集ファイル保管完了画面" />
+          </p>
+
+          <div class="caption-big">保存資料夾指定功能的設定為無效時</div>
+          <p><img src="../../help-images/view-tcn/5-3_1.gif" class="view" alt="収集ファイル一覧：フォルダ指定無効" /></p>
+
+          <p>
+            「保存資料夾指定功能」的設定為無效時，保存在文件一覽的頂部。<br />
+            請點擊「保存」按鍵。
+          </p>
+
+          <p>
+            點擊「保存」按鍵，移動至收集文件保存（確認）頁面。請對需要保存的文件進行確認。點擊「保存」按鍵後，文件將保存在文件一覽內。<br />
+            <img src="../../help-images/view-tcn/5-3_2.gif" class="view" alt="収集ファイル保管確認画面" />
+          </p>
+
+          <p>
+            收集文件已保存。<br />
+            <img src="../../help-images/view-tcn/5-3_3.gif" class="view" alt="収集ファイル保管完了画面" />
+          </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

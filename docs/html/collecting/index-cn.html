@@ -1,0 +1,118 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+          <h2><span>接收（收集）</span></h2>
+          <p>
+            接收（收集）是：是为了确保文件的接收空间，把文件收集通知邮件发给特定收件人，让收件人把文件上传到网络系统上的功能。
+            目录：请点击接收（收集）<br />
+            <img src="../../../images-cn/sysmenu_collecting.gif" class="view" alt="目录： 收集)" />
+          </p>
+          <h3><a name="5-1"></a>收集文件一览</h3>
+          <p>
+            菜单：点击收集（接收），进入到“收集文件一览”页面。<br />
+            利用接收功能，显示上传完毕的文件一览。在“收集文件一览”页面里，可以对各文件进行操作。<br />
+            <img src="../../help-images/view-cn/5-1_1.gif" class="view" alt="收集文件一览画面" />
+          </p>
+
+          <table>
+            <tbody>
+              <tr>
+                <th><img src="../../help-images/no-s-1.gif" alt="1" />[发送接收邮件]</th>
+                <td>请点击“发送接收邮件”按键。(<a href="collect-cn.html#5-2">→文件收信</a>)</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-2.gif" alt="2" />[从本管理器发送邮件<br/>文件的收集]</th>
+                <td>请点击“从本管理器发送接收邮件”按键。(<a href="collect-cn.html#collect-mailer">→从本管理器发送接收邮件</a>)</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-3.gif" alt="3" />标签一览</th>
+                <td>
+                  是为了收集邮件及管理收集的文件的标签的一览<br />
+                  单击各标签的话，将显示被分配到该标签的文件一览。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-4.gif" alt="4" />[更改表签名]</th>
+                <td>
+                  在标签一览中，可以对现在选定的标签名进行更改。<br />
+                  <img src="../../help-images/view-cn/5-1_2.gif" class="view" alt="タグ名の変更画面" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-5.gif" alt="5" />[删除标签]</th>
+                <td>
+                  进行标签删除。标签删除后，此标签管理下的收集文件及收集邮件也将一并删除。<br />
+                  收集文件删除后，接收URL将失效，请注意！<br />
+                  <img src="../../help-images/view-cn/5-1_3.gif" class="view" alt="タグ削除画面" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-6.gif" alt="6" />文件一览</th>
+                <td>
+                  显示已接收文件的信息。<br />
+                  <table class="data">
+                    <tbody>
+                      <tr>
+                        <th>文件名</th>
+                        <td>是文件名。“未登录”表示文件未上传的状态。</td>
+                      </tr>
+                      <tr>
+                        <th><img src="../../help-images/icon_filemenu.gif" alt="ファイル詳細" /></th>
+                        <td>
+                          是文件的详情键。点击这个按键，显示接收时输入的发信人的详细信息及登录日期。
+                          点击<img src="../../help-images/icon_close-cn.gif" alt="詳細閉じる" />(关闭详情)按键，则详情关闭。<br />
+                          <img src="../../help-images/view-cn/5-1_4.gif" class="view" alt="ファイル詳細画面" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>登录日</th>
+                        <td>是文件上传时的年月日或者时分秒。上传当天可显示至时分秒，如隔天则只显示年月日。</td>
+                      </tr>
+                      <tr>
+                        <th>大小</th>
+                        <td>是文件的大小。</td>
+                      </tr>
+                      <tr>
+                        <th><img src="../../help-images/icon_dl-cn.gif" alt="ダウンロード" /></th>
+                        <td>
+                          是“下载”键。进行文件的下载。<br />
+                          如接收“指定文件夹”，则不能从接收一览表中下载。
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/icon_save-cn.gif" alt="保管" /></th>
+                <td>
+                  是“保存”键。进行文件的保存。(<a href="save-cn.html#5-3">→文件保管</a>)<br />
+                  如接收“指定文件夹”，将显示指定文件夹的名称。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/icon_delete-cn.gif" alt="削除" /></th>
+                <td>
+                  是“删除”键。进行文件的删除。<br />
+                  删除文件，将同时在系统里完全删除。请小心操作！
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/ico-tag-change-cn.gif" alt="タグ変更" /></th>
+                <td>是“标签更改”键。可对接收的文件及邮件的标签进行更改。</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl>
+            <dt>对选定的文件进行操作</dt>
+            <dd>
+              对复选框里已选定的文件进行操作。<br />
+              点击“保存”键，保存文件。保存完毕的文件，菜单：移至文件一览。点击“删除”键，删除文件及接收空间。<br />
+              “更改标签”时，点击更改的标签后可更改该标签。<br />
+              <img src="../../help-images/view-cn/5-1_5.gif" class="view" alt="選択中のファイルを操作" />
+            </dd>
+          </dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

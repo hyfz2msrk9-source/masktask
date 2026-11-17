@@ -1,0 +1,24 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+<h2><span>設定</span></h2>
+<p>
+  目前的帳號設定。<br />
+  可以新建郵件正文的文本、簽名。只有組管理員才顯示關於共用組的設置。<br />
+  目錄：點擊設定。<br />
+  <img src="../../../images-tcn/sysmenu_config.gif" class="view" alt="目錄：設定" />
+</p>
+
+<p>
+  顯示設定頁面。<br />
+  <img src="../../help-images/view-tcn/9_1.gif" class="view" alt="管理員的設定頁面" />
+</p>
+
+<p>
+  寄件者設定功能為無效時，不顯示寄件者設定。<br />
+  另外，沒有被設定為組管理員的使用者畫面為以下畫面。<br />
+  <img src="../../help-images/view-tcn/9_2.gif" class="view" alt="設定頁面" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

@@ -1,0 +1,94 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-en/";
+  include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+
+<h2><span>Download files</span></h2>
+<h3><a name="13-3"></a>Download with the one-time password</h3>
+
+<p>
+  One-time password is a kind of password that can be used 1 time and after that the same password is not available. You can get the one-time password and download the files with the password.
+  <span class="attention">You have to get the password every time you want to download. You can get the password with Email.</span><br />
+</p>
+
+<h4>Input form for email address</h4>
+<p>
+  Please enter the email address you received the download URL from, and then click [Enter] button.
+</p>
+<p>
+  If you enter the Email address that is different address of the original receiver or the address that is forwarded for not the original, it is impossible to get the one-time password. If you receive the forwarded Email, please enter the address of the original receiver.
+</p>
+
+<p>
+  If the Email was received “○○@sample.co.jp” first, and Ms. / Mr. Green forwards this Email to you as “▲▲@mailaddress.com.” In this case, you enter “○○@sample.co.jp “ to get one-time password.
+</p>
+
+<p>
+  <img src="<?php echo $image_path; ?>onetime-mail.png" class="view" alt="get one-time passoward" />
+</p>
+
+<dl>
+  <dt>In case that the Email address is correct</dt>
+  <dd>
+    The one-time password is sent to the address that you entered, and the screen to enter the password is open.<br />
+    <img src="<?php echo $image_path; ?>onetime-pass.png" class="view" alt="in case that the Email address is correct" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>In case that the Email address is incorrect</dt>
+  <dd>
+    The error message is displayed and the screen to enter the password is not open.<br />
+    <img src="<?php echo $image_path; ?>onetime-error-mail.png" class="view" alt="in case that the Email address is incorrect" />
+  </dd>
+</dl>
+
+<a name="pass"></a><h4>Input form for password</h4>
+<p>
+  When the address that you enter is correct, the password is sent by Email “Notification of password for downloading”.
+  <img src="<?php echo $image_path; ?>13-3-4.gif" class="view" alt="Email:Notification of password for downloading" />
+  </p>
+
+  <p>
+  Please enter the password which is given in the password, and click the [Enter] button.
+  <img src="<?php echo $image_path; ?>onetime-pass-marked.png" class="view" alt="send password" />
+</p>
+
+<dl>
+  <dt>In case that the password is correct</dt>
+  <dd>The download files screen is opened.<br />
+    <img src="<?php echo $image_path; ?>download.png" class="view" alt="in case that the password is correct" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>In case that the password is not correct</dt>
+  <dd>The error message is displayed and the screen to download files is not open.<br />
+    Click [Redo from beginning] button, you can redo from getting one-time password.<br />
+    <img src="<?php echo $image_path; ?>onetime-error-pass.png" class="view" alt="in case that the password is incorrect" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>Restarting from getting a one-time password</dt>
+  <dd>If you want to start over with getting a one-time password, please click the [Mail address] buttonin the step list at the top of the screen. You can start over by entering your email address.
+  <img src="<?php echo $image_path; ?>onetime-tomail.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:パスワードの取得からやり直す" />
+  </dd>
+</dl>
+
+<a name="dl"></a> <h4>Download page</h4>
+<p>
+When the download screen opens, click on the name of the file you want to download or the download button on the right side of the table.
+The download will begin.<br />
+  <img src=" <?php echo $image_path; ?>download-marked.png" class="view" alt="通常ファイルダウンロード" /><br />
+  </p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

@@ -1,0 +1,64 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+  $path = "../../";
+}else{
+  $customer_flg = 0;
+  $path = "../";
+}
+$image_path = "../" . $path . "help-images/view/";
+include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+
+<?php if($customer_flg): ?>
+<h2><span>配布メールを受け取った方（ダウンロード）</span></h2>
+<?php else:?>
+<h2><span>ファイルのダウンロード</span></h2>
+<?php  endif; ?>
+
+<h3><a id="13-1" name="13-1"></a>ファイルダウンロードについて</h3>
+<p>メール内に記載されたURLへアクセスし、ダウンロード画面から[ダウンロード]ボタンで必要なファイルをダウンロードするだけの簡単操作です。</p>
+
+<dl>
+  <dt><a name="normal" id="normal"></a>通常ダウンロード</dt>
+  <dd style="width:530px;margin-bottom:35px;">
+  <div>
+    データの配布をお知らせするメールを受信されましたら、メール内に記載されている、ダウンロード用URLをクリックしてください。
+    <img src=" <?php echo $image_path; ?>13-1-1.gif" class="view" alt="通常ファイルダウンロード：メール本文" /></div>
+    <a name="normal_download" id="normal_download"></a><div>
+    ダウンロード画面が開きましたら、ダウンロードしたいファイルのファイル名か、表の右端に表示されたダウンロードボタンをクリックしてください。ダウンロードが開始されます。<br />
+    <img src=" <?php echo $image_path; ?>download-marked.png" class="view" alt="通常ファイルダウンロード" /><br />
+    </div>
+  </dd>
+
+  <dt><a name="zip"></a>ZIPファイルダウンロード</dt>
+  <dd style="width:530px;margin-bottom:35px;">
+  <div>
+    データの配布をお知らせするメールを受信されましたら、メール内に記載されている、ダウンロード用URLをクリックしてください。<br />
+    <img src=" <?php echo $image_path; ?>13-1-1.gif" class="view" alt="通常ファイルダウンロード：メール本文" /><br />
+    </div>
+    
+    <div>
+    ダウンロード画面が開きましたら、ダウンロードしたいファイルのファイル名か、表の右端に表示されたダウンロードボタンをクリックしてください。ダウンロードが開始されます。<br />
+    ZIPファイルに圧縮されたファイルは、パスワードが設定されています。<br />
+    パスワードが分からない場合は送信者にお問い合わせください。<br />
+    <img src=" <?php echo $image_path; ?>zip_dl.png" class="view" alt="ZIPファイルダウンロード" /><br />
+    </div>
+  </dd>
+
+  <dt><a name="folder"></a>フォルダ公開</dt>
+  <dd style="width:530px;">
+    フォルダ公開のお知らせするメールが受信されましたら、メール内に記載されている、ダウンロード用URLをクリックしてください。<br />
+    <img src=" <?php echo $image_path; ?>13-1-3.gif" class="view" alt="フォルダ公開：メール本文" /><br />
+    フォルダ公開画面が開きましたら、ダウンロードしたいファイルのファイル名、または右横に表示されているダウンロードボタンをクリックしてください。ダウンロードが開始されます。<br /><br />
+    <img src="<?php echo $image_path; ?>openfolder.png" class="view" alt="Folder publication" /><br />
+    表示されているファイルを一括でダウンロードする場合は、[一括ダウンロード]ボタンをクリックしてください。フォルダ一括ダウンロード確認画面に遷移します。<br />
+    <img src=" <?php echo $image_path; ?>openfolder_dl_all.png" class="view" alt="フォルダ公開：ダウンロード画面" />
+    一括ダウンロードしてもよろしければ、確認画面内の[一括ダウンロード]ボタンをクリックしてください。ファイルの圧縮が開始します。<br />
+    <img src=" <?php echo $image_path; ?>openfolder_dl_all_zipping.png" class="view" alt="フォルダ公開：圧縮中" /><br />
+    ファイルの圧縮完了後、[一括ダウンロード]ボタンをクリックし、圧縮されたファイルをダウンロードしてください。<br />
+    <img src=" <?php echo $image_path; ?>openfolder_dl_all_done.png" class="view" alt="フォルダ公開：圧縮完了" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

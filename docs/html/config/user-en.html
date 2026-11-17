@@ -1,0 +1,155 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>Settings</span></h2>
+<h3><a name="9-3"></a>Share group</h3>
+<h4><a name="9-3-1"></a>User management</h3>
+
+<p>You can set setting to manage shared group user.<br />
+  Please click [User management] button.<br />
+  <img src="../../help-images/view-en/9-3_1.gif" class="view" alt="settings：user management" />
+</p>
+
+<p>
+  User management screen will appear.<br />
+  In User management, you can see the list of the user of the group that is managed by you.<br />
+  <img src="../../help-images/view-en/9-3_2.gif" class="view" alt="user management" />
+</p>
+
+<h5><a name="9-3-1-1"></a>Create new user</h4>
+<p class="h5-p">
+  In this user management, you can create new user.<br />
+  Please click [Create] button.<br />
+  <img src="../../help-images/view-en/9-3-1_1.gif" class="view" alt="user management:make a user" />
+</p>
+
+<p class="h5-p">
+  User addition screen will appear.<br />
+  In the group privilege, only the group you are administrator is displayed.<br />
+  Please enter the item and click [Create] button.<br />
+  <img src="../../help-images/view-en/9-3-1_2.gif" class="view" alt="add user" />
+</p>
+
+<dl>
+    <dt>Authentication method</dt>
+    <dd>
+        <span class="attention">※You can set it only when you are using multi login methods.</span><br />
+        <br />
+        If you choose Google SSO authentication, please enter the user's Google account in your account.<br />
+        <img src="../../help-images/view-en/9-3-1_5.png" class="view" alt="add user：Authentication method：SSO" /><br />
+        If you choose [##SAML_NAME##], please enter the user's Email address in your account.<br />
+        <img src="../../help-images/view-en/9-3-1_6.png" class="view" alt="add user：Authentication method：SAML" />
+    </dd>
+</dl>
+<br />
+
+<p class="h5-p">
+  User addition (Confirm) screen will appear.<br />
+  Please confirm the setting and click [Create] button.<br />
+  <img src="../../help-images/view-en/9-3-1_3.gif" class="view" alt="add user:confirm" />
+</p>
+
+<p class="h5-p">
+  User addition (completion) screen will appear. New user was added.<br />
+  <img src="../../help-images/view-en/9-3-1_4.gif" class="view" alt="add user:completion" />
+</p>
+
+<h4><a name="9-3-1-2"></a>Edit user</h4>
+<p class="h5-p">
+  You can edit user setting here.Please click [Edit] button by the user you want edit.<br />
+  <img src="../../help-images/view-en/9-3-2_1.gif" class="view" alt="user management:edit" />
+</p>
+
+<p class="h5-p">
+  User edit screen will appear.<br />
+  Only you have to change password, please enter the new password in the password area.<br />
+  Please enter item and set the group, and click [Edit] button.<br />
+  <img src="../../help-images/view-en/9-3-2_2.gif" class="view" alt="user management:edit" />
+</p>
+
+<p class="h5-p">
+  When File locking is effective, sentences of the lock file are displayed on the edit screen.<br />
+  When the folder authority of File locking user is changed to "Read only", the file locking is released.<br />
+  About File locking(<a href="../top/group-en.html#4-4-3">→File locking</a>)<br />
+  <img src="../../help-images/view-en/9-3-2_2_lock.gif" class="view" alt="user management:edit-lock" />
+</p>
+
+<dl>
+    <dt>Authentication method</dt>
+    <dd>
+        <span class="attention">※You can set it only when you are using multi login methods.</span><br />
+        <br />
+        If you choose Google SSO authentication, please enter the user's Google account in your account.<br />
+        <img src="../../help-images/view-en/9-3-1_5.png" class="view" alt="edit user：Authentication method：SSO" /><br />
+        If you choose [##SAML_NAME##], please enter the user's Email address in your account.<br />
+        <img src="../../help-images/view-en/9-3-1_6.png" class="view" alt="edit user：Authentication method：SAML" />
+    </dd>
+</dl>
+<br />
+
+<p class="h5-p">
+  User edit screen will appear.<br />
+  Please confirm the setting and click [Submit] button.<br />
+  <img src="../../help-images/view-en/9-3-2_3.gif" class="view" alt="edit user:confirm" />
+</p>
+
+<p class="h5-p">
+  User Edit (completion) will appear.The user setting was completed.<br />
+  <img src="../../help-images/view-en/9-3-2_4.gif" class="view" alt="edit user:completion" />
+</p>
+
+<h4><a name="9-3-1-3"></a>Delete user</h4>
+<p class="h5-p">
+  You can delete user here.Please click [Delete] button by the user you want to delete.<br />
+  <img src="../../help-images/view-en/9-3-3_1.gif" class="view" alt="delete user" />
+</p>
+
+<p class="h5-p">
+  User delete (confirm) will appear.<br />
+  If you really want to delete this user, please click [Delete] button.<br />
+  <img src="../../help-images/view-en/9-3-3_2.gif" class="view" alt="delete user:confirm" />
+</p>
+
+<p class="h5-p">
+  User delete (completion) will appear.The user was deleted.<br />
+  <img src="../../help-images/view-en/9-3-3_3.gif" class="view" alt="delete user:completion" />
+</p>
+
+<h4><a name="9-3-2"></a>IP Restrictions</h4>
+<p class="h4-p">
+  IP restrictions are the functions to which access restriction can be applied by an IP address for every group. They are firmer security countermeasures of the group treating confidential information. <br />
+  In each group unit, IP address registration can be performed with a use setup. <br />
+  When it is set as "Only a registration IP address can be accessed.", only a registration IP address permits access and can perform an inspection and operation of a file. <br />
+</p>
+<h5><a name="9-3-2-1"></a>IP restrictions of each group</h5>
+<p class="h5-p">Please click [IP Restrictions] button.<br />
+
+  <img src="../../help-images/view-en/9-3-a2_1.gif" class="view" alt="setup" /><br />
+  share groups list of IP Restrictions screen will appear.<br />
+
+  Click the [Setup] button of a group. It becomes a setting screen of IP restrictions of each group.
+  [Setup] When undisplayed, there is no Permission. <br />
+  <img src="../../help-images/view-en/9-3-a2_2.gif" class="view" alt="setup : share groups list of IP Restrictions" />
+</p>
+<h5><a name="9-3-2-2"></a>Effective and invalidity of IP restrictions</h5>
+<p class="h5-p">
+  A setup of "Access is more possible than all the IP." or "Only a registration IP address can be accessed." can be performed to each group. <br />
+  Please click after selection the button under a screen [Update]. <br /><br />
+  The registration of an IP address should click and perform the button of the bottom on the right-hand side of a screen [Edit].
+</p>
+<p>
+  <img src="../../help-images/view-en/9-3-a2_3.gif" class="view" alt="edit" />
+</p>
+
+<h5><a name="9-3-2-3"></a>Edit IP address</h5>
+<p class="h5-p">
+  You can edit IP address here.Please click [Edit] button.IP address edit screen will appear.<br />
+  <img src="../../help-images/view-en/9-3-a2_4.gif" class="view" alt="IP address" />
+  In an IP address edit display, addition of the IP address which can be accessed, and deletion can be performed. <br />
+  Please input the IP address registered into the IP address column, and click a [Add] button. An IP address is added to an IP address list. A subnet mask is also OK. <br /><br />
+  When you delete a registered IP address, please choose the IP address under list and push [Delete] button. An IP address is deleted. <br />
+  <span class="attention">Edit of an IP address cannot be performed. Please delete and add the IP address of relevance. </span>
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

@@ -1,0 +1,45 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>About the Preview Function</span></h2>
+<p>You can open the preview screen by double-clicking a file name in the file list or by clicking <img src='../../../images/icon_preview.svg' class='icon_18'/> (available only for files that can be previewed).<br/>
+CSV and Excel files exceeding 50,000 cells per sheet cannot be previewed.<br/>
+Files larger than 200 MB cannot be previewed.<br/>
+In Excel files, the layout may not be displayed correctly.<br/>
+Files for which you do not have download permission cannot be previewed.<br/>
+Files that can be previewed are as follows:</p>
+<table>
+  <tr>
+    <th>File Type</th>
+    <th>Extension</th>
+  </tr>
+  <tr>
+    <td>PDF</td>
+    <td>.pdf</td>
+  </tr>
+  <tr>
+    <td>Text</td>
+    <td>.txt</td>
+  </tr>
+  <tr>
+    <td>CSV / Excel</td>
+    <td>.csv, .xlsx, .xls</td>
+  </tr>
+  <tr>
+    <td>Image</td>
+    <td>.jpeg, .jpg, .png, .bmp, .gif</td>
+  </tr>
+  <tr>
+    <td>Audio Files</td>
+    <td>.mp3, .ogg, .opus, .wav, .m4a</td>
+  </tr>
+  <tr>
+    <td>Video Files</td>
+    <td>.mov, .mp4</td>
+  </tr>
+</table>
+
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

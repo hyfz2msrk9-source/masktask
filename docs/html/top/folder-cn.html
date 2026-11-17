@@ -1,0 +1,207 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+          <h2><span>文件一览</span></h2>
+          <h3><a name="4-5"></a>文件夹公开功能</h3>
+          <p>
+            文件夹公开功能是，将包括用户所作成的个人文件夹里的文件一起送信的功能。<br />
+            可以把所建的文件夹整个送信给指定用户。<br />
+            共享文件夹不具有文件夹公开功能。请注意。<br />
+            当缩略图显示功能开启时，如果您公开的个人文件夹内有带缩略图的文件，您可以把缩略图一起发送给指定用户。<br />
+            收信方可以在收到的文件夹上看到附带的缩略图。为了让文件夹里的内容更明了请附加明了的缩略图。<br />
+            并且，文件夹内的文件如果是使用了缩略图的图片文件，则不能利用文件夹公开功能发送，请注意！<br />
+            文件夹公开功能可以每次设置安全性设定。根据需要公开的情况，可以进行各种各样的安全性设定，确保了高安全性。
+          </p>
+
+          <p>
+            请在文件一览里选择想要公开的文件夹，点击页面右侧的[文件夹公开]按钮。<br />
+            <img src="../../help-images/view-cn/3-5_1.gif" class="view" alt="ファイル一覧：フォルダ公開" />
+          </p>
+
+          <p>
+            移动到登录文件的通知页面。<br />
+            输入项目、选择、根据情况设定安全性设置。<br />
+            <img src="../../help-images/view-cn/3-5_2.png" class="view" alt="フォルダ公開画面" />
+          </p>
+
+          <table>
+            <tbody>
+              <tr>
+                <th class="bRnone"><img src="../../help-images/no-s-1.gif" alt="1" /></th><th class="bLnone">[从本管理器发送]</th>
+                <td>
+                  用自己的邮箱发送文件夹公开的通知。<br />
+                  (<a href="send-cn.html#4-3-3">→从本管理器发送</a>)
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-2.gif" alt="2" />收件人</th>
+                <td>
+                  输入收件人或从地址簿添加。最多可以设置10个项目。（号码可能已被管理员更改，详情请联系管理员。）<br />
+                  输入收件人，然后单击[追加收件人]按钮。或者，单击[>>从邮箱地址簿里选择]从您的地址簿添加。<br />
+                  要删除添加的收件人，请单击每个收件人右侧的[×删除]按钮。<br />
+                  <img src="../../help-images/view-cn/3-3_3.png" class="view" alt="宛先" /><br />
+                  <img src="../../help-images/view-cn/3-3_4.png" class="view" alt="アドレス帳から宛先を追加" /><br />
+                  在邮箱地址簿里选择的画面中，从邮箱地址簿一览表中点击选择或者打钩选择您要添加的邮箱地址，然后点击[↓]按钮就追加完毕了。<br />
+                  <img src="../../help-images/view-cn/3-3_5.gif" class="view" alt="アドレスの選択" /><br />
+                  邮箱地址没有问题的话请点击[追加收件人]按钮。<br />
+                  追加邮箱地址到文件发送页面里。<br /><br />
+
+                  收件人中有未曾登录过的邮箱地址时，在文件登录完毕的通知页面里可以追加该邮箱地址到邮箱地址簿。<br />
+                  （会登录在「未分类」群里。<a href="../address/group-cn.html#6-5">→更改邮箱地址组</a>里进行群设置。）
+                  <br /><br />
+
+                  如果邮件地址已经被登记的话，向输入时邮件地址，被地址簿预测。<br />
+                  单击输入的邮件地址。单击的邮件地址地址被表示。
+                  <img src="../../help-images/view-cn/yosoku-1.gif" class="view" alt="アドレスの選択:予測表示" /><br /><br />
+                  此外，如果您在邮件地址输入字段中输入多个由<span class="attention nowrap" style="font-weight:bold;">逗号（,）</span>分隔的电子邮件地址，或者输入名称为<span class="attention nowrap" style="font-weight:bold;">名称&lt;邮件地址&gt;</span>的邮件地址，则可以添加可以自动添加的“名称” 我们可以检测候选人的“邮件地址”并添加选中的邮件地址。
+                  <img src="../../help-images/view-cn/detect-address.png" class="view" alt="地址选择：候选检测" />
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-3.gif" alt="3" />共享文件名</th>
+                <td>
+                  发送的文件夹。可以把文件夹里的内容一起发送。<br />
+                  这里不能变更其他文件夹或追加其他文件夹。请注意。<br />
+                  <img src="../../help-images/view-cn/3-5_3.gif" class="view" alt="公開フォルダ名" />
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-4.gif" alt="4" />发件人</th>
+                <td>
+                  可以根据情况变更发送人及发送人邮箱地址来发送邮件。可以在(<a href="../config/from-cn.html">→设定发送人</a>)里进行发送人的登录。<br />
+                  发件人设定功能为无效时不显示发件人。
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-5.gif" alt="5" />邮件件名</th>
+                <td>
+                  发送文件时送信邮件的件名。
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-6.gif" alt="6" />邮件正文</th>
+                <td>
+                  发送文件时送信邮件的正文。请输入必填项目。(<a href="send-cn.html#4-3-1">→关于邮件正文</a>)
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-7.gif" alt="7" />安全性设定</th>
+                <td>
+                  发送文件时的安全设置。请按照您的需要设定安全设置。(<a href="folder-cn.html#4-5-1">→关于安全设置</a>)
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2"><img src="../../help-images/no-s-8.gif" alt="8" />字符编码</th>
+                <td>
+                  你能选择文字编码。
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            您输入的内容没有问题的话,请点击[邮件确认]按钮。<br />
+            移动到登录文件的通知（确认）页面。<br />
+            <br />
+            管理员设置上级时<span class="attention">（*可选设定）</span>,在确认页面上,
+            还将显示“上级信息”或“选择上级”区域。
+            如果显示“选择上级”区域,请选择上级以请求批准。
+            批准请求电子邮件到达上级。<br />
+            获得上级许可后,发送资料夹公开的通知。如果上级驳回,则不发送。
+            您可以在上级确认一览中查看批准状态。(<a href="../superior/index-cn.html#7">→上级确认一览</a>)
+            <img src="../../help-images/view-cn/3-5_4.gif" class="view" alt="" />
+          </p>
+
+          <p>
+            移动到登录文件的通知（完成）页面。文件夹公开成功。<br />
+            <img src="../../help-images/view-cn/3-3_10.gif" class="view" alt="" />
+          </p>
+
+          <h4><a name="4-5-1"></a>关于文件夹公开的安全性设置</h4>
+          <p class="h4-p">
+            <img src="../../help-images/view-cn/3-5-1_1.gif" class="view" alt="" />
+          </p>
+
+          <dl>
+            <dt>通过SSL通信进行加密</dt>
+            <dd>通过EVSSL进行通信加密。基本功能(※ 只有SSL通信时显示)。</dd>
+
+            <dt>文件夹公开的有效期限</dt>
+            <dd>
+              设定公开文件夹的下载有效期限。<br />
+              超过有效期限后无法下载。
+            </dd>
+
+            <dt>不加锁</dt>
+            <dd>不设定密码锁。</dd>
+
+            <dt>设置临时密码锁</dt>
+            <dd>
+              设置临时密码。采用限定邮箱地址的临时密码，确保了高安全性。
+            </dd>
+
+            <dt>设置指定密码锁</dt>
+            <dd>用户可以自由指定密码。请告知收件人指定的密码。</dd>
+
+            <dt>开封确认</dt>
+            <dd>文件发送后，有人点击下载URL就会给用户发送开封通知邮件。</dd>
+
+            <dt>下载确认</dt>
+            <dd>文件发送后，文件被下载后会给用户发送下载通知邮件。</dd>
+          </dl>
+
+          <h4><a name="4-5-2"></a>关于公开文件夹信息</h4>
+          <p>
+            在文件一览里选择想要发送的文件夹，点击画面右侧的[公开文件夹信息]按钮。<br />
+            <img src="../../help-images/view-cn/3-5_1b.gif" class="view" alt="" />
+          </p>
+
+          <p class="h4-p">
+            公开文件夹信息里显示现在的公开文件夹的状况。<br />
+            <img src="../../help-images/view-cn/3-5-2_1.gif" class="view" alt="" />
+          </p>
+
+          <table>
+            <tbody>
+              <tr>
+                <th><img src="../../help-images/no-s-1.gif" alt="1" />收件人</th>
+                <td>将显示文件夹公开给的收件人的邮箱地址及姓名。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-2.gif" alt="2" />发送日期〜有效期限</th>
+                <td>显示发送开始日期到有效期限。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-3.gif" alt="3" />密码</th>
+                <td>
+                  显示文件夹公开时的密码设置页面。
+                  <table class="data">
+                    <tbody>
+                      <tr>
+                        <th colspan="2">关于密码</th>
+                      </tr>
+                      <tr>
+                        <th>无</th>
+                        <td>选定“不加密”时显示。</td>
+                      </tr>
+                      <tr>
+                        <th>一次性（临时）</th>
+                        <td>选定“一次密码加密”时显示。</td>
+                      </tr>
+                      <tr>
+                        <th><img src="../../help-images/icon_unlock-cn.gif" alt="変更" /></th>
+                        <td>用户可以通过键入指定的密码，变更原密码。</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-4.gif" alt="4" /><img src="../../help-images/icon_stop-cn.gif" alt="停止" /></th>
+                <td>可以中止文件夹的公开。</td>
+              </tr>
+            </tbody>
+          </table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

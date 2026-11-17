@@ -1,0 +1,125 @@
+<?php
+   if ($customer_flg) {
+   $path = $path."customer/";
+   }
+?>
+<div id="sideMenu">
+  <ul class="index-1">
+    <li>
+      <a href="<?php echo $path; ?>index-cn.html">关于本说明书</a>
+    </li>
+    <?php if(!$customer_flg): ?>
+    <li>
+      <a href="<?php echo $path; ?>login/index-cn.html">登录</a>
+      <ul class="index-2">
+        <li><a href="<?php echo $path; ?>login/index-cn.html#2-1">登录</a></li>
+        <li><a href="<?php echo $path; ?>login/index-cn.html#2-2">退出</a></li>
+        <li><a href="<?php echo $path; ?>login/index-cn.html#2-3">忘记账号或密码</a></li>
+        <li><a href="<?php echo $path; ?>login/index-cn.html#2-6">双因素认证</a></li>
+        <li><a href="<?php echo $path; ?>login/index-cn.html#2-7">Google SSO身份验证</a></li>
+        <li><a href="<?php echo $path; ?>login/index-cn.html#2-8">[##SAML_NAME##]</a></li>
+        <li><a href="<?php echo $path; ?>login/index-cn.html#2-4-2">Windows综合验证</a></li>
+        <li><a href="<?php echo $path; ?>login/index-cn.html#2-5">用户端身份验证</a></li>
+        <li><a href="<?php echo $path; ?>login/lock-cn.html">账号锁定</a></li>
+        <li><a href="<?php echo $path; ?>login/news-cn.html">通知</a></li>
+        <li><a href="<?php echo $path; ?>login/login-error-cn.html">登录错误</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>top/menu-cn.html">目录</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>top/index-cn.html">文件一览</a>
+      <ul class="index-2">
+        <li><a href="<?php echo $path; ?>top/index-cn.html#4-1">文件一览页面</a></li>
+        <li><a href="<?php echo $path; ?>top/upload-cn.html">上传文件</a></li>
+        <li><a href="<?php echo $path; ?>top/send-cn.html">发送文件</a>
+          <ul class="index-3">
+            <li><a href="<?php echo $path; ?>top/send-cn.html#4-3-1">关于邮件正文</a></li>
+            <li><a href="<?php echo $path; ?>top/send-cn.html#4-3-2">关于安全设定</a></li>
+            <li><a href="<?php echo $path; ?>top/send-cn.html#4-3-3">从本管理器发送</a></li>
+            <li><a href="<?php echo $path; ?>top/send-collect-cn.html#4-3-4">接收及分发邮件的发送</a></li>
+            <li><a href="<?php echo $path; ?>top/send-collect-cn.html#4-3-5">关于接收及分发邮件的正文</a></li>
+            <li><a href="<?php echo $path; ?>top/send-collect-cn.html#4-3-6">关于接收及分发邮件的安全性设置</a></li>
+            <li><a href="<?php echo $path; ?>top/send-collect-cn.html#send-collect-mailer">从本管理器发送邮件收集的分發</a></li>
+            <li><a href="<?php echo $path; ?>top/send-status-cn.html#4-3-8">发送文件状况确认</a></li>
+          </ul>
+        </li>
+        <li><a href="<?php echo $path; ?>top/group-cn.html">组共享功能</a></li>
+        <li><a href="<?php echo $path; ?>top/folder-cn.html">文件夹公开功能</a></li>
+        <li><a href="<?php echo $path; ?>top/thumbnail-cn.html">缩略图显示功能</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>collecting/index-cn.html">接收（收集）</a>
+      <ul class="index-2">
+        <li><a href="<?php echo $path; ?>collecting/index-cn.html#5-1">收集文件一览</a></li>
+        <li><a href="<?php echo $path; ?>collecting/collect-cn.html#5-2">文件收信</a></li>
+        <li><a href="<?php echo $path; ?>collecting/collect-cn.html#collect-mailer">文件收信 （从邮箱发送）</a></li>
+        <li><a href="<?php echo $path; ?>collecting/save-cn.html#5-4">文件保管</a></li>
+      </ul>
+    </li>
+    <li><a href="<?php echo $path; ?>waitmail/index-cn.html">待机邮件一览</a></li>
+    <li>
+      <a href="<?php echo $path; ?>address/index-cn.html">邮箱地址簿</a>
+      <ul class="index-2">
+        <li><a href="<?php echo $path; ?>address/index-cn.html#6-1">邮箱地址簿一览</a></li>
+        <li><a href="<?php echo $path; ?>address/change-cn.html#6-2">追加邮箱地址</a></li>
+        <li><a href="<?php echo $path; ?>address/change-cn.html#6-3">编辑邮箱地址</a></li>
+        <li><a href="<?php echo $path; ?>address/change-cn.html#6-4">删除邮箱地址</a></li>
+        <li><a href="<?php echo $path; ?>address/group-cn.html#6-5">更改邮箱地址组</a></li>
+        <li><a href="<?php echo $path; ?>address/group-cn.html#6-6">追加组</a></li>
+        <li><a href="<?php echo $path; ?>address/group-cn.html#6-7">工作组编辑</a></li>
+        <li><a href="<?php echo $path; ?>address/group-cn.html#6-8">工作组删除</a></li>
+        <li><a href="<?php echo $path; ?>address/group-cn.html#6-9">变更组的排列顺序</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>superior/index-cn.html">上级确认一览<span style="font-size:90%; font-weight:normal;">(选项功能)</span></a>
+      <ul class="index-2">
+        <li><a href="<?php echo $path; ?>superior/index-cn.html#7-1">用户上级确认功能</a></li>
+        <li><a href="<?php echo $path; ?>superior/index-cn.html#7-2">上级确认功能</a></li>
+      </ul>
+    </li>
+    <li><a href="<?php echo $path; ?>log/index-cn.html">日志</a></li>
+    <li><a href="<?php echo $path; ?>config/index-cn.html">设定</a>
+      <ul class="index-2">
+        <li><a href="<?php echo $path; ?>config/template-cn.html">文本</a></li>
+        <li><a href="<?php echo $path; ?>config/sign-cn.html">签名</a></li>
+        <li><a href="<?php echo $path; ?>config/user-cn.html">组共享</a>
+          <ul class="index-3">
+            <li><a href="<?php echo $path; ?>config/user-cn.html#9-3-1">用户管理</a></li>
+            <li><a href="<?php echo $path; ?>config/user-cn.html#9-3-2">IP制限</a></li>
+          </ul>
+        </li>
+        <li><a href="<?php echo $path; ?>config/from-cn.html">发件人设定</a></li>
+        <li><a href="<?php echo $path; ?>config/mailsend-cn.html">邮件分发设定</a></li>
+      </ul>
+    </li>
+    <li><a href="<?php echo $path; ?>profile/index-cn.html">个人信息</a></li>
+    <li><a href="<?php echo $path; ?>support/index-cn.html">支持</a></li>
+    <li><a href="<?php echo $path; ?>help/index-cn.html">帮助</a></li>
+
+    <?php endif; ?>
+    <li>
+      <a href="<?php echo $path; ?>dl/index-cn.html">关于文件下载</a>
+      <ul class="index-2">
+        <li><a href="<?php echo $path; ?>dl/index-cn.html#13-1">文件下载</a></li>
+        <li><a href="<?php echo $path; ?>dl/onetime-pass-cn.html">遇到需要输入临时密码时</a></li>
+        <li><a href="<?php echo $path; ?>dl/onetimesms-pass-cn.html">遇到需要输入临时密码时（另一条路线）</a></li>
+        <li><a href="<?php echo $path; ?>dl/pass-cn.html">遇到需要输入指定密码时</a></li>
+        <li><a href="<?php echo $path; ?>dl/mail-address-cn.html">遇到需要输入邮箱地址时</a></li>
+        <li><a href="<?php echo $path; ?>dl/error-cn.html">遇到无法下载的情况</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>up/index-cn.html">上传文件</a>
+      <ul class="index-2">
+        <li><a href="<?php echo $path; ?>up/index-cn.html#14-1">标准上传</a></li>
+        <li><a href="<?php echo $path; ?>up/onetime-pass-cn.html">遇到要求输入临时密码时</a></li>
+        <li><a href="<?php echo $path; ?>up/pass-cn.html">遇到要求输入指定密码时</a></li>
+        <li><a href="<?php echo $path; ?>up/error-cn.html">遇到无法上传时</a></li>
+      </ul>
+    </li>
+  </ul>
+</div><!-- sidemenu -->

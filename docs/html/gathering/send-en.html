@@ -1,0 +1,321 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span><a name="gathering-top"></a>Gathering</span></h2>
+<h3><span>Send a Gathering email</span></h3>
+<p class="h4-p">
+  Gathering is a function that receive (collect) files from multiple destinations at once.<br />
+  By importing a CSV format file with multiple destination information, you can request multiple destinations to upload files in a single transmission.<br />
+  Click on the [Send a Gathering email] button from the Gathering list page.
+  <img src="../../help-images/view-en/gathering-send_button.gif" class="view" alt="[Send a Gathering email] button" /><br />
+  The Gathering email input page will be displayed.<br />
+  <img src="../../help-images/view-en/gathering_send-form.png" class="view" alt="Page for sending Gathering emails" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />Template</th>
+      <td>
+        You can select template you prepared. <br />
+        When you select a template, it will be inserted into the body of the email.<br />
+        If you have not created a template, this item will not be displayed.(→<a href="../config/template-en.html">Template</a>)<br />
+        <img src="../../help-images/view-en/4-3-1_2.gif" class="view" alt="Template" style="width:50%; height:auto;" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />Destination File</th>
+      <td>
+        Click the [Choose file] button to select the CSV file with the destination information.
+(→<a href="#gathering-csv">About destination files</a>)<br />
+        <img src="../../help-images/view-en/gathering_send-import.png" class="view" alt="Importing destination files" /><br />
+        If you want to change the destination file once the import is completed, please click the [>> Change the destination file] link and select a new destination file.<br />
+        The previously imported destination information will be deleted and replaced by the contents of the new destination file.<br />
+        <img src="../../help-images/view-en/gathering_send-import-change.png" class="view"
+alt="Change the destination file" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Sender</th>
+      <td>
+        According to the usage, you can send email of file notification with another sender name and sender email address. <br />
+        You can register another sender name and email address in the sender settings(→<a href="../config/from-en.html">Sender setting</a>).<br />
+        When the sender setting is invalid, the Sender is not displayed.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Upload folder</th>
+      <td>
+        Select the folder where the uploaded files will be stored. Uploaded files will be stored directly in the specified folder.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />Replaced file name</th>
+      <td>
+        Sets the prefix string to add to the uploaded file name.<br />
+        For example, if the replaced file name is set to <strong>[##name##]-May-FileName</strong>, and Sample_user uploads "report.pdf", the file will be saved as <strong>Sample_user-May-report.pdf</strong>.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />Subject</th>
+      <td>Enter the subject of your email.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />Body</th>
+      <td>
+        Enter the required information in the body of the email.<br />
+        (→<a href="#gathering-send-message">About Email text</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />Security settings</th>
+      <td>
+        Select the security settings that best suit your situation.<br />
+        (→<a href="#gathering-send-security">About security settings</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />Encoding</th>
+      <td>Please select ISO-2022-JP or UTF-8 as the character encoding for your email.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="h4-p">
+  After importing the destination file and entering and selecting the required items, click the [Go to the Confirmation page] button. You will be redirected to the confirmation page.<br />
+  If you want to confirm the imported destinations, click [Display the address list] to move to the Destination list page.(→<a href="#gathering-send-to">About address list</a>)<br />
+  If you are satisfied with the contents of the page, click on the [Send this mail] button.<br />
+  <img src="../../help-images/view-en/gathering_send-confirm.png" class="view" alt="Confirmation page" />
+</p>
+
+<p class="h4-p">
+  The completion page will be displayed, and emails will be sent to the destinations according to the information you have entered.<br />
+  <img src="../../help-images/view-en/gathering_send-done.gif" class="view" alt="Completion page" />
+</p>
+
+<h4><a name="gathering-csv"></a>About destination files</h4>
+<p class="h4-p">
+  In the destination file, enter the following headings in <span class="attention">comma-separated CSV format </span> on
+  the first line and the contents of each destination on the second and subsequent lines.<br />
+  <span class="attention">name, Email
+    address, Replacement text1, Replacement text2 ...</span>
+  <br /> <br />
+Sample destination files are available for file preparation.
+  (→<a href="../gathering/index-en.html#list">Gathering list</a>)<br /><br />
+  <b>Replacement text</b> can be set to 0~
+  <?php echo REPLACEMENT_MAX_NUM; ?>, and any item name can be given.
+  <br /><br />
+
+  The number of destinations that can be sent at one time depends on th e license agreement. (For details, please
+  contact your administrator.)<br /><br />
+
+  <b>Example of a destination file</b><br />
+<p class="view  h4-p">
+  "name","Email address","company","staff"<br />
+  "nameA","sampleA@example.com","company A","staff 1"<br />
+  "nameB","sampleB@example.com","company B","staff 2"<br />
+  "nameC","sampleC@example.com","company C","staff 3"
+</p>
+<p class="h4-p">
+  <b>Example of CSV opened in Excel</b><br />
+  <img src="../../help-images/view-en/gathering-excel.gif" class="view" alt="Example of CSV opened in Excel" />
+</p>
+<h4><a name="gathering-send-message"></a>About Email text</h4>
+<p class="h4-p">
+  The body of the email can be created efficiently by inserting the text to be converted. The text to be converted are available for the upload URL required for collection, expiration date, name of each recipient, and email address. <br />
+  In addition, sample sentences, templates and signatures can be inserted. <br />
+  <img src="../../help-images/view-en/gathering_send-message.png" class="view" alt="Email text" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />Template</th>
+      <td>
+        You can select template you prepared. <br />
+        When you select a template, it will be inserted into the body of the email.<br />
+        If you have not created a template, this item will not be displayed.(→<a href="../config/template-en.html">Template</a>)<br />
+        <img src="../../help-images/view-en/4-3-1_2.gif" class="view" alt="Template" style="width:50%; height:auto;" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[Insert a sample <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sentence] button</th>
+      <td>
+        You can insert pre-prepared sample sentences.<br />
+        Click the [Insert a sample sentence] button to insert the sentences into the body of the email.
+      </td>
+    </tr>
+    <tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Sign off</th>
+      <td>
+        You can select template signature you prepared. <br />
+        When you select a signature, it will be inserted into the body of the email.<br />
+        If you have not created a signature, this item will not be displayed.(→<a href="../config/sign-en.html">Sign offs</a>)<br />
+        <img src="../../help-images/view-en/5-2_8b.gif" class="view" alt="Sign off" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Text to be converted</th>
+      <td>
+        When inserted into the body of an email, the following text will be replaced with the information for each recipient when the email is sent.<br />
+        You can insert the text to be replaced into the body of the email by clicking (Insert) to the left of each text.<br />
+        <img src="../../help-images/view-en/gathering_convert-characters.gif" class="view" alt="Text to be converted" /><br />
+
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>[##name##]</th>
+              <td>This will be converted to the name of each destination.</td>
+            </tr>
+            <tr>
+              <th>[##mail##]</th>
+              <td>This will be converted to the email address of each destination.</td>
+            </tr>
+            <tr>
+              <th>[##upload##]</th>
+              <td>This will be converted to the URL for uploading for each destination.</td>
+            </tr>
+            <tr>
+              <th>[##up_limit##]</th>
+              <td>This will be converted to the Gathering expiration date for each email.</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="h4-p">
+  <b>Example of text containing replacement</b>
+</p>
+<p class="view h4-p">
+Dear [##company##] [##name##].<br />
+  <br />
+My name is [##staff##] from xx Corporation.<br />
+  <br />
+  Thank you very much for your cooperation in providing us with a case study of your use of our service.<br />
+Please upload your manuscript from the following URL.<br />
+  The upload deadline is [##up_limit##].<br />
+  <br />
+  [Upload URL]<br />
+  [##upload##]<br />
+  <br />
+Thank you in advance for your cooperation.
+</p>
+<p class="h4-p">
+  <b>Actual email text to be received</b>
+</p>
+<p class="view h4-p">
+  Dear company A nameA.<br />
+  <br />
+  My name is staff 1 from xx Corporation.<br />
+  <br />
+  Thank you very much for your cooperation in providing us with a case study of your use of our service.<br />
+  Please upload your manuscript from the following URL.<br />
+  The upload deadline is 20xx-01-01 00:30.<br />
+  <br />
+  [Upload URL]<br />
+  https://example.com/gup.php?xxxxxxxxxxxx<br /><br />
+  Thank you in advance for your cooperation.
+</p>
+<h4><a name="gathering-send-security"></a>About security settings</h4>
+<p class="h4-p">
+  Select the security settings that best suit your situation.<br />
+  <img src="../../help-images/view-en/gathering_send-security.gif" class="view" alt="Security settings" />
+</p>
+
+<dl>
+  <dt>Gathering expiration date</dt>
+  <dd>Set the expiration date of Gatering.</dd>
+
+  <dt>No Password Lock</dt>
+  <dd>Select this option if you do not want to lock the upload URL for Gathering with a password.</dd>
+
+  <dt>Enable One-Time Password Lock</dt>
+  <dd>
+    Select this option if you want to lock the upload URL for Gathering with a one-time password.
+    The password is a one-time password with a limited email address to ensure high security.
+  </dd>
+
+  <dt>Enable Specified Password Lock</dt>
+  <dd>
+    Select this option if you want to lock the upload URL for Gathering with your own designated password.
+    If it is set on the administrator's side, the designated password will be sent in another mail when the Gathering mail is sent.
+  </dd>
+</dl>
+
+<h4><a name="gathering-send-to"></a>About address list</h4>
+<p class="h4-p">
+  In the address list, you can view a list of the address information imported from the destination file.<br />
+  <img src="../../help-images/view-en/gathering_send-to.gif" class="view" alt="Address list" />
+
+<table>
+  <tbody>
+    <tr>
+      <th colspan="2">Address list</th>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/magnifier.png" alt="Search" /></th>
+      <td>
+        Click the magnifying glass icon to open the search form.<br />
+        <img src="../../help-images/view-en/delivery_confirm-search.gif" class="view" alt="Search form" />
+        <table class="data-s">
+          <tbody>
+            <tr>
+              <td>Pull-down menu</td>
+              <td>: Select the item you want to search for.</td>
+            </tr>
+            <tr>
+              <td>Text box</td>
+              <td>: Enter the key words to search for.</td>
+            </tr>
+            <tr>
+              <td>[Search] button</td>
+              <td>: Start to search.</td>
+            </tr>
+            <tr>
+              <td>[Clear] button</td>
+              <td>: Clear the text box and the result.</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_3.gif" alt="Number of items to be displayed per page" /></th>
+      <td>Set the number of lines to be displayed per page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/first.gif" alt="Move to the first page." /></th>
+      <td>Move to the first page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/prev.gif" alt="Move to the previous page." /></th>
+      <td>Move to the previous page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_4.gif" alt="Move to the page you enter" /></th>
+      <td>Move to the page you enter.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/next.gif" alt="Move to the next page" /></th>
+      <td>Move to the next page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/last.gif" alt="Move to the last page" /></th>
+      <td>Move to the last page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/load.png" alt="Update the list" /></th>
+      <td>Update the list.</td>
+    </tr>
+  </tbody>
+</table>
+
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,51 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+        <h2><span>上長承認設定(※オプション)</span></h2>
+        <h3>各ユーザ毎の上長設定</h3>
+        <p>
+          各ユーザ毎に上長を設定する場合は、上長承認設定画面のユーザ一覧、[編集]ボタンをクリックします。<br />
+          <img src="../../images/view/8-3-1.png" class="view" alt="上長承認設定：各ユーザ毎の上長設定" />
+        </p>
+
+        <p>
+          [編集]ボタンをクリックすると、各ユーザ毎の上長設定画面へ遷移します。<br />
+           <img src="../../images/view/superior-edit.png" class="view" alt="上長承認設定：各ユーザ毎の上長設定：編集" />
+        </p>
+
+        <p>
+          上長が設定されていないユーザーに対して、ログインを許可するかどうかを選択できます。<br />
+           <img src="../../images/view/no-superior-login.png" class="view" width="40%" alt="上長承認設定：上長なしユーザーのログイン許可" />
+        </p>
+
+        <p>
+          ユーザ一覧から、設定する上長をクリックすると、上長を選択することができます。(複数選択可能)<br />
+          選択されると、背景が青に変わります。<br />
+          <img src="../../images/view/8-3-3.gif" class="view" alt="上長承認設定：各ユーザ毎の上長設定：選択" />
+        </p>
+
+        <p>
+          上長を選択した後、[選択ユーザをすべて追加]ボタンをクリックすると、上長一覧に選択した上長が追加されます。<br />
+          <img src="../../images/view/8-3-4.gif" class="view"  alt="上長承認設定：各ユーザ毎の上長設定：追加" />
+        </p>
+
+        <p>
+          上長一覧では、上長の優先順位をドラッグ＆ドロップで変更することができます。ユーザが上長を選択する場合に、表示される上長の順番です。<br />
+          <img src="../../images/view/8-3-5.gif" class="view" alt="上長承認設定：各ユーザ毎の上長設定：優先順位変更" />
+        </p>
+
+        <p>
+          承認方式は次の二通りから選べます。<br /><br />
+            <b>「いずれかの上長からの承認を必要とする」の場合</b><br />
+            ユーザはメールの作成時に一名以上の上長を選択します。<br />
+            ユーザが指定した上長のうち一名が承認すればメールが送信されます。<br /><br />
+            <b>「すべての上長からの承認を必須にする」の場合</b><br />
+            設定されたすべての上長が承認するまでメールは送信されません。<br />
+            <img src="../../images/view/superior-edit-method.png" class="view" alt="上長承認設定：承認方式設定"/>
+        </p>
+
+        <p>
+          上長の追加、優先順位の変更後、[変更する]ボタンをクリックすると、上長の設定が完了します。<br />
+          <img src="../../images/view/8-3-6.gif" class="view" alt="上長承認設定：各ユーザ毎の上長設定完了"/>
+        </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

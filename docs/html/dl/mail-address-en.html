@@ -1,0 +1,41 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-en/";
+  include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+
+
+<h2><span>Download files</span></h2>
+<h3><a name="13-2"></a>Download with the mail address</h3>
+<p>In case the Email is requested after you access download URL,it confirms that you are correct or not as reseiving file.  <br />
+Please enter <span class="attention">the Email address where you received the email </span>containing the download URL.
+</p>
+<p>
+  If you enter the Email address that is different address of the original receiver or the address that is forwarded for not the original, it is impossible to get the one-time password. If you receive the forwarded Email, please enter the address of the original receiver.
+</p>
+
+<p>
+  If the Email was received “○○@sample.co.jp” first, and Ms. / Mr. Green forwards this Email to you as “▲▲@mailaddress.com.” In this case, you enter “○○@sample.co.jp “ to get one-time password.<br />
+  <img src="<?php echo $image_path; ?>mailer.png" class="view" alt="download files with the mail address" />
+</p>
+
+<h5><span class="line">In case that the Email address is correct</span></h5>
+<p class="h4-p">
+  The download files screen is opened.<br />
+  Please click the [Download] button at the right side of the file that you want to download. File downloading will start.<br />
+  <img src="<?php echo $image_path; ?>download.png" class="view" alt="download files with the mail address:In case that the Email address is correct" />
+</p>
+
+<h5><span class="line">In case you enter the incorrect password</span></h5>
+<p class="h4-p">
+  The error message is displayed and the screen to download files is not open.<br />
+  <img src="<?php echo $image_path; ?>mailer-error-mail.png" class="view" alt="download files with the mail address:In case that the Email address is incorrect" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

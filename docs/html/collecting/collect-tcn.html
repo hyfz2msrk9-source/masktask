@@ -1,0 +1,300 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+<h2><span>接收（收集）</span></h2>
+<h3><a name="5-2"></a>文件收信</h3>
+<p>
+  文件的接收（收集）是，為確保有足夠的接收空間，把以收集文件為目的的發送郵件給特定收信人，在WEB的系統裡上傳文件的功能。<br />
+  以收集文件為目的的郵件，一次最多可發10封。<br />
+  請在「收集文件一覽」頁面，點擊「發送接收郵件」。<br />
+  <img src="../../help-images/view-tcn/5-2_1.gif" class="view" alt="引取りメールを送るボタン" /><br />
+  進入到收集文件的申請發送郵件的頁面。<br />
+  請輸入專案名後選定，點擊「確認郵件」按鍵。<br />
+  <img src="../../help-images/view-tcn/5-2_2.png" class="view" alt="ファイル収集の依頼メール送信画面" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />收件人</th>
+      <td>
+        輸入收件人或從地阯簿添加。最多可以設置10個項目。（號碼可能已被管理員更改，詳情請聯係管理員。）<br />
+        輸入收件人，然後單擊[追加收件人]按鈕。或者，單擊[>>從郵箱地址簿裡選擇]從您的地阯簿添加。<br />
+        要刪除添加的收件人，請單擊每個收件人右側的[×刪除]按鈕。<br />
+        <img src="../../help-images/view-tcn/3-3_3.png" class="view" alt="宛先" /><br />
+        <img src="../../help-images/view-tcn/3-3_4.png" class="view" alt="アドレス帳から宛先を追加" /><br />
+        在郵箱地址簿裡選擇的畫面中，從郵箱地址簿一覽表中點擊選擇或者打鉤選擇您要添加的郵箱地址，然後點擊[↓]按鈕就追加完畢了。<br />
+        <img src="../../help-images/view-tcn/3-3_5.gif" class="view" alt="アドレスの選択" /><br />
+        郵箱地址沒有問題的話請點擊[追加收件人]按鈕。<br />
+        追加郵箱地址到文件發送頁面裡。<br /><br />
+        收件人中有未曾登錄過的郵箱地址時，在文件登錄完畢的通知頁面裡可以追加該郵箱地址到郵箱地址簿。<br />
+        （會登錄在「未分類」群裡。<a href="../address/group-tcn.html#6-5">→更改郵箱地址組</a>裡進行群設置。）
+        <br /><br />
+        如果郵件地址已經登記、向輸入候被郵件地址，地址簿就預測。<br />
+        單擊輸入的郵件地址。單擊的郵件地址的地址被表示。
+        <img src="../../help-images/view-tcn/yosoku-1.gif" class="view" alt="アドレスの選択:予測表示" /><br /><br />
+        此外，如果您在郵件地址輸入字段中輸入多個由<span class="attention nowrap" style="font-weight:bold;">逗號（,）</span>分隔的電子郵件地址，或者輸入名稱為<span class="attention nowrap" style="font-weight:bold;">名稱&lt;郵件地址&gt;</span>的郵件地址，則可以添加可以自動添加的“名稱” 我們可以檢測候選人的“郵件地址”並添加選中的郵件地址。
+        <img src="../../help-images/view-tcn/detect-address.png" class="view" alt="地址選擇：候選檢測" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />保存到的資料夾</th>
+      <td>
+        只有在[保管資料夾指定功能]開啟的情況下顯示。<br />
+        首先指定文件所要上傳到的資料夾。指定資料夾後，所上傳的文件直接保存到指定的資料夾中。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />接收標籤</th>
+      <td>
+        這是管理接收郵件的標籤。有已登錄標籤時，點擊[標籤選擇]按鍵，打開已登錄的標籤的一覽表。<br />
+        <img src="../../help-images/view-tcn/3-3-4_8.gif" class="view" alt="引取りタグ" /><br />
+        使用已登錄標籤時，點擊各標籤名的連結，即可出現標籤欄。生成新標籤時，請鍵入您想要的標籤名。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />寄件者</th>
+      <td>
+        可以根據情況變更發送人及發送人郵箱地址來發送郵件。可以在(<a href="../config/from-tcn.html">→設定發送人</a>)裡進行發送人的登錄。<br />
+        寄件者設定功能為無效時不顯示寄件者。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />郵件件名</th>
+      <td>
+        郵件的件名。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />郵件正文</th>
+      <td>
+        郵件的正文。請輸入必填專案。(<a href="collect-tcn.html#5-2-1">→關於郵件正文</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />安全性設定</th>
+      <td>
+        可在每次收集文件時，進行安全性設置。也可以根據實際的文件收集情況，對安全性不定時進行設置。<br />
+        <img src="../../help-images/view-tcn/5-2_4.gif" class="view" alt="セキュリティ設定" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />字符編碼</th>
+      <td>妳能選擇文字編碼。</td>
+    </tr>
+    <tr><!-- 新機能 -->
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />發送待機設定</th>
+      <td>
+        送信待機功能為有效時才顯示該項目。<br />
+        送信待機功能是指即使發送文件後也顯示送信待機狀態，在一定時間內無法進行文件下載的功能。<br />
+        預先設定時間的情況下，在所設定的時間內會顯示為送信待機狀態。<br />
+        <img src="../../help-images/view-tcn/standbymail-1.gif" alt="送信待機機能：予め設定されている場合" class="view" /><br />
+        用戶可任意設定時，選擇「使用發送待機」，設定時間。不能設定比初期值小的時間。<br />
+        <img src="../../help-images/view-tcn/standbymail-2.gif" alt="送信待機機能：任意で設定が可能な場合" class="view" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />上傳通知設定</th>
+      <td>
+        是“保存到的文件夾”選擇時使用可以的設定“共享文件夾”。請點擊“通知組成員共享”鈕。
+        它會顯示“通知共享組的所有用戶”和“選擇一個成員”。<br/>
+        <img src="../../help-images/view-tcn/uploadsend-1.png" alt="アップロード通知設定" class="view" /><br />
+        通知所有成員如果選擇“通知共享組的所有用戶”。您會收到一個“選擇一個成員鏈接如果您選擇“選擇一個成員”。
+        向文件被向上載時，選擇的共享成員通知文件被上載。<br />
+        <img src="../../help-images/view-tcn/uploadsend-2.png" alt="共有グループメンバーを選択" class="view" /><br />
+        選擇共享小組成員的畫面被表示。選擇通知的成員請單擊[追加收件人]按鈕。<br />
+        <img src="../../help-images/view-tcn/uploadsend-3.png" alt="メンバー追加完了" class="view" /><br />
+        追加成員的話，對上載通知設定選擇的成員名被表示。如果刪除成員請單擊[×刪除]。被通知成員刪除。<br />
+        <img src="../../help-images/view-tcn/uploadsend-4.png" alt="共有グループメンバーを選択" class="view" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  您輸入的內容沒有問題的話請點擊[確認郵件]按鈕。<br />
+  進入到收集文件的申請發送郵件的頁面。
+</p>
+<p>
+  確認輸入、設定的內容無誤後請點擊[發送郵件]按鈕。<br />
+  <img src="../../help-images/view-tcn/5-2_5.gif" class="view" alt="ファイル収集の依頼メール送信確認画面" />
+</p>
+
+<p>
+  轉入到文件收集的申請郵件發信（完成）頁面。<br />
+  文件收集的申請發送郵件完畢。<br />
+  <img src="../../help-images/view-tcn/5-2_6.gif" class="view" alt="ファイル収集の依頼メール送信完了画面" />
+</p>
+
+<h4><a name="5-2-1"></a>關於郵件正文</h4>
+<p class="h4-p">
+  收集文件時的郵件正文，其操作自由，可以進行例如：鍵入文件收件時需要的上傳URL、更改各收信人的名稱及郵寄地址等等。<br />
+  並且，可以插入文本、對常用的正文內容作成範本、製作簽名等等，可大大節省您的郵件編輯時間。<br />
+  <img src="../../help-images/view-tcn/5-2_8.gif" class="view" alt="メール本文の詳細" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[插入文本]</th>
+      <td>
+        插入事先寫好的範文。<br />
+        請點擊[插入文本]按鈕。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />文本</th>
+      <td>
+        選擇後在郵件正文中插入使用者事先寫好的文本。<br />
+        只有在有文本的情況下才可以進行選擇。沒有文本的話不顯示。<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />簽名</th>
+      <td>
+        選擇後在郵件正文中插入用戶事先寫好的簽名。只有在有簽名的情況下才可以進行選擇，沒有簽名的話則不顯示。<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />変換文字</th>
+      <td>
+        在郵件正文輸入後，各收件人也將相應變換。<br />
+        點擊各可變文字的左方的「插入」鍵，插入郵件正文。<br />
+        <img src="../../help-images/view-tcn/5-2_9.gif" class="view" alt="変換文字" /><br />
+
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>[##name##]</th>
+              <td>變換為各收件人名。</td>
+            </tr>
+            <tr>
+              <th>[##mail##]</th>
+              <td>變換為各收件人郵箱地址。</td>
+            </tr>
+            <tr>
+              <th>[##addr_list##]</th>
+              <td>變換為目的地列表。</td>
+            </tr>
+            <tr>
+              <th>[##upload##]</th>
+              <td>變換為各郵件的上傳URL。</td>
+            </tr>
+            <tr>
+              <th>[##up_limit##]</th>
+              <td>變換上傳有效期限。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  通過可變文字[##upload##]和[##mail##]等等，可變更上傳URL以及各收件人的郵箱地址。
+</p>
+
+<h3><a name="collect-mailer"></a>文件收信（從郵箱發送）</h3>
+<p>
+  這是、”發送從自己的郵箱接收郵件”的能力。<br/>
+  它可以最多發送30地址在總一次。 （10個地址可以分別為收件人，抄送，密件抄送和發送。）<br/>
+  請在“收集文件一覽”頁面，點擊“發送從自己的郵箱接收郵”。<br/>
+  <img src="../../help-images/view-tcn/collect-mailer-1.gif" class="view" alt="發送從自己的郵箱接收郵件" /><br />
+  畫面切換到“發送文件收集的申請郵件”。請輸入並選擇該項目，然後單擊[確認郵件]按鈕。<br />
+  <img src="../../help-images/view-tcn/collect-mailer-2.png" class="view" alt="Send email to collect file from mailer" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th>
+        <img src="../../help-images/no-s-1.gif" alt="1" />收件人<br /><br />
+        <img src="../../help-images/no-s-2.gif" alt="2" />Cc.<br /><br />
+        <img src="../../help-images/no-s-3.gif" alt="3" />Bcc.
+      </th>
+      <td>
+        輸入收件人、Cc.、Bcc.或從地阯簿添加。最多可以設置10個項目。（號碼可能已被管理員更改，詳情請聯係管理員。）<br />
+        輸入收件人、Cc.、Bcc.，然後單擊[追加收件人]按鈕。或者，單擊[>>從郵箱地址簿裡選擇]從您的地阯簿添加。<br />
+        要刪除添加的收件人、Cc.、Bcc.，請單擊每個收件人、Cc.、Bcc.右側的[×刪除]按鈕。<br />
+        <img src="../../help-images/view-cn/3-3-3_5.png" class="view" alt="宛先" /><br />
+        <img src="../../help-images/view-tcn/3-3-3_3.png" class="view" alt="アドレス帳から宛先を追加" /><br />
+
+        在郵箱地址簿選擇頁面中，請在郵箱地址一覽中把點擊選擇或打鉤選擇您要追加的郵箱地址，添加至收件人（Cc,Bcc)。<br />
+        <img src="../../help-images/view-tcn/3-3_5.gif" class="view" alt="アドレスの選択" /><br />
+        請點擊[↓]按鈕在收信人欄中追加郵箱地址。<br />
+        郵箱地址沒有問題的話請點擊[追加收件人]按鈕。文件發送頁面追加郵箱地址。
+        <br /><br />
+
+        如果郵件地址已經登記、向輸入候被郵件地址，地址簿就預測。<br />
+        單擊輸入的郵件地址。單擊的郵件地址的地址被表示。
+        <img src="../../help-images/view-tcn/yosoku-1.gif" class="view" alt="アドレスの選択:予測表示" /><br /><br />
+        此外，如果您在郵件地址輸入字段中輸入多個由<span class="attention nowrap" style="font-weight:bold;">逗號（,）</span>分隔的電子郵件地址，或者輸入名稱為<span class="attention nowrap" style="font-weight:bold;">名稱&lt;郵件地址&gt;</span>的郵件地址，則可以添加可以自動添加的“名稱” 我們可以檢測候選人的“郵件地址”並添加選中的郵件地址。
+        <img src="../../help-images/view-tcn/detect-address.png" class="view" alt="地址選擇：候選檢測" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />保存到的資料夾</th>
+      <td>
+        只有在[保管資料夾指定功能]開啟的情況下顯示。<br />
+        首先指定文件所要上傳到的資料夾。指定資料夾後，所上傳的文件直接保存到指定的資料夾中。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />接收標籤</th>
+      <td>
+        這是管理接收郵件的標籤。有已登錄標籤時，點擊[標籤選擇]按鍵，打開已登錄的標籤的一覽表。<br />
+        <img src="../../help-images/view-tcn/3-3-4_8.gif" class="view" alt="引取りタグ" /><br />
+        使用已登錄標籤時，點擊各標籤名的連結，即可出現標籤欄。生成新標籤時，請鍵入您想要的標籤名。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />寄件者</th>
+      <td>
+        可以根據情況變更發送人及發送人郵箱地址來發送郵件。可以在(<a href="../config/from-tcn.html">→設定發送人</a>)裡進行發送人的登錄。<br />
+        寄件者設定功能為無效時不顯示寄件者。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />安全性設定</th>
+      <td>
+        可在每次收集文件時，進行安全性設置。也可以根據實際的文件收集情況，對安全性不定時進行設置。<br />
+        <img src="../../help-images/view-tcn/5-2_4.gif" class="view" alt="セキュリティ設定" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />上傳通知設定</th>
+      <td>
+        是“保存到的文件夾”選擇時使用可以的設定“共享文件夾”。請點擊“通知組成員共享”鈕。
+        它會顯示“通知共享組的所有用戶”和“選擇一個成員”。<br/>
+        <img src="../../help-images/view-tcn/uploadsend-1.png" alt="アップロード通知設定" class="view" /><br />
+        通知所有成員如果選擇“通知共享組的所有用戶”。您會收到一個“選擇一個成員鏈接如果您選擇“選擇一個成員”。
+        向文件被向上載時，選擇的共享成員通知文件被上載。<br />
+        <img src="../../help-images/view-tcn/uploadsend-2.png" alt="共有グループメンバーを選択" class="view" /><br />
+        選擇共享小組成員的畫面被表示。選擇通知的成員請單擊[追加收件人]按鈕。<br />
+        <img src="../../help-images/view-tcn/uploadsend-3.png" alt="メンバー追加完了" class="view" /><br />
+        追加成員的話，對上載通知設定選擇的成員名被表示。如果刪除成員請單擊[×刪除]。被通知成員刪除。<br />
+        <img src="../../help-images/view-tcn/uploadsend-4.png" alt="共有グループメンバーを選択" class="view" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  進入每一個項目後，請點擊[確認郵件]按鈕。<br/>
+  屏幕“發送文件收集的申請郵件（確認）”將出現。<br/>
+</p>
+<p>
+  請確認的內容，請單擊[完成新建郵件準備工作]按鈕。<br/>
+  <img src="../../help-images/view-tcn/collect-mailer-3.gif" class="view" alt="發送文件收集的申請郵件（確認）" />
+</p>
+
+<p>
+  屏幕“發送文件收集的申請郵件（完成）”將出現。<br/>
+  這樣，從本管理器發信前，文件夾分發郵件的製作準備就完成了。<br/>
+  頁面將顯示用於上載的URL。請把這個URL記載在郵件上，並從自己的郵箱給設定的收件人，Cc，Bcc，發送郵件。<br/>
+  點擊[啟動自己的郵箱]按鍵，啟動平時使用的管理器。<br/>
+  <img src="../../help-images/view-tcn/collect-mailer-4.gif" class="view" alt="發送文件收集的申請郵件（完成）" />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

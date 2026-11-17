@@ -1,0 +1,264 @@
+<?php
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+  if(!isset($path)){
+    $path = "../";
+    include_once(WF_HELP_PATH.'/html/common/header.html');
+  }; 
+?>
+<h2><span><a name="delivery-top"></a>一斉配信</span></h2>
+<h3><span>ファイルなしの配信</span></h3>
+<h4><a name="delivery-nofile"></a>ファイルなしの配信について</h4>
+<p class="h4-p">
+  多くの宛先に一斉にメールを送信する機能です。<br />
+  ファイルを配布することはできません。<br />
+  一斉配信一覧画面で、[ファイルなしの配信]ボタンをクリックしてください。
+  <img src="../../help-images/view/delivery_nofile.png" class="view" alt="[ファイルなしの配信]ボタン" /><br />
+  ファイルなしの配信画面へ遷移します。<br />
+<img src="../../help-images/view/delivery_nofile-form.gif" class="view" alt="ファイルなしの配信画面" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />テンプレート</th>
+      <td>
+        ご自身の作成したテンプレートを挿入します。<br />
+        テンプレートをご選択いただくと、メール本文に挿入されます。<br />
+        テンプレートを作成していない場合は表示されません。(→<a href="../config/template.html">テンプレート</a>)<br />
+        <img src="../../help-images/view/3-3-1_2.gif" class="view" alt="テンプレート選択" style="width:50%; height:auto;" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />宛先ファイル</th>
+      <td>
+        [選択]ボタンをクリックし、宛先情報が記されたCSVファイルをご選択ください。<br />
+(→<a href="#delivery-nofile-csv">宛先ファイルについて</a>)<br />
+        <img src="../../help-images/view/delivery_send-import.png" class="view" alt="宛先ファイルのインポート" /><br />
+        一度インポートが完了した宛先ファイルを変更される場合は、「＞＞別の宛先ファイルをインポート」リンクをクリックし、新しい宛先ファイルをご選択ください。<br />
+        宛先情報は新しい宛先ファイルの情報に上書きされ、以前にインポートした情報は削除されます。<br />
+<img src="../../help-images/view/delivery_send-import-change.png" class="view" alt="別の宛先ファイルをインポート" /><br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />差出人</th>
+      <td>
+        送信者名や送信者のメールアドレスを変更することができます。<br />
+        送信者の登録は、送信者設定(→<a href="../config/from.html">送信者設定</a>)でおこないます。<br />
+        送信者設定機能が無効の場合は表示されません。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />メール件名</th>
+      <td>メールの件名をご入力ください。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />メール本文</th>
+      <td>
+        メールの本文に必要事項をご入力ください。<br />
+        (→<a href="#delivery-nofile-message">メール本文について</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />送信予定日時</th>
+        一斉配信メールを送信する時刻を設定できます。<br />
+        上長承認が有効な場合、承認期限としても利用されるため、予約なしでの送信はできません。<br />
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />文字エンコーディング</th>
+      <td>送信するメールの文字エンコーディングを「ISO-2022-JP」または「UTF-8」からご選択ください。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="h4-p">
+  宛先ファイルをインポートし、項目を入力・選択した後、[メール確認]ボタンをクリックしてください。<br />
+  ファイルなしの配信確認画面に遷移します。<br />
+  インポートした宛先情報を確認する場合は、[宛先一覧を表示]をクリックすると宛先一覧画面に遷移します。(→<a href="#delivery-nofile-to">宛先一覧について</a>)<br />
+  ご確認いただいた内容に問題がなければ、[配信内容を登録]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/delivery_nofile-confirm.png" class="view" alt="ファイルなしの配信確認画面" />
+</p>
+
+<p class="h4-p">
+  ファイルなしの配信登録完了画面に遷移します。<br />
+  これで入力した配信内容の登録が完了し、宛先へ順次メールが配信されます。<br />
+  <img src="../../help-images/view/delivery_nofile-done.png" class="view" alt="ファイルなしの配信登録完了画面" />
+</p>
+
+<h4><a name="delivery-nofile-csv"></a>宛先ファイルについて</h4>
+<p class="h4-p">
+宛先ファイルには、1行目に以下の見出しを<span class="attention">カンマ区切りのCSV形式</span>で入力し、2行目以降に内容を記入してください。<br />
+<span class="attention">名前,メールアドレス,置換文字列1,置換文字列2...</span><br />
+ファイル作成時には、サンプルファイルもご利用いただけます。(→<a href="../delivery/sample.html
+">宛先ファイルサンプルのダウンロード</a>)<br /><br />
+  <b>置換文字列</b>は0~<?php echo REPLACEMENT_MAX_NUM; ?>個設定でき、任意の項目名をつけることができます。<br />
+1件の配信で送信できる人数は、ご契約内容によります。詳しくは管理者へお問い合わせください。<br /><br />
+<table>
+  <tr>
+    <th>CSVファイル例<br />（案件名・前任者を置換文字列に指定）</th>
+    <td>
+      "名前","メールアドレス","案件名","前任者"<br />
+      "鈴木","suzuki@example.com","案件A","田中"<br />
+      "佐藤","satou@example.com","案件B","田中"<br />
+      "藤原","fujiwara@example.com","案件C","山田"
+    </td>
+  </tr>
+  <tr>
+    <th>上記ファイルをExcelで開いたイメージ</th>
+    <td>
+      <img src="../../help-images/view/delivery_nofile-excel.gif" class="view"
+        alt="ファイルなし：置換文字列のある宛先ファイル(Excelで開いた場合)" /><br />
+    </td>
+  </tr>
+</table>
+</p>
+<h4><a name="delivery-nofile-message"></a>メール本文について</h4>
+<p class="h4-p">
+メールの本文は、各宛先のお名前やメールアドレス・CSVファイルで設定した置換文字列に変換できるる変換文字を挿入することによって、効率的に作成することができます。<br />
+テンプレートや署名の挿入も可能です。<br />
+  <img src="../../help-images/view/delivery_nofile-message.png" class="view" alt="メール本文の詳細" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />テンプレート</th>
+      <td>
+        ご自身の作成したテンプレートを挿入します。<br />
+        テンプレートをご選択いただくと、メール本文に挿入されます。<br />
+        テンプレートを作成していない場合は表示されません。(→<a href="../config/template.html">テンプレート</a>)<br />
+        <img src="../../help-images/view/3-3-1_2.gif" class="view" alt="テンプレート選択" style="width:50%; height:auto;" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />署名</th>
+      <td>
+        ご自身の作成した署名を挿入します。<br />
+        署名をご選択いただくと、メール本文に挿入されます。<br />
+        署名を作成していない場合は表示されません。(→<a href="../config/sign.html">署名</a>)<br />
+        <img src="../../help-images/view/3-3-1_3.gif" class="view" alt="署名選択" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />変換文字</th>
+      <td>
+        メールの本文に入力すると、各宛先に合わせて変換します。<br />
+        各変換文字の左にある（挿入)をクリックすると、メール本文に挿入します。<br />
+        <img src="../../help-images/view/delivery_nofile-transform.png" class="view" alt="変換文字" /><br />
+
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>[##name##]</th>
+              <td>各宛先のお名前に変換します。</td>
+            </tr>
+            <tr>
+              <th>[##mail##]</th>
+              <td>各宛先のメールアドレスに変換します。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>  
+<p class="h4-p">
+  <b>置換文字列を含む本文例</b>
+</p>
+<p class="view h4-p">
+  [##name##]様<br />
+  <br />
+  はじめまして。<br />
+  xx株式会社のOOと申します。<br />
+  <br />
+  前任の[##前任者##]の異動により、<br />
+  このたび[##案件名##]の担当を引き継ぐことになりました。<br />
+  <br />
+  至らぬ点もあるかと思いますが、誠心誠意対応いたしますので<br />
+  今後よろしくお願いいたします。
+</p>
+<p class="h4-p">
+  <b>実際に届くメール例</b>
+</p>
+<p class="view h4-p">
+  鈴木様<br /><br />
+  はじめまして。<br />
+  xx株式会社のOOと申します。<br />
+  <br />
+  前任の田中の異動により、<br />
+  このたび案件Aの担当を引き継ぐことになりました。<br />
+  <br />
+  至らぬ点もあるかと思いますが、誠心誠意対応いたしますので<br />
+  今後よろしくお願いいたします。
+</p>
+
+<h4><a name="delivery-nofile-to"></a>宛先一覧について</h4>
+<p class="h4-p">
+  宛先一覧画面では、宛先ファイルからインポートした宛先情報を一覧で確認することができます。<br />
+  <img src="../../help-images/view/delivery_nofile-to.png" class="view" alt="ファイルなし配信の宛先一覧" />
+
+  <table>
+    <tbody>
+      <tr>
+        <th colspan="2">一覧表示</th>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+        <td>
+          虫眼鏡アイコンで、検索フォームを開きます。<br />
+          <img src="../../help-images/view/delivery_to-search.png" class="view" alt="検索フォーム" />
+          <table class="data-s">
+            <tbody>
+              <tr>
+                <td>項目のプルダウン</td>
+                <td>：検索する項目を選択します。</td>
+              </tr>
+              <tr>
+                <td>[検索]欄</td>
+                <td>：検索する文言を入力します。</td>
+              </tr>
+              <tr>
+                <td>[検索]ボタン</td>
+                <td>：検索を開始します。</td>
+              </tr>
+              <tr>
+                <td>[クリア]ボタン</td>
+                <td>：検索を解除します。</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+        <td>1ページに表示する一覧の件数を変更します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+        <td>先頭ページに移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+        <td>1ページ前に移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+        <td>入力されたページに移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+        <td>1ページ次に移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+        <td>最終ページに移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/load.png"  alt="一覧を最新の状態にする" /></th>
+        <td>一覧画面を最新の状態に更新します。</td>
+      </tr>
+    </tbody>
+  </table>
+
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

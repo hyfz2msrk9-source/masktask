@@ -1,0 +1,138 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+<h2><span>文件一覽</span></h2>
+<h3><a name="4-2"></a>文件的上傳</h3>
+<p>
+在文件一覽頁面，可以直接拖放文件進行上傳（→<a href="../top/index-tcn.html#dragdrop">文件上傳（拖放）</a>）。<br />
+如果需要在上傳時設定共享群組成員通知或備註，請點擊文件一覽中的[上傳]按鈕。<br />
+  <img src="../../help-images/view-tcn/3-2.gif" class="view" alt="文件一覽：上傳" />
+</p>
+
+<p>
+  移動到文件上傳頁面。選擇要上傳的文件點擊[上傳]按鈕。<br />
+  <img src="../../help-images/view-tcn/3-2_2.png" class="view" alt="文件上傳頁面" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-1.gif" alt="1" /></th><th class="bLnone">[文件追加]</th>
+      <td>
+        使用[文件追加]請選擇你要上傳的文件。<br/>打開文件選擇窗口。請選擇一個文件。<br/>
+        <img src="../../help-images/view-tcn/top-upload-1.gif" class="view" alt="上傳文件選擇" />
+        <br/>
+        請上傳畫面。您可以檢查文件和文件大小，可以在同一時間內上載的數量。文件大小，文件的數目是由系統管理員所限制。
+        <br/>
+        <img src="../../help-images/view-tcn/top-upload-1_2.gif" class="view" alt="上傳容量，上傳" /><br />
+        根據文件上載時，文件的擴展名有過濾的情況。<br >關于文件格式請詢問給管理者。<br />
+        <img src="../../help-images/view-tcn/fileformat-1.gif" class="view" alt="文件扩展名" />
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-2.gif" alt="2" /></th><th class="bLnone">[刪除]</th>
+      <td>
+        刪除您所選擇的上傳文件。
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-3.gif" alt="3" /></th><th class="bLnone">選擇上傳到的資料夾</th>
+      <td>
+        我選擇你要上傳的文件的文件夾。
+        <img src="../../help-images/view-tcn/top-upload-2.gif" class="view" alt=">選擇上傳到的資料夾" />
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-4.gif" alt="4" /></th><th class="bLnone">記事本</th>
+      <td>
+        上傳時可以附加備忘錄。可以在文件詳細中確認。<br />
+        文件發送後第三者是無法閱覽的。<br />
+        <img src="../../help-images/view-tcn/3-2_6.gif" class="view" alt="記事本" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p style="margin-top:30px;">文件上傳完畢。</br>
+  </br>當無害化選項啟用時，在點擊 [上傳] 按鈕時文件將自動進行無害化。(<a href="index-tcn.html#sanitize">→無害化</a>)
+</p>
+<img src="../../help-images/view-tcn/3-2_5.gif" class="view" alt="上傳文件的完成屏幕" />
+<p>
+  要發送已上傳的文件請點擊[文件發送]。移動到文件通知頁面。(<a href="send-tcn.html#4-3">→發送文件</a>)
+</p>
+
+<h4><a name="4-2-1"></a>選擇要上傳的文件</h4>
+<dl>
+  <dt>選擇多個文件</dt>
+  <dd>
+    在文件選擇窗口中可以選擇多個文件。<br/>
+    按住Ctrl或Shift鍵可以選擇多個文件。<br/>
+    <img src="../../help-images/view-tcn/top-upload-3.gif" class="view" alt="您可以選擇多個文件" />
+  </dd>
+  <dt>通過拖放選擇文件</dt>
+  <dd>
+    可以通過從資源管理器（Mac上的Finder）拖放選擇多個文件。<br/>
+    選擇要上傳的文件，並將其拖放至[添加文件]按鈕。<br/>
+    <img src="../../help-images/view-tcn/top-upload-4.gif" class="view" alt="您可以通過拖放選擇多個文件" />
+  </dd>
+  <dt>通過拖放選擇文件夾</dt>
+  <dd>
+    文件夾可以通過從資源管理器（或Mac上的Finder）拖放來選擇。<br/>
+    選擇包含你要上傳的文件的文件夾，並把它們拖放到[添加文件]按鈕上。<br/>
+    <img src="../../help-images/view-tcn/top-upload-5.gif" class="view" alt="您可以通過拖放選擇多個文件" />
+  </dd>
+
+</dl>
+
+<?php
+if (defined("VIRUS_CHECK_FLG") && (VIRUS_CHECK_FLG == 1)):
+?>
+  <h4><a name=""></a>關於文件上傳時病毒掃描</h4>
+  <p class="h4-p">
+    <?php
+    if (!defined("VIRUS_CHECK_SIZE_LIMIT")) {
+      $virus_check_size_limit = 2000;
+    } else {
+      $virus_check_size_limit = VIRUS_CHECK_SIZE_LIMIT;
+    }
+    ?>
+    病毒檢查適用於<?= number_format($virus_check_size_limit) ?>MB以下的文件。大於<?= number_format($virus_check_size_limit) ?>MB的文件將不被檢查病毒而被上傳。
+  </p>
+<?php endif; ?>
+
+<h4><a name="4-2-3"></a>關於上傳共享文件夾。</h4>
+<p class="h4-p">
+  如果您選擇將文件上傳到共享文件夾，您可以發送通知郵件到該組的成員。<br/>
+  您可以編輯通知郵件的主題和正文。
+  <br/>
+  <img src="../../help-images/view-tcn/top-upload-share-1.png" class="view" alt="關於上傳共享文件夾。" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-1.gif" alt="1" /></th><th class="bLnone">選擇上傳到的資料夾</th>
+      <td>
+        如果您在文件列表中選擇一個共享文件夾你將不能改變“上傳文件夾”。<br/>
+        請在一個點擊的材料夾覽頁面文件。<br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-2.gif" alt="2" /></th><th class="bLnone">郵件通知</th>
+      <td>
+        您可以發送通知郵件到該組的成員。請所有成員或成員的選擇選擇。<br/>
+        請點擊[>>選擇一個成員]，顯示成員名單。選擇從成員列表成員。<br/>
+        <img src="../../help-images/view-tcn/top-upload-share-2.png" class="view" alt="選擇該組成員共享" /><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-3.gif" alt="3" /></th><th class="bLnone">郵件通知 編輯</th>
+      <td>
+        您可以編輯的電子郵件通知的主題和內容，當您單擊編輯按鈕。<br/>編輯完成後，請單擊“編輯”按鈕。<br/>
+        <img src="../../help-images/view-tcn/top-upload-share-3.gif" class="view" alt="郵件通知 編輯" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

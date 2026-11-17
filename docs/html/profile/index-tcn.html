@@ -1,0 +1,48 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+          <h2><span>個人資訊</span></h2>
+          <p>
+            目前所登錄的個人資訊。可以更改密碼。<br />
+            建議定期更換密碼。
+          </p>
+
+          <p>目錄：點擊個人資訊。<br />
+        <img src="../../help-images/view-tcn/submenu.png" class="view" alt="目錄：個人資訊" />
+          </p>
+
+          <p><img src="../../help-images/view-tcn/10-1.png" class="view" alt="個人資訊" /></p>
+
+          <h3><a name="10-1"></a>更改密碼</h3>
+          <p>
+            更改密碼。請點擊[更改密碼]按鈕。<br />
+            <span class="attention">※使用Google SSO身份驗證或者[##SAML_NAME##]的用戶不能更改密碼。</span><br />
+            <img src="../../help-images/view-tcn/10-1_1.png" class="view" alt="個人資訊：更改密碼" />
+          </p>
+
+          <p>
+            移動至更改密碼頁面。輸入現在的密碼、新密碼、新密碼（確認）後點擊[確定編輯]按鈕。<br />
+            <img src="../../help-images/view-tcn/10-1_2.gif" class="view" alt="更改密碼" />
+          </p>
+
+          <p>
+            更改密碼後系統自動退出。<br />
+            請輸入新的密碼重新登錄。
+          </p>
+
+          <h3><a name="two_step_auth"></a>雙因素認證</h3>
+          <span class="attention">&nbsp;※使用Google SSO身份驗證或者[##SAML_NAME##]的用戶無法在WebFile中設置雙因素認證。</span><br />
+          <span class="attention">&nbsp;※此設置只適用於使用認證應用程序的雙因素認證。</span><br />
+
+          <h4><a name="two_step_auth_on"></a>啟用雙因素認證</h4>
+          <p>在禁用雙因素認證時，請點擊在個人資訊中的[啟用]按鈕。</p>
+          <p><img src="../../help-images/view-tcn/10-2_1.gif" class="view" alt="雙因素認證:on" /></p>
+          <p>按照說明設置雙因素認證。請輸入確認碼並點擊[檢查並保存]。</p>
+
+          <h4><a name="two_step_auth_off"></a>禁用雙因素認證</h4>
+          <p>在啟用雙因素認證時，請點擊個人資訊部分的[禁用]按鈕。</p>
+          <p><img src="../../help-images/view-tcn/10-2_2.gif" class="view" alt="雙因素認證:off" /></p>
+          <p>從閱讀說明，請點擊[關閉]。</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

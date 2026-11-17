@@ -1,0 +1,20 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+    <h2><span>上長承認設定(※オプション)</span></h2>
+        <h3>CSVエクスポート</h3>
+      <p>
+        設定されている全てのユーザの上長設定を、CSVファイルの形式でダウンロードします。このCSVファイルを編集し、[CSVファイルで設定]を行うと、情報が変更されているユーザに対して更新を行います。<br />
+      CSVエクスポートを行うには、上長承認設定画面から [CSVエクスポート]ボタンをクリックします。<br />
+      <img src="../../images/view/8-2-1.png" class="view" alt="上長承認設定：CSVエクスポート" />
+    </p>
+
+      <p>
+         [エクスポート]ボタンをクリックすると、登録されている全てのユーザの上長設定をCSVファイルでエクスポートします。ファイルをダウンロードしますので、お使いのパソコンに保存してください。<br />
+      <img src="../../images/view/8-2-2.gif" class="view" alt="上長承認設定：CSVエクスポートファイルダウンロード" />
+       </p>
+
+      <p class="attention">
+          [注意]<br />エクスポートされたCSVファイルは、毎回同じファイル名がつきます。ダウンロードする時は、前回のCSVファイルとの混合にご注意ください。
+        </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

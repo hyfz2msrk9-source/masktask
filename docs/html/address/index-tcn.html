@@ -1,0 +1,168 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+<h2><span>郵箱地址簿</span></h2>
+
+<p>
+  是郵箱地址通訊錄。發送資料夾或收集資料夾時，可以進入郵箱地址通信錄，從通信錄中直接選擇，省去輸入的麻煩。<br />
+  菜單：請點擊「郵箱地址簿」按鍵。<br />
+<img src="../../../images-tcn/sysmenu_address.gif" class="view" alt="菜單：郵箱地址簿" />
+</p>
+
+<h3><a name="6-1"></a>郵箱地址簿一覽</h3>
+<p>
+  目錄：點擊郵箱地址簿移動至郵箱地址簿頁面。<br />
+  <img src="../../help-images/view-tcn/6-1_1.png" class="view" alt="郵箱地址簿画面" />
+</p>
+
+<p>
+  左側顯示組一覽。點擊後根據所登錄的組顯示郵箱地址到右側。<br />
+  現在顯示中的組背景顏色會變，顯示組標籤。(<img src="../../help-images/ico-group-active.gif" alt="表示グループ" />)
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />使用CSV文件<br />追加郵箱地址・<br />使用CSV文件<br />下載郵箱位址</th>
+      <td>
+        使用CSV文件追加新郵箱地址。使用CSV檔案下載郵箱位址。<br />
+        (<a href="change-tcn.html#6-2-2">→從CSV文件裡追加・從CSV文件裡下載</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />個人/共通/部門</th>
+      <td>
+        您可以切換地址簿類型。<br />
+        設定不顯示共通時，顯示共通以外的。<br />
+        設定不顯示部門郵箱地阯簿時，顯示部門郵箱以外的。<br />
+        設定不顯示共通和部門郵箱時，只顯示個人的。<br />
+        如果選擇部門郵箱地阯簿，顯示每箇部門的組。<br />
+        <img src="../../help-images/view-tcn/address_group_list.png" class="view" alt="アドレス帳グループ一覧" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />追加組</th>
+      <td>
+        顯示組所追加的空間。(<a href="group-tcn.html#6-6">→追加組</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />追加郵箱地址</th>
+      <td>
+        顯示郵箱地址所追加的空間。(<a href="change-tcn.html#6-2">→追加郵箱地址</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />編輯郵箱地址</th>
+      <td>
+        從郵箱地址一覽中選擇想要編輯的郵箱地址後，顯示郵箱地址編輯空間。編輯郵箱地址只能是1個。(<a href="change-tcn.html#6-3">→編輯郵箱地址</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />刪除郵箱地址</th>
+      <td>
+        在郵箱地址一覽中選擇想要刪除的郵箱地址後，刪除郵箱地址。(<a href="change-tcn.html#6-4">→刪除郵箱地址</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />更改組成員</th>
+      <td>
+        錶示登記的郵件地阯從屬于的小組。(<a href="group-tcn.html#6-5">→更改郵箱地阯組</a>)<br />
+        如果您選擇部門郵箱地阯簿，則還顯示[複製到另一箇部門組]按鈕。(→<a href="group-tcn.html#6-10">複製到另一箇部門組</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />郵箱地址全刪除</th>
+      <td>
+        在郵箱地址一覽中刪除所有的郵箱地址。(<a href="change-tcn.html#6-4">→刪除郵箱地址</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />郵箱地阯一覽</th>
+      <td>
+        錶示登記的郵件地阯一覽。
+        <table class="data">
+          <tr>
+            <th>名字（片假名）</th>
+            <td>郵箱地址所登錄的人名（片假名）。點擊標題可以按照人名來排列。</td>
+          </tr>
+          <tr>
+            <th>組</th>
+            <td>郵箱地址的分類組。點擊標題可以按照組名來排列。</td>
+          </tr>
+          <tr>
+            <th>郵箱地址</th>
+            <td>郵箱地址。點擊標題可以按照郵箱地址來排列。</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />郵箱地址檢索</th>
+      <td>
+        <table class="data">
+          <tbody>
+            <tr>
+              <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+              <td>
+                點擊放大鏡圖示打開使用者查閱資料表。<br />
+                <img src="../../help-images/view-tcn/6-1_2-s.gif" class="view" alt="検索フォーム" />
+                <table class="data-s">
+                  <tbody>
+                    <tr>
+                      <td>項目下拉清單</td>
+                      <td>：選擇查找的項目。</td>
+                    </tr>
+                    <tr>
+                      <td>查找欄</td>
+                      <td>：輸入想要查找的語句。</td>
+                    </tr>
+                    <tr>
+                      <td>查找</td>
+                      <td>：開始查找。</td>
+                    </tr>
+                    <tr>
+                      <td>清空</td>
+                      <td>：解除查找。</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+              <td>更改一頁中顯示的一覽件數。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+              <td>移動到第一頁。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+              <td>移動到前一頁。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+              <td>移動到所輸入的頁面。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+              <td>移動到下一頁。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+              <td>移動到尾頁。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/load.png" alt="一覧を最新の状態にする" /></th>
+              <td>更新一覽頁面。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

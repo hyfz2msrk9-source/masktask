@@ -1,0 +1,130 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+<h2><span>郵箱地址簿</span></h2>
+  <h3><a name="6-2"></a>追加郵箱地址</h3>
+    <h4><a name="6-2-1"></a>在表格裡新建連絡人</h4>
+    <p class="h4-p">
+      追加郵箱地址。請點擊[追加郵箱地址]按鈕。<br />
+      顯示郵箱地址所追加的空間。<br />
+      <img src="../../help-images/view-tcn/6-2_1.gif" class="view" alt="アドレスフォーム：アドレス追加" />
+    </p>
+
+<p class="h4-p">
+  顯示郵箱地址簿（登錄）頁面。<br />
+  輸入項目、選擇、點擊[追加]按鈕。<br />
+  <img src="../../help-images/view-tcn/6-2_2.gif" class="view" alt="アドレス帳登録エリア" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>名字</th>
+      <td>郵箱地址所登錄的人名。</td>
+    </tr>
+    <tr>
+      <th>名字(片假名)</th>
+      <td>郵箱地址所登錄的用戶的片假名。</td>
+    </tr>
+    <tr>
+      <th>組</th>
+      <td>
+        郵箱地阯的分類組。<br />
+        如果從屬于到已經有的小組郵件地阯，請單擊「更改組成員」。錶示更改組成員。<br />
+        請選擇上部的小組。如果小組能選擇請單擊[↓]按鈕。單擊[更改組成員身份]按鈕的話，對郵件地阯設定小組。<br />
+        <img src="../../help-images/view-tcn/6-2_3.gif" class="view" alt="グループ選択" /><br />
+        製作新的小組。單擊[追加組]按鈕的話，錶示輸入欄。請輸入小組名。<br />單擊保存按鈕的話，保存小組。<br />
+        <img src="../../help-images/view-tcn/6-2_4.gif" class="view" alt="新規グループ作成" />
+      </td>
+    </tr>
+    <tr>
+      <th>郵箱地址</th>
+      <td>登錄的郵箱地址。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="6-2-2"></a>從CSV文件裡追加・從CSV文件裡下載</h4>
+<h5>從CSV文件裡追加</h5>
+<p class="h4-p">
+  請點擊[使用CSV文件追加郵箱地址]按鈕。<br />
+  <img src="../../help-images/view-tcn/6-2-2_1.gif" class="view" alt="CSVファイルでアドレスを追加ボタン" />
+</p>
+
+<p class="h4-p">
+  選擇存有郵箱地址資訊的CSV文件，點擊[導入]按鈕追加到郵箱地址簿裡。<br />
+  <img src="../../help-images/view-tcn/6-2-2_2.png" class="view" alt="CSVファイルでの追加画面：個人／共通" />
+</p>
+
+<p class="h4-p">
+  設定不顯示共通時，能登錄共通以外的郵箱地址。<br />
+  設定不顯示部門郵箱時，能登錄部門郵箱以外的郵箱地址。<br />
+  設定不顯示共通和部門郵箱時，只能登錄個人的郵箱地址。<br />
+  選擇存有郵箱地址資訊的CSV文件，點擊[導入]按鈕追加到郵箱地址簿裡。<br />
+  <img src="../../help-images/view-tcn/6-2-2_2_2.png" class="view" alt="CSVファイルでの追加画面：個人" />
+</p>
+
+<p class="h4-p">
+  CSV文件請按照<span class="attention">「名字、名字（片假名）、組、郵箱地址、登錄到的位置」</span>的順序作成。<br />
+  保存位置是，保存到個人郵箱地址簿時輸入"個人"或者"0"，保存到共通郵箱地址簿時輸入"共通"或者"1",保存到部門郵箱地阯簿時輸入"部門"或者"2"。<br />
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+      "smaple-name1","name1","sales","name1@example.com","0"<br>
+      "smaple-name2","name2","sales;marketing","name2@example.com","1"<br>
+      "smaple-name3","name3","section¥grpup1","name2@example.com","2"
+  </div>
+</p>
+
+<p class="h4-p">
+  設定不顯示共通和部門郵箱時，CSV文件請按照<span class="attention">「名字、名字（片假名）、組、郵箱地址」</span>的順序作成。<br />
+  只登錄到個人的郵箱地址。<br />
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+      "smaple-name1","name1","sales","name1@example.com"<br>
+      "smaple-name2","name2","sales;marketing","name2@example.com"
+  </div>
+</p>
+<p class="h4-p">
+  導入成功後會顯示完成頁面。點擊[返回]按鈕，返回到郵箱地址簿頁面。<br />
+  <img src="../../help-images/view-tcn/6-2-2_4.gif" class="view" alt="CSVファイルでの追加完了画面" />
+</p>
+<h5>從CSV文件裡下載</h5>
+<p class="h4-p">
+  請點擊[使用CSV文件下載郵箱位址]按鈕。請下載CSV文件。<br />
+  <img src="../../help-images/view-tcn/6-2-2_1_2.gif" class="view" alt="CSVファイルでアドレスを追加ボタン" />
+</p>
+
+<h3><a name="6-3"></a>編輯郵箱地址</h3>
+<p>
+  編輯郵箱地址。在郵箱地址簿裡點擊選擇要編輯的郵箱地址。<br />
+  選擇後點擊[編輯郵箱地址]按鈕。<br />
+  <img src="../../help-images/view-tcn/6-3_1.gif" class="view" alt="アドレスフォーム：アドレス編集" />
+</p>
+
+<p>
+  顯示郵箱地址編輯頁面。進行編輯，然後點擊[變更]按鈕。<br />
+  <img src="../../help-images/view-tcn/6-3_2.gif" class="view" alt="アドレス編集エリア" />
+</p>
+
+<h3><a name="6-4"></a>刪除郵箱地址</h3>
+<p>
+  在郵箱地址簿裡點擊選擇要刪除的郵箱地址。<br />
+  郵箱地址可以選擇多個。<br />
+  選擇後，點擊[刪除郵箱地址]按鈕。
+</p>
+<p>
+  系統會顯示確認資訊，如果沒有問題請點擊[OK]按鈕。<br />
+  所選擇的郵箱地址會被刪除。<br />
+  <img src="../../help-images/view-tcn/6-4_1.gif" class="view" alt="アドレスフォーム：アドレス削除" />
+</p>
+
+<p>
+  想要刪除郵箱地址簿裡所有郵箱地址時，請點擊[刪除所有郵箱地址]按鈕。<br />
+  在「個人／共有分頁標籤」裡選擇為個人時顯示「刪除所有個人郵箱地址」，選擇為共有時顯示「刪除所有共有郵箱地址」。
+</p>
+<p>
+  系統會顯示確認資訊，如果沒有問題請點擊[OK]按鈕。<br />
+  所選擇的郵箱地址會被刪除。<br />
+  <img src="../../help-images/view-tcn/6-4_3.gif" class="view" alt="アドレスフォーム：アドレス全削除" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

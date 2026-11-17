@@ -1,0 +1,50 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>プロフィール</span></h2>
+<p>
+  現在登録されているプロフィールです。パスワードの変更を行うことができます。<br />
+  パスワードは定期的に変更されることを、お勧めいたします。
+</p>
+
+<p>
+  メニュー：プロフィールをクリックしてください。<br />
+  <img src="../../../images/sysmenu_profile.gif" class="view" alt="メニュー：プロフィール" />
+</p>
+
+<p><img src="../../help-images/view/10_1.png" class="view" alt="プロフィール画面" /></p>
+
+<h3><a name="10-1"></a>パスワード変更</h3>
+<p>
+  パスワードを変更します。[パスワード変更]ボタンをクリックしてください。<br />
+  <span class="attention">※Google SSO認証または[##SAML_NAME##]利用ユーザはパスワードを変更することはできません。</span><br />
+  <img src="../../help-images/view/10-1_1.png" class="view" alt="プロフィール画面：パスワード変更" />
+</p>
+
+<p>
+  パスワード変更画面へ遷移します。現在のパスワード、新パスワード、新パスワード(確認)を入力し、[編集確定]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/10-1_2.gif" class="view" alt="パスワード変更画面" />
+</p>
+
+<p>
+  パスワードを変更すると、自動的にログアウトします。<br />
+  変更後のパスワードで、再度ログインしてください。
+</p>
+
+<h3><a name="two_step_auth"></a>二要素認証</h3>
+<span class="attention">&nbsp;※Google SSO認証または[##SAML_NAME##]利用ユーザはWebFileから二要素認証の設定を行うことはできません。</span><br />
+<span class="attention">&nbsp;※認証アプリを使用して二要素認証を行う時のみ、二要素認証の設定を行うことが出来ます。</span><br />
+
+<h4><a name="two_step_auth_on"></a>二要素認証を有効にする</h4>
+<p>無効になっている状態で、プロフィールに表示される[有効にする]ボタンをクリックします。</p>
+<p><img src="../../help-images/view/10-2_1.gif" class="view" alt="二要素認証有効画面" /></p>
+<p>説明に沿って二要素認証の準備を行います。確認コードを入力して、[確認して保存]をクリックしてください。</p>
+
+<h4><a name="two_step_auth_off"></a>二要素認証を無効にする</h4>
+<p>有効になっている状態で、プロフィールに表示される[無効にする]ボタンをクリックします。</p>
+<p><img src="../../help-images/view/10-2_2.gif" class="view" alt="二要素認証無効画面" /></p>
+<p>説明を読んでから、[無効にする]をクリックしてください。</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

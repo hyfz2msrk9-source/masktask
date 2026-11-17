@@ -1,0 +1,304 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+<h2><span>接收（收集）</span></h2>
+<h3><a name="5-2"></a>文件收信</h3>
+<p>
+  文件的接收（收集），是为确保有足够的接收空间，并把以收集文件为目的的邮件发送给特定收信人，让收信人把文件上传到WEB系统上的功能。<br />
+  以收集文件为目的的邮件，一次最多可发10封。<br />
+  请在“收集文件一览”页面，点击“发送接收邮件”。<br />
+  <img src="../../help-images/view-cn/5-2_1.gif" class="view" alt="引取りメールを送るボタン" /><br />
+  进入到收集文件的申请邮件发送的页面。<br />
+  请输入项目名后选定，点击“确认邮件”按键。<br />
+  <img src="../../help-images/view-cn/5-2_2.png" class="view" alt="ファイル収集の依頼メール送信画面" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />收件人</th>
+      <td>
+        输入收件人或从地址簿添加。最多可以设置10个项目。（号码可能已被管理员更改，详情请联系管理员。）<br />
+        输入收件人，然后单击[追加收件人]按钮。或者，单击[>>从邮箱地址簿里选择]从您的地址簿添加。<br />
+        要删除添加的收件人，请单击每个收件人右侧的[×删除]按钮。<br />
+        <img src="../../help-images/view-cn/3-3_3.png" class="view" alt="宛先" /><br />
+        <img src="../../help-images/view-cn/3-3_4.png" class="view" alt="アドレス帳から宛先を追加" /><br />
+        在邮箱地址簿里选择的画面中，从邮箱地址簿一览表中点击选择或者打钩选择您要添加的邮箱地址，然后点击[↓]按钮就追加完毕了。<br />
+        <img src="../../help-images/view-cn/3-3_5.gif" class="view" alt="アドレスの選択" /><br />
+        邮箱地址没有问题的话请点击[追加收件人]按钮。<br />
+        追加邮箱地址到文件发送页面里。<br /><br />
+
+        收件人中有未曾登录过的邮箱地址时，在文件登录完毕的通知页面里可以追加该邮箱地址到邮箱地址簿。<br />
+        （会登录在「未分类」群里。<a href="../address/group-cn.html#6-5">→更改邮箱地址组</a>里进行群设置。）
+        <br /><br />
+
+        如果邮件地址已经被登记的话，向输入时邮件地址，被地址簿预测。<br />
+        单击输入的邮件地址。单击的邮件地址地址被表示。
+        <img src="../../help-images/view-cn/yosoku-1.gif" class="view" alt="アドレスの選択:予測表示" /><br /><br />
+        此外，如果您在邮件地址输入字段中输入多个由<span class="attention nowrap" style="font-weight:bold;">逗号（,）</span>分隔的电子邮件地址，或者输入名称为<span class="attention nowrap" style="font-weight:bold;">名称&lt;邮件地址&gt;</span>的邮件地址，则可以添加可以自动添加的“名称” 我们可以检测候选人的“邮件地址”并添加选中的邮件地址。
+        <img src="../../help-images/view-cn/detect-address.png" class="view" alt="地址选择：候选检测" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />保存到的文件夹</th>
+      <td>
+        只有在[保管文件夹指定功能]开启的情况下显示。<br />
+        首先指定文件所要上传到的文件夹。指定文件夹后，所上传的文件直接保存到指定的文件夹中。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />接收标签</th>
+      <td>
+        这是管理接收邮件的标签。有已登录标签时，点击[标签选择]按键，打开已登录的标签的一览表。<br />
+        <img src="../../help-images/view-cn/3-3-4_8.gif" class="view" alt="引取りタグ" /><br />
+        使用已登录标签时，点击各标签名的链接，即可出现标签栏。生成新标签时，请键入您想要的标签名。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />发件人</th>
+      <td>
+        可以根据情况变更发送人及发送人邮箱地址来发送邮件。可以在(<a href="../config/from-cn.html">→发件人设定</a>)里进行发送人的登录。
+        发件人设定功能为无效时不显示发件人。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />邮件件名</th>
+      <td>
+        是文件收集的申请邮件的邮件件名。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />邮件正文</th>
+      <td>
+        是文件收集的申请邮件的正文。请输入必要的事项。(<a href="collect-cn.html#5-2-1">→关于邮件的正文</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />安全性设置</th>
+      <td>
+        可在每次收集文件时，进行安全性设置。也可以根据实际的文件收集情况，对安全性不定时进行设置。<br />
+        <img src="../../help-images/view-cn/5-2_4.gif" class="view" alt="セキュリティ設定" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />字符编码</th>
+      <td>
+        你能选择文字编码。
+      </td>
+    </tr>
+    <tr><!-- 新機能 -->
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />发送待机设定</th>
+      <td>
+        如果发送待机功能已启用，将显示该项目。<br />
+        发送待机功能即使将发送文件发送后，仍处于发送待机状态，一段时间之内无法下载文件。<br />
+        如果时间是预先设定，到了设定时间将完成文件的发送。<br />
+        <img src="../../help-images/view-cn/standbymail-1.gif" alt="送信待機機能：予め設定されている場合" class="view" /><br />
+        用户可任意设定时，选择“使用发送待机”，设定时间。不能设定比初期值小的时间。<br />
+        <img src="../../help-images/view-cn/standbymail-2.gif" alt="送信待機機能：任意で設定が可能な場合" class="view" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />上传通知设定</th>
+      <td>
+        是“保存到的文件夹”选择时使用可以的设定“共享文件夹”。请点击“通知组成员共享”钮。<br/>
+        它会显示“通知共享组的所有用户”和“选择一个成员”。<br/>
+        <img src="../../help-images/view-cn/uploadsend-1.png" alt="アップロード通知設定" class="view" /><br />
+        通知所有成员如果选择“通知共享组的所有用户”。您会收到一个“选择一个成员链接”如果您选择“选择一个成员”。
+        向文件被向上载时，选择的共享成员通知文件被上载。<br />
+        <img src="../../help-images/view-cn/uploadsend-2.png" alt="共有グループメンバーを選択" class="view" /><br />
+        选择共享小组成员的画面被表示。选择通知的成员请单击[地址追加]按钮。<br />
+        <img src="../../help-images/view-cn/uploadsend-3.png" alt="メンバー追加完了" class="view" /><br />
+        追加成员的话，对上载通知设定选择的成员名被表示。如果删除成员请单击[×删除]。被通知成员删除。<br />
+        <img src="../../help-images/view-cn/uploadsend-4.png" alt="共有グループメンバーを選択" class="view" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  您输入的内容没有问题的话请点击[邮件确认]按钮。<br />
+  进入到文件收集的申请邮件发送（确认）页面。
+</p>
+<p>
+  输入、设定内容没有错误的话请点击[发送邮件]按钮。<br />
+  <img src="../../help-images/view-cn/5-2_5.gif" class="view" alt="ファイル収集の依頼メール送信確認画面" />
+</p>
+
+<p>
+  转入到文件收集的申请邮件发信（完成）页面。<br />
+  文件收集的申请邮件发送完毕。<br />
+  <img src="../../help-images/view-cn/5-2_6.gif" class="view" alt="ファイル収集の依頼メール送信完了画面" />
+</p>
+
+<h4><a name="5-2-1"></a>关于邮件正文</h4>
+<p class="h4-p">
+  收集文件时的邮件正文，可以通过将收集文件需要的上传URL、收件人名及邮件地址等等插入可变文字，来制作更加自由的邮件正文。<br />
+  并且，可以插入文本、对常用的正文内容作成模板、制作签名等等，可大大节省您的邮件编辑时间。<br />
+  <img src="../../help-images/view-cn/5-2_8.gif" class="view" alt="メール本文の詳細" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[插入文本]</th>
+      <td>
+        插入事先写好的文本。<br />
+        请点击[插入文本]按钮。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />文本</th>
+      <td>
+        选择后在邮件正文中插入用户事先写好的文本。<br />
+        只有在有文本的情况下才可以进行选择。没有文本的话不显示。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />签名</th>
+      <td>
+        选择后在邮件正文中插入用户事先写好的签名。只有在有签名的情况下才可以进行选择，没有签名的话则不显示。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />可变文字</th>
+      <td>
+        在邮件正文输入后，各收件人也将相应变换。<br />
+        点击各可变文字的左方的“插入”键，插入邮件正文。<br />
+        <img src="../../help-images/view-cn/5-2_9.gif" class="view" alt="変換文字" /><br />
+
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>[##name##]</th>
+              <td>变换为各收件人名</td>
+            </tr>
+            <tr>
+              <th>[##mail##]</th>
+              <td>变换为各收件人邮箱地址。</td>
+            </tr>
+            <tr>
+              <th>[##addr_list##]</th>
+              <td>变换为目的地列表。</td>
+            </tr>
+            <tr>
+              <th>[##upload##]</th>
+              <td>变换为各邮件的収集文件的上传URL。</td>
+            </tr>
+            <tr>
+              <th>[##up_limit##]</th>
+              <td>变换上传有效期限。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  通过可变文字[##upload##]和[##mail##]等等，可变更上传URL以及各收件人的邮箱地址。
+</p>
+
+<h3><a name="collect-mailer"></a>文件收信（从邮箱发送）</h3>
+<p>
+  这是“从本管理器发送接收邮件”这是一个函数。<br/>
+  它可以最多发送30地址在总一次。 （10个地址可以分别为收件人，抄送，密件抄送和发送。）<br/>
+  请在“收集文件一览”页面，点击“从本管理器发送邮件文件的收集”。<br/>
+  <img src="../../help-images/view-cn/collect-mailer-1.gif" class="view" alt="从本管理器发送邮件文件的收集" /><br />
+  画面切换到“发送文件收集的申请邮件”。请输入并选择该项目，然后单击[确认邮件]按钮。<br />
+  <img src="../../help-images/view-cn/collect-mailer-2.png" class="view" alt="Send email to collect file from mailer" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th>
+        <img src="../../help-images/no-s-1.gif" alt="1" />收件人<br /><br />
+        <img src="../../help-images/no-s-2.gif" alt="2" />Cc.<br /><br />
+        <img src="../../help-images/no-s-3.gif" alt="3" />Bcc.
+      </th>
+      <td>
+        输入收件人、Cc.、Bcc.或从地址簿添加。最多可以设置10个项目。（号码可能已被管理员更改，详情请联系管理员。）<br />
+        输入收件人、Cc.、Bcc.，然后单击[追加收件人]按钮。或者，单击[>>从邮箱地址簿里选择]从您的地址簿添加。<br />
+        要删除添加的收件人、Cc.、Bcc.，请单击每个收件人、Cc.、Bcc.右侧的[×删除]按钮。<br />
+        <img src="../../help-images/view-cn/3-3-3_5.png" class="view" alt="宛先" /><br />
+        <img src="../../help-images/view-cn/3-3-3_3.png" class="view" alt="アドレス帳から宛先を追加" /><br />
+
+        在邮箱地址簿选择页面中，请在邮箱地址一览中 点击选择或打钩选择，把您要追加的邮箱地址添加至收件人（Cc,Bcc)。<br />
+        <img src="../../help-images/view-cn/3-3_5.gif" class="view" alt="アドレスの選択" /><br />
+        请点击[↓]按钮在收信人栏中追加邮箱地址。<br />
+        邮箱地址没有问题的话请点击[追加收件人]按钮。邮箱地址将被追加到文件发送页面。
+        <br /><br />
+
+        如果邮件地址已经被登记的话，向输入时邮件地址，被地址簿预测。<br />
+        单击输入的邮件地址。单击的邮件地址地址被表示。
+        <img src="../../help-images/view-cn/yosoku-1.gif" class="view" alt="アドレスの選択:予測表示" /><br /><br />
+        此外，如果您在邮件地址输入字段中输入多个由<span class="attention nowrap" style="font-weight:bold;">逗号（,）</span>分隔的电子邮件地址，或者输入名称为<span class="attention nowrap" style="font-weight:bold;">名称&lt;邮件地址&gt;</span>的邮件地址，则可以添加可以自动添加的“名称” 我们可以检测候选人的“邮件地址”并添加选中的邮件地址。
+        <img src="../../help-images/view-cn/detect-address.png" class="view" alt="地址选择：候选检测" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />保存到的文件夹</th>
+      <td>
+        只有在[保管文件夹指定功能]开启的情况下显示。<br />
+        首先指定文件所要上传到的文件夹。指定文件夹后，所上传的文件直接保存到指定的文件夹中。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />接收标签</th>
+      <td>
+        这是管理接收邮件的标签。有已登录标签时，点击[标签选择]按键，打开已登录的标签的一览表。<br />
+        <img src="../../help-images/view-cn/3-3-4_8.gif" class="view" alt="引取りタグ" /><br />
+        使用已登录标签时，点击各标签名的链接，即可出现标签栏。生成新标签时，请键入您想要的标签名。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />发件人</th>
+      <td>
+        可以根据情况变更发送人及发送人邮箱地址来发送邮件。可以在(<a href="../config/from-cn.html">→发件人设定</a>)里进行发送人的登录。
+        发件人设定功能为无效时不显示发件人。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />安全性设置</th>
+      <td>
+        可在每次收集文件时，进行安全性设置。也可以根据实际的文件收集情况，对安全性不定时进行设置。<br />
+        <img src="../../help-images/view-cn/5-2_4.gif" class="view" alt="セキュリティ設定" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />上传通知设定</th>
+      <td>
+        是“保存到的文件夹”选择时使用可以的设定“共享文件夹”。请点击“通知组成员共享”钮。<br/>
+        它会显示“通知共享组的所有用户”和“选择一个成员”。<br/>
+        <img src="../../help-images/view-cn/uploadsend-1.png" alt="アップロード通知設定" class="view" /><br />
+        通知所有成员如果选择“通知共享组的所有用户”。您会收到一个“选择一个成员链接”如果您选择“选择一个成员”。
+        向文件被向上载时，选择的共享成员通知文件被上载。<br />
+        <img src="../../help-images/view-cn/uploadsend-2.png" alt="共有グループメンバーを選択" class="view" /><br />
+        选择共享小组成员的画面被表示。选择通知的成员请单击[地址追加]按钮。<br />
+        <img src="../../help-images/view-cn/uploadsend-3.png" alt="メンバー追加完了" class="view" /><br />
+        追加成员的话，对上载通知设定选择的成员名被表示。如果删除成员请单击[×删除]。被通知成员删除。<br />
+        <img src="../../help-images/view-cn/uploadsend-4.png" alt="共有グループメンバーを選択" class="view" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  进入每一个项目后，请点击[确认邮件]按钮。<br/>
+  屏幕“从邮件发送邮件来收集文件（确认）”将出现。<br/>
+</p>
+<p>
+  请确认的内容，请单击[完成新建邮件准备工作]按钮。<br/>
+  <img src="../../help-images/view-cn/collect-mailer-3.gif" class="view" alt="从邮件发送邮件来收集文件（确认）" />
+</p>
+
+<p>
+  屏幕“发送文件收集的申请邮件（完成）”将出现。<br/>
+  这样，从本管理器发信前，文件夹分发邮件的制作准备就完成了。<br/>
+  页面将显示用于上载的URL。请把这个URL记载在邮件上，并从自己的邮箱给设定的收件人，Cc，Bcc，发送邮件。<br/>
+  点击[启动本管理器]按键，启动平时使用的管理器。<br/>
+  <img src="../../help-images/view-cn/collect-mailer-4.gif" class="view" alt="发送文件收集的申请邮件（完成）" />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

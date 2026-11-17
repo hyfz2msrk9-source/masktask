@@ -1,0 +1,35 @@
+<?php
+include_once(realpath(dirname(__FILE__)."/../../").'/lib.php');
+$path = "../../"; include_once(WF_HELP_PATH.'/html/synchrorer/header.html');
+?>
+<h2><span>アイコンについて</span></h2>
+<p>タスクトレイに常駐しているアイコンは状態によって変化します。</p>
+<table>
+    <tr>
+        <th><img src="../../../help-images/view/synchrorer/5-7-0.gif"/></th>
+        <td>WebFileと通信していない状態です。</td>
+    </tr>
+    <tr>
+        <th><img src="../../../help-images/view/synchrorer/5-7-1.gif"/></th>
+        <td>WebFileに未ログインの状態です。</td>
+    </tr>
+    <tr>
+        <th><img src="../../../help-images/view/synchrorer/5-7-2.gif"/></th>
+        <td>
+            パソコンとWebFileを同期処理中です。
+        </td>
+    </tr>
+    <tr>
+        <th><img src="../../../help-images/view/synchrorer/5-7-3.gif"/></th>
+        <td>同期処理が完了した、通常の状態です。</td>
+    </tr>
+    <tr>
+        <th><img src="../../../help-images/view/synchrorer/5-7-4.gif"/></th>
+        <td>
+            設定画面を表示している状態です。<br />
+            パソコン上の同期フォルダの監視、および設定画面で指定した間隔での同期は一時停止されます。
+        </td>
+    </tr>
+</table>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

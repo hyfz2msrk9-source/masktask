@@ -1,0 +1,120 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+
+<h2><span>登錄與認證</span></h2>
+<p>
+  登錄畫面及可用操作會因您的環境而異。
+</p>
+<img src="../../help-images/view-tcn/login.png" class="view" alt="登錄畫面" /><br />
+<p>要登錄WebFile，請使用以下任一認證方式：</p>
+<dl>
+  <dt>帳號登錄（帳號・密碼）</dt>
+  <dt>Google SSO身份驗證</dt>
+  <dt>[##SAML_NAME##]</dt>
+  <dt>Windows綜合驗證</dt>
+  <dt>用戶身分驗證（證書）</dt>
+</dl>
+
+<h3>共通操作</h3>
+<h4 id="2-1">登錄</h4>
+<p>
+  進入登錄畫面，根據認證方式登錄。認證後會跳轉到檔案一覽頁面。
+</p>
+
+<h4 id="2-2">退出</h4>
+<p>
+點擊選單中的「退出」即可登出並返回登錄畫面。<br />
+  <img src="../../help-images/view-tcn/logout.png" class="view" alt="選單：退出" />
+</p>
+
+<h4 id="2-3">忘記帳號或密碼時</h4>
+<p>
+  若忘記登錄資訊，請輸入註冊信箱並點擊「登錄資訊再發行」按鈕。<br />
+  <span class="attention">※使用Google SSO身份驗證或[##SAML_NAME##]的用戶無法重新發布密碼。</span><br />
+  <img src="../../help-images/view-tcn/2-3.gif" class="view" alt="登錄資訊再發行" />
+</p>
+
+<h3>各認證方式詳細說明</h3>
+
+<h4>帳號登錄（帳號・密碼）</h4>
+<p>
+  依照畫面指示輸入帳號及密碼登錄。
+</p>
+<h5 id="2-6">雙因素認證（選用）</h5>
+<p>
+  啟用雙因素認證時，帳號登錄後需透過認證App或郵件輸入驗證碼。<br />
+  <span class="attention">※使用Google SSO身份驗證或[##SAML_NAME##]的用戶無法使用WebFile的雙因素認證。</span>
+</p>
+<dl>
+  <dt>使用認證App</dt>
+  <dd>
+    輸入驗證碼後點擊「確認」。可選擇一段時間內免認證。<br />
+    <img src="../../help-images/view-tcn/two_step_auth.png" class="view" alt="雙因素認證" />
+  </dd>
+  <dt>使用郵件</dt>
+  <dd>
+    輸入郵件中的驗證碼後點擊「發送」。可重新發送驗證碼。<br />
+    <img src="../../help-images/view-tcn/two_step_auth_mail.png" class="view" alt="雙因素認證 郵件" />
+  </dd>
+</dl>
+
+<h4 id="2-7">Google SSO身份驗證</h4>
+<p>
+  啟用Google SSO身份驗證時，請點擊「Google登錄」按鈕。<br />
+<img src="../../help-images/view-tcn/login.png" class="view" alt="登錄畫面" /><br />
+  出現Google登錄畫面後，選擇帳號並輸入密碼即可登錄WebFile。<br />
+  <img src="../../help-images/view-tcn/2-7_3.gif" class="view" alt="Google帳號選擇畫面" />
+  <img src="../../help-images/view-tcn/2-7_4.gif" class="view" alt="Google登錄畫面" />
+</p>
+
+<h4 id="2-8">[##SAML_NAME##]認證</h4>
+<p>
+  點擊[SAML登錄]按鈕，在服務登錄畫面輸入必要資訊後登錄。認證後進入WebFile。
+  <img src="../../help-images/view-tcn/login.png" class="view" alt="登錄畫面" /><br />
+  <img src="../../help-images/view-tcn/2-8_2.png" class="view" alt="[##SAML_NAME##]服務登錄畫面" />
+</p>
+
+<h4 id="2-4-2">Windows綜合驗證</h4>
+<p>
+  AD用戶點擊「Windows綜合驗證」按鈕後，下次起會自動跳轉到認證畫面。
+  <img src="../../help-images/view-tcn/win-auth.gif" class="view" alt="Windows綜合驗證" />
+</p>
+
+<h4 id="2-5">用戶身分驗證（證書）</h4>
+<p>
+  用戶身分驗證是透過用戶端證書識別用戶的選用功能。<br />
+  使用證書登錄時，請依下列步驟操作：<br />
+</p>
+<p>1. 雙擊證書檔案，開啟匯入畫面。</p>
+<img src="../../help-images/view-tcn/client-1.gif" class="view" alt="用戶端認證-1" /><br />
+<p>2. 選擇要匯入的檔案，點擊「下一步」。</p>
+<img src="../../help-images/view-tcn/client-2.gif" class="view" alt="用戶端認證-2" />
+<p>3. 輸入密碼，點擊「下一步」。</p>
+<img src="../../help-images/view-tcn/client-3.gif" class="view" alt="用戶端認證-3" /><br />
+<p>如有需要，請勾選下列選項：</p>
+<dl>
+  <dt>啟用加強私密金鑰保護</dt>
+  <dd>勾選後，每次登錄使用私鑰時都會提示確認。</dd>
+  <dt>將這個金鑰設成可匯出</dt>
+  <dd>勾選後，可匯出私鑰。</dd>
+  <dt>包含所有延伸內容</dt>
+  <dd>勾選後，包含所有擴充屬性。</dd>
+</dl>
+<p>4. 出現憑證存放區畫面時，按需設定後點擊「下一步」。</p>
+<img src="../../help-images/view-tcn/client-4.gif" class="view" alt="用戶端認證-4" />
+<dl>
+<dt>自動根據憑證類型來選取憑證存放區</dt>
+  <dd>如需自動放置憑證，請選擇此項。</dd>
+  <dt>將所有憑證放入以下的存放區</dt>
+  <dd>如需指定憑證存放位置，請選擇此項。</dd>
+</dl>
+<p>5. 匯入完成後，點擊「完成」關閉嚮導。</p>
+<img src="../../help-images/view-tcn/client-5.gif" class="view" alt="用戶端認證-5" />
+<p>6. 下次登錄時會出現憑證選擇畫面，選擇憑證即可登錄。</p>
+<img src="../../help-images/view-tcn/client-6.gif" class="view" alt="用戶端認證-6" />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>
+    <dd>

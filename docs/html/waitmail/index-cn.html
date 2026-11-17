@@ -1,0 +1,111 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+<h2><span>待机邮件一览</span></h2>
+<p>
+  待机邮件一览是指待机状态还未被发出的邮件一览。<br />
+  文件发送邮件的发送，接收与发送邮件同时发送，收集文件邮件的发送，在设置为待机发送时，等待时间经过之后会自动发送电子邮件。<br />
+  目录：请点击待机邮件一览。<br />
+  <img src="../../../images-cn/sysmenu_waitmail.gif" alt="目录：待机邮件一览" class="view" />
+</p>
+
+<p>
+  以下界面是待机邮件的一览。<br />
+  <img src="../../help-images/view-cn/standbymail-5.gif" alt="待机邮件一览" class="view" />
+</p>
+
+<table>
+  <tr>
+    <th><img src="../../help-images/no-s-1.gif" alt="1" />动作</th>
+    <td>
+      显示送信邮件的种类。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-2.gif" alt="2" />收件人</th>
+    <td>
+      显示被发送邮件的收件人的邮箱地址。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-3.gif" alt="3" />文件名</th>
+    <td>
+      显示送信邮件里附件的名字。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-4.gif" alt="4" />件名</th>
+    <td>
+      显示发送邮件的件名。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-5.gif" alt="5" />发送预订时间</th>
+    <td>
+      显示邮件发送的时间。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-6.gif" alt="6" />发送状态</th>
+    <td>
+      显示邮件的状态。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-7.gif" alt="7" />详细</th>
+    <td>
+      对发送待机中的邮件进行编辑和确认。
+    </td>
+  </tr>
+</table>
+
+<a name="detail"></a>
+<h3>待机邮件的详细</h3>
+<p>
+  在一览中选择想要确认的邮件点击[详细]按钮。<br />
+  <img src="../../help-images/view-cn/standbymail-6.gif" alt="待機メール：詳細ボタン" class="view" />
+</p>
+
+<p>
+  显示邮件的详细页面。<br />
+  在详细页面里可以进行邮件的编辑、删除、发送停止解除。<br />
+  <img src="../../help-images/view-cn/wait_detail.png" alt="待機メール：詳細" class="view" />
+</p>
+
+<a name="edit"></a>
+<h3>待机邮件的编辑</h3>
+<p>
+  在详细页面里点击[编辑]按钮，显示编辑页面。<br />
+  <img src="../../help-images/view-cn/standbymail-7-2.gif" alt="詳細：編集ボタン" class="view" />
+</p>
+<p>
+  更改内容后点击[移至确认页面]按键。移动到确认页面。<br />
+  确认完了后移动至待机邮件一览页面。<br />
+  如果你已经设置了发送延迟，会在设定时间更新为发送的时间。<br />
+  <img src="../../help-images/view-cn/wait_form.png" alt="待機メール：編集画面" class="view" />
+</p>
+
+<a name="release"></a>
+<h3>解除"发送停止"</h3>
+<p>
+  在编辑待机邮件时移动到其他页面，被编辑中的待机邮件会改为发送停止状态。使用解除“发送停止”功能能够解除发送停止状态的待机邮件。<br />
+  点击详细页面中的[解除发送停止]按钮，移动至解除发送停止页面。<br />
+  <img src="../../help-images/view-cn/standbymail-8-2.gif" alt="待機メール：送信停止解除ボタン" class="view" />
+</p>
+
+<p>
+  移动至解除发送停止页面。<br />
+  可以解除的话请点击[确定]按钮。完成解除发送停止。<br />
+  <img src="../../help-images/view-cn/standbymail-9.gif" alt="待機メール：送信停止解除確認" class="view" />
+</p>
+
+<a name="del"></a>
+<h3>删除待机邮件</h3>
+<p>
+  点击详细页面里的[删除]按钮，会显示确认框。<br />
+  确认要删除请点击[OK]按钮。完成待机邮件的删除。<br />
+  <img src="../../help-images/view-cn/standbymail-10.gif" alt="待機メール：削除" class="view" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

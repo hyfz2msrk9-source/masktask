@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PII 匿名化＆データ抽出</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col p-6">
+
+    <!-- 全画面プレゼン用ワイドコンテナ -->
+    <div
+        class="w-full max-w-[1700px] mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-8 flex-1 flex flex-col">
+
+        <!-- ヘッダー -->
+        <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-200">
+            <div class="flex items-center space-x-4">
+                <div class="bg-indigo-600 text-white p-3.5 rounded-xl shadow-md">
+                    <i class="fa-solid fa-user-shield text-3xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">PII 個人情報マスキング & 抽出ポータル</h1>
+                </div>
+            </div>
+            <div id="modeBadge" class="hidden text-sm px-4 py-1.5 rounded-full font-bold shadow-sm"></div>
+        </div>
+
+        <!-- 左右2カラムメインレイアウト (左: 入力, 右: 出力上下) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-1">
+
+            <!-- 【左カラム】設定 ＆ テキスト入力エリア -->
+            <div class="flex flex-col space-y-5 bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-inner">
+                <!-- 実行モデル・バージョン選択 -->
+                <div
+                    class="flex items-center justify-between bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <label for="modelSelect"
+                        class="text-sm font-bold text-slate-700 uppercase tracking-wider flex items-center shrink-0 mr-3">
+                        <i class="fa-solid fa-sliders text-indigo-600 text-base mr-2"></i>実行モデル・バージョン:
+                    </label>
+                    <select id="modelSelect" onchange="handleModeChange(this.value)"
+                        class="w-full bg-slate-50 border border-slate-300 text-slate-800 text-base font-semibold rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none shadow-sm cursor-pointer">
+                        <option value="prompt">プロンプト版 (qwen2.5:7b - 標準モデル)</option>
+                        <option value="lora_v1">LoRA v1</option>
+                        <option value="lora_v2">LoRA v2</option>
+                        <option value="lora_v3" selected>LoRA v3</option>
+                    </select>
+                </div>
+
+                <!-- テキスト入力 -->
+                <div class="flex-1 flex flex-col">
+                    <label for="inputText"
+                        class="block text-base font-bold text-slate-700 mb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-keyboard mr-2 text-indigo-500"></i>マスキング対象のテキスト</span>
+                    </label>
+                    <textarea id="inputText"
+                        class="w-full flex-1 min-h-[380px] p-4 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-slate-800 placeholder-slate-400 text-base leading-relaxed resize-none bg-white font-sans shadow-sm"
+                        placeholder="マスキングしたい文章（メール本文、署名フッター、障害報告など）を入力してください..."></textarea>
+                </div>
+
+                <!-- 実行ボタン -->
+                <button id="submitBtn" onclick="maskText()"
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-bold text-lg py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition duration-200 flex items-center justify-center space-x-3 cursor-pointer">
+                    <i class="fa-solid fa-shield-halved text-xl"></i>
+                    <span>マスキング ＆ データ抽出を実行</span>
+                </button>
+
+                <!-- ローディング表示 -->
+                <div id="loading" class="hidden text-center py-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+                    <div
+                        class="inline-block animate-spin rounded-full h-7 w-7 border-4 border-indigo-600 border-t-transparent mr-2 align-middle">
+                    </div>
+                    <span id="loadingMsg"
+                        class="text-base text-indigo-600 font-bold animate-pulse align-middle">モデル推論中...</span>
+                </div>
+
+                <!-- エラー表示 -->
+                <div id="errorBox"
+                    class="hidden p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm flex items-center space-x-2">
+                    <i class="fa-solid fa-circle-exclamation text-red-500 text-xl"></i>
+                    <span id="errorMsg" class="font-medium">エラーが発生しました</span>
+                </div>
+            </div>
+
+            <!-- 【右カラム】結果出力エリア（上: マスキング後テキスト / 下: 抽出JSON） -->
+            <div class="flex flex-col space-y-6">
+
+                <!-- 1. マスキング後テキスト (上段) -->
+                <div class="flex-1 flex flex-col bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-inner">
+                    <span class="text-sm font-bold text-slate-700 uppercase tracking-wider flex items-center mb-3">
+                        <i class="fa-solid fa-file-lines text-indigo-600 text-lg mr-2"></i>1. マスキング後テキスト
+                    </span>
+                    <div id="maskedText"
+                        class="flex-1 bg-white p-5 rounded-xl border border-slate-200 text-base text-slate-900 font-sans leading-relaxed whitespace-pre-wrap min-h-[220px] max-h-[320px] overflow-y-auto shadow-sm">
+                        <span class="text-slate-400 italic">「マスキング ＆ データ抽出を実行」を押すと結果がここに表示されます</span>
+                    </div>
+                </div>
+
+                <!-- 2. 抽出された個人情報 (JSON) (下段) -->
+                <div class="flex-1 flex flex-col bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-inner">
+                    <span class="text-sm font-bold text-slate-700 uppercase tracking-wider flex items-center mb-3">
+                        <i class="fa-solid fa-database text-emerald-600 text-lg mr-2"></i>2. 抽出された個人情報 (JSON)
+                    </span>
+                    <pre id="extractedEntities"
+                        class="flex-1 bg-slate-900 text-emerald-400 p-5 rounded-xl border border-slate-800 text-sm font-mono overflow-x-auto min-h-[240px] max-h-[360px] leading-relaxed shadow-sm"><span class="text-slate-500 italic">// 抽出されたデータがここに表示されます</span></pre>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // バージョンごとの結果保持オブジェクト
+        const resultsCache = {
+            prompt: null,
+            lora_v1: null,
+            lora_v2: null,
+            lora_v3: null
+        };
+
+        // 入力文章が変更されたら全キャッシュを自動リセット
+        document.getElementById('inputText').addEventListener('input', () => {
+            Object.keys(resultsCache).forEach(key => resultsCache[key] = null);
+            resetResultDisplay();
+        });
+
+        // 描画表示の初期化
+        function resetResultDisplay() {
+            document.getElementById('maskedText').innerHTML = '<span class="text-slate-400 italic">「マスキング ＆ データ抽出を実行」を押すと結果がここに表示されます</span>';
+            document.getElementById('extractedEntities').innerHTML = '<span class="text-slate-500 italic">// 抽出された辞書データがここに表示されます</span>';
+            document.getElementById('modeBadge').classList.add('hidden');
+        }
+
+        // プルダウン変更時の処理（※自動通信は飛ばさず、キャッシュがあれば描画切替）
+        function handleModeChange(targetMode) {
+            document.getElementById('errorBox').classList.add('hidden');
+
+            if (resultsCache[targetMode]) {
+                renderResult(targetMode);
+            } else {
+                resetResultDisplay();
+            }
+        }
+
+        // バッジのデザイン定義
+        const badgeStyles = {
+            prompt: { text: 'プロンプト版 (qwen2.5:7b - 標準モデル)', class: 'bg-amber-100 text-amber-900 border border-amber-300' },
+            lora_v1: { text: 'LoRA v1', class: 'bg-blue-100 text-blue-900 border border-blue-300' },
+            lora_v2: { text: 'LoRA v2', class: 'bg-purple-100 text-purple-900 border border-purple-300' },
+            lora_v3: { text: 'LoRA v3', class: 'bg-indigo-100 text-indigo-900 border border-indigo-300' }
+        };
+
+        // 描画関数
+        function renderResult(mode) {
+            const data = resultsCache[mode];
+            if (!data) return;
+
+            const result = typeof data.result === 'string' ? JSON.parse(data.result) : data.result;
+
+            document.getElementById('maskedText').innerText = result.masked_text || '';
+            document.getElementById('extractedEntities').innerText = JSON.stringify(result.extracted_entities || {}, null, 2);
+
+            const badge = document.getElementById('modeBadge');
+            const style = badgeStyles[mode] || { text: mode, class: 'bg-slate-100 text-slate-800' };
+            badge.innerText = style.text;
+            badge.className = `text-sm px-4 py-1.5 rounded-full font-bold shadow-sm ${style.class}`;
+            badge.classList.remove('hidden');
+        }
+
+        // 実行ボタンを押した時のみリクエスト送信
+        async function maskText() {
+            const inputText = document.getElementById('inputText').value;
+            if (!inputText.trim()) {
+                alert("テキストを入力してください");
+                return;
+            }
+
+            const selectedMode = document.getElementById('modelSelect').value;
+
+            let endpoint = '/mask';
+            if (selectedMode === 'prompt') {
+                endpoint = '/mask-prompt';
+            } else {
+                endpoint = `/mask?version=${selectedMode}`;
+            }
+
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const errorBox = document.getElementById('errorBox');
+
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            loading.classList.remove('hidden');
+            errorBox.classList.add('hidden');
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: inputText, version: selectedMode })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.status === 'success') {
+                    resultsCache[selectedMode] = data;
+                    renderResult(selectedMode);
+                } else {
+                    document.getElementById('errorMsg').innerText = data.detail || '匿名化処理に失敗しました';
+                    errorBox.classList.remove('hidden');
+                }
+            } catch (err) {
+                document.getElementById('errorMsg').innerText = '通信エラーが発生しました';
+                errorBox.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                loading.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+
+</html>

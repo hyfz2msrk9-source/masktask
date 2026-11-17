@@ -1,0 +1,61 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-cn/";
+  $icon_path = "../" . $path . "help-images/";
+  include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+  <h2><span>上传文件</span></h2>
+  <p>
+    收到接收文件的请求邮件后，可在WEB系统上传文件，并发送给对方。<?php if(!$customer_flg): ?><br />
+    (<a href="../collecting/index-cn.html">→接收（收集）</a>)<?php endif; ?></p>
+
+  <h3><a name="14-1"></a>标准上传</h3>
+
+  <p>
+    收到数据发送请求邮件，使用邮件里的上传用URL链接进行数据上传。<br />
+    点击访问邮件里的上传URL链接。
+  </p>
+
+  <a name="upload"></a>
+  <p>
+    在上传页面里进行文件上传。<br />
+    点击[文件追加]按钮选择想要上传的数据，点击[上传]按钮完成上传。<br />
+    <img src="<?php echo $image_path; ?>upload.png" class="view" alt="通常アップロード" />
+  </p>
+
+  <table>
+    <tr>
+      <th><img src="<?php echo $icon_path; ?>no-s-1.gif" alt="1" />[文件追加]</th>
+      <td>
+        使用[文件追加]请选择你要上传的文件。<br/>在选择要上传的文件对话框打开时，单击[添加文件]按钮。<br/>
+        <img src="<?php echo $image_path; ?>top-upload-1.gif" class="view" alt="上传文件选择" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="<?php echo $icon_path; ?>no-s-2.gif" alt="1" />[删除]</th>
+      <td>删除所选文件。</td>
+    </tr>
+    <tr>
+      <th><img src="<?php echo $icon_path; ?>no-s-3.gif" alt="1" />给发件人的信息</th>
+      <td>文件上传的同时，可以给对方发送信息。</td>
+    </tr>
+    <tr>
+      <th><img src="<?php echo $icon_path; ?>no-s-4.gif" alt="1" />[上传]</th>
+      <td>完成文件上传。</td>
+    </tr>
+  </table>
+  <dl>
+    <dt>您可以通过拖放选择文件夹</dt>
+    <dd>
+      在Edge、Google Chrome、Firefox和Safari中,可以通过从资源管理器（Mac上的Finder）拖放来选择文件夹。<br/>
+      <img src="<?php echo $image_path; ?>upload_dragdrop.png" class="view" alt="您可以通过拖放选择文件夹" />
+    </dd>
+  </dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

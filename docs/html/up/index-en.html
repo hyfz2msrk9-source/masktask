@@ -1,0 +1,72 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-en/";
+  $icon_path = "../" . $path . "help-images/";
+  include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+
+<h2><span>Upload files</span></h2>
+<p>
+  When you get an Email that is inform you to collect files, you can upload your files to the system on the web, and the files are sent to the sender of the Email.<br />
+  <?php if(!$customer_flg): ?>(<a href="../collecting/index-en.html">→Receive (collect)</a>)<?php endif; ?></p>
+
+<h3><a name="14-1"></a>The ordinary upload</h3>
+
+<p>
+  Please upload files with the URL that is written in the Email that is inform you to collect files.<br />
+  First, please access to the URL written in the Email to upload files.
+
+  <img src="<?php echo $image_path; ?>14-1-1.gif" class="view" alt="The ordinary upwnload" /><br />
+</p>
+
+<a name="upload"></a>
+<p>
+  Please upload files in the upload screen.<br />
+  Please click[Add another file]button and select the files you want to upload, and click [Upload] button. It is completed to upload files.<br />
+
+  <img src="<?php echo $image_path; ?>upload.png" class="view" alt="The ordinary upload" /><br />
+
+</p>
+
+<table>
+
+  <tr>
+    <th><img src="<?php echo $icon_path; ?>no-s-1.gif" alt="1" />[Add files]</th>
+    <td>
+      Please select files you want to upload with [Add another file] button.<br/>The Choose File to Upload dialog opens when you click the [Add another file] button.<br/>
+      <img src="<?php echo $image_path; ?>top-upload-1.gif" class="view" alt="The Choose File to Upload" />
+    </td>
+  </tr>
+
+  <tr>
+    <th><img src="<?php echo $icon_path; ?>no-s-2.gif" alt="1" />[Delete]</th>
+    <td>You can delete file name that is prepared for upload.</td>
+  </tr>
+
+  <tr>
+    <th><img src="<?php echo $icon_path; ?>no-s-3.gif" alt="1" />Message to sender</th>
+    <td>You can send message to the sender at the same time to upload files.</td>
+  </tr>
+
+  <tr>
+    <th><img src="<?php echo $icon_path; ?>no-s-4.gif" alt="1" />[Upload]</th>
+    <td>Complete to upload files..</td>
+  </tr>
+</table>
+
+<dl>
+  <dt>Drag and Drop Folder Upload.</dt>
+  <dd>
+    In Edge, Google Chrome, Firefox, or Safari, folders can be uploaded by drag and drop from Explorer (or Finder on a Mac).<br/>
+    Please select folder that include files.
+    <img src="<?php echo $image_path; ?>upload_dragdrop.png" class="view" alt="ドラッグ＆ドロップでアップロードフォルダを選択する" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

@@ -1,0 +1,29 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>設定</span></h2>
+<h3><a name="10-7"></a><?php echo API_CLIENT_NAME; ?></h3>
+<p>
+  <?php echo API_CLIENT_NAME; ?>は、パソコン上のフォルダと、システム上のフォルダを同期するアプリケーションです。<br />
+  <?php echo API_CLIENT_NAME; ?>をインストールし、同期したいフォルダを設定しておくと、パソコン上のフォルダを監視し、変更を検出するとシステムに自動で同期します。<br />
+  また、一定時間ごとにシステム上の内容をパソコンに同期します。<br />
+</p>
+<br />
+<p>
+  <?php echo API_CLIENT_NAME; ?>のインストーラーをダウンロードします。<br />
+  お使いのパソコンに合わせて<strong>[32bit版インストーラー]</strong>または、<strong>[64bit版インストーラー]</strong>をクリックしてください。<br />
+<br />
+  ・<?php echo API_CLIENT_NAME; ?>は日本語のみの対応です。他言語の画面からはインストールできません。<br />
+  ・<?php echo API_CLIENT_NAME; ?>はGoogle SSO認証または[##SAML_NAME##]利用ユーザは、使用することはできません。<br />
+  ・インストールには、ご利用端末の管理者権限が必要となります。<br />
+  　アプリケーションのインストールが制限されている環境へは、正しくインストールできません。<br />
+    <img src="../../help-images/view/synchrorer/2-0-1.gif" class="view" alt="<?php echo API_CLIENT_NAME; ?>のインストール" />
+</p>
+<br />
+<p>
+  <?php echo API_CLIENT_NAME; ?>の詳しい設定方法は、<?php echo API_CLIENT_NAME; ?>のヘルプをご確認ください。<br />
+  （→<a href="../synchrorer/index.html" target="_blank"><?php echo API_CLIENT_NAME; ?> ヘルプ</a>)
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,302 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+<h2><span>文件一览</span></h2>
+<p>
+  在文件一览中您可以进行以下操作：文件一览、文件发送、文件上传、文件下载、文件消除、新建文件夹、文件夹编辑、文件夹消除、文件的文件夹移动、文件详细、文件名变更等。<br />
+  目录：点击文件一览。<br />
+  <img src="../../../images-cn/sysmenu_top.gif" class="view" alt="目录：文件一览" />
+</p>
+
+<h3><a name="4-1"></a>文件一览页面</h3>
+<p>
+  目录：点击文件一览可以移动到文件一览页面。显示已上传的文件一览。<br />
+  在文件一览页面能够操作各文件。另外，显示可利用容量。<br />
+  <img src="../../help-images/view-cn/3-1.gif" class="view" alt="文件一览" />
+</p>
+
+<table>
+  <tr>
+    <th><img src="../../help-images/no-s-1.gif" alt="1" />使用容量</th>
+    <td>
+      显示可使用的容量。<br />
+      <span class="bold">可使用容量为「基本容量」＋「扩展容量」。</span><br />
+      *系统的扩展容量的剩余容量低于用户设定的扩展容量时，可使用容量为<span class="bold">[基本容量+系统的扩展容量的剩余容量]</span>。<br />
+      <span class="attention">[注意]</span>显示共享文件夹时,不显示扩展容量，而显示管理员设定的容量。
+      <table class="table-s">
+        <tr>
+          <th>基本容量</th>
+          <td>用户设定的最低限度的确保容量。</td>
+        </tr>
+        <tr>
+          <th>扩展容量</th>
+          <td>全体用户有未使用（未分配）容量时，可分配给每个用户使用（扩展）的容量。</td>
+        </tr>
+      </table>
+      右图的显示表，是用图表表示的使用容量（管理员也可以设置为“不显示”。）
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-2.gif" alt="2" />文件夹一览</th>
+    <td>显示注册为最喜欢的文件夹、共享文件夹和个人文件夹。(<a href="index-cn.html#4-1-1">→关于文件夹</a>)</td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-3.gif" alt="3" />关于文件</th>
+    <td>显示已上传的文件。(<a href="index-cn.html#4-1-4">→文件一览</a>)</td>
+  </tr>
+</table>
+
+<h4><a name="4-1-1"></a>关于文件夹</h4>
+<p class="h4-p">
+  文件一览的上方有现在的文件夹和文件夹的操作按钮。<br />
+  显示除首位以外的文件夹时才显示。关于其操作请参考以下。<br />
+  关于共享文件夹请参考<a href="index-cn.html#4-1-3">关于文件夹</a>，或者<a href="group-cn.html#4-4">组共享功能</a>。<br />
+  <img src="../../help-images/view-cn/3-1-1.gif" class="view" alt="現在のフォルダとフォルダの操作ボタン" />
+</p>
+<dl>
+  <dt>现在的文件夹</dt>
+  <dd>
+    现在的文件夹。选择其他文件夹就会移动到所选择的文件夹页面。<br />
+    <img src="../../help-images/view-cn/3-1-1_2.gif" class="view" alt="現在のフォルダ" />
+  </dd>
+
+  <dt>[更改文件夹名]</dt>
+  <dd>
+    变更现在的文件夹名。共享的文件夹名无法变更。<br />
+    <img src="../../help-images/view-cn/3-1-1_3.gif" class="view" alt="フォルダ名変更画面" />
+  </dd>
+
+  <dt>[删除文件夹]</dt>
+  <dd>
+    删除现在的文件夹。一旦删除文件夹，该文件夹中的文件夹及文件会全部消失。请慎重操作。共享的文件夹无法删除。<br />
+    <img src="../../help-images/view-cn/3-1-1_4.gif" class="view" alt="フォルダ削除画面" />
+  </dd>
+
+  <dt>[新建文件夹]</dt>
+  <dd>
+    添加新的文件夹。无法添加共享文件夹。<br />
+    <img src="../../help-images/view-cn/3-1-1_5.gif" class="view" alt="フォルダ作成画面" />
+  </dd>
+
+  <dt>文件夹移动</dt>
+  <dd>
+    鼠标拖动文件夹至想移动到的文件夹上松开鼠标，就可以移动文件夹。<br />
+    最喜欢的文件夹列表不支持这个功能。<br />
+    <img src="../../help-images/view-cn/3-1-1_6.gif" class="view" alt="フォルダの移動" />
+  </dd>
+</dl>
+
+<h4><a name="4-1-2"></a>新建文件夹</h4>
+<p class="h4-p">
+  添加新的文件夹。选择新文件夹作成的位置，输入新建的文件夹名。<br />
+  请单击[追加]按钮。<br />
+  <img src="../../help-images/view-cn/folder-add-1.gif" class="view" alt="フォルダ作成" />
+</p>
+
+<p class="h4-p">
+  追加了文件夹。请单击各按钮。<br />
+  <img src="../../help-images/view-cn/folder-add-2.gif" class="view" alt="フォルダ作成" />
+</p>
+
+<dl>
+  <dt>移动到较高文件夹</dt>
+  <dd>
+    移动到较高文件夹。<br />
+    移动到在Top内制作时文件夹，Top的文件夹。<br />
+    <img src="../../help-images/view-cn/folder-add-3.gif" class="view" alt="フォルダ作成-上位フォルダへ移動する" />
+  </dd>
+
+  <dt>移动到创建文件夹</dt>
+  <dd>
+    移动到制作的文件夹。<br />
+    <img src="../../help-images/view-cn/folder-add-4.gif" class="view" alt="フォルダ作成-作成フォルダへ移動する" />
+  </dd>
+
+  <dt>创建额外的文件夹</dt>
+  <dd>
+    创建额外的文件夹<br />
+    请单击[创建额外的文件夹]按钮。向作成画面变迁。
+  </dd>
+</dl>
+
+<h4><a name="4-1-3"></a>关于文件夹</h4>
+<p class="h4-p">
+  文件一览页面的左侧是文件夹一览。<br />
+  关于文件夹的种类，功能，图标等请参考下面。<br />
+  <img src="../../help-images/view-cn/3-1-2.gif" class="view" alt="フォルダ一覧" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />最喜欢的文件夹</th>
+      <td>
+        点击文件夹名称右侧的图标，可将其注册或删除为最喜爱的文件夹。<br />
+        注册为最喜爱的文件夹的文件夹用<img src="../../../images/ico-favorite-on.svg" alt="favorite-on" class="favorite-icon"/>标记，其他文件夹用<img src="../../../images/ico-favorite.svg" alt="favorite-off" class="favorite-icon"/>标记。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />共享文件夹</th>
+      <td>
+        在这里显示的文件夹是共享文件夹。<br />
+        可以在设定的群中共享文件。在组共享功能里如果没有群所属的话不会显示「▼共享文件夹」。<br />
+        关于组共享功能请参考<a href="group-cn.html#4-4">4-4.组共享功能</a>。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />检索共享文件</th>
+      <td>
+        检索共享文件夹。在组共享功能里，如果没有群所属或者共享文件夹检索功能设定为无效时不显示。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />个人文件夹</th>
+      <td>
+        在这里显示的文件夹是用户个人使用的文件夹。<br />
+        可以自由的新增、编辑、删除文件夹。在组共享功能里如果没有群所属的话上面不会显示「▼个人文件夹」，所显示的文件夹全都是个人文件夹。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/folder_open.gif" alt="現在選択中の個人フォルダ" /><span class="normalWeight">(文件夹名)</span></th>
+      <td>
+        现在选择的个人文件夹内的文件夹。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/folder_close.gif" alt="現在選択していない個人フォルダ" /><span class="normalWeight">(文件夹名)</span></th>
+      <td>
+        现在没有选择的个人文件夹内的文件夹。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/sfolder_open.gif" alt="現在選択中の共有フォルダ内フォルダ" /><span class="normalWeight">(文件夹名)</span></th>
+      <td>
+        现在选择的共享文件夹内的文件夹。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/sfolder_close.gif" alt="現在選択していない共有フォルダ内フォルダ" /><span class="normalWeight">(文件夹名)</span></th>
+      <td>
+        现在没有选择的共享文件夹内的文件夹。
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="4-1-4"></a>文件一览</h4>
+<p class="h4-p">
+  文件一览页面的右侧是文件一览。关于功能和按键请参考下面。<br />
+  <img src="../../help-images/view-cn/3-1-3.gif" class="view" alt="ファイル一覧" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />文件名</th>
+      <td>已上传的文件名。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />登录日</th>
+      <td>
+        文件上传的年月日或时分秒。<br />
+        文件上传当天是显示时分秒，第二天开始显示年月日。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />大小</th>
+      <td>已上传的文件大小。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />通知</th>
+      <td>文件分发及通知的人数。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_up-cn.gif" alt="アップロード" /></th>
+      <td>文件上传按钮。（<a href="upload-cn.html#4-2">→文件上传</a>）</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_folder_dl-cn.gif" alt="一括ダウンロード" /></th>
+      <td>
+        将现在打开的文件夹内的文件全部下载的按钮。<br />
+        注意：文件夹内全部下载只有一部分的环境可以使用。<br />
+        <img src="../../help-images/view-cn/3-1-3_2.gif" class="view" alt="フォルダ一括ダウンロード画面" /><br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_changenm.gif" alt="图标指示功能" /></th>
+      <td>
+        文件名变更和图标指定用的按钮。<br />
+        变更文件名需要输入新的文件名后点击[编辑确认]按钮。文件夹公开功能为有效并且图标功能为ON时，您可以登录图标或编辑图标。（<a href="thumbnail-cn.html#4-6">→缩略图显示功能</a>）
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_detail.gif" alt="详细" /></th>
+      <td>
+        文件的详细按钮。点击后显示备忘录和详细登录日期<br />
+        <img src="../../help-images/icon_close-cn.gif" alt="闭详细" />想关闭详细时请点击「隐藏详细」按钮。<br />
+        另外，点击「点击进行编辑...」按钮可以编辑备忘录。如果已经登录了备忘录，只要点击备忘录上的文字就可以进行编辑。<br />
+        <img src="../../help-images/view-cn/3-1-3_3.gif" class="view" alt="文件的详细" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_sanitization-cn.gif" alt="无害化" />(选项功能)</th>
+      <td>
+        [无害化]按钮。将对尚未无害化的文件进行无害化。(<a href="#sanitize">→无害化</a>)
+      </td>
+      </tr>
+      <tr>
+      <th><img src="../../help-images/icon_send-cn.gif" alt="发送" /></th>
+      <td>
+        「发送」按钮。可以进行文件发送。（<a href="send-cn.html#4-3">→文件发送</a>）
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_dl-cn.gif" alt="下载" /></th>
+      <td>
+        [下载]按钮。可以下载文件。<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_delete-cn.gif" alt="删除" /></th>
+      <td>
+        [删除]按钮。可以删除文件。<br />
+        文件被删除后，会从系统上消失。已给过文件发送通知的人无法再进行下载。请慎重操作。
+      </td>
+    </tr>
+  </tbody>
+</table>
+<dl>
+  <dt>对选择的文件进行操作</dt>
+  <dd>
+    在选择里打钩可以把所选的文件一起操作。<br />
+     点击[分发]按钮来分发文件。选择目标文件夹，点击[移动]按钮，将文件移动到另一个文件夹。点击[下载]来下载文件。点击[删除]删除文件。<br />
+    <img src="../../help-images/view-cn/3-1-3_4.gif" class="view" alt="选择的文件进行操作" />
+  </dd>
+  <dt id="dragdrop">文件的上传（拖放）</dt>
+  <dd>
+    在有写入权限的文件夹中，可以通过将文件拖放到文件一览区域来上传文件。<br />
+    <img src="../../help-images/view-cn/drag-new-file.png" class="view" alt="将新文件拖到一览上"><br />
+    <img src="../../help-images/view-cn/drop-new-file.png" class="view" alt="将新文件拖放到一览上即可上传">
+  </dd>
+  <dt>文件移动（鼠标拖动&放入）</dt>
+  <dd>
+    用鼠标拖动&放入来移动文件。把文件夹内想移动的文件名拖至想移动到的文件夹中放入。<br />
+    最喜欢的文件夹列表不支持这个功能。<br />
+    <img src="../../help-images/view-cn/3-1-4.gif" class="view" alt="文件移动（鼠标拖动&放入）" />
+  </dd>
+  <dt>文件检索</dt>
+  <dd>您可以通过输入文件名的一部分作为关键词来搜索已注册的文件。<br />
+    输入关键词并点击[查找]按钮。<br />
+    通过打开一个空格，您也可以输入多个关键词。<br />
+    <img src="../../help-images/view-cn/3-1-5.gif" class="view" alt="文件检索" />
+  </dd>
+  <dt id="sanitize">无害化（选项功能）</dt>
+  <dd>
+    对上传的文件进行无害化处理，去除其中可能包含的有害宏功能部分。<br />
+    根据管理员的设置，可能会同时保留原始文件和无害化后的文件，或者仅保存无害化后的文件。<br />
+    如果设定为保留无害化前的文件，文件名会自动添加「_无害化前」。<br />
+    <img style="width:500px" src="../../help-images/view-cn/3-1-6.gif" class="view" alt="无害化" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

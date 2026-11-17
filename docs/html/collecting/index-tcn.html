@@ -1,0 +1,122 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+          <h2><span>接收（收集）</span></h2>
+          <p>
+            接收（收集）是：為了確保文件的接收空間，把文件收集通知郵件發給特定收件人，在網路系統上上傳文件的功能。<br />
+            目錄：請點擊接收（收集）<br />
+            <img src="../../../images-tcn/sysmenu_collecting.gif" class="view" alt="目錄：收集" />
+          </p>
+          <h3><a name="5-1"></a>收集檔案一覽</h3>
+          <p>
+            菜單：點擊收集（接收），進入到「收集文件一覽」頁面。<br />
+            利用接收功能，顯示上傳完畢的文件一覽。在「收集文件一覽」頁面裡，可以對各資料夾進行操作。<br />
+            <img src="../../help-images/view-tcn/5-1_1.gif" class="view" alt="收集文件一覽" />
+          </p>
+
+          <table>
+            <tbody>
+              <tr>
+                <th><img src="../../help-images/no-s-1.gif" alt="1" />[發送接收郵件]</th>
+                <td>
+                  請點擊「發送接收郵件」按鍵。(<a href="collect-tcn.html#5-2">→文件收信</a>)
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-2.gif" alt="2" />[發送從自己的郵箱<br/>接收郵件]</th>
+                <td>
+                  請點擊「發送從自己的郵箱接收郵件」按鍵。(<a href="collect-tcn.html#collect-mailer">→文件收信（从邮箱发送）</a>)
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-3.gif" alt="3" />標籤一覽</th>
+                <td>
+                  是為了[收集郵件]及管理領去的文件的標籤的一覽。<br />
+                  單擊各標籤的話，標籤被分配的文件一覽被表示。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-4.gif" alt="4" />[更改表簽名]</th>
+                <td>
+                  在標籤一覽中，可以對現在選定的標籤名進行更改。<br />
+                  <img src="../../help-images/view-tcn/5-1_2.gif" class="view" alt="タグ名の変更画面" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-5.gif" alt="5" />[刪除標籤]</th>
+                <td>
+                  進行標籤刪除。標籤刪除後，此標籤管理下的收集文件及收集郵件也將一併刪除。<br />
+                  收集文件刪除後，接收URL將失效，請注意！<br />
+                  <img src="../../help-images/view-tcn/5-1_3.gif" class="view" alt="タグ削除画面" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-6.gif" alt="6" />文件一覽</th>
+                <td>
+                  顯示已接收文件的資訊。<br />
+                  <table class="data">
+                    <tbody>
+                      <tr>
+                        <th>文件名</th>
+                        <td>是文件名。「未登錄」表示文件未上傳的狀態。</td>
+                      </tr>
+                      <tr>
+                        <th><img src="../../help-images/icon_filemenu.gif" alt="ファイル詳細" /></th>
+                        <td>
+                          是文件的詳情鍵。點擊這個按鍵，顯示接收時輸入的發信人的詳細資訊及登錄日期。<br />
+                          點擊「隱藏詳細」按鍵，則詳情關閉。(<img src="../../help-images/icon_close-tcn.gif" alt="詳細閉じる" />)<br />
+                          <img src="../../help-images/view-tcn/5-1_4.gif" class="view" alt="ファイル詳細画面" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>登錄日</th>
+                        <td>是文件上傳時的年月日或者時分秒。上傳當天可顯示至時分秒，如隔天則只顯示年月日。</td>
+                      </tr>
+                      <tr>
+                        <th>大小</th>
+                        <td>是文件的大小。</td>
+                      </tr>
+                      <tr>
+                        <th><img src="../../help-images/icon_dl-tcn.gif" alt="ダウンロード" /></th>
+                        <td>
+                          是「下載」鍵。進行文件的下載。<br />
+                          如接收「指定資料夾」，則不能從接收一覽表中下載。
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/icon_save-tcn.gif" alt="保管" /></th>
+                <td>
+                  是「保存」鍵。進行文件的保存。(<a href="save-tcn.html#5-3">→文件保管</a>)
+                  如接收「指定資料夾」，將顯示指定資料夾的名稱。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/icon_delete-tcn.gif" alt="削除" /></th>
+                <td>
+                  是「刪除」鍵。進行文件的刪除。<br/>
+                  刪除文件，將同時在系統裡完全刪除。請小心操作！
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/ico-tag-change-tcn.gif" alt="タグ変更" /></th>
+                <td>是「標籤更改」鍵。可對接收的文件及郵件進行更改。</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl>
+            <dt>對選定的文件進行操作</dt>
+            <dd>
+              對核取方塊裡已選定的文件進行操作。<br />
+              點擊「保存」鍵，保存文件。保存完畢的文件，菜單：移至文件一覽。點擊「刪除」鍵，刪除文件及接收空間。<br />
+              「更改標籤」時，點擊更改的標籤，則更改完成。<br />
+              <img src="../../help-images/view-tcn/5-1_5.gif" class="view" alt="選択中のファイルを操作" />
+            </dd>
+          </dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

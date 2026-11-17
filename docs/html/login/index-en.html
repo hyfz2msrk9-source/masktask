@@ -1,0 +1,126 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+
+<h2><span>Login & Authentication</span></h2>
+<p>
+  The login screen and available operations may differ depending on your environment.
+</p>
+<img src="../../help-images/view-en/login.png" class="view" alt="login" /><br />
+<p>To login to WebFile, use one of the following authentication methods:</p>
+<dl>
+  <dt>Login with account (ID & password)</dt>
+  <dt>Google SSO authentication</dt>
+  <dt>[##SAML_NAME_EN##]</dt>
+  <dt>Windows Integrated Authentication</dt>
+  <dt>Client authentication (certificate)</dt>
+</dl>
+
+<h3>Common Operations</h3>
+<h4 id="2-1">Login</h4>
+<p>
+  Access the login screen and login using the appropriate authentication method. After authentication, you will be
+  redirected to the file list page.
+</p>
+
+<h4 id="2-2">Logout</h4>
+<p>
+  Click "Logout" in the menu to logout and return to the login screen.
+  <img src="../../help-images/view-en/menu_logout.png" class="view" alt="menu:logout" />
+</p>
+
+<h4 id="2-3">If you forgot your account or password</h4>
+<p>
+  If you forgot your login information, enter your registered email address and click the [Reissue] button.<br />
+  <span class="attention">※Users using Google SSO authentication or [##SAML_NAME##] cannot reissue their
+    password.</span><br />
+  <img src="../../help-images/view-en/2-3.gif" class="view" alt="when forgot your account, password" />
+</p>
+
+<h3>Details of each authentication method</h3>
+
+<h4>Standard login account & password)</h4>
+<p>
+  Follow the instructions on the screen and enter your account and password to login.
+</p>
+<h5 id="2-6">Two-factor authentication (optional)</h5>
+<p>
+  If two-factor authentication is enabled, after logging in with your account, enter the verification code from an
+  authentication app or email.<br />
+  <span class="attention">※Users using Google SSO authentication or [##SAML_NAME_EN##] cannot use two-factor
+    authentication with WebFile.</span>
+</p>
+<dl>
+  <dt>Using an authentication app</dt>
+  <dd>
+    Enter the code and click [Confirm]. You can skip two-factor authentication for a certain period by checking the
+    box.<br />
+    <img src="../../help-images/view-en/two_step_auth.png" class="view" alt="Two-factor authentication" />
+  </dd>
+  <dt>Using email</dt>
+  <dd>
+    Enter the code from the email and click [Send]. You can resend the code if needed.<br />
+    <img src="../../help-images/view-en/two_step_auth_mail.png" class="view" alt="Two-factor authentication mail" />
+  </dd>
+</dl>
+
+<h4 id="2-7">Google SSO authentication</h4>
+<p>
+  If Google SSO authentication is enabled, click the "Sign in with Google" button.<br />
+  <img src="../../help-images/view-en/login.png" class="view" alt="login" /><br />
+  When the Google login screen appears, select your account and enter your password to login to WebFile.<br />
+  <img src="../../help-images/view-en/2-7_3.gif" class="view" alt="Google account selection screen" />
+  <img src="../../help-images/view-en/2-7_4.gif" class="view" alt="Google login screen" />
+</p>
+
+<h4 id="2-8">[##SAML_NAME##]</h4>
+<p>
+Click the [##SAML_BUTTON_NAME##] button, enter the required information on the service's login screen, and log in.
+  After authentication, you will be logged in to WebFile.
+  <img src="../../help-images/view-en/login.png" class="view" alt="login" /><br />
+  <img src="../../help-images/view-en/2-8_2.png" class="view" alt="login screen for [##SAML_NAME_EN##] service" />
+</p>
+
+<h4 id="2-4-2">Windows Integrated Authentication</h4>
+<p>
+  AD users can click the "Windows Integrated Authentication" button to automatically transition to the authentication
+  screen from next time.
+  <img src="../../help-images/view-en/win-auth.gif" class="view" alt="Windows Integrated Authentication" />
+</p>
+
+<h4 id="2-5">Client authentication (certificate)</h4>
+<p>
+  Client authentication is an optional feature that identifies users by client certificate.<br />
+  To login using a certificate, please follow these steps:<br />
+</p>
+<p>1. Double-click the certificate file to open the import screen.</p>
+<img src="../../help-images/view-en/client-1.gif" class="view" alt="client-1" /><br />
+<p>2. Select the file to import and click the [Next] button.</p>
+<img src="../../help-images/view-en/client-2.gif" class="view" alt="client-2" />
+<p>3. Enter the password and click the [Next] button.</p>
+<img src="../../help-images/view-en/client-3.gif" class="view" alt="client-3" /><br />
+<p>If necessary, check the following options:</p>
+<dl>
+  <dt>Enable strong private key protection</dt>
+  <dd>If checked, you will be prompted every time the private key is used for login.</dd>
+  <dt>Mark this key as exportable</dt>
+  <dd>If checked, you will be able to export the private key later.</dd>
+  <dt>Include all extended properties</dt>
+  <dd>If checked, all extended properties will be included.</dd>
+</dl>
+<p>4. When the Certificate Store screen appears, configure as needed and click the [Next] button.</p>
+<img src="../../help-images/view-en/client-4.gif" class="view" alt="client-4" />
+<dl>
+  <dt>Automatically select the certificate store based on the type of certificate</dt>
+  <dd>Select this if the certificate should be placed automatically based on its type.</dd>
+  <dt>Place all certificates in the following store</dt>
+  <dd>Select this if you need to specify the storage location for the certificate.</dd>
+</dl>
+<p>5. When the import is complete, click the [Finish] button to close the wizard.</p>
+<img src="../../help-images/view-en/client-5.gif" class="view" alt="client-5" />
+<p>6. The next time you login, a certificate selection screen will appear. Select your certificate to login.</p>
+<img src="../../help-images/view-en/client-6.gif" class="view" alt="client-6" />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

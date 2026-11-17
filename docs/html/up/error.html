@@ -1,0 +1,55 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+      $path = "../../";
+  }else{
+      $customer_flg = 0;
+      $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view/";
+  include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+
+<?php if($customer_flg): ?>
+  <h2><span>収集メールを受け取った方（アップロード）</span></h2>
+<?php else:?>
+  <h2><span>ファイルのアップロード</span></h2>
+<?php endif; ?>
+<h3>アップロードできない場合</h3>
+
+<p>以下のような画面やメッセージが表示される場合は、ファイルのアップロードが出来ません。メールの送信者までお問合せください。</p>
+
+
+<dl>
+  <dt>この要求は削除されています</dt>
+  <dd>
+    送信者によって、アップロード依頼が削除されています。<br />
+    <img src="<?php echo $image_path; ?>error_up_stopped.png" class="view" alt="この要求は削除されています" />
+  </dd>
+
+  <dt>収集有効期限を過ぎています</dt>
+  <dd>
+    送信者が指定したアップロード期限を過ぎたため、アップロードできません。<br />
+    <img src="<?php echo $image_path; ?>error_up_limit.png" class="view" alt="収集有効期限を過ぎています" />
+  </dd>
+
+  <dt>URLが正しくありません</dt>
+  <dd>
+    通知されたアップロードURLに誤りがあり、アップロード画面に正しくアクセスできません。<br />
+    <img src="<?php echo $image_path; ?>error-url.png" class="view" alt="URLが正しくありません" />
+  </dd>
+  <dt>ファイルをアップロードするための空き容量が足りません</dt>
+  <dd>
+    送信者側のファイルをアップロードするための空き容量が足りず、ファイルをアップロードできません。<br />
+    <img src="<?php echo $image_path; ?>error_nospace.png" class="view" alt="ファイルをアップロードするための空き容量が足りません" />
+  </dd>
+  
+  <dt>ファイルの無害化に失敗しました。/無害化できません</dt>
+  <dd>
+    無害化オプションがあり、無害化できないファイルをアップロードした際に表示されるエラーです。<br />
+    <img src="<?php echo $image_path; ?>error_sanitize.png" class="view" alt="無害化に失敗しました" />
+    <img src="<?php echo $image_path; ?>error_sanitize_not_upload.png" class="view" alt="パスワード保護されたファイルは、無害化できません" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

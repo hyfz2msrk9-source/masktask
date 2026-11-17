@@ -1,0 +1,82 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+<h2><span>个人信息</span></h2>
+<p>
+    目前所登录的个人信息。可以更改密码。<br />
+    建议定期更换密码。
+</p>
+
+<p>
+    目录：点击个人信息。<br />
+    <img
+        src="../../help-images/view-cn/submenu.png"
+        class="view"
+        alt="目录：个人信息"
+    />
+</p>
+
+<p>
+    <img src="../../help-images/view-cn/10_1.png" class="view" alt="个人信息" />
+</p>
+
+<h3><a name="10-1"></a>更改密码</h3>
+<p>
+    更改密码。请点击[更改密码]按钮。<br />
+    <span class="attention"
+        >※使用Google SSO身份验证或者[##SAML_NAME##]的用户不能更改密码。</span
+    ><br />
+    <img
+        src="../../help-images/view-cn/10-1_1.png"
+        class="view"
+        alt="个人信息：更改密码"
+    />
+</p>
+
+<p>
+    移动至更改密码页面。输入现在的密码、新密码、新密码（确认）后点击[确定编辑]按钮。<br />
+    <img
+        src="../../help-images/view-cn/10-1_2.gif"
+        class="view"
+        alt="更改密码"
+    />
+</p>
+
+<p>
+    更改密码后系统自动退出。<br />
+    请输入新的密码重新登录。
+</p>
+
+<h3><a name="two_step_auth"></a>双因素认证</h3>
+<span class="attention"
+    >&nbsp;※使用Google
+    SSO身份验证或者[##SAML_NAME##]的用户无法在WebFile中设置双因素认证。</span
+><br />
+<span class="attention"
+    >&nbsp;※此设置只适用于使用认证应用程序的双因素认证。</span
+><br />
+
+<h4><a name="two_step_auth_on"></a>启用双因素认证</h4>
+<p>在禁用双因素认证时，请点击个人信息部分的[启用]按钮。</p>
+<p>
+    <img
+        src="../../help-images/view-cn/10-2_1.gif"
+        class="view"
+        alt="双因素认证：on"
+    />
+</p>
+<p>按照说明设置双因素认证。请输入确认码并点击[检查并保存]。</p>
+
+<h4><a name="two_step_auth_off"></a>禁用双因素认证</h4>
+<p>在启用双因素认证时，请点击个人信息部分的[禁用]按钮。</p>
+<p>
+    <img
+        src="../../help-images/view-cn/10-2_2.gif"
+        class="view"
+        alt="双因素认证:off"
+    />
+</p>
+<p>阅读说明，然后请点击[禁用]。</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

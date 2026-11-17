@@ -1,0 +1,62 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+          <h2><span>文件一覽</span></h2>
+          <h3>發送文件</h3>
+          <h4><a name="4-3-8"></a>文件發送狀況確認</h4>
+          <p>
+            文件的發送狀況，從「文件一覽」畫面→文件一覽→「通知」能確認。<br />
+            單擊「通知」欄的通知人數的話，移動到新的一覽表示畫面。<br />
+            <img src="../../help-images/view-tcn/3-3-7_1.gif" class="view" alt="ファイル一覧：通知" /> <br />
+            <img src="../../help-images/view-tcn/top_notice-personal.png" class="view" alt="ファイル通知情報画面" />
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <th><img src="../../help-images/no-s-1.gif" alt="1" />一覽表轉換</th>
+                <td>
+                  通常的發送畫面發送的一覽和，自己的郵箱利用發送功能發送的一覽的表示。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-2.gif" alt="2" />發送日期</th>
+                <td>是發送的發送郵件的日期和時間。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-3.gif" alt="3" />收件人</th>
+                <td>
+                  是發送的郵件的收件人。<br />
+                  如果被發送時，輸入名字「名字」表示。沒被輸入名字的情況，「郵件地址」被表示。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-4.gif" alt="4" />有效期限</th>
+                <td>下載有效期限。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-5.gif" alt="5" />自動刪除</th>
+                <td>要為文件的自動刪除觀看的設置。在“我”的情況下，後的有效期限已經過期的下載將被刪除。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-6.gif" alt="6" />下載次數</th>
+                <td>文件下載次數。分母，下載限制次數。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-7.gif" alt="7" />最終下載日</th>
+                <td>最終下載文件的日期和時間。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/icon_distop-tcn.gif" alt="配布停止" /></th>
+                <td>
+                  停止發送。<br />
+                  停止發送的話，不能從發送的URL下載文件。還有，停止一次的話，不能再次返還為有效。<br />
+                  單擊[停止發送]按鈕的話，向文件的發送停止畫面變遷。<br />
+                  <img src="../../help-images/view-tcn/3-3-7_4.gif" class="view" alt="ファイルの配布を停止する画面" /><br />
+                  <img src="../../help-images/view-tcn/3-3-7_5.gif" class="view" alt="配布停止ボタン" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

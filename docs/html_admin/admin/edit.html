@@ -1,0 +1,30 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+
+<h2><span>ユーザ管理</span></h2>
+  <h3>管理者編集</h3>
+    <p>
+      管理者の編集を行います。[編集]ボタンをクリックしてください。<br />
+      <img src="../../images/view/4-11-1.gif" class="view" alt="ユーザ管理：管理者編集"  />
+    </p>
+    <p>
+      管理者の編集画面に遷移します。<br />
+      アカウントロックは、編集中のユーザがアカウントロックにかかっている場合、アカウントロックの解除を行うことができます。<br />
+      必要項目を入力し、[確認する]ボタンをクリックしてください。管理者の編集確認画面に遷移します。<br />
+      <img src="../../images/view/4-11-2.gif" class="view" alt="ユーザ管理：管理者編集" />
+    </p>
+    <p>
+      [権限移行]欄で、別の管理者を選択した場合、管理しているユーザ・グループ・部署情報の変更権限を、選択した管理者に譲渡できます。<br />
+      <img src="../../images/view/4-11-2-1.gif" class="view" alt="ユーザ管理：管理者編集" />
+    </p>
+    <p>
+      内容が正しければ、[登録する]ボタンをクリックしてください。完了画面へ遷移します。<br />
+      <img src="../../images/view/4-11-3.gif" class="view" alt="ユーザ管理：管理者編集" />
+    </p>
+    <p>
+      管理者の編集が完了しました。<br />
+      <img src="../../images/view/4-11-4.gif" class="view"  alt="ユーザ管理：管理者編集完了" />
+    </p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

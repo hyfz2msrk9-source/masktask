@@ -1,0 +1,48 @@
+AddType application/x-httpd-php .html
+
+# 以下３行は、php-fpmを使うサーバではコメントアウト
+#php_value include_path ".:../:../../:../../../"
+#php_value auto_prepend_file "lib.php"
+#php_flag display_errors On
+
+#以下３行は、php-fpmを使わないサーバではコメントアウト
+<FilesMatch \.html$>
+  SetHandler "proxy:unix:/run/php-fpm/www.sock|fcgi://localhost"
+</FilesMatch>
+
+# ユーザーエージェントで指定
+SetEnvIfNoCase User-Agent "msnbot" shutout
+SetEnvIfNoCase User-Agent "Googlebot" shutout
+SetEnvIfNoCase User-Agent "Slurp" shutout
+SetEnvIfNoCase User-Agent "Yahoo" shutout
+SetEnvIfNoCase User-Agent "Y!J" shutout
+SetEnvIfNoCase User-Agent "goo" shutout
+
+SetEnvIf User-Agent "inktomi" shutout
+SetEnvIf User-Agent "moget" shutout
+SetEnvIf User-Agent "ichiro" shutout
+SetEnvIf User-Agent "ia_archiver" shutout
+SetEnvIfNoCase User-Agent "MarkAgent" shutout
+SetEnvIfNoCase User-Agent "marsflag" shutout
+SetEnvIfNoCase User-Agent "spider" shutout
+SetEnvIfNoCase User-Agent "Baiduspider" shutout
+SetEnvIfNoCase User-Agent "Crawler" shutout
+SetEnvIfNoCase User-Agent "Yeti" shutout
+
+SetEnvIf User-Agent "http" shutout
+
+# Googleから立入禁止
+SetEnvIf Referer "^http://www\.google\..*/search" shutout
+SetEnvIf Referer "^http://images\.google\..*/images" shutout
+# Yahooから立入禁止
+SetEnvIf Referer "^http.*search\.yahoo\..*\?" shutout
+# MSNから立入禁止
+SetEnvIf Referer "^http://search\.msn\..*/results\.aspx\?" shutout
+SetEnvIf Referer "^http://search\.live\..*/results\.aspx\?" shutout
+# 百度から立入禁止
+SetEnvIf Referer "^http://baidu\." shutout
+SetEnvIf Referer "^http.*\.baidu\." shutout
+
+order Allow,Deny
+Allow from all
+Deny from env=shutout

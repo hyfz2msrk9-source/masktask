@@ -1,0 +1,150 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+          <h2><span>設定</span></h2>
+    <h3><a name="9-3"></a>組共用</h3>
+          <h3><a name="9-3-1"></a>用戶管理</h3>
+          <p>
+            操作關於組共用的設定。點擊[用戶管理]按鈕。<br />
+            <img src="../../help-images/view-tcn/9-3_1.gif" class="view" alt="設定画面：ユーザ管理" />
+          </p>
+
+          <p>
+            移動到用戶管理頁面。<br />
+            在用戶管理頁面裡，顯示所管理的組裡的用戶一覽。<br />
+            <img src="../../help-images/view-tcn/9-3_2.gif" class="view" alt="ユーザ管理画面" />
+          </p>
+
+          <h4><a name="9-3-1"></a>新增用戶</h4>
+          <p class="h4-p">
+            在用戶管理頁面裡可以新增用戶。點擊[追加]按鈕。<br />
+            <img src="../../help-images/view-tcn/9-3-1_1.gif" class="view" alt="ユーザ管理画面：ユーザ作成" />
+          </p>
+
+          <p class="h4-p">
+            移動至用戶追加頁面。<br />
+            組存取權限只有組管理員才顯示。輸入必填專案、點擊[追加]按鈕。<br />
+            <img src="../../help-images/view-tcn/9-3-1_2.gif" class="view" alt="ユーザ追加画面" />
+          </p>
+
+          <dl>
+              <dt>認證方法</dt>
+              <dd>
+                  <span class="attention">※在請使用複數的認證方法的時候，能要設定。</span><br />
+                  <br />
+                  如果您選擇Google SSO身份驗證，請在您的帳戶中輸入用戶的Google帳戶。<br />
+                  <img src="../../help-images/view-tcn/9-3-1_5.png" class="view" alt="ユーザ追加画面：認証方式：SSO" /><br />
+                  如果您選擇[##SAML_NAME##]，請在您的帳戶中輸入用戶的郵件地阯。<br />
+                  <img src="../../help-images/view-tcn/9-3-1_6.png" class="view" alt="ユーザ追加画面：認証方式：SAML" />
+              </dd>
+          </dl>
+          <br />
+
+          <p class="h4-p">
+            移動至用戶追加（確認）頁面。確認內容無誤請點擊[追加]按鈕。<br />
+            <img src="../../help-images/view-tcn/9-3-1_3.gif" class="view" alt="ユーザ追加確認画面" />
+          </p>
+
+          <p class="h4-p">
+            移動至用戶追加（完成）頁面。完成用戶追加。<br />
+            <img src="../../help-images/view-tcn/9-3-1_4.gif" class="view" alt="ユーザ追加完了画面" />
+          </p>
+
+          <h4><a name="10-3-1-2"></a>用戶編輯</h4>
+          <p class="h4-p">
+            進行用戶編輯。點擊想要編輯的用戶的[編輯]按鈕。<br />
+            <img src="../../help-images/view-tcn/9-3-2_1.gif" class="view" alt="ユーザ管理画面：編集" />
+          </p>
+
+          <p class="h4-p">
+            移動至用戶編輯頁面。密碼只有在需要更改的時候才輸入。<br />
+            <img src="../../help-images/view-tcn/9-3-2_2.gif" class="view" alt="ユーザ編集画面" />
+          </p>
+
+          <p class="h4-p">
+            文件鎖功能為有效時，資料夾許可權頁面裡會顯示用語。<br />
+            上鎖的用戶的資料夾許可權改為「唯讀」時，文件的鎖會得到解除。<br />
+            關於帶鎖下載(<a href="../top/group-tcn.html#4-4-3">→加密下載</a>)<br />
+            <img src="../../help-images/view-tcn/9-3-2_2_lock.gif" class="view" alt="ユーザ編集画面：ロックファイル機能" />
+          </p>
+
+          <p class="h4-p">輸入必填專案，點擊[編輯]按鈕。</p>
+
+          <dl>
+              <dt>認證方法</dt>
+              <dd>
+                  <span class="attention">※在請使用複數的認證方法的時候，能要設定。</span><br />
+                  <br />
+                  如果您選擇Google SSO身份驗證，請在您的帳戶中輸入用戶的Google帳戶。<br />
+                  <img src="../../help-images/view-tcn/9-3-1_5.png" class="view" alt="ユーザ編集画面：認証方式：SSO" /><br />
+                  如果您選擇[##SAML_NAME##]，請在您的帳戶中輸入用戶的郵件地阯。<br />
+                  <img src="../../help-images/view-tcn/9-3-1_6.png" class="view" alt="ユーザ編集画面：認証方式：SAML" />
+              </dd>
+          </dl>
+          <br />
+
+          <p class="h4-p">
+            移動至用戶編輯（確認）頁面。確認內容無誤請點擊[確定編輯]按鈕。<br />
+            <img src="../../help-images/view-tcn/9-3-2_3.gif" class="view" alt="ユーザ編集確認画面" />
+          </p>
+
+          <p class="h4-p">
+            移動至用戶編輯（完成）頁面。完成用戶編輯。<br />
+            <img src="../../help-images/view-tcn/9-3-2_4.gif" class="view" alt="ユーザ編集完了画面" />
+          </p>
+
+          <h4><a name="9-3-3"></a>刪除用戶</h4>
+          <p class="h4-p">
+            進行用戶刪除。點擊想要刪除的用戶的[刪除]按鈕。<br />
+            <img src="../../help-images/view-tcn/9-3-3_1.gif" class="view" alt="ユーザ管理：削除" />
+          </p>
+
+          <p class="h4-p">
+            移動至用戶刪除（確認）頁面。<br />
+            確認可以刪除用戶請點擊[刪除]按鈕。<br />
+            <img src="../../help-images/view-tcn/9-3-3_2.gif" class="view" alt="ユーザ削除確認画面" />
+          </p>
+
+          <p class="h4-p">
+            移動至用戶刪除（完成）頁面。完成用戶刪除。<br />
+            <img src="../../help-images/view-tcn/9-3-3_3.gif" class="view" alt="ユーザ削除完了画面" />
+          </p>
+
+          <h4><a name="9-3-2"></a>IP Restrictions</h4>
+          <p class="h4-p">
+            IP restrictions are the functions to which access restriction can be applied by an IP address for every group. They are firmer security countermeasures of the group treating confidential information. <br />
+            In each group unit, IP address registration can be performed with a use setup. <br />
+            When it is set as "Only a registration IP address can be accessed.", only a registration IP address permits access and can perform an inspection and operation of a file. <br />
+          </p>
+          <h5><a name="9-3-2-1"></a>IP restrictions of each group</h5>
+          <p class="h5-p">Please click [IP Restrictions] button.<br />
+
+            <img src="../../help-images/view-en/9-3-a2_1.gif" class="view" alt="setup" /><br />
+            share groups list of IP Restrictions screen will appear.<br />
+
+            Click the [Setup] button of a group. It becomes a setting screen of IP restrictions of each group.
+            [Setup] When undisplayed, there is no Permission. <br />
+            <img src="../../help-images/view-en/9-3-a2_2.gif" class="view" alt="setup : share groups list of IP Restrictions" />
+          </p>
+          <h5><a name="9-3-2-2"></a>Effective and invalidity of IP restrictions</h5>
+          <p class="h5-p">
+            A setup of "Access is more possible than all the IP." or "Only a registration IP address can be accessed." can be performed to each group. <br />
+            Please click after selection the button under a screen [Update]. <br /><br />
+            The registration of an IP address should click and perform the button of the bottom on the right-hand side of a screen [Edit].
+          </p>
+          <p>
+            <img src="../../help-images/view-en/9-3-a2_3.gif" class="view" alt="edit" />
+          </p>
+
+          <h5><a name="9-3-2-3"></a>Edit IP address</h5>
+          <p class="h5-p">
+            You can edit IP address here.Please click [Edit] button.IP address edit screen will appear.<br />
+            <img src="../../help-images/view-en/9-3-a2_4.gif" class="view" alt="IP address" />
+            In an IP address edit display, addition of the IP address which can be accessed, and deletion can be performed. <br />
+            Please input the IP address registered into the IP address column, and click a [Add] button. An IP address is added to an IP address list. A subnet mask is also OK. <br /><br />
+            When you delete a registered IP address, please choose the IP address under list and push [Delete] button. An IP address is deleted. <br />
+            <span class="attention">Edit of an IP address cannot be performed. Please delete and add the IP address of relevance. </span>
+          </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

@@ -1,0 +1,51 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+  $path = "../../";
+}else{
+  $customer_flg = 0;
+  $path = "../";
+}
+$image_path = "../" . $path . "help-images/view-tcn/";
+include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+
+<h2><span>文件下載</span></h2>
+<h3><a name="13-1"></a>關於文件下載</h3>
+<p>點擊訪問郵件內的URL連結，在下載頁面中選擇需要的文件點擊[下載]按鈕的簡單操作。</p>
+
+<dl>
+<dt><a name="normal"></a>標準下載</dt>
+<dd style="width:530px;margin-bottom:35px;">
+    <div>收到資料發送的通知郵件後，點擊郵件中的下載用URL連結。</div>
+    <img src=" <?php echo $image_path; ?>13-1-1.png" class="view" alt="通常ファイルダウンロード：メール本文" /></p>
+    <a name="normal_download" id="normal_download"></a><div>
+      當打開數據下載界面時，您可以選擇要下載的文件的文件名，或選擇點擊屏幕右側的下載按鈕。 <br />下載將開始。<br />
+      <img src="<?php echo $image_path; ?>download-marked.png" class="view" alt="通常ファイルダウンロード" /><br />
+      </div>
+</dd>
+
+<dt><a name="zip"></a>ZIP文件下載</dt>
+<dd style="width:530px;margin-bottom:35px;">
+    收到資料發送的通知郵件後，點擊郵件中的下載用URL連結。<br />
+    當打開數據下載界面時，您可以選擇要下載的文件的文件名，或選擇點擊屏幕右側的下載按鈕。 下載將開始。<br />
+    被壓縮為ZIP文件的文件有設置密碼。<br />
+    如果不知道密碼，請聯繫寄件者。<br />
+    <img src="<?php echo $image_path; ?>zip_dl.png" class="view" alt="ZIPファイルダウンロード" /><br />
+</dd>
+
+<dt><a name="folder"></a>資料夾公開</dt>
+<dd style="width:530px;">
+    收到資料夾公開的通知郵件後，點擊郵件中的下載用URL連結。<br />
+    打開了資料夾公開頁面，點擊想要下載的文件右側的[下載]按鈕，或者點擊文件名開始下載。<br />
+    <img src="<?php echo $image_path; ?>openfolder.png" class="view" alt="フォルダ公開：ダウンロード画面" /><br /><br />
+    要下載所有顯示的文件請點擊[下載全部文件]按鈕。移動至下載壓縮文件夾頁面。<br />
+    <img src="<?php echo $image_path; ?>openfolder_dl_all.png" class="view" alt="フォルダ公開：一括ダウンロード確認画面" /><br />
+    確認可以打包下載請點擊[下載壓縮文件夾]按鈕。開始壓縮文件。<br />
+    <img src="<?php echo $image_path; ?>openfolder_dl_all_zipping.png" class="view" alt="フォルダ公開：圧縮中" /><br />
+    文件壓縮完畢後點擊[下載壓縮文件夾]按鈕進行下載。<br />
+    <img src="<?php echo $image_path; ?>openfolder_dl_all_done.png" class="view" alt="フォルダ公開：圧縮完了" />
+</dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

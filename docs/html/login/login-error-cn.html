@@ -1,0 +1,101 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+<h2><span>登录</span></h2>
+<h3><a name="2-6"></a>登录错误</h3>
+<p>
+  登录失败时会弹出错误信息。<br />
+  出错内容及对应方法。<br />
+  <img src="../../help-images/view-cn/2-6.gif" class="view" alt="アカウントまたはパスワードが正しくありません。" /><br />
+</p>
+
+<h5>标准显示错误</h5>
+<dl>
+  <dt>账号或密码错误。</dt>
+  <dd style="margin-bottom:15px;">
+    您输入的账号或密码有误时显示该信息。
+  </dd>
+
+  <dt>此账号已过有效期。</dt>
+  <dd style="margin-bottom:15px;">
+    如果账号设定有效期，有效期过后该账号将无法登录。<br />
+    需要再次登录的用户请与管理员联系。
+  </dd>
+
+  <dt>此账号还未生效。</dt>
+  <dd>
+    如果账号设定有效期，在有效期生效前该账号无法登录。<br />
+    需要马上开通登录的用户请与管理员联系。
+  </dd>
+</dl>
+
+<h5>与AD(ActiveDirectory)服务器连接时显示的错误</h5>
+<p style="line-height:1.3em;margin:10px 0 15px 30px;width:530px;">
+  AD(ActiveDirectory)服务器是用来管理用户信息的服务器。<br />
+  系统会连接ActiveDirectory服务器来认证用户。
+</p>
+<dl>
+  <dt class="position20">无法连接AD服务器。<br />请与管理员联系。</dt>
+  <dd style="margin-bottom:15px;">
+    系统服务器无法与AD(ActiveDirectory)服务器连接。
+  </dd>
+
+  <dt>用户或密码错误。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(ActiveDirectory)认证ID和密码错误。<br />
+    或者是系统设定错误导致认证失败。
+  </dd>
+
+  <dt class="position20">AD账号被锁定。<br />请与管理员联系。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(ActiveDirectory)服务器的账号被锁定。请与管理员联系。
+  </dd>
+
+  <dt class="position20">AD账号无效。<br />请与管理员联系。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(ActiveDirectory)服务器的账号无效。请与管理员联系。
+  </dd>
+
+  <dt class="position20">AD账号没有登录系统权限。<br />请与管理员联系。</dt>
+  <dd style="margin-bottom:15px;">
+    此账号在AD(ActiveDirectory)服务器上没有登录系统的权限。请与管理员联系。
+  </dd>
+
+  <dt class="position10">系统账号初始化失败。<br />超出可登陆用户数。<br />请与管理员联系。</dt>
+  <dd style="margin-bottom:15px;">
+    账号数量超过签约用户数量，无法登入。<br />
+    请与管理员联系。
+  </dd>
+
+  <dt class="position10">系统账号初始化失败。<br />系统容量不足。<br />请与管理员联系。</dt>
+  <dd style="margin-bottom:15px;">
+    容量不足无法登陆。请与管理员联系。
+  </dd>
+
+  <dt class="position8">系统账号初始化失败。<br />AD账号的用户信息不足。<br />（需要显示用户名和邮箱地址）<br />请与管理员联系。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(ActiveDirectory)账号的用户信息不足，无法登陆。请与管理员联系。
+  </dd>
+
+  <dt class="position10">系统账号初始化失败。<br />AD账号的邮箱地址和其他账号的邮箱地址重复。<br />请与管理员联系。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(Active Directory)账号的邮箱地址与其他账号的邮箱地址重复，无法登陆。请与管理员联系。
+  </dd>
+</dl>
+
+<h5>Google SSO身份验证或者[##SAML_NAME##]时显示的错误</h5>
+<dl>
+  <dt>帐户未注册。</dt>
+  <dd style="margin-bottom:15px;">
+    您输入的账号错误。<br />
+    或者是系统设定错误导致认证失败。
+  </dd>
+  <dt class="position20">无法获取登录信息。<br />请再次登录。</dt>
+  <dd style="margin-bottom:15px;">
+    临时问题正在Google SSO身份验证或者[##SAML_NAME##]服务发生<br />
+    或者是系统设定错误导致认证失败。
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

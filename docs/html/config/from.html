@@ -1,0 +1,91 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>設定</span></h2>
+<h3><a name="9-4"></a>送信者設定</h3>
+<p>
+  配布や収集メールの送信者名を複数登録することができます。<br />
+  登録した送信者名は、用途に応じて差出人の名前やメールアドレスを変更するために使用することができます。<br />
+  [送信者設定]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-4.gif" class="view" alt="設定画面：送信者設定" />
+</p>
+
+<p>
+  送信者設定画面に遷移します。<br />
+  送信者設定画面では、登録した送信者名の一覧が表示されます。
+  <img src="../../help-images/view/9-4-1.gif" class="view" alt="送信者設定画面" />
+</p>
+
+<h4><a name="9-4-1"></a>送信者名を設定する</h4>
+<p class="h4-p">
+  送信者名を設定します。<br />
+  [送信者追加]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-4-2.gif" class="view" alt="送信者設定：送信者追加ボタン" />
+</p>
+
+<p class="h4-p">
+  送信者追加画面に遷移します。<br />
+  「デフォルトに設定する」にチェックを入れると、作成した送信者名がデフォルトに設定されます。<br />
+  必要項目を入力し、[確認画面へ]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-4-3.gif" class="view" alt="送信者追加画面" />
+</p>
+
+<p class="h4-p">
+  送信者追加確認画面に遷移します。<br />
+  内容が正しければ[作成する]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-4-4.gif" class="view" alt="送信者追加確認画面" />
+</p>
+
+<p class="h4-p">
+  登録したメールアドレス宛に確認のメールが送信されます。<br />
+  メールに記載されているURLをクリックして登録の完了を行ってください。<br />
+  <img src="../../help-images/view/9-4-5.gif" class="view" alt="確認メールを送信" />
+</p>
+
+<p class="h4-p">
+  メールに記載されているURLをクリックすると、送信者設定確認画面に遷移します。<br />
+  <img src="../../help-images/view/9-4-6.gif" class="view" alt="送信者名設定確認画面" />
+</p>
+
+<p class="h4-p">
+  送信者名を設定してもよければ[承認]ボタンをクリックしてください。<br />
+  送信者承認依頼完了画面へ遷移し、送信者名に追加されます。<br />
+  <img src="../../help-images/view/9-4-6-1.gif" class="view" alt="送信者承認依頼完了画面：承認" />
+</p>
+
+<p class="h4-p">
+  送信者名を設定しない場合は[却下]ボタンをクリックしてください。<br />
+  送信者承認依頼完了画面へ遷移し、送信者名の設定が却下されます。<br />
+  <img src="../../help-images/view/9-4-6-2.gif" class="view" alt="送信者承認依頼完了画面：却下" />
+</p>
+
+<p class="h4-p">
+  メールが確認されない場合は、[メール再送]ボタンをクリックして再度メールを送信してください。<br />
+  <img src="../../help-images/view/9-4-7.gif" class="view" alt="メール再送" />
+</p>
+
+<h4><a name="9-4-2"></a>送信者名を編集する</h4>
+<p class="h4-p">
+  送信者名を編集します。編集する送信者名の[編集]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-4-8.gif" class="view" alt="送信者設定：編集ボタン"/>
+</p>
+
+<p class="h4-p">
+  送信者編集画面に遷移します。必要項目を入力し、[編集確定]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-4-9.gif" class="view" alt="送信者設定：編集画面">
+  </p>
+
+  <h4><a name="9-4-3"></a>送信者名を削除する</h4>
+<p class="h4-p">
+  送信者名を削除します。削除する送信者名の[削除]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-4-10.gif" class="view" alt="送信者設定：削除ボタン"/>
+</p>
+
+<p class="h4-p">
+  確認メッセージが表示されますので、よろしければ[OK]ボタンをクリックしてください。<br />
+  送信者名が削除されます。<br />
+  <img src="../../help-images/view/9-4-11.gif" class="view" alt="送信者設定：削除確認" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

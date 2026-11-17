@@ -1,0 +1,41 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-en/";
+  include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+
+<h2><span>Upload files</span></h2>
+<h3>Upload with specified password</h3>
+<p>You can reach the upload screen using specified password that is given by the sender of the file.<br />
+  <span class="attention">If you are required to enter the password not to enter the Email address, you have to enter the password that is set by the sender of files.  If you do not know the password, please ask sender of the Email.<br /></span>
+</p>
+
+<p>Please enter the password that sender of this Email inform you, and click the [Send password] button.<br />
+  <img src="<?php echo $image_path; ?>upload_selfpass.png" class="view" alt="send password" /><br /><br />
+
+  Example: You get password by the Email from sender.<br />
+  <img src="<?php echo $image_path; ?>13-4-2.gif" class="view" alt="Example: You get password by the Email from sender" />
+
+</p>
+<dl>
+  <dt>In case you enter the correct password.</dt>
+  <dd>The link to upload files screen will displayed.<br />
+    Click the “Upload files”, the upload files screen will be displayed and you can upload files.<br/>
+
+    <img src="<?php echo $image_path; ?>upload.png" class="view" alt="In case you enter the correct password" />
+  </dd>
+</dl>
+<dl>
+  <dt>In case you enter the incorrect password</dt>
+  <dd>The error message is displayed and the screen to upload files is not open.<br />
+    <img src="<?php echo $image_path; ?>error-selfpass.png" class="view" alt="In case you enter the incorrect password" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

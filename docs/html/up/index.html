@@ -1,0 +1,74 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+  $path = "../../";
+}else{
+  $customer_flg = 0;
+  $path = "../";
+}
+$image_path = "../" . $path . "help-images/view/";
+$icon_path = "../" . $path . "help-images/";
+include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+
+<?php if($customer_flg): ?>
+  <h2><span>収集メールを受け取った方（アップロード）</span></h2>
+<?php else:?>
+  <h2><span>ファイルのアップロード</span></h2>
+<?php endif; ?>
+<p>ファイルの引き取り依頼メールを受け取ったとき、Web上のシステムにファイルをアップロードし、相手にファイルを送ることができます。
+<?php if(!$customer_flg): ?>(→<a href="../collecting/index.html">引取り(収集)</a>)
+<?php endif; ?></p>
+
+<h3><a name="14-1"></a>通常アップロード</h3>
+
+<p>
+  データの送信依頼メールを受け取り、メールに記載されているアップロード用URLからデータをアップロードします。<br />
+  メールに記載されている、アップロードURLへアクセスします。<br />
+  <img src="<?php echo $image_path; ?>14-1-1.gif" class="view" alt="通常アップロード" /><br />
+</p>
+
+
+
+<a name="upload"></a>
+<p>アップロード画面から、ファイルをアップロードします。<br />
+  [ファイル追加]ボタンでアップロードしたいデータを選択し、[アップロード]ボタンを押せば、アップロード完了です。<br />
+  <img src="<?php echo $image_path; ?>upload.png" class="view" alt="通常アップロード" /><br />
+
+</p>
+
+<table>
+
+  <tr>
+    <th><img src="<?php echo $icon_path; ?>no-s-1.gif" alt="1" />[ファイル追加]</th>
+    <td>
+      アップロードしたいファイルを選択します。[ファイル追加]ボタンをクリックするとファイル選択ウィンドウが開きますので、ファイルを選択してください。<br/>
+      <img src="<?php echo $image_path; ?>top-upload-1.gif" class="view" alt="アップロードファイル選択" />
+    </td>
+  </tr>
+
+  <tr>
+    <th><img src="<?php echo $icon_path; ?>no-s-2.gif" alt="1" />[削除]ボタン</th>
+    <td>選択したファイルを削除します。誤って選択した場合にご利用いただけます。</td>
+  </tr>
+
+  <tr>
+    <th><img src="<?php echo $icon_path; ?>no-s-3.gif" alt="1" />差出人宛のメッセージ</th>
+    <td>ファイルをアップロードすると同時に、相手にメッセージを送信することができます。</td>
+  </tr>
+
+  <tr>
+    <th><img src="<?php echo $icon_path; ?>no-s-4.gif" alt="1" />[アップロード]ボタン</th>
+    <td>ファイルのアップロードを完了します。</td>
+  </tr>
+</table>
+<dl>
+  <dt>ドラッグ＆ドロップでフォルダごとファイルをアップロード</dt>
+  <dd>
+    Edge、Google Chrome、Firefox、Safariをご利用の場合は、エクスプローラー（Macの場合はFinder）からドラッグ＆ドロップでフォルダを選択することが可能です。<br/>
+    アップロードしたいファイルが入っているフォルダを選択し[ファイル追加]ボタンにドラッグ＆ドロップしてください。<br/>
+    <img src="<?php echo $image_path; ?>upload_dragdrop.png" class="view" alt="ドラッグ＆ドロップでファイルごとファイル選択する" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,155 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>設定</span></h2>
+<h3><a name="9-3"></a>グループ共有</h3>
+<h4><a name="9-3-1"></a>ユーザ管理</h4>
+<p>
+  グループ共有に関する設定を操作します。[ユーザ管理]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-3_1.gif" class="view" alt="設定画面：ユーザ管理" />
+</p>
+
+<p>
+  ユーザ管理画面に遷移します。<br />
+  ユーザ管理画面では、グループ管理者が管理しているグループのユーザ一覧が表示されます。<br />
+  <img src="../../help-images/view/9-3_2.gif" class="view" alt="ユーザ管理画面" />
+</p>
+
+<h5><a name="9-3-1-1"></a>ユーザを作成する</h5>
+<p class="h4-p">
+  ユーザ管理画面では、ユーザを新しく作成することができます。<br />
+  [追加する]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-3-1_1.gif" class="view" alt="ユーザ管理画面：ユーザ作成" />
+</p>
+
+<p class="h4-p">
+  ユーザ追加画面に遷移します。<br />
+  グループアクセス権限は、ユーザがグループ管理者として所属しているグループのみ表示されます。<br />
+  必要項目を入力し、[追加する]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-3-1_2.gif" class="view" alt="ユーザ追加画面" />
+</p>
+
+<dl>
+    <dt>認証方式</dt>
+    <dd>
+        <span class="attention">※複数の認証方式をご利用いただいている場合のみ設定いただけます。</span><br />
+        <br />
+        Google SSO認証を選択した場合、アカウントにはユーザのGoogleアカウントを入力してください。<br />
+        <img src="../../help-images/view/9-3-1_5.png" class="view" alt="ユーザ追加画面：認証方式：SSO" /><br />
+        [##SAML_NAME##]を選択した場合、アカウントにはユーザのメールアドレスを入力してください。<br />
+        <img src="../../help-images/view/9-3-1_6.png" class="view" alt="ユーザ追加画面：認証方式：SAML" />
+    </dd>
+</dl>
+<br />
+
+<p class="h4-p">
+  ユーザ追加(確認)画面に遷移します。<br />
+  内容が正しければ[追加する]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-3-1_3.gif" class="view" alt="ユーザ追加確認画面" />
+</p>
+
+<p class="h4-p">
+  ユーザ追加(完了)画面に遷移します。ユーザ追加が完了しました。<br />
+  <img src="../../help-images/view/9-3-1_4.gif" class="view" alt="ユーザ追加完了画面" />
+</p>
+
+<h4><a name="9-3-1-2"></a>ユーザを編集する</h4>
+<p class="h4-p">
+  ユーザの編集を行います。編集したいユーザの欄にある[編集]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-3-2_1.gif" class="view" alt="ユーザ管理画面：編集" />
+</p>
+
+<p class="h4-p">
+  ユーザ編集画面に遷移します。<br />
+  パスワードは変更する場合のみ入力してください。<br />
+  <img src="../../help-images/view/9-3-2_2.gif" class="view" alt="ユーザ編集画面" />
+</p>
+
+<p class="h4-p">
+  ロックファイル機能が有効の場合、フォルダ権限画面に文言が表示されます。<br />
+  ロックを行ったユーザのフォルダ権限を「読み出しのみ」に変更すると、ファイルのロック解除が行われます。(→<a href="../top/group.html#4-4-3">ロック付きダウンロード</a>)<br />
+  <img src="../../help-images/view/9-3-2_2_lock.gif" class="view" alt="ユーザ編集画面：ロックファイル機能" />
+</p>
+
+<p class="h4-p">必要項目を入力し、[編集する]ボタンをクリックしてください。</p>
+
+<dl>
+    <dt>認証方式</dt>
+    <dd>
+        <span class="attention">※複数の認証方式をご利用いただいている場合のみ設定いただけます。</span><br />
+        <br />
+        Google SSO認証を選択した場合、アカウントにはユーザのGoogleアカウントを入力してください。<br />
+        <img src="../../help-images/view/9-3-1_5.png" class="view" alt="ユーザ編集画面：認証方式：SSO" /><br />
+        [##SAML_NAME##]を選択した場合、アカウントにはユーザのメールアドレスを入力してください。<br />
+        <img src="../../help-images/view/9-3-1_6.png" class="view" alt="ユーザ編集画面：認証方式：SAML" />
+    </dd>
+</dl>
+<br />
+
+<p class="h4-p">
+  ユーザ編集(確認)画面に遷移します。<br />
+  内容が正しければ[編集確定]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-3-2_3.gif" class="view" alt="ユーザ編集確認画面" />
+</p>
+
+<p class="h4-p">
+  ユーザ編集(完了)画面に遷移します。ユーザ編集が完了しました。<br />
+  <img src="../../help-images/view/9-3-2_4.gif" class="view" alt="ユーザ編集完了画面" />
+</p>
+
+
+<h5><a name="9-3-1-3"></a>ユーザを削除する</h5>
+<p class="h4-p">
+  ユーザの削除を行います。削除したいユーザの欄にある[削除]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-3-3_1.gif" class="view" alt="ユーザ管理：削除" />
+</p>
+
+<p class="h4-p">
+  ユーザ削除(確認)画面に遷移します。<br />
+  ユーザの削除を行ってもよろしければ、[削除する]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-3-3_2.gif" class="view" alt="ユーザ削除確認画面" />
+</p>
+
+<p class="h4-p">
+  ユーザ削除(完了)画面に遷移します。ユーザの削除が完了しました。<br />
+  <img src="../../help-images/view/9-3-3_3.gif" class="view" alt="ユーザ削除完了画面" />
+</p>
+<div class="pageToplink"><a href="#top">▲このページの先頭へ</a></div>
+
+
+<h4><a name="9-3-2"></a>IP制限</h4>
+<p class="h4-p">
+  IP制限は、グループごとにIPアドレスによってアクセス制限をかけることができる機能です。機密な情報を扱うグループへの、より強固なセキュリティ対策になります。<br />
+  各グループ毎にIPアドレスでのアクセス制限機能を利用するかどうかの設定と、利用する場合にアクセス可能なIPアドレスを登録する事ができます。<br />
+  「登録IPアドレスのみアクセス可能」に設定した場合、登録されたIPアドレスのみアクセスを許可し、ファイルの閲覧や操作を行えます。<br />
+</p>
+<h5><a name="9-3-2-1"></a>各グループのIP制限</h5>
+<p class="h4-p">[IP制限]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-3-a2_1.gif" class="view" alt="設定画面" /><br />
+  IP制限のグループ一覧画面に遷移します。<br />
+  IP制限を設定したいグループの[設定]ボタンをクリックすると、各グループのIP制限の設定画面に遷移します。<br /><br />
+  [設定]ボタンが表示されていないグループは、システム管理者によって、グループ管理者によるIP制限設定を許可されていません。<br />
+  <img src="../../help-images/view/9-3-a2_2.gif" class="view" alt="設定画面：IP制限のグループ一覧画面" />
+</p>
+<h5><a name="9-3-2-2"></a>IP制限の有効・無効</h5>
+<p class="h4-p">
+  各グループに対して、「全てのIPよりアクセス可能」または「登録したIPアドレスのみアクセス可能」かどうかの設定が行えます。<br />
+  選択後、画面の下にある[編集する]ボタンをクリックしてください。<br /><br />
+  IPアドレスの登録は、画面右側のIPアドレスの下にある[更新する]ボタンをクリックして、行ってください。
+</p>
+<p>
+  <img src="../../help-images/view/9-3-a2_3.gif" class="view" alt="IP制限のグループ一覧画面" />
+</p>
+
+<h5><a name="9-3-2-3"></a>IPアドレス編集</h5>
+<p class="h4-p">
+  IPアドレスの[編集]ボタンをクリックすると、IPアドレス編集画面へ遷移します。
+  <img src="../../help-images/view/9-3-a2_4.gif" class="view" alt="IP制限画面" />
+  IPアドレス編集画面では、「登録IPアドレスのみアクセス可能」へ設定した場合、アクセス可能なIPアドレスの追加、及び削除を行うことができます。<br />
+  IPアドレス欄に登録するIPアドレスを入力し、[追加]ボタンをクリックしてください。IPアドレス一覧に、IPアドレスが追加されます。サブネットマスクも追加することが可能です。<br /><br />
+  登録したIPアドレスを削除する場合、一覧内の削除するIPアドレスを選択し、[削除]ボタンをクリックしてください。IPアドレスが削除されます。<br />
+  <span class="attention">IPアドレスの編集は行えませんので、該当のIPアドレスを一度、削除し追加を行ってください。</span>
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

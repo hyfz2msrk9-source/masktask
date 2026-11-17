@@ -1,0 +1,241 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>履歴</span></h2>
+<p>
+  ファイル操作履歴です。<br />
+  共有オプションをご利用の場合は、「共有グループ履歴」ボタンで、共有グループに関する操作履歴を確認することができます。<br />
+  メニュー：履歴をクリックしてください。<br />
+  <img src="../../../images/sysmenu_log.gif" class="view" alt="メニュー：履歴" /><br />
+</p>
+
+<p>
+  以下の画面は、ユーザのファイル操作履歴です。<br />
+  <img src="../../help-images/view/8_1.gif" class="view" alt="ユーザファイル操作履歴画面" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[共有グループ履歴]</th>
+      <td>共有オプションを御利用の場合のみ表示され、共有グループに関する操作履歴を確認することができます。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[部署グループ履歴]</th>
+      <td>共有オプションを御利用の場合のみ表示され、部署グループに関する操作履歴を確認することができます。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />ファイル名</th>
+      <td>
+        操作が行われたファイルの名前です。<br />
+        (ログインなど、ファイルと関係のない操作履歴の場合は、操作内容が表示されます)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />操作内容</th>
+      <td>行われた操作の内容です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />操作日時</th>
+      <td>操作が行われた日時です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />IPアドレス</th>
+      <td>操作が行われた端末のIPアドレスです。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />備考</th>
+      <td>
+        各操作に関連する備考を表示します。
+        <table class="data-s">
+          <tbody>
+            <tr>
+              <td><img src="../../help-images/btn_resend.gif" alt="再送" /></td>
+              <td>
+                SMTPでメールの配信を行われている場合、送信エラーが発生した際に、再送ボタンが表示されます。<br />
+                再送ボタンを押すと、エラー時の送信内容がセットされた状態で、メールの通知画面が開きます。<br />
+                セキュリティの設定を行い、エラーとなったメールを再送することが可能です。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <a name="share"></a>以下の画面は、共有グループでのファイル操作履歴です。<br />
+  <img src="../../help-images/view/8_2.gif" class="view" alt="共有グループファイル操作履歴" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[ユーザ操作履歴]</th>
+      <td>ユーザのファイル操作履歴を確認することができます。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[部署グループ履歴]</th>
+      <td>共有オプションを御利用の場合のみ表示され、部署グループに関する操作履歴を確認することができます。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />グループ名</th>
+      <td>操作が行われたグループの名前です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />ユーザ名</th>
+      <td>操作を行ったユーザの名前です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />ファイル名</th>
+      <td>操作が行われたファイル名です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />操作内容</th>
+      <td>行われた操作の内容です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />操作日時</th>
+      <td>操作が行われた日時です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />IPアドレス</th>
+      <td>操作が行われた端末のIPアドレスです。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />備考</th>
+      <td>各操作に関連する備考を表示します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <a name="section"></a>以下の画面は、部署グループでのファイル操作履歴です。<br />
+  <img src="../../help-images/view/8-2-1.gif" class="view" alt="部署グループファイル操作履歴" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[ユーザ操作履歴]</th>
+      <td>ユーザのファイル操作履歴を確認することができます。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[共有グループ履歴]</th>
+      <td>共有オプションを御利用の場合のみ表示され、共有グループに関する操作履歴を確認することができます。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />ユーザ名</th>
+      <td>操作を行ったユーザの名前です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />ファイル名</th>
+      <td>操作が行われたファイル名です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />操作内容</th>
+      <td>行われた操作の内容です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />操作日時</th>
+      <td>操作が行われた日時です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />IPアドレス</th>
+      <td>操作が行われた端末のIPアドレスです。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />備考</th>
+      <td>各操作に関連する備考を表示します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  各項目のタイトル欄右にカーソルを宛てると「▼」が表示され、「▼」から各項目のプルダウンが表示されます。<br />
+  プルダウン内のチェックボックスの付け外しで、各項目の表示・非表示を切り替えます。<br />
+  <img src="../../help-images/view/8_3.gif" class="view" alt="各項目の表示・非表示" />
+</p>
+
+<p>
+  また、「操作日時」のタイトル欄を押すごとに、昇順・降順を切り替えます。<br />
+  <img src="../../help-images/view/8_4.gif" class="view" alt="昇順・降順切替" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th colspan="2">履歴検索</th>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+      <td>
+        虫眼鏡アイコンで、検索のフォームを開きます。<br />
+        <img src="../../help-images/view/8_5.gif" class="view" alt="検索フォーム" />
+        <table class="data-s">
+          <tbody>
+            <tr>
+              <td>項目のプルダウン</td>
+              <td>：検索する項目を選択します。</td>
+            </tr>
+            <tr>
+              <td>[検索]欄</td>
+              <td>：検索する文言を入力します。</td>
+            </tr>
+            <tr>
+              <td>[検索]ボタン</td>
+              <td>：検索を開始します。</td>
+            </tr>
+            <tr>
+              <td>[クリア]ボタン</td>
+              <td>：検索を解除します。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+      <td>1ページに表示する一覧の件数を変更します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+      <td>先頭ページに移動します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+      <td>1ページ前に移動します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+      <td>入力されたページに移動します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+      <td>1ページ次に移動します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+      <td>最終ページ に移動します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/load.png" alt="一覧を最新の状態にする" /></th>
+      <td>一覧画面を最新の状態に更新します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>共有グループのファイル操作履歴をCSVダウンロード</h4>
+<p class="h4-p">
+  共有グループのファイル操作履歴画面では共有グループ履歴をCSV形式でダウンロードすることが可能です。グループ名とダウンロードしたい履歴の日付を選択して下さい。<br />
+  全てを選択後、[CSVダウンロード]ボタンをクリックすると共有グループログがダウンロードされます。<br />
+  <br/>
+  <span class="attention">
+    共有グループの操作履歴は「グループ管理者」のみダウンロードが可能です。
+  </span>
+  <img src="../../help-images/view/logcsvdl-1.gif" class="view" alt="共有グループログCSVダウンロード" />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

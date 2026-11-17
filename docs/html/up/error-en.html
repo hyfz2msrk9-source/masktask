@@ -1,0 +1,50 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-en/";
+  include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+
+<h2><span>Upload files</span></h2>
+<h3>In case you cannot upload files</h3>
+
+<p>If the messages as follows are displayed, you cannot upload files. Please ask for sender the Email and files.</p>
+
+<dl>
+  <dt>This demand was deleted by sender.</dt>
+  <dd>
+    You cannot upload files because the request is canceled by the sender.<br />
+    <img src="<?php echo $image_path; ?>error_up_stopped.png" class="view" alt="This demand was deleted by sender" />
+  </dd>
+
+  <dt>This file's upload expiry date has passed.</dt>
+  <dd>
+    You cannot upload files because the file’s upload expiry date has passed.<br />
+    <img src="<?php echo $image_path; ?>error_up_limit.png" class="view" alt="This file's upload expiry date has passed." />
+  </dd>
+
+  <dt>The URL is incorrect.</dt>
+  <dd>
+    You cannot upload files because the URL to upload files that is inform you is incorrect and you cannot access the upload screen.<br />
+    <img src="<?php echo $image_path; ?>error-url.png" class="view" alt="The URL is incorrect." />
+  </dd>
+  <dt>Can't upload a file.Because this folder does not have capacity.</dt>
+  <dd>
+    You cannot upload files because the folder that you try to upload into have no enough capacity.<br />
+    <img src="<?php echo $image_path; ?>error_nospace.png" class="view" alt="no enough capacity" />
+  </dd>
+
+  <dt>Failed to sanitize the file / cannot be sanitized</dt>
+  <dd>
+    When the sanitize option is enabled, an error is displayed when a file that cannot be sanitized is uploaded.<br />
+    <img src="<?php echo $image_path; ?>error_sanitize.png" class="view" alt="Failed to sanitize the file" />
+    <img src="<?php echo $image_path; ?>error_sanitize_not_upload.png" class="view" alt="Password-protected files cannot be sanitized." />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

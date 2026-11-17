@@ -1,0 +1,134 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+
+<h2><span>File list</span></h2>
+<h3><a name="4-2"></a>Upload files</h3>
+<p>
+You can upload files directly by drag & drop on the file list screen (→<a href="../top/index-en.html#dragdrop">File upload (Drag & Drop)</a>).<br />
+If you want to set notifications to shared group members or add a memo when uploading, please click the [Upload] button on the file list.<br />
+  <img src="../../help-images/view-en/4-2_1.gif" class="view" alt="File list: Upload" />
+</p>
+
+<p>Form to upload file is appear. Please select files and click [Upload].<br />
+  <img src="../../help-images/view-en/4-2_2.png" class="view" alt="#" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-1.gif" alt="1" /></th><th class="bLnone">[Add another file]</th>
+      <td>
+        Please select files you want to upload with [Add another file] button.<br/>The Choose File to Upload dialog opens when you click the [Add another file] button.<br/>
+        <img src="../../help-images/view-en/top-upload-1.gif" class="view" alt="The Choose File to Upload" />
+        <br/>
+        Please check the screen the maximum number of file and the maximum upload capacity.<br/>
+        <img src="../../help-images/view-en/top-upload-1_2.gif" class="view" alt="About maimum number of file and the maximum upload capacity." /><br />
+        When you upload a file, it may be filtering according to the form of a file.<br />
+        Please Ask an administrator about a file format.<br />
+        <img src="../../help-images/view-en/fileformat-1.gif" class="view" alt="file filter" />
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-2.gif" alt="2" /></th><th class="bLnone">[Delete]</th>
+      <td>
+        After you select the file you want to upload, you can delete the file that you do not want to upload.
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-3.gif" alt="3" /></th><th class="bLnone">Select upload <br/>destination folder</th>
+      <td>
+        You can select folder you want upload files in.<br />
+        <img src="../../help-images/view-en/4-2_4.gif" class="view" alt=" You can select folder you want upload files in" />
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-4.gif" alt="4" /></th><th class="bLnone">Memo</th>
+      <td>
+        You can note down something here. And you can see this memo in the file details area.<br />
+        It is not able to the person whom you sent these files to see this memo.<br />
+        <img src="../../help-images/view-en/4-2_6.gif" class="view" alt=" You can select folder you want upload files in" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p style="margin-top:30px;">File uploading was completed.</br>
+  </br>If file sanitization is enabled, the file will be automatically sanitized when you click the [Upload] button.(<a href="index-en.html#sanitize">→Sanitization</a>)
+</p>
+<img src="../../help-images/view-en/4-2_5.gif" class="view" alt="screan of File uploading was completed" />
+<p>
+  To notify people of the uploaded file, click the [Distribute File] button.
+  The Notification of registered file page will appear. (→<a href="send-en.html#4-3">File distribute</a>)
+</p>
+
+<h4><a name="4-2-1"></a>About about upload file selection.</h4>
+<dl>
+  <dt>Select multiple files.</dt>
+  <dd>
+    You can upload multiple files.Please select files at press Ctrl key or Shift key.<br/>
+    <img src="../../help-images/view-en/top-upload-3.gif" class="view" alt="About upload file selection." />
+  </dd>
+  <dt>Drag and Drop File Upload.</dt>
+  <dd>
+    You can drag and drop file uploads.<br/>
+    <img src="../../help-images/view-en/top-upload-4.gif" class="view" alt="About drag and drop file uploads." />
+  </dd>
+  <dt>Drag and Drop Folder Upload.</dt>
+  <dd>
+    You can drag and drop folder uploads. Please select folder that include files.
+    <img src="../../help-images/view-en/top-upload-5.gif" class="view" alt="About drag and drop folder uploads." />
+  </dd>
+</dl>
+<?php
+if (defined("VIRUS_CHECK_FLG") && (VIRUS_CHECK_FLG == 1)):
+?>
+  <h4><a name=""></a>About virus scanning for file uploads.</h4>
+  <p class="h4-p">
+    <?php
+    if (!defined("VIRUS_CHECK_SIZE_LIMIT")) {
+      $virus_check_size_limit = 2000;
+    } else {
+      $virus_check_size_limit = VIRUS_CHECK_SIZE_LIMIT;
+    }
+    ?>
+    Virus scanning is only performed on files that are less than <?= number_format($virus_check_size_limit) ?>MB.<br>
+    Files larger than <?= number_format($virus_check_size_limit) ?>MB will be uploaded without being scanned.
+  </p>
+<?php endif; ?>
+
+<h4><a name="4-2-3"></a>About uploading shared folder.</h4>
+<p class="h4-p">
+  If you choose to upload files to a shared folder, You can send notification E-mail to members of the group.<br/>
+  And you are able to edit the subject and body of the notification e-mail.
+  <br/>
+  <img src="../../help-images/view-en/top-upload-share-1.png" class="view" alt="About uploading shared folder." />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-1.gif" alt="1" /></th><th class="bLnone">Select upload <br/>destination folder</th>
+      <td>
+If after selecting a shared folder, and if you go to the upload page, it is not possible to change the "upload folder". Please go to the file list page, and selecting shared folder.<br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-2.gif" alt="2" /></th><th class="bLnone">notification by mail</th>
+      <td>
+        You can send notification E-mail to members of the group. Please select from all members or choice member.<br/>
+        Please click on the [>>Select a member] to show the members list. Select members from the member list.<br/>
+        <img src="../../help-images/view-en/top-upload-share-2.png" class="view" alt="Group member list" /><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-3.gif" alt="3" /></th><th class="bLnone">notification by mail edit</th>
+      <td>
+        You can edit the subject and body of the e-mail notification when you click the Edit button.<br/>
+After editing, please click the "Edit" button.
+        <img src="../../help-images/view-en/top-upload-share-3.gif" class="view" alt="Edit of notification mail." />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

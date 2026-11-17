@@ -1,0 +1,318 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span><a name="gathering-top"></a>一斉収集</span></h2>
+<p>
+  一斉収集では、複数の宛先から複数ファイルを回収することができます。複数の宛先の指定はCSVファイル形式で作成し、作成したファイルをインポートをするだけで簡単にメールの送信が可能です。<br />
+  <span class="attention">※現在は日本語版と英語版のみ対応となっており、中国語には対応しておりません。 </span>
+</p>
+
+<p>
+  メニュー：[一斉収集]をクリックしてください。<br />
+  <img src="../../../images/sysmenu_gathering.gif" class="view" alt="メニュー：一斉収集" />
+</p>
+
+<h3><a name="list"></a>一斉収集一覧</h3>
+<p class="h4-p">
+  一斉収集一覧では、今までに送信した一斉収集の履歴を一覧で閲覧することができます。
+</p>
+<img src="../../help-images/view/gathering-list.png" class="view" alt="一斉収集一覧" />
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[一斉収集メールを送信する]ボタン</th>
+      <td>
+        一斉収集メール送信画面に遷移します。<br />
+        (→<a href="send.html">一斉収集メールを送信する</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[宛先サンプルファイルの<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ダウンロード]ボタン</th>
+      <td>
+        メール送信時に必要な宛先ファイルのサンプルをダウンロードします。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />チェックボックス</th>
+      <td>[選択したメールのログを全て削除]機能でメールを選択するためのチェックボックスです。<br />
+        ページをまたいだ複数選択が可能です。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />通知日</th>
+      <td>一斉にメールを送信した日時を表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />メール件名</th>
+      <td>メール件名を表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />送信者件数</th>
+      <td>
+        送信した宛先の件数を表示します。<br />
+        件数には、配信に失敗した宛先も含まれています。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt=78" />エラー件数</th>
+      <td>
+        送信に失敗した宛先の件数を表示します。<br />
+        宛先により送信失敗の情報を取得する時間に差が出る場合があります。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />状況</th>
+      <td>配信状況を「収集中」、「停止済」、「有効期限切れ」のステータスで表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />フォルダ名</th>
+      <td>収集したファイルの保管フォルダ名を表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />ログ</th>
+      <td>
+        詳細をCSV形式のログファイルでダウンロードします。<br />
+        ログファイルが作成されていない場合、[ダウンロード]ボタンは表示されません。<br />
+        (→<a href="#gathering-log">ログのダウンロード</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-11.gif" alt="11" /><img src="../../help-images/btn_detail.gif" alt="[詳細]ボタン" /></th>
+      <td>
+        詳細画面を別ウィンドウで表示します。<br />
+        (→<a href="#gathering-detail">一斉収集の詳細</a>)
+      </td>
+    </tr>
+    <tr>
+      <th>　 <img src="../../help-images/icon_stop.gif" alt="[停止]ボタン" /></th>
+      <td>
+        収集メールの停止画面に遷移します。停止は、状況が「収集中」となっているメールのみ有効です。<br />
+        (→<a href="#gathering-stop">一斉収集の停止</a>)
+      </td>
+    </tr>
+    <tr>
+      <th>　 <img src="../../help-images/icon_delete.gif"" alt="[削除]ボタン" /></th>
+      <td>
+        一覧から一斉収集の情報を削除します。<br />同時に保存されていたログファイルも削除されます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-12.gif" alt="12" />[選択したメールの<br />　　ログを全て削除]ボタン</th>
+      <td>チェックボックスで選択した一斉収集の情報とログファイルをまとめて削除します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <th colspan="2">一覧表示</th>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+      <td>
+        虫眼鏡アイコンで、検索フォームを開きます。<br />
+        <img src="../../help-images/view/delivery_confirm-search.png" class="view" alt="検索フォーム" />
+        <table class="data-s">
+          <tbody>
+            <tr>
+              <td>項目のプルダウン</td>
+              <td>：検索する項目を選択します。</td>
+            </tr>
+            <tr>
+              <td>[検索]欄</td>
+              <td>：検索する文言を入力します。</td>
+            </tr>
+            <tr>
+              <td>[検索]ボタン</td>
+              <td>：検索を開始します。</td>
+            </tr>
+            <tr>
+              <td>[クリア]ボタン</td>
+              <td>：検索を解除します。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+      <td>1ページに表示する一覧の件数を変更します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+      <td>先頭ページに移動します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+      <td>1ページ前に移動します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+      <td>入力されたページに移動します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+      <td>1ページ次に移動します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+      <td>最終ページに移動します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/load.png"  alt="一覧を最新の状態にする" /></th>
+      <td>一覧画面を最新の状態に更新します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="gathering-log"></a>ログのダウンロード</h4>
+<p class="h4-p">
+  ログのダウンロードでは、一斉収集の詳細をCSV形式のログファイルでダウンロードします。<br />
+  [ダウンロード]ボタンをクリックすると、ログファイルをダウンロードします。<br />
+  ログファイルが作成されていない場合、[ダウンロード]ボタンは表示されません。<br />
+  ログファイルは、宛先のお名前、宛先のメールアドレス、配信結果、1件目の収集したファイル名、アップロード日時、2件目の収集したファイル名、アップロード日時…の順で記載されています。<br />
+  <img src="../../help-images/view/gathering_log.png" class="view" alt="ログファイル" />
+</p>
+
+<h4><a name="gathering-detail"></a>一斉収集の詳細</h4>
+<p class="h4-p">
+  一斉収集の詳細では、配信の詳細情報を表示します。<br />
+  <img src="../../help-images/view/gathering_detail.png" class="view" alt="一斉収集の詳細" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />通知日</th>
+      <td>メールの送信日時を表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />宛先ファイル</th>
+      <td>
+        インポートした宛先ファイルのファイル名を表示します。<br />
+        ファイル名の横にある[ダウンロード]ボタンをクリックすると、インポートした宛先ファイルをダウンロードします。<br />
+        配信中に宛先ファイルの保存に失敗した場合は、[ダウンロード]ボタンは表示されません。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />収集フォルダ</th>
+      <td>
+        アップロードされたファイルの保管先フォルダ名を表示します。<br />
+        フォルダが削除された場合やフォルダへのアクセス権がない場合は、フォルダ名が表示されません。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />収集後のファイル名</th>
+      <td>
+        送信時に設定した収集後のファイル名を表示します。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />メールアドレス</th>
+      <td>宛先一覧画面に遷移します。(→<a href="#gathering-detail-to">宛先一覧</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />差出人</th>
+      <td>差出人の名前とメールアドレスを表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />メール件名</th>
+      <td>メールの件名を表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />メール本文</th>
+      <td>メール本文画面に遷移します。(→<a href="#gathering-detail-message">メール本文</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />セキュリティ設定</th>
+      <td>
+        送信時に設定したセキュリティ設定（アップロード有効期限・パスワードロック）を表示します。<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />文字エンコーディング</th>
+      <td>送信時に設定したメールの文字エンコーディングを表示します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="gathering-detail-to"></a>宛先一覧</h4>
+<p class="h4-p">
+  宛先一覧では、配信の宛先情報を一覧で表示します。<br />
+  <img src="../../help-images/view/gathering_detail-to.png" class="view" alt="宛先一覧" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>宛先</th>
+      <td>宛先の名前を表示します。</td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td>宛先のメールアドレスを表示します。</td>
+    </tr>
+    <tr>
+      <th>配信停止希望 </th>
+      <td>メール配信停止を希望している宛先には「○」が表示されます。</td>
+      </tr>
+      <tr>
+        <th>アップロードURL</th>
+        <td>宛先に送信したアップロードURLを「クリップボードにコピー」ボタンをクリックしてにコピーしたり、マウスカーソルを合わせることで、URLを確認したりできます。</td>
+      </tr>
+      <tr>
+        <th>送信結果</th>
+      <td>
+        宛先へのメール送信結果を表示します。<br />
+        成功の場合は「○」、失敗の場合は「×」になります。<br />
+        宛先により配信失敗の情報を取得する時間に差が出る場合があります。
+      </td>
+    </tr>
+    <tr>
+      <th>ファイル名</th>
+      <td>
+        収集したファイル名、アップロード日時を表示します。<br/>
+        青字のファイル名をクリックするとプレビューが可能です。<br />
+        <img src="../../../images/dl_icon.svg" class="icon_18" alt="ダウンロード" />をクリックするとファイルのダウンロードができます。
+      </td>
+    </tr>
+    <tr>
+      <th>note</th>
+      <td>
+        ファイルの収集時に差出人宛のメッセージとして入力された内容が表示されます
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="gathering-detail-message"></a>メール本文</h4>
+<p class="h4-p">
+  メール本文では、送信時のメール本文を表示します。<br />
+  <img src="../../help-images/view/gathering_detail-message.png" class="view" alt="メール本文" />
+</p>
+
+<h4><a name="gathering-detail-unsubscribe"></a>一斉収集の配信停止リンク</h4>
+<p class="h4-p">
+  管理者側で配信停止リンクを付加する設定にしている場合、メール本文に配信停止リンクが挿入されます。<br />
+  <img src="../../help-images/view/gathering_detail-unsubscribe-url.png" class="view" alt="一斉収集の配信停止リンクがあるメール本文" />
+  リンクをクリックすると、メール配信停止ページに遷移します。<br />
+  <!-- 一斉配信と画面が変わらないため、下の画像は一斉配信のものを使用しています。 -->
+  <img src="../../help-images/view/delivery_detail-unsubscribe.png" class="view" alt="一斉収集の配信停止リンク先" />
+</p>
+
+<h4><a name="gathering-stop"></a>一斉収集の停止</h4>
+<p class="h4-p">
+  一斉収集を停止する機能です。停止は状況が「収集中」となっている収集のみ有効です。<br />
+  一斉収集一覧画面で、停止したい配信の欄にある[停止]ボタンをクリックすると停止確認画面に遷移します。<br />
+  <img src="../../help-images/view/gathering_stop-confirm.png" class="view" alt="停止の確認" /><br />
+  停止すると、配信したメールに記載されているアップロードURLからファイルのアップロードができなくなります。<br />
+  また、一度停止すると、再度アップロードURLを有効にすることはできません。<br />
+  配信情報をご確認いただき、停止しても問題がない場合は[停止する]ボタンをクリックし、停止できます。<br />
+  <img src="../../help-images/view/gathering_stop-done.png" class="view" alt="停止の完了" />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

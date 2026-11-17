@@ -1,0 +1,71 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>File list</span></h2>
+<h3>File Distribution</h3>
+<h4><a name="4-3-8"></a>check on how many people the file was sent</h4>
+<p>
+  You can check about the status of file distribution. Please press the number in the “Notification” column, so you will be able to check on how many people the file was sent. And you can also check on how many times the file was downloaded.<br />
+
+  <img src="../../help-images/view-en/4-3-7_1.gif" class="view" alt="file list：notification" /> <br />
+  <img src="../../help-images/view-en/top_notice-personal.png" class="view" alt="screen of file notification" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />Tabs</th>
+      <td>
+        <img src="../../help-images/view-en/4-3-7_3.gif" class="view" alt="tabs" /><br />
+  Change the list of distribution. You can choose the list of distribute file from the WebFile distribute function, or distribute from your own usual mailer.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />Distribution date</th>
+      <td>It is the date the notification email was sent.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Distribution</th>
+      <td>
+        This is an address or a name that file notification email was sent to. If you entered a name in addition to the address, the name is displayed in this area. <br />
+  If you didn’t enter a name, the email address is in this area. <br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Expiry date</th>
+      <td>his date is the expiry date to download the file.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />File auto delete</th>
+      <td>You are viewing the settings for the automatic deletion of files. In the case of "I do", will be removed after the expiration date has expired download.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />Download count</th>
+      <td>This number is a frequency of file downloading. The denominator means the ceiling to download the file.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />Last download time</th>
+      <td>They are the last date and time that file was downloaded.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_distop-en.gif" alt="stop to distribution" /></th>
+      <td>
+        When this button is clicked, a file distributions stop. And the download-URL that you have sent is not effective. Once you stop the distribution, it is not able to make the download-URL effective.<br />
+  After press the [Stop distribution] button, you move to the “Stop the distribution of the file”page.<br />
+
+
+  <img src="../../help-images/view-en/3-3-7_4.gif" class="view" alt="screen of being stoped distribution" /><br />
+
+
+        <p class="section">
+    Press the [Stop] button, the file distribution is stopped.<br />
+    Once you stop to file distribution, you will not be able to press the [Stop] button again.
+  </p>
+        <img src="../../help-images/view-en/4-3-7_5.gif" class="view" alt="button to stop to distribution" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

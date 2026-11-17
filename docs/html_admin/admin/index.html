@@ -1,0 +1,231 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+<h2><span>ユーザ管理</span></h2>
+  <h3>管理者管理</h3>
+    <p>
+      登録されている管理者の一覧を表示します。また、管理者を管理する入り口となっています。<br />
+      メニュー：ユーザ管理をクリックし、[管理者管理]ボタンをクリックしてください。<br /><br />
+      <img src="../../images/view/4-9-1-1.gif" class="view"  alt="ユーザ管理：管理者管理" />
+    </p>
+    <p>
+      管理者管理画面へ遷移します。<br />
+      管理者管理画面は、システム側で設定された内容によって画面が違う場合があります。<br />
+      画面は、管理画面でできる操作が履歴の閲覧のみの画面と、管理者の追加、編集、削除、履歴の閲覧が可能である画面と2通りあります。
+    </p>
+    <p>
+      操作が履歴の閲覧のみの画面です。<br />
+      履歴の機能については、<a href="history.html#4-14">管理者履歴</a>をご覧ください。<br />
+      <img src="../../images/view/4-9-1-2.gif" class="view" alt="ユーザ管理：管理者管理：履歴" />
+    </p>
+    <p>
+      管理者の追加、編集、削除、履歴の閲覧が可能である画面です。<br />
+      <img src="../../images/view/4-9-1-3.gif" class="view" alt="ユーザ管理：管理者管理：追加・編集・削除・履歴" />
+    </p>
+
+    <h4>備考</h4>
+      <p class="h4-p">
+        備考欄には、任意のメモや特記事項などを自由に入力することができます。
+        <img src="../../images/view/4-9-1-5.gif" class="view"  alt="ユーザ管理：管理者管理：備考"/>
+      </p>
+
+    <h4>アカウントロック</h4>
+      <p class="h4-p">
+        アカウントロックは、設定が有効になっている場合のみ確認することができます。<br />
+        管理者にアカウントロックがかかっている場合に、アカウントロックされていない別の管理者がログインし、管理者管理画面でアカウントロックされた管理者を確認することができます。
+        <img src="../../images/view/4-9-1-4.gif" class="view"  alt="ユーザ管理：管理者管理：アカウントロック"/>
+      </p>
+
+    <h4>管理者権限</h4>
+      <p class="h4-p">
+        管理者権限はシステムの管理者の権限を表示しています。<br />
+        各権限ごとに行える操作が制限されています。<br />
+        <img src="../../images/view/admin-1.gif" class="view"  alt="ユーザ管理：管理者管理：管理者権限"/>
+      </p>
+      <div class="caption">管理者権限について</div>
+        <table>
+          <tbody>
+            <tr>
+              <th></th>
+              <th class="cc title" colspan="3">権限</th>
+            </tr>
+            <tr>
+              <th class="cc title vm" rowspan="2">項目</th>
+              <th class="cc vm" rowspan="2">システム<br />管理者</th>
+              <th class="cc" colspan="2" style="background-color:#CCC;">サブ管理者</th>
+            </tr>
+            <tr>
+              <th class="cc">スーパーユーザ<br />管理者</th>
+              <th class="cc">ユーザ<br />管理者</th>
+            </tr>
+            <tr>
+              <td>ユーザを追加する</td>
+              <td class="cc">◎</td>
+              <td class="cc">◎</td>
+              <td class="cc">△</td>
+            </tr>
+            <tr>
+              <td>ユーザを編集する</td>
+              <td class="cc">◎</td>
+              <td class="cc">◎</td>
+              <td class="cc">△</td>
+            </tr>
+            <tr>
+              <td>ユーザを削除する</td>
+              <td class="cc">◎</td>
+              <td class="cc">◎</td>
+              <td class="cc">△</td>
+            </tr>
+            <tr>
+              <td>ユーザ履歴閲覧</td>
+              <td class="cc">◎</td>
+              <td class="cc">◎</td>
+              <td class="cc">△</td>
+            </tr>
+            <tr>
+              <td>ユーザCSVインポート</td>
+              <td class="cc">◎</td>
+              <td class="cc">◎</td>
+              <td class="cc">△</td>
+            </tr>
+            <tr>
+              <td>ユーザCSVエクスポート</td>
+              <td class="cc">◎</td>
+              <td class="cc">◎</td>
+              <td class="cc">△</td>
+            </tr>
+            <tr>
+              <td>ログ管理</td>
+              <td class="cc">◎</td>
+              <td class="cc">×</td>
+              <td class="cc">×</td>
+            </tr>
+            <tr>
+              <td>ウイルススキャンログ管理</td>
+              <td class="cc">◎</td>
+              <td class="cc">×</td>
+              <td class="cc">×</td>
+            </tr>
+            <tr>
+              <td>アーカイブ管理</td>
+              <td class="cc">◎</td>
+              <td class="cc">×</td>
+              <td class="cc">×</td>
+            </tr>
+            <tr>
+              <td>上長を設定する</td>
+              <td class="cc">◎</td>
+              <td class="cc">◎</td>
+              <td class="cc">△</td>
+            </tr>
+            <tr>
+              <td>上長CSVインポート</td>
+              <td class="cc">◎</td>
+              <td class="cc">◎</td>
+              <td class="cc">△</td>
+            </tr>
+            <tr>
+              <td>上長CSVエクスポート</td>
+              <td class="cc">◎</td>
+              <td class="cc">◎</td>
+              <td class="cc">△</td>
+            </tr>
+            <tr>
+              <td>部署作成<br />(※作成すること自体は全ての管理者が可能)</td>
+              <td class="cc">◎</td>
+              <td class="cc">○</td>
+              <td class="cc">○</td>
+            </tr>
+            <tr>
+              <td>部署編集</td>
+              <td class="cc">◎</td>
+              <td class="cc">○</td>
+              <td class="cc">○</td>
+            </tr>
+            <tr>
+              <td>部署削除</td>
+              <td class="cc">◎</td>
+              <td class="cc">○</td>
+              <td class="cc">○</td>
+            </tr>
+            <tr>
+              <td>部署CSVメンバー追加</td>
+              <td class="cc">◎</td>
+              <td class="cc">○</td>
+              <td class="cc">○</td>
+            </tr>
+            <tr>
+              <td>部署CSVエクスポート</td>
+              <td class="cc">◎</td>
+              <td class="cc">○</td>
+              <td class="cc">○</td>
+            </tr>
+            <tr>
+              <td>グループ作成<br />(※作成すること自体は全ての管理者が可能)</td>
+              <td class="cc">◎</td>
+              <td class="cc">○</td>
+              <td class="cc">○</td>
+            </tr>
+            <tr>
+              <td>グループ編集</td>
+              <td class="cc">◎</td>
+              <td class="cc">○</td>
+              <td class="cc">○</td>
+            </tr>
+            <tr>
+              <td>グループ削除</td>
+              <td class="cc">◎</td>
+              <td class="cc">○</td>
+              <td class="cc">○</td>
+            </tr>
+            <tr>
+              <td>グループCSVエクスポート</td>
+              <td class="cc">◎</td>
+              <td class="cc">○</td>
+              <td class="cc">○</td>
+            </tr>
+            <tr>
+              <td>グループメンバーCSVインポート</td>
+              <td class="cc">◎</td>
+              <td class="cc">○</td>
+              <td class="cc">○</td>
+            </tr>
+            <tr>
+              <td>グループメンバーCSVエクスポート</td>
+              <td class="cc">◎</td>
+              <td class="cc">○</td>
+              <td class="cc">○</td>
+            </tr>
+            <tr>
+              <td>各種設定</td>
+              <td class="cc">◎</td>
+              <td class="cc">×</td>
+              <td class="cc">×</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="font-size:85%;">
+          ◎：他のシステム管理者、スーパーユーザ管理者、ユーザ管理者が登録したのも操作可能<br />
+          ◯：許可されたデータのみ操作が可能<br />
+          △：自分で登録したデータのみ操作が可能<br />
+          ×：システム管理者のみ操作可能<br /><br />
+          ※グループ作成、部署作成時の「サブ管理者による編集を許可する」設定はシステム管理者のみ設定が可能
+        </p>
+        <br />
+        <div class="caption">管理者権限の移行について</div>
+        <p>
+          <strong>&gt;&gt;全ての権限の移行</strong><br />
+          特定の管理者が管理しているユーザ・部署・グループを、別の管理者の管理下へ移行します。<br />
+          権限の移行方法については、<a href="edit.html">管理者編集</a>をご覧ください。
+        </p>
+        <br />
+        <p>
+          <strong>&gt;&gt;ユーザの管理権限の移行</strong><br />
+          ユーザ情報の編集や削除操作を行える管理者を、他の管理者へ変更します。<br />
+          ユーザ管理者が追加した特定のユーザのみ、別のユーザ管理者の管理下に変更したい場合などに有効です。<br />
+          <span style="color:red;">編集権限のある管理者を変更すると、対象のユーザのグループ・部署への所属情報、上長を設定していた場合は上長設定が、初期化されます。</span><br/ >
+          管理者の変更方法については、<a href="../user/index.html#4-1-ownerchange">ユーザ一覧の管理者の変更について</a>をご覧ください。
+        </p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

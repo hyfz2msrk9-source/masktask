@@ -1,0 +1,126 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+
+
+<h2><span>Receive (collect)</span></h2>
+<p>
+  Receive (collect) is a function that the file receipt space is secured, send the mail to collect files to the specific person, and up-loads files to this system on the web.<br />
+</p>
+
+
+<p>
+  Please click Menu:Receive (collect).<br />
+  <img src="../../../images-en/sysmenu_collecting.gif" class="view" alt="menu：Receive (collect)" />
+</p>
+<h3><a name="5-1"></a>Collected file list</h3>
+<p>
+  When you click the menu:Receive (collect), the collection file list appears. You can operate each file on the colleced file list.<br />
+
+  <img src="../../help-images/view-en/5-1_1.gif" class="view" alt="the collection file list" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[Collected<br /> Email send]</th>
+      <td>This is a button to send Email to collect files.(→<a href="collect-en.html#5-2">Receive (collect) files</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[Send Email <br/>from own mailer<br/> to collect]</th>
+      <td>This is a button to send Email to collect files from own mailer.<br/>(→<a href="collect-en.html#collect-mailer">Receive (collect) files from own mailer</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Tag list</th>
+      <td>
+        It is a list of tags to manage mails to collect and the collected files.<br />
+  When you click each tag, the file list distributed with tag is displayed.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />[Change <br />the tag name]</th>
+      <td>
+        It is possible to change the tag name you select in the tag list.<br />
+        <img src="../../help-images/view-en/5-1_2.gif" class="view" alt="change the tag name" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />[Delete tag]</th>
+      <td>
+  Tag is deleted. When tag is deleted, the collected file and the mail to collect managed with this tag are deleted.<br />
+  Please note that URL to collect files  becomes invalid when the collected file is deleted.<br />
+        <img src="../../help-images/view-en/5-1_3.gif" class="view" alt="tag is deleted" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />File list</th>
+      <td>
+        Information of collected files is sas follows.<br />
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>File name</th>
+              <td>It is a name of file. “Unregistered” means that the file has not uploaded yet.</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/icon_filemenu.gif" alt="file name" /></th>
+              <td>
+                Button to display details of file. When you click it, you can see the message to sender which was written when the file was collected and the registered date.<br />
+                When the<img src="../../help-images/icon_close-en.gif" alt="close detail" />button is clicked, the column is closed.<br />
+                <img src="../../help-images/view-en/5-1_4.gif" class="view" alt="file detail" />
+              </td>
+            </tr>
+            <tr>
+              <th>Registration date</th>
+              <td>It is the date or time file was uploaded.<br />
+    The time is displayed during that day. The date is described since the next day.</td>
+            </tr>
+            <tr>
+              <th>size</th>
+              <td>It is size of the file.</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/icon_dl-en.gif" alt="download" /></th>
+              <td>
+                [Download] button.Download files.<br />
+    If you set [Save folder], you can not download from the Collected file list.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_save-en.gif" alt="store" /></th>
+      <td>
+        [Save] button. You can save files.(→<a href="save-en.html#5-3">Store files</a>)<br />
+        If you set [Save folder] you collect the files, the folder name is displayed.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_delete-en.gif" alt="delete" /></th>
+      <td>
+        [Delete] button. You can delete files.<br />
+        Caraful, if you delete files, these files are deleted completely from the system.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/ico-tag-change-en.gif" alt="change tag" /></th>
+      <td>[Change tag] button. You can change the tags of collected files and mails.</td>
+    </tr>
+  </tbody>
+</table>
+
+<dl>
+  <dt>Operate the selected file</dt>
+  <dd>
+    You can operate the files which are selected with check-box. <br />
+    When you click the [Save] button, files are saved. And saved files move to Menu: File list.  When you click the [Delete] button, files and space for collected files are deleted.<br />
+    When you select the "Change tag" list, the tag with files is changed.
+
+    <img src="../../help-images/view-en/5-1_5.gif" class="view" alt="operate the selected file" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

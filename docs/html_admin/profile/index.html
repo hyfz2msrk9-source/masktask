@@ -1,0 +1,33 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+
+<h2><span>個人設定</span></h2>
+<p>右上に表示されているログイン中アカウント名をクリックすると、以下の機能を利用できます。</p>
+<h3 id="change_password"><span>パスワード変更</span></h3>
+<p>
+  ログインしている管理者のパスワードを変更します。<br />
+  パスワードは定期的に変更されることをお勧めします。現在のパスワード、新しいパスワード、確認のため新しいパスワード(再入力)を入力し、[変更する]ボタンをクリックしてください。正しく認証されましたら、パスワードを変更します。<br />
+  <img src="../../images/view/11-1.png" class="view" alt="パスワード変更" />
+</p>
+
+<p>
+  パスワード変更後は、パスワード変更完了画面へ遷移し、自動的にログアウトされます。<br />
+  [ログイン画面へ移動]ボタンをクリックすると、ログイン画面へ遷移しますので、もう一度ログインしてください。<br />
+  <img src="../../images/view/11-2.png" class="view" alt="パスワード変更完了" />
+</p>
+
+<h3 id="twostep_auth">二要素認証の設定</h3>
+<p>
+管理者画面で二要素認証が有効な場合に表示されます。<br />
+ログイン中のアカウントの二要素認証を設定できます。<br />
+設定が有効な場合、二要素認証が使えなくなった時に備えてバックアップコードを作成することもできます。<br />
+</p>
+<h4>メールアドレスによる二要素認証の場合</h4>
+<img src="../../images/view/twostep_mail.png" class="view" alt="二要素認証の設定画面_メールアドレス認証" />
+<h4>アプリによる二要素認証の場合</h4>
+<img src="../../images/view/twostep_app.png" class="view" alt="二要素認証の設定画面_アプリによる認証" />
+
+<h3>ログアウト</h3>
+<p>クリックするとログアウトできます。</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

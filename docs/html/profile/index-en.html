@@ -1,0 +1,51 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>Profile</span></h2>
+<p>
+  You can see your profile registered in the system. You can change your password here.<br />
+  We advise that you change your password periodically.
+</p>
+
+<p>Please click menu:profile.<br />
+  <img src="../../help-images/view-en/submenu.png"  class="view" alt="menu:profile" />
+</p>
+
+<p><img src="../../help-images/view-en/10_1.png" class="view" alt="profile" /></p>
+
+<h3><a name="10-1"></a>Change password</h3>
+<p>
+  You can change password. Please click [Change password] button.<br />
+  <span class="attention">※Users using Google SSO authentication or [##SAML_NAME##] can not change their passwords.</span><br />
+  <img src="../../help-images/view-en/10-1_1.png" class="view" alt="profile:change password" />
+</p>
+
+<p>
+  Change password screen will appear.<br />
+  Please enter current password, new password, and new password to confirm, and click [Submit] button.<br />
+  <img src="../../help-images/view-en/10-1_2.gif" class="view" alt="profile:change password" />
+</p>
+
+<p>
+  When you change your password, it automatically logs you out.<br />
+  Please log in with your new password.
+</p>
+
+<h3><a name="two_step_auth"></a>Two-factor authentication</h3>
+<span class="attention">&nbsp;※Users using Google SSO authentication or [##SAML_NAME##] can not use two-factor authentication with WebFile.</span><br />
+<span class="attention">&nbsp;※This setting is only available for two-factor authentication with authentication apps.</span><br />
+
+
+<h4><a name="two_step_auth_on"></a>Enable two-factor authentication</h4>
+<p>When two-factor authentication with apps is disabled, click [Enable] that appears in your profile.</p>
+<p><img src="../../help-images/view-en/10-2_1.gif" class="view" alt="Two-factor authentication:Turn valid" /></p>
+<p>Follow the instructions to set up two-factor authentication. Please enter your confirmation code and click [Check and save].</p>
+
+<h4><a name="two_step_auth_off"></a>Disable two-factor authentication</h4>
+<p>When two-factor authentication with apps is enabled, click [Disable] that appears in your profile.</p>
+<p><img src="../../help-images/view-en/10-2_2.gif" class="view" alt="Two-factor authentication:Turn invalid" /></p>
+<p>Read the instructions and then click [Disable].</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

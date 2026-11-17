@@ -1,0 +1,223 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>File list</span></h2>
+<h3><a name="4-5"></a>Folder publication</h3>
+<p>
+  Folder publication function is a function to send a whole personal folder with files made by user.<br />
+  You are able to send many files to someone whom you want to send files at once.<br />
+  Shared folder cannot be opened like a personal folder.<br />
+  When thumbnail-picture function is on, if there are files with thumbnail-picture in the personal folder you will open for public, you can send files with thumbnail-picture to someone you want to send.<br />
+
+  People who received their files can see the files with thumbnail-picture. So, you attach a thumbnail-picture that receiver can image the file contents easily.<br />
+  An image file you attached to another files as a thumbnail-picture in a folder cannot be distributed by the folder publication function.<br />
+  Every time you use folder publication function, you can set security-settings. At your situation, you can set various function to keep your operate and files safe.<br />
+</p>
+
+<p>
+  In the file list page, please click the [folder publication] button at the right hand.<br />
+  <img src="../../help-images/view-en/4-5_1.gif" class="view" alt="screen of the file list:folder publication" />
+</p>
+
+<p>
+  Next, a page that sends an information Email about sending files with a publication folder will appear. <br />
+  Please enter or select items and set the security-settings as you need.
+  <img src="../../help-images/view-en/3-5_2.png" class="view" alt="screen of the folder publication" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[Send from<br /> own mailer]</th>
+      <td>
+        You can use your usual mailer software to send information Email.<br />
+        (→<a href="send-en.html#4-3-3">Send from own mailer</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />Template</th>
+      <td>
+        You can select template you prepared. <br />
+        When you select a template, it will be inserted into the body of the email.<br />
+        If you have not created a template, this item will not be displayed.(→<a href="../config/template-en.html">Template</a>)<br />
+        <img src="../../help-images/view-en/4-3-1_2.gif" class="view" alt="select of temlate" style="width:50%; height:auto;" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Destination<br />addres</th>
+      <td>
+        Enter the destination address or add from the address book. Up to 10 items can be set. (The number may have been changed by the administrator. Please contact the administrator for details.)<br />
+        Enter the destination address and click the [Add destination address] button. Alternatively, click [>>Add from the address book] to add from your address book.<br />
+        To delete an added destination address, click the [×Delete] button on the right of each destination address.<br />
+        <img src="../../help-images/view-en/3-3_3.png" class="view" alt="screen of selecting address" /><br />
+        <img src="../../help-images/view-en/3-3_4.png" class="view" alt="screen of adding destination address" /><br />
+        On the window of select from the address book, please click the address you want to add or check the check-box, and click [↓] button.<br />
+        <img src="../../help-images/view-en/3-3_5.gif" class="view" alt="select address" /><br />
+
+        After check on the address, please click [Add Destination address] button. <br />
+        These addresses are added to the file distribution area.<br /><br />
+
+        If you enter the address that is not on the address book, you are able to add it to your address book after you send this Email.<br />
+        (It will be registered as “No group”. If you need divide it into group, you can change the group of address. (→<a href="../address/group-en.html#6-5">Change group of address</a>)<br /><br />
+
+        If a mail address is inputted when the mail address is registered into the address book, it will come to be indicated by prediction from an address book.<br />
+        When clicking a mail address to input, the mail address clicked in the input area of the address is displayed.<br />
+        <img src="../../help-images/view-en/yosoku-1.gif" class="view" alt="address:select" /><br /><br />
+        Also, if you enter multiple email addresses separated by <span class="attention nowrap" style="font-weight:bold;">comma (,)</span> in the mail address entry field or named mail addresses like <span class="attention nowrap" style="font-weight:bold;">name &lt;mail address&gt;</span>, you can add "name" that can be added automatically We can detect the candidate "mail address" and add the checked one.
+        <img src="../../help-images/view-en/detect-address.png" class="view" alt="select address:candidate detection" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Published<br /> folder name</th>
+      <td>
+  This is a folder to be published. You can distribute files that contained in the folder at once.<br />
+    You can not change the folder or add another folder.<br />
+        <img src="../../help-images/view-en/4-5_6.gif" class="view" alt="published folder name" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />From address</th>
+      <td>
+        According to the usage, you can send email of file notification with another sender name and sender email address. <br />
+        You can register another sender name and email address in the sender settings(→<a href="../config/from-en.html">Sender setting</a>).<br />
+        When the sender setting is invalid, the From address is not displayed.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />Email subject</th>
+      <td>
+        This is an Email subject send to file distribution.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />Email text</th>
+      <td>
+         Write Email text here. Please enter essential items.<br />
+        (→<a href="send-en.html#4-3-1">About Email text</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />Security settings</th>
+      <td>
+        Security settings: Settings for keep security,Please set security-function according to your need.<br />
+        (→<a href="folder-en.html#4-5-1">About the security settings for the published folder</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />Character<br>encoding</th>
+      <td>
+        You can set up character encoding of e-mail. You can choose either for ISO-2022-JP or UTF-8.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  After you confirm these contents, please click the [Confirm Email] button.  The Folder publication (confirm) page will appear.<br />
+<br /><br />
+  In the case of superiors are set<span class="attention"> (*Option)</span>,
+   "Superiors infomation" or "Select your superior" area is also displayed on this page.
+   If "Select your superior"  area is displayed, please select superiors to request approval.
+   Your request to distribute files will be sent to your superior by Email.
+   The distribution Email will be sent after the superior approved your request. If the superior rejects, the Email will not be sent.
+   You can check the approval status in the Approval list.(→<a href="../superior/index-en.html#7">list of leader confirmation</a>)<br />
+   <br />
+  After you confirm these contents, please click the [Send Email] button.<br />
+
+
+</p>
+
+<p>
+  You can see the “notification of registered file (completed)” page. The folder publication was completed.<br />
+  <img src="../../help-images/view-en/4-5_8.gif" class="view" alt="the folder publication was complete" />
+</p>
+
+<h4><a name="4-5-1"></a>About Security settings for the publication folder</h4>
+<p class="h4-p">
+  <img src="../../help-images/view-en/4-5-1_1.gif" class="view" alt="security settings for the publication folde" />
+</p>
+
+<dl>
+  <dt>Encryption by SSL</dt>
+  <dd>In this system, the communication is encrypted by EV SSL. This is a standard function.(※ This is appeared when connected by EV-SSL.)</dd>
+
+  <dt>The download expiry date</dt>
+  <dd>
+    You can set the expiry date of download files from the publication folder.<br />
+    After that date, it is impossible to download.
+  </dd>
+
+  <dt>Do not lock the password</dt>
+  <dd>Do not use lock function.</dd>
+
+  <dt>Enable the one-time password lock.</dt>
+  <dd>
+    Use one-time password lock. <br />
+    The password is only use one time, and it is can be used by with Email address you limit, so it is very secure.<br />
+  </dd>
+
+  <dt>Lock specified password</dt>
+  <dd>You can lock supecified password with the word or number you decide. Please inform file-receiver the password.</dd>
+
+  <dt>Confirm Email was opened</dt>
+  <dd>After files are distributed, and a file-receiver access the download URL, a notification Email is sent to you.</dd>
+
+  <dt>Confirm download</dt>
+  <dd>After the folders are published, and files are downloaded, a notification Email is sent to you.</dd>
+</dl>
+
+<h4><a name="4-5-2"></a>About the folder publication information</h4>
+
+<p class="h4-p">
+  In the file list page, please click the [folder publication information] button at the right hand.
+
+  <img src="../../help-images/view-en/4-5_1b.gif" class="view" alt="screen of the file list:folder publication" />
+
+  In the folder publication information page, there is information about the folder that is opened to the pubic now.<br />
+  <img src="../../help-images/view-en/4-5-2_1.gif" class="view" alt="the folder publication information page" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />Distribution<br /> destination</th>
+      <td>Mail address (name) which is sent notification about the folder publication Email.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />Distribution date<br /> - expiry date</th>
+      <td>The date that start to distribute and end to distribute files in the publication folder.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Password</th>
+      <td>
+        They are the password type you set when you distribute publication folder.
+        <table class="data">
+          <tbody>
+            <tr>
+              <th colspan="2">about Password</th>
+            </tr>
+            <tr>
+              <th>None</th>
+              <td>You didn’t use password lock function.</td>
+            </tr>
+            <tr>
+              <th>one-time <br />password</th>
+              <td>You use one-time password lock function.</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/icon_unlock-en.gif" alt="change" /></th>
+              <td>If you set specified password, you can change the password.</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" /><img src="../../help-images/icon_stop-en.gif" alt="stop" /></th>
+      <td>Stop going public with the folder.</td>
+    </tr>
+  </tbody>
+</table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

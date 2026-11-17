@@ -1,0 +1,66 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+          <h2><span>文件一览</span></h2>
+          <h3>发送文件</h3>
+          <h4><a name="4-3-8"></a>发送文件状况确认</h4>
+          <p>
+            文件的散发状况，从「文件一览」画面→文件一览→「通知」能确认。<br />
+            点击「通知」栏的通知人数的话，新的页面会显示一览表。<br />
+            <img src="../../help-images/view-cn/3-3-7_1.gif" class="view" alt="ファイル一覧：通知" /> <br />
+            <img src="../../help-images/view-cn/top_notice-personal.png" class="view" alt="ファイル通知情報画面" />
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <th><img src="../../help-images/no-s-1.gif" alt="1" />一览表切换</th>
+                <td>
+                  通常的发送画面发送的一览表，和利用从自己的邮箱发送功能发送的一览表之间的表示切换。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-2.gif" alt="2" />发送日期</th>
+                <td>邮件的发送日期和时间(通知日)。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-3.gif" alt="3" />收件人</th>
+                <td>
+                  发送邮件的发送地址。<br />
+                  在发送时，输入名字的情况下显示「名字」，没输入名字的情况下将显示「邮件地址」。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-4.gif" alt="4" />有效期限</th>
+                <td>显示下载有效期限。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-5.gif" alt="5" />自动删除</th>
+                <td>要为文件的自动删除观看的设置。在“我”的情况下，后的有效期限已经过期的下载将被删除。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-6.gif" alt="6" />下载次数</th>
+                <td>显示发送的文件被下载的次数。分母是下载上限次数。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-7.gif" alt="7" />最终下载日</th>
+                <td>显示发送的文件最后被下载的日期和时间。 </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/icon_distop-cn.gif" alt="配布停止" /></th>
+                <td>
+                  停止文件的发送。<br />
+                  停止发送的话，被通知者将无法从发送的URL下载文件。而且一旦停止发送的话，不能再次回到有效状态。<br />
+                  点击[停止发送]按钮，将移动到停止发送的画面。<br />
+                  <img src="../../help-images/view-cn/3-3-7_4.gif" class="view" alt="ファイルの配布を停止する画面" /><br />
+                  <p class="section">
+                    点击[停止]按钮，停止文件的发送。<br />
+                    被停止的文件，将无法再次点击[停止发送]按钮。
+                  </p>
+                  <img src="../../help-images/view-cn/3-3-7_5.gif" class="view" alt="配布停止ボタン" />
+          </td>
+         </tr>
+        </tbody>
+      </table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

@@ -1,0 +1,65 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-tcn/";
+  include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+          <h2><span>上傳文件</span></h2>
+          <h3>遇到要求輸入臨時密碼時</h3>
+
+          <p>
+            領取臨時密碼（使用一次後，不能再用第二次的密碼形式），密碼解鎖後進行上傳。<br />
+            <span class="attention">需要領取密碼時，請輸入收到郵件的人的郵箱地址。</span><br />
+            如果輸入其他人的郵箱地址，或把郵件轉發後輸入轉發收件人的郵箱地址是無法收到密碼的。如果遇到這種情況請輸入最初收到郵件的人的轉發前的郵箱地址。
+          </p>
+
+          <p>
+            用「○○＠sample.co.jp」的郵箱地址收信，自動轉發給「▲▲@mailaddress.com」並確認過郵件的，請輸入「○○＠sample.co.jp」的郵箱地址。<br /><br />
+            輸入郵箱地址後點擊[領取密碼]按鈕。<br />
+            <img src="<?php echo $image_path; ?>upload_onepass.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルアップロード:パスワード取得" />
+          </p>
+
+          <dl>
+            <dt>輸入正確的郵箱地址</dt>
+            <dd>
+              系統會把密碼以郵件的形式發送到輸入的郵箱地址裡，打開密碼輸入頁面。<br />
+              <img src="<?php echo $image_path; ?>onetime-pass.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルアップロード:正しいメールアドレスを入力した場合" />
+            </dd>
+          </dl>
+
+          <dl>
+            <dt>輸入錯誤的郵箱地址時</dt>
+            <dd>
+              系統會提示錯誤資訊，無法進入密碼輸入頁面。<br />
+              <img src="<?php echo $image_path; ?>onetime-error-mail.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルアップロード:誤ったメールアドレスを入力した場合" />
+            </dd>
+          </dl>
+
+          <p>
+            輸入正確的郵箱地址後，輸入的郵箱地址會收到件名為「文件上傳用密碼的通知」的郵件。<br />
+            把郵件內的密碼輸入到密碼發送頁面內的密碼欄裡，點擊「發送」按鈕。<br />
+            <img src="<?php echo $image_path; ?>onetime-pass-marked.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルアップロード:アップロード用パスワード送信" />
+          </p>
+
+          <dl>
+            <dt>輸入正確的密碼</dt>
+            <dd>
+              顯示文件的上傳頁面的連接。<br />
+              點擊 [文件上傳]移動至上傳頁面，可以進行上傳。<br />
+              <img src="<?php echo $image_path; ?>upload.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルアップロード:正しいパスワードを入力した場合" />
+            </dd>
+          </dl>
+
+          <dl>
+            <dt>輸入錯誤的密碼</dt>
+            <dd>系統顯示錯誤提示，無法進入上傳頁面。<br />
+              <img src="<?php echo $image_path; ?>onetime-error-pass.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルアップロード:誤ったパスワードを入力した場合" />
+            </dd>
+          </dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

@@ -1,0 +1,67 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+  $path = "../../";
+}else{
+  $customer_flg = 0;
+  $path = "../";
+}
+$image_path = "../" . $path . "help-images/view-tcn/";
+include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+
+<h2><span>文件下載</span></h2>
+<h3><a name="13-3"></a>遇到需要輸入臨時密碼時（另一條路線）</h3>
+
+<p>
+	領取臨時密碼（使用一次後，不能再用第二期的密碼形式），下載加密資料。密碼會在每次下載時以郵件的形式獲得。
+</p>
+
+<h4>電話號碼確認</h4>
+<p>
+    檢查您要向其發送一次性密碼的手機號碼（或電子郵件地址），然後單擊[發送]按鈕。 <br />
+       <span class ="attention">此時，如果它不是您自己的地址，請單擊“電話號碼錯誤”按鈕。 </ span>我們將與發件人聯繫，並對任何錯誤做出回應。
+</p>
+
+
+<dl>
+		<img src="<?php echo $image_path; ?>onetimesms-pass.png" class="view" alt="ワンタイムパスワードスの入力を求められる場合のファイルダウンロード:正しいメールアドレスを入力した場合" />
+</dl>
+
+<a  name="pass"></a><h4>輸入密碼頁面</h4>
+<p>
+	輸入正確的郵箱地址後，輸入的郵箱地址會收到件名為「下載用密碼的通知」的郵件。
+	<img src="<?php echo $image_path; ?>13-3-4.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:ダウンロード用パスワードのお知らせ" />
+</p>
+<p>
+	把郵件內的密碼輸入到密碼發送頁面內的密碼欄裡，點擊「發送」按鈕。
+	<img src="<?php echo $image_path; ?>onetime-pass-marked.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:ダウンロード用パスワード送信" />
+</p>
+
+<dl>
+	<dt>輸入正確的密碼後</dt>
+	<dd>會打開文件下載頁面。<br />
+		<img src="<?php echo $image_path; ?>download.png" class="view" alt="ワンタイムパスードの入力を求められる場合のファイルダウンロード:正しいパスワードを入力した場合" />
+	</dd>
+</dl>
+
+<dl>
+	<dt>輸入錯誤的密碼後</dt>
+	<dd>系統會提示錯誤，無法進入下載頁面。點擊「重新領取密碼」按鈕回到郵箱地址輸入頁面。<br />
+		<img src="<?php echo $image_path; ?>onetime-error-pass.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:誤ったパスワードを入力した場合" />
+	</dd>
+</dl>
+
+<dl>
+	<dt>重新開始獲取一次性密碼</dt>
+	<dd>如果你想從獲得一次性密碼開始，請點擊屏幕上方的步驟列表中的「輸入電子郵件地址」。 您可以通過輸入您的電子郵件地址重新開始。<br />
+		<img src="<?php echo $image_path; ?>onetimesms-tomail.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:誤ったパスワードを入力した場合" />
+	</dd>
+</dl>
+
+<a  name="dl"></a><h4>下載頁面</h4>
+<p>點擊文件名或屏幕右側的下載按鈕即可下載文件。<br />
+<img src=" <?php echo $image_path; ?>download-marked.png" class="view" alt="通常ファイルダウンロード" /><br />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

@@ -1,0 +1,36 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+          <h2><span>接收（收集）</span></h2>
+          <h3><a name="5-4"></a>文件保管</h3>
+          <p>
+            通过接收功能，可在文件一览内对上传完毕的文件进行保存。<br />
+            文件被保存之前，可无限次上传此文件。保存后，原来发送文件的收集申请邮件的发件人，则不能再上传此文件。
+          </p>
+
+          <div class="caption-big">保存文件夹指定功能的设定为有效的情况</div>
+          <p><img src="../../help-images/view-cn/5-3_1-1.gif" class="view" alt="収集ファイル一覧：フォルダ指定有効" /></p>
+          <p>
+            只有“保存方文件夹指定功能”的设定有效时，才可以在收集邮件中指定文件夹进行保存。<br />
+            请点击指定文件夹名。<br /><br />
+            点击指定文件夹名，把文件移动到文件一览的指定文件夹。<br />
+            <img src="../../help-images/view-cn/5-3_4.gif" class="view" alt="収集ファイル保管完了画面" />
+          </p>
+
+          <div class="caption-big">保存文件夹指定功能的设定为无效时</div>
+          <p><img src="../../help-images/view-cn/5-3_1.gif" class="view" alt="収集ファイル一覧：フォルダ指定無効" /></p>
+          <p>
+            「保存文件夹指定功能」的设定为无效时，保存在文件一览的顶部。<br />
+            请点击「保存」按键。
+          </p>
+          <p>
+            点击“保存”按键，移动至收集文件保存（确认）页面。请对需要保存的文件进行确认。点击“保存”按键后，文件将保存在文件一览内。<br />
+            <img src="../../help-images/view-cn/5-3_2.gif" class="view" alt="収集ファイル保管確認画面" />
+          </p>
+          <p>
+            收集文件已保存。<br />
+            <img src="../../help-images/view-cn/5-3_3.gif" class="view" alt="収集ファイル保管完了画面" />
+          </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

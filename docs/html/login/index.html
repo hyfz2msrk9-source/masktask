@@ -1,0 +1,119 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+
+<h2><span>ログイン・認証について</span></h2>
+<p>
+  ログイン画面は、ご利用環境によって表示や操作が異なります。
+</p>
+<img src="../../help-images/view/login.png" class="view" alt="ログイン画面" /><br />
+<p>WebFileにログインするには、以下の認証方式のいずれかを利用します。</p>
+<dl>
+    <dt>アカウントを使ったログイン（アカウント・パスワード）</dt>
+    <dt>Google SSO認証</dt>
+    <dt>[##SAML_NAME##]</dt>
+    <dt>Windows統合認証</dt>
+    <dt>クライアント認証（証明書）</dt>
+</dl>
+
+<h3>共通操作</h3>
+<h4 id="2-1">ログイン</h4>
+<p>
+  ログイン画面にアクセスし、認証方式に応じた方法でログインしてください。認証後はファイル一覧画面へ遷移します。
+</p>
+
+<h4 id="2-2">ログアウト</h4>
+<p>
+  メニューの「ログアウト」をクリックすると、ログアウトしログイン画面へ戻ります。
+  <img src="../../help-images/view/menu_logout.png" class="view" alt="メニュー：ログアウト" />
+</p>
+
+<h4 id="2-3">アカウント・パスワードを忘れた場合</h4>
+<p>
+  ログイン情報を忘れた場合は、メールアドレスを入力し「ログイン情報再発行」ボタンをクリックしてください。<br />
+  <span class="attention">※Google SSO認証または[##SAML_NAME##]利用ユーザはパスワード再発行不可</span><br />
+  <img src="../../help-images/view/2-3.gif" class="view" alt="ログイン情報の再発行" />
+</p>
+
+<h3>認証方式ごとの詳細</h3>
+
+<h4>通常ログイン（ID・パスワード）</h4>
+<p>
+  画面の指示に従い、アカウントとパスワードを入力してログインします。
+</p>
+<h5 id="2-6">二要素認証（オプション）</h5>
+<p>
+  二要素認証が有効な場合、アカウントを使ったログイン後、認証アプリまたはメールで確認コードを入力します。<br />
+  <span class="attention">※Google SSO認証または[##SAML_NAME##]利用ユーザはWebFileでの二要素認証不可</span>
+</p>
+<dl>
+  <dt>認証アプリ利用</dt>
+  <dd>
+    コード入力後「確認する」をクリック。一定期間認証省略も可能。<br />
+    <img src="../../help-images/view/two_step_auth.png" class="view" alt="二要素認証" />
+  </dd>
+  <dt>メール利用</dt>
+  <dd>
+    メール記載のコードを入力し「送信する」をクリック。再送も可能。<br />
+    <img src="../../help-images/view/two_step_auth_mail.gif" class="view" alt="メールで二要素認証" />
+  </dd>
+</dl>
+
+<h4 id="2-7">Google SSO認証</h4>
+<p>
+  Google SSO認証が有効な場合、「Googleでログイン」ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/login.png" class="view" alt="ログイン画面" /><br />
+  Googleのログイン画面が表示されたら、アカウント選択・パスワード入力後、WebFileにログインします。<br />
+  <img src="../../help-images/view/2-7_3.gif" class="view" alt="Googleアカウント選択画面" />
+  <img src="../../help-images/view/2-7_4.gif" class="view" alt="Googleログイン画面" />
+</p>
+
+<h4 id="2-8">[##SAML_NAME##]認証</h4>
+<p>
+  [##SAML_BUTTON_NAME##]ボタンをクリックし、サービスのログイン画面で必要情報を入力してください。認証後、WebFileにログインします。
+  <img src="../../help-images/view/login.png" class="view" alt="ログイン画面" /><br />
+  <img src="../../help-images/view/2-8_2.png" class="view" alt="[##SAML_NAME##]サービスログイン画面" />
+</p>
+
+<h4 id="2-4-2">Windows統合認証</h4>
+<p>
+  ADユーザは「Windows統合認証」ボタンを押すことで、次回以降自動的に認証画面へ遷移します。
+  <img src="../../help-images/view/win-auth.gif" class="view" alt="windows統合認証" />
+</p>
+
+<h4 id="2-5">クライアント認証（オプション）</h4>
+<p>
+  クライアント認証は、クライアント証明書を使ってユーザを識別するオプション機能です。<br />
+  証明書を利用してログインするには、以下の手順で設定を行う必要があります。<br />
+<p>
+<P>1. 証明書ファイルをダブルクリックし、インポート画面を開く</P>
+<img src="../../help-images/view/client-1.gif" class="view" alt="クライアント認証-1" /><br />
+<p>2. インポートするファイルを指定し、[次へ]ボタンをクリックしてください。</p>
+<img src="../../help-images/view/client-2.gif" class="view" alt="クライアント認証-2" />
+<p>3. パスワードを入力し、[次へ]ボタンをクリックしてください。</p>
+<img src="../../help-images/view/client-3.gif" class="view" alt="クライアント認証-3" /><br />
+<p>必要に応じて、以下の項目をチェックしてください。</P>
+<dl>
+  <dt>秘密キーの保護を強力にする</dt>
+  <dd>チェックすると、クライアント認証の鍵を使用する(ログインする)度に、確認メッセージを表示します。</dd>
+  <dt>このキーをエクスポート可能にする</dt>
+  <dd>チェックすると、クライアント認証の鍵を抜き出せるようになります。</dd>
+  <dt>すべての拡張プロパティを含める</dt>
+  <dd>チェックすると、全ての拡張プロパティを含めた状態にします。</dd>
+</dl>
+<p>4.証明書ストア画面が表示されますので、設定し、[次へ]ボタンをクリックしてください。</p>
+<img src="../../help-images/view/client-4.gif" class="view" alt="クライアント認証-4" />
+<dl>
+  <dt>証明書の種類に基づいて、自動的に証明書ストアを選択する</dt>
+  <dd>証明書の種類に基づいて証明書を証明書ストアに自動的に配置する必要がある場合に選択します。</dd>
+  <dt>証明書をすべて次のストアに配置する</dt>
+  <dd>証明書の格納先を指定する必要がある場合に選択します。</dd>
+</dl>
+<p>5. 証明書のインポートが完了しました。[完了]ボタンをクリックし、ウィザード画面を閉じてください。</p>
+<img src="../../help-images/view/client-5.gif" class="view" alt="クライアント認証-5" />
+<p>6.次回よりログインする際に、証明書の確認画面が表示されますので、証明書を選択しログインすることが可能になります。</p>
+<img src="../../help-images/view/client-6.gif" class="view" alt="クライアント認証-6" />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,42 @@
+<?php 
+	include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+	$path = "../../";
+	}else{
+	$customer_flg = 0;
+	$path = "../";
+	}
+	$image_path = "../" . $path . "help-images/view-cn/";
+	include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+	<h2><span>关于文件下载</span></h2>
+	<h3><a name="13-4"></a>遇到需要输入指定密码时</h3>
+
+	<p>
+	输入发件人预先指定的密码，解除加密后打开下载页面。<br />
+	<span class="attention">遇到不需要输入邮箱地址，直接要求输入密码的情况，是邮件的发件人设定了指定密码。<br />
+	如果不知道密码，请与邮件发件人联系，进行确认。</span>
+	</p>
+
+	<p>
+	使用邮件或电话拿到邮件发件人所指定的密码并输入，点击「发送密码」按钮。<br />
+	<img src="<?php echo $image_path; ?>selfpass.png" class="view" alt="指定パスワードを求められる場合：パスワード送信" /><br />
+	</p>
+
+	<dl>
+	<dt>输入正确的密码时</dt>
+	<dd>
+		打开文件下载页面。<br />
+		点击文件名或屏幕右侧的下载按钮即可下载文件。<br />
+		<img src="<?php echo $image_path; ?>download-marked.png" class="view" alt="指定パスワードを求められる場合のファイルダウンロード:正しいメールアドレスを入力した場合" />
+	</dd>
+	</dl>
+
+	<dl>
+	<dt>输入错误的密码时</dt>
+	<dd>系统显示错误提示，无法进入文件下载页面。<br />
+		<img src="<?php echo $image_path; ?>error-selfpass.png" class="view" alt="指定パスワードを求められる場合のファイルダウンロード:誤ったメールアドレスを入力した場合" /><br />
+	</dd>
+	</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

@@ -1,0 +1,100 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+<h2><span>登錄</span></h2>
+<h3><a name="2-6"></a>登錄錯誤</h3>
+<p>
+  登錄失敗時會彈出錯誤資訊。<br />
+  出錯內容及對應方法。<br />
+  <img src="../../help-images/view-tcn/2-6.gif" class="view" alt="アカウントまたはパスワードが正しくありません。" /><br />
+</p>
+
+<h5>標準顯示錯誤</h5>
+<dl>
+  <dt>帳號或密碼錯誤。</dt>
+  <dd style="margin-bottom:15px;">
+    您輸入的帳號或密碼有誤時顯示該資訊。
+  </dd>
+
+  <dt>此帳號已過有效期。</dt>
+  <dd style="margin-bottom:15px;">
+    如果帳號設定有效期，有效期過後該帳號將無法登錄。<br />
+    需要再次登錄的使用者請聯繫管理員。
+  </dd>
+
+  <dt>此帳號還未生效。</dt>
+  <dd>
+    如果帳號設定有效期，在有效期生效前該帳號無法登錄。<br />
+    需要馬上開通登錄的使用者請聯繫管理員。
+  </dd>
+</dl>
+
+<h5>與AD(ActiveDirectory)伺服器連接時顯示的錯誤</h5>
+<p style="line-height:1.3em;margin:10px 0 15px 30px;width:530px;">
+  AD(ActiveDirectory)伺服器是用來管理用戶的伺服器。<br />
+  系統會連接ActiveDirectory伺服器來認證用戶。
+</p>
+<dl>
+  <dt class="position20">無法連接AD伺服器。<br />請于管理員聯繫。</dt>
+  <dd style="margin-bottom:15px;">
+    系統伺服器無法與AD(ActiveDirectory)伺服器連接。
+  </dd>
+
+  <dt>使用者或密碼錯誤。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(ActiveDirectory)認證ID和密碼錯誤。<br />
+    或者是系統設定錯誤導致認證失敗。
+  </dd>
+
+  <dt class="position20">AD帳號被鎖定。<br />請聯繫管理員。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(ActiveDirectory)伺服器的帳號被鎖定。請聯繫管理員。
+  </dd>
+
+  <dt class="position20">AD帳號無效。<br />請聯繫管理員。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(ActiveDirectory)伺服器的帳號無效。請聯繫管理員。
+  </dd>
+
+  <dt class="position20">AD帳號沒有登錄系統許可權。<br />請聯繫管理員。</dt>
+  <dd style="margin-bottom:15px;">
+    此帳號在AD(ActiveDirectory)伺服器上沒有登錄系統的許可權。請聯繫管理員。
+  </dd>
+
+  <dt class="position10">系統帳號初始化失敗。<br />超出可登陸用戶數。<br />請聯繫管理員。</dt>
+  <dd style="margin-bottom:15px;">
+    帳號數量超過簽約用戶數量，無法登入。<br />
+    請聯繫管理員。
+  </dd>
+
+  <dt class="position10">系統帳號初始化失敗。<br />系統容量不足。<br />請聯繫管理員。</dt>
+  <dd style="margin-bottom:15px;">
+    容量不足無法登陸。請聯繫管理員。
+  </dd>
+
+  <dt class="position8">系統帳號初始化失敗。<br />AD帳號的使用者資訊不足。<br />（需要顯示名和郵箱地址）<br />請聯繫管理員。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(ActiveDirectory)帳號的使用者資訊不足，無法登陸。請聯繫管理員。
+  </dd>
+
+  <dt class="position10">系統帳號初始化失敗。<br />AD帳號的郵箱地址和其他帳號的郵箱地址重複。<br />請聯繫管理員。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(Active Directory)帳號的郵箱地址與其他帳號的郵箱地址重複，無法登陸。請聯繫管理員。
+</dl>
+
+<h5>Google SSO身份驗證或者[##SAML_NAME##]時顯示的錯誤</h5>
+<dl>
+  <dt>帳戶未註冊。</dt>
+  <dd style="margin-bottom:15px;">
+    您輸入的賬號錯誤。<br />
+    或者是系統設定錯誤導致認證失敗。
+  </dd>
+  <dt class="position20">無法獲取登錄信息。<br />請再次登錄。</dt>
+  <dd style="margin-bottom:15px;">
+    臨時問題正在Google SSO身份驗證或者[##SAML_NAME##]服務發生<br />
+    或者是系統設定錯誤導致認證失敗。
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

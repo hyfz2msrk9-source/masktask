@@ -1,0 +1,52 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+    <h2><span>上長承認設定(※オプション)</span></h2>
+      <p>
+          <span class="attention">上長承認機能はオプション機能です。別途、お申込みが必要となります。</span><br />
+      上長承認機能が有効でない場合は、メニューに「上長承認設定」が表示されません。<br /><br />
+      上長承認機能が有効な場合は、ユーザがファイルの配布(メーラーからの配布)、フォルダ公開(メーラーからのフォルダ公開)、配布と引取同時送信機能を利用した場合に、設定された上長の承認が必要となります。上長承認設定画面では、ユーザの上長を設定することができます。<br /><br />
+      また、上長承認の際に、メール詳細画面にて配布ファイルがダウンロードされたかをチェックする機能もございます。(→<a href="/admin/admin.php?action=admin_config#section-sec-superior">上長承認に関する設定</a>)<br />
+            <img src="../../images/view/8.png" class="view" alt="上長承認設定" />
+    </p>
+
+      <h3><a name="8-1"></a>CSVファイルで設定</h3>
+      <p>
+          CSVファイルで追加では、CSVファイル(→<a href="#8-1-1">CSVファイルの作成</a>)を用いて、ユーザの上長を一括設定します。
+        </p>
+
+      <p>上長承認設定画面から[CSVファイルで設定]ボタンをクリックします。<br />
+          <img src="../../images/view/8-0-2.png" class="view" alt="上長承認設定：CSVファイルで設定" />
+      </p>
+
+      <p>
+          上長承認設定＞CSVファイルでの設定画面に遷移します。<br />
+          [選択…]ボタンをクリックして、CSVファイルを選択してください。選択したCSVファイルが正しければ、[インポート実行]ボタンをクリックしてください。<br />
+           <img src="../../images/view/8-0-3.gif" class="view" alt="上長承認設定：CSVファイルで設定" />
+      </p>
+
+      <p>
+          CSVファイルがインポートされ、ユーザの上長が設定されました。<br />
+           <img src="../../images/view/8-0-4.gif" class="view" alt="上長承認設定：CSVファイルで設定" />
+      </p>
+
+      <h4><a name="8-1-1"></a>CSVファイルの作成</h4>
+      <p class=h4-p>
+        ユーザの上長を設定するためのCSVファイルを用意します。<br /><br />
+        CSVファイルは、 <span class="attention">一行目から「設定するユーザのアカウント,上長のアカウント1,上長のアカウント2,上長のアカウント3,上長のアカウント4,上長のアカウント5」</span>のように、各項目を半角カンマ区切りでご記入ください。<br />
+        1行につき1ユーザの設定です。2ユーザ目からは、改行してください。<br />
+        (※最大上長設定可能数は、お申し込み内容によって異なります)<br />
+       <img src="../../images/view/8-1-1.png" class="view" alt="上長承認設定：CSVファイルの作成" />
+    </p>
+
+      <p class="h4-p">
+        また、Microsoft Excelを用いて、CSVファイルを作成することもできます。<br />
+        Microsoft Excelでは、 セルごとにアカウントを記入してください。<br />
+           <img src="../../images/view/8-1-2.png" class="view" alt="上長承認設定：CSVファイルの作成" />
+      </p>
+
+      <p class="h4-p">
+        Microsoft Excelでは、保存時にファイルの種類を「CSV(カンマ区切り)（*.csv）」を選択し、保存してください。<br />
+            <img src="../../images/view/4-3-1-3.png" class="view" alt="上長承認設定：CSVファイルの作成" />
+      </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

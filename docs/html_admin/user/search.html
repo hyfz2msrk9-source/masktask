@@ -1,0 +1,46 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+      <h2><span>ユーザ管理</span></h2>
+        <h3>ユーザ検索</h3>
+      <p>
+          ユーザ一覧から、ユーザを検索します。<br />
+        ユーザ管理から<img src="../../images/btn_search-btn.gif" class="view" alt="ユーザ管理：ユーザ一覧" style="margin:2px;" />ボタンをクリックします。</p>
+      <p>
+        <img src="../../images/btn_search-btn.gif" class="view" alt="ユーザ管理：ユーザ一覧" style="margin:2px;" />ボタンをクリックすると、検索画面が表示されます。<br />
+            検索項目を選択、検索内容を入力し、右隣にある[検索]ボタンを押してください。
+        </p>
+      <img src="../../images/view/4-5-2.gif" class="view" alt="ユーザ管理：検索画面"  />
+     </p>
+
+
+     <table>
+        <tr>
+          <th>検索項目</th>
+            <td>検索する項目です。氏名、アカウント、メールアドレスから、選択してください。<br />
+                <img src="../../images/user-search1.gif" class="view"  alt="検索項目" />
+          </td>
+        </tr>
+        <tr>
+          <th>検索内容</th>
+            <td>検索する文字列を入力します。<br />
+                <img src="../../images/user-search2.gif" class="view"  alt="検索内容" />
+          </td>
+        </tr>
+        <tr>
+          <th><img src="../../images/user-search3.gif" alt="検索" /></th>
+            <td>検索を開始します。</td>
+        </tr>
+        <tr>
+          <th><img src="../../images/user-search4.gif" alt="クリア" /></th>
+            <td>検索を解除します。</td>
+        </tr>
+
+    </table>
+
+
+    <p>
+      検索項目を入力し、[検索]ボタンをクリックすると、検索した結果を表示します。<br />
+        <img src="../../images/view/4-5-3.gif" class="view"  alt="ユーザ管理：検索結果" />
+    </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

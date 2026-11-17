@@ -1,0 +1,50 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-tcn/";
+  include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+          <h2><span>上傳文件</span></h2>
+          <h3>遇到無法上傳時</h3>
+          <p>
+            出現以下頁面或資訊時無法上傳文件。
+          </p>
+
+          <dl>
+            <dt>發送人已刪除此要求</dt>
+            <dd>
+              因寄件者取消上傳請求。<br />
+              <img src="<?php echo $image_path; ?>error_up_stopped.png" class="view" alt="この要求は削除されています" />
+            </dd>
+
+            <dt>此資料夾的收集有效期已過期</dt>
+            <dd>
+              因寄件者指定的上傳期限過期，無法進行上傳。<br />
+              <img src="<?php echo $image_path; ?>error_up_limit.png" class="view" alt="収集有効期限を過ぎています" />
+            </dd>
+
+            <dt>URL不正確</dt>
+            <dd>
+              收到通知裡的上傳URL連結錯誤，無法訪問到上傳頁面。<br />
+              <img src="<?php echo $image_path; ?>error-url.png" class="view" alt="URLが正しくありません" />
+            </dd>
+            <dt>沒有可使用空間，無法上傳文件</dt>
+            <dd>
+              發信方文件上傳所需的空間不足，無法進行上傳。<br />
+              <img src="<?php echo $image_path; ?>error_nospace.png" class="view" alt="ファイルをアップロードするための空き容量が足りません" />
+            </dd>
+            
+            <dt>文件無害化失敗 / 不能無害化</dt>
+            <dd>
+              在有無害化選項的情況下，上傳無法進行無害化的文件時顯示的錯誤。<br />
+              <img src="<?php echo $image_path; ?>error_sanitize.png" class="view" alt="不能無害化" />
+              <img src="<?php echo $image_path; ?>error_sanitize_not_upload.png" class="view" alt="不能無害化" />
+            </dd>
+          </dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

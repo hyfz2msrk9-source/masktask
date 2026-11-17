@@ -1,0 +1,68 @@
+<?php 
+	include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+	$path = "../../";
+	}else{
+	$customer_flg = 0;
+	$path = "../";
+	}
+	$image_path = "../" . $path . "help-images/view-cn/";
+	include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+
+<h2><span>关于文件下载</span></h2>
+<h3><a name="13-3"></a>遇到需要输入一次性密码时（另一条路线）</h3>
+
+<p>
+	领取一次性密码（使用一次后，不能再用第二次的密码形式）后，下载加密数据。密码可在每次下载时以邮件的形式获得。
+</p>
+
+<h4>电话号码确认</h4>
+<p>
+	检查您要向其发送一次性密码的手机号码（或电子邮件地址），然后单击[发送]按钮。 <br />
+   <span class ="attention">此时，如果它不是您自己的地址，请单击“电话号码错误”按钮。</span>我们将与发件人联系，并对任何错误做出回应。
+</p>
+
+<dl>
+		<img src="<?php echo $image_path; ?>onetimesms-pass.png" class="view" alt="ワンタイムパスワードスの入力を求められる場合のファイルダウンロード:正しいメールアドレスを入力した場合" />
+</dl>
+
+<a name="pass"></a> <h4>输入密码页面</h4>
+<p>
+	输入正确的邮箱地址后，输入的邮箱地址会收到件名为「下载用密码的通知」的邮件。
+	<img src="<?php echo $image_path; ?>13-3-4.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:ダウンロード用パスワードのお知らせ" />
+</p>
+
+<p>
+	把邮件内的密码输入到密码发送页面内的密码栏里，点击「发送」按钮。
+	<img src="<?php echo $image_path; ?>onetime-pass-marked.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:ダウンロード用パスワード送信" />
+</p>
+
+<dl>
+	<dt>输入正确的密码后</dt>
+	<dd>会打开文件下载页面。<br />
+		<img src="<?php echo $image_path; ?>download.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:正しいパスワードを入力した場合" />
+	</dd>
+</dl>
+
+<dl>
+	<dt>输入错误的密码后</dt>
+	<dd>系统会提示错误，无法进入下载页面。点击「重试」按钮回到邮箱地址输入页面。<br />
+		<img src="<?php echo $image_path; ?>onetime-error-pass.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:誤ったパスワードを入力した場合" />
+	</dd>
+</dl>
+
+<dl>
+	<dt>重新开始获取一次性密码</dt>
+	<dd>如果你想从获得一次性密码开始，请点击屏幕上方的步骤列表中的「输入电子邮件地址」。 您可以通过输入您的电子邮件地址重新开始。<br />
+		<img src="<?php echo $image_path; ?>onetimesms-tomail.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:誤ったパスワードを入力した場合" />
+	</dd>
+</dl>
+
+<a name="dl""></a> <h4>下载页面</h4>
+<p>点击文件名或屏幕右侧的下载按钮即可下载文件。<br />
+<img src=" <?php echo $image_path; ?>download-marked.png" class="view" alt="通常ファイルダウンロード" /><br />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

@@ -1,0 +1,267 @@
+
+// Wiki: https://github.com/KEYPOINT/WebFile/wiki/2_3.WebFile%E9%96%8B%E7%99%BA%E6%99%82%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%AB_%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E7%B7%A8#systemphp%E3%81%A8commonphp
+// =======================================================
+// 1.管理者側設定値基本項目
+// =======================================================
+// URL
+define("APP_URL","https://localhost");
+define("APP_PATH","/acb");
+define("ADMIN_PATH","/admin");
+
+// Session
+define("SESSION_SAVEPATH","/var/lib/php/acb/wf-admin");
+define("SESSION_SECURE",1);
+
+// DB
+define("DB_HOST","db");
+define("DB_NAME","wf-asp");
+define("DB_USER","wf-asp");
+define("DB_PASS","webfile");
+
+// システムのメール設定
+define("MAIL_DOMAIN","webfile.jp");
+define("SYS_FROM","help@".MAIL_DOMAIN);
+//define('MAIL_EXTRA_HEADERS', 'X-SMX-Token:対象のトークン');//カンマ区切りで複数設定可能。
+
+// パスの設定
+define("SAVE_PATH","/var/wf-file/acb");
+define("TEMPLATE_PATH","/var/webfile/acb/wf/webapp/modules/common/tpl");
+define("TEMPLATE_PATH_EN","/var/webfile/acb/wf/webapp/modules/common/tpl/en");
+define("TEMPLATE_PATH_CN","/var/webfile/acb/wf/webapp/modules/common/tpl/cn");
+define("TEMPLATE_PATH_TCN","/var/webfile/acb/wf/webapp/modules/common/tpl/tcn");
+
+// Webfile(ユーザ側)のパス
+define('WF_PATH','/var/webfile/acb/wf');
+
+// コマンドパス
+define("PHP_PATH","/usr/bin/php");
+define("COM_ZIP_PATH","/usr/bin/zip");
+
+// システム環境
+define('SYSTEM_COPY',"大容量ファイル管理・受け渡し・ネットワークファイル共有システム");
+define("SYS_NAME", "WebFile"); // システム名称
+define("SYS_NAME_SUB","ASP");  // システムサブ名
+define("LOGO_PREFIX","");      // ロゴの変更の時 標準の時は、""で
+define("SYS_MAX_SIZE",5);     // システム総容量（単位はGBです）
+
+// =======================================================
+// 2.準項目
+// =======================================================
+define("ZIPDL_TYPE","1"); // Windowsサーバの場合は0か、消して下さい。
+
+// アップロード制限容量 ※64bitサーバでは最大6000まで指定可
+define( "UPLOAD_LIMIT_1", 500 );
+
+// IPアドレス取得時に、WebサーバがProxy構成かを考慮
+define("REVERSE_PROXY_FLG", 0); // 0: プロキシサーバを使わない($_SERVER["REMOTE_ADDR"]優先), 1: プロキシサーバを使う($_SERVER["HTTP_X_FORWARDED_FOR"]優先)
+
+// =======================================================
+// 3.オプション
+// =======================================================
+// 共有機能
+define("SHARE_GROUP_FLG",1);      // 共有オプション 0:無効 1:有効
+define("SHARE_MAX_CAPACITY",5);   // 共有機能の容量（単位は、GB）
+define("SHARE_SPACE_FLG" , 0);    // 共有機能容量制限撤廃 0:割当て有り 1:割当て無し ※コメントアウト禁止,ユーザ側と合わせる
+define("SHARE_ADMIN_MUST_FLG",0); // // 共有フォルダの管理ユーザ 0:任意入力, 1:必須入力
+//共有フォルダの有効期限設定
+//define("SHARE_FOLDER_TERM_REQUIRED_FLG",0);   //有効期限機能を必須にするかどうかのフラグ 0:任意 1:必須
+//define("SHARE_FOLDER_TERM_DEFAULT_SPAN",365); //延長のデフォルト期間(日)
+
+// ウイルスチェック
+define("VIRUS_CHECK_FLG", 1); //ウイルスチェック機能 0 or not define:無効 1:有効
+
+// 上長承認
+define("SUPERIOR_OPTION_FLG", 1); // 上長承認機能ON/OFF 0:OFF 1:ON
+// 上長最大登録数
+define('MAX_SUPERIOR',5);
+
+// EVI
+define("EVI_ARCHIVE_FLG", 1); // アーカイブ（Evi）0:無効 ／ 1:有効
+
+define("EVI_ARCHIVE_PATH","/var/wf-file/acb/archive"); // アーカイブファイルの保存先
+define("EVI_ARCHIVE_MAX_SIZE",10); // アーカイブ保存領域の容量（単位はGB）
+define("EVI_ARCHIVE_AUTONOTICE", 70); // アーカイブ：この設定容量を超える場合は警告メールを送ります（単位は%・1〜100で指定）
+define("EVI_ARCHIVE_AUTODELETE", 90); // アーカイブ：この設定容量を超える場合はデータを削除します（単位は%・1〜100で指定）
+
+define("EVI_ARCHIVE_EXPORT_PATH","/var/wf-file/acb/archive"); // エクスポート：エクスポートファイルの保存先
+define("EVI_ARCHIVE_EXPORT_MAX_SIZE",10); // エクスポート：保存領域の容量（単位はGB）
+define("EVI_ARCHIVE_EXPORT_AUTONOTICE", 70); // エクスポート：この設定容量を超える場合は警告メールを送ります（単位は%・1〜100で指定）
+define("EVI_ARCHIVE_EXPORT_AUTODELETE", 90); // エクスポート：この設定容量を超える場合はデータを削除します（単位は%・1〜100で指定）
+
+//メールによる自動更新
+define("AUTO_UPDATE_FLG",1);            //0:無効 1:有効
+//define("AUTO_UPDATE_PASS", "wf_");      //添付ファイル解凍用パスワードの頭部分
+
+// ロゴ変更
+//define("CHANGE_LOGO_FLG",1);                // 0:無効 1:有効
+
+// 中国語
+define("CHINESE_FLG",1);                    // 0:無効 1:有効
+
+// API
+define('API_FLG', 1);       // API機能 0:無効 1:有効
+define("API_MAX_USER", 0);  // APIを利用できる最大ユーザ数(0で無制限)
+define("API_CLIENT_NAME", "Synchrorer"); //APIクライアント表示
+define("API_PATH", "/api/1.0"); // APIのパス
+
+// OUTLOOKアドイン
+define("OUTLOOK_ADDIN_FLG", 1);//0:無効 1:有効
+
+//Chrome拡張
+define("CHROME_ADDIN_FLG", 1);//0:無効 1:有効
+
+// クライアント認証機能
+define("CLIENT_AUTH_FLG", 1); // 0:利用しない 1:利用する
+//define("CLIENT_CN","www.webfile.jp");  // クライアント証明書のCNを設定
+//define("CLIENT_OU", "WebFileTeam"); // クライアント証明書のOUを設定
+//define("CLIENT_EMAIL","webfile@webfile.jp"); // クライアント証明書のEmailを設定
+
+// 一斉配信機能
+define("DELIVERY_FLG", 1); // 一斉配信機能 0:無効 1:有効
+//define("DELIVERY_MAIL_MAX_LIMIT", 100); // 一斉配信の最大送信人数 0:任意 1以上:人数（100以上で設定）
+//define("DELIVERY_FILE_MAX_LIMIT", 10); // 一斉配信の最大送信ファイル数 0:任意 1以上:ファイル数（10以下で設定）
+
+// 一斉収集機能
+define("GATHERING_FLG", 1); // 一斉収集機能 0:無効 1:有効
+//define("GATHERING_MAIL_MAX_LIMIT", 100); // 一斉収集の最大送信人数 0:任意 1以上:人数（100以上で設定）
+//define("GATHERING_FILE_MAX_LIMIT", 10); // 一斉収集の最大アップロードファイル数 0:任意 1以上:ファイル数（10以下で設定）
+
+// 二要素認証
+define("TWO_STEP_AUTH_FLG", 1); // ユーザ側二要素認証機能 0:無効 1:有効 デフォルト有効
+define("ADMIN_TWO_STEP_AUTH_FLG", 1); // 管理者側二要素認証機能 0:無効 1:有効 デフォルト有効
+
+// ファイル無害化
+define("FILE_SANITIZE_FLG", 0); //デフォルト0
+define("SHOW_SANITIZATION_SETTINGS_FLG", 1); //デフォルト0 管理者画面で無害化前ファイル保持の変更機能を利用 0:利用しない 1:利用する
+
+// =======================================================
+// 4.標準機能
+// =======================================================
+define("ADMIN_MANAGER_FLG",1);    // 管理者管理機能ON/OFF 0:OFF 1:ON
+//define("USERCSV_ACCOUNT_CHANGE_FLG", 1); // ユーザ管理CSVでアカウント変更機能を利用 0:利用しない 1:利用する
+
+// ユーザアカウントの有効期限
+//define("TERM_OF_VALIDITY",1); // 0:無効、1:有効
+
+// フォルダ上書き
+define("OVERWRITE_FLG", 0); // 0:上書きしない（同名OK）、1:上書きする（名前ユニーク）
+
+// ファイルロック機能
+define("FILE_LOCK_OPTION_FLG",1); //0:OFF 1:ON 上書きモード&共有利用のみ1が設定可能
+
+//CSVユーザ追加パスワード必須チェック設定
+//define("PASSWORD_REQUIRED_FLG",1); //0:必須チェック有り 1:なし
+
+//ユーザ管理画面の利用容量エクスポートボタン
+//define("CAPA_EXPORT_FLG",1);// 0:表示しない、1:表示する
+
+//ユーザ一覧の表示件数のデフォルト設定
+define("USER_PER_PAGE_DEFAULT", 30); //10,20,30,50,100から選択する。初期値は30
+
+// =======================================================
+// 5.特別な設定
+// =======================================================
+// URL(複数ある場合): APP_URL未定義時に有効な設定
+// (APP_URLはリクエストURLから自動的にセットされる。APP_URL_*が未定義のときは、APP_URLの値が定義される。common.php参照)
+//define("APP_URL_INSIDE" ,"https://www1.webfile.jp"); // イントラネットから接続されるURL(カンマ区切り複数指定可能)
+//define("APP_URL_OUTSIDE","https://www2.webfile.jp"); // インターネットから接続されるURL(カンマ区切り複数指定可能)
+
+// SSO対応ログインフォーム名を変更する場合は有効にして指定する
+//define("LOGIN_FORM_NAME","login");
+
+// SMTPサーバを指定してメール送信
+//define("SMTP_FLG", 0);            // SMTPサーバ指定 0:指定しない 1:指定する
+//define("SMTP_HOST", "localhost"); // 接続するサーバ名
+//define("SMTP_PORT", 25);          // 接続するポート番号
+//define("SMTP_AUTH", FALSE);       // SMTP認証を使用するかどうか
+//define("SMTP_USERNAME", "");      // SMTP認証で使用するユーザ名
+//define("SMTP_PASSWORD", "");      // SMTP認証で使用するパスワード
+
+// SMTPサーバを指定してメール送信
+define("SMTP_FLG", 1);            // SMTPサーバ指定 0:指定しない 1:指定する
+define("SMTP_HOST", "mail.key-p.com"); // 接続するサーバ名
+define("SMTP_PORT", 587);          // 接続するポート番号
+define("SMTP_AUTH", 'PLAIN');       // SMTP認証を使用するかどうか
+define("SMTP_USERNAME", "nishikawa@dev.grpmail.jp");      // SMTP認証で使用するユーザ名
+define("SMTP_PASSWORD", "mon1089jin!");      // SMTP認証で使用するパスワード
+
+// 拡張容量
+define("EXTRA_SPACE_FLG",1); // 0:無効、1:有効
+
+// 認証方式 通常ログイン
+//define("LOGIN_FLG", 1); // 0: 無効 、1: 有効
+// 認証方式 Google SSO認証
+//define("SSO_FLG", 0); // 0: 無効 、1: 有効
+// 認証方式 SAML認証
+define("SAML_FLG", 1);  // 0: 無効 、1: 有効
+// X.509 Certificateのパス
+//define("SAML_IDP_X509CERTIFICATE_FILE", "/var/wf-file/saml/IdP_X509_Certificate.pem");
+
+// AD連携
+define("AD_FLG",1);
+define("AD_HOST_1", "");
+define("AD_PORT_1", "389");
+define("AD_DC_1", "");
+define("AD_PROTO_1", 0);//ADサーバで署名を 0:使わない 1:使う
+define("AD_HOST_2", "");
+define("AD_PORT_2", "389");
+define("AD_DC_2", "");
+define("AD_PROTO_2", 0);//ADサーバで署名を 0:使わない 1:使う
+define("AD_ADMIN_USER","");       // AD管理者ユーザ
+define("AD_ADMIN_PASS","");       // AD管理者パスワード
+define("AD_SERVER_TYPE","AD") ;	// 認証サーバタイプ AD or OpenLDAP (default:AD @common.php)
+define("AD_USER_OU", "");	  // ユーザ情報が保管されているOU（複数可）
+define("AD_GROUP_OU", "");        // 認証許可グループのあるOU（※複数不可）
+define("AD_GROUP", "");           // 認証許可グループ（複数可）
+
+// ADユーザ一括登録
+define("AD_PACKAGE",1);           // AD一括登録機能を使用するかどうか
+define("AD_PACKAGE_RESTART",0);   // AD側で削除されて停止状態になったADアカウントがAD側で復活した場合、利用を再開するかどうか
+define("MAX_USER",100);    // 最大のアクティブユーザ数
+define("AD_MAX_FILE_SIZE", 100);  // AD連携ユーザの容量初期値（MB）
+define("AD_EXTRA_FILE_SIZE", 0);  // AD連携ユーザの拡張容量初期値（MB）※無制限に設定する場合は、-1を指定してください
+define("AD_MAX_UP_SIZE", 0);      // AD連携ユーザのアップロード容量初期値（MB）
+
+// WebFile Lite
+//define("AUTO_DEL_FILE_STOP_FLG", 1); // ファイルの定期削除（個人・共有） 0:有効 1:無効
+define("SENDS_COLLECT_MAX_NUMBER", 0); // 配布ダウンロードの最大人数 0:任意 1以上:人数
+//define("AUTO_DEL_LOG_TERM", 365); // 履歴ログの自動削除日数 0:削除しない 1以上:日数
+//define("MAX_USER",100);
+
+// Eviアーカイブエクスポート時(自動・手動)、分割ファイル1つあたりのサイズ(MB)
+define("EVI_FILE_SIZE_MB", 1800);       // 1800以下で設定してください
+// // Evi自動エクスポートのテスト用定数
+define("TEST_EVI_REGULAR_EXPORT", 1); // 0:本番、1:テスト
+// define("TEST_EVI_REGULAR_EXPORT_START", "2013-03-01"); // 開始日
+// define("TEST_EVI_REGULAR_EXPORT_END",   "2013-03-31"); // 終了日
+// // ----- 例 -----
+// // 月初め : 1〜末日で、ご設定ください
+// define("TEST_EVI_REGULAR_EXPORT_START", "2013-03-01"); // 開始日
+// define("TEST_EVI_REGULAR_EXPORT_END",   "2013-03-31"); // 終了日
+// // 週初め : 7日間で、ご設定ください
+define("TEST_EVI_REGULAR_EXPORT_START", "2026-05-18"); // 開始日
+define("TEST_EVI_REGULAR_EXPORT_END",   "2026-05-22"); // 終了日
+
+// 送信待機
+define("SEND_WAIT_FLG",1);
+
+//KPニュースの表示。デフォルト1(表示する)
+//define("SHOW_KP_NEWS_CONFIG", 0);
+
+// 【10GB以上のアップロード対応】
+// 10GB以上アップロードする場合、php.iniの下記パラメータは無制限(-1)にし、下記のini_set()を有効にする
+// すると、アップロード以外のアクションは下記ini_set()値が使用され、アップロード時はphp.iniの設定が使用され、アップロードがタイムアウトしなくなる
+//ini_set('max_execution_time', '600');
+//ini_set('max_input_time', '120');
+
+// 別経路でのワンタイムパスワード認証
+define("SMS_PASS_FLG", 2); // 0:なし 、 1: メールアドレスによるワンタイムパスワード認証あり 、 2:メールアドレス・SMSによるワンタイムパスワード認証あり
+// define("SMS_MAX_COUNT_PER_MONNTH", 100); // 一ヶ月あたりの最大SMS送信数
+
+// メールアドレス重複登録許可
+define("DUPLICATE_EMAIL_ENABLE_FLG", 0); // 0:重複不可 、 1:重複可
+
+// カスタマイズ
+// define("FAVICON_PREFIX", "example_"); //favicon.icoの前につける接頭語
+// define("FTF_FLG", 1); //1で①パスワード保護された圧縮ファイルのアップロードを拒否②無害化前のファイルを保持しないで固定になり設定を非表示にする
+// define("USE_ENV_SEPARATION_FLG", 0); //イントラ環境:0、インターネット環境:1 環境分けないときは0で運用

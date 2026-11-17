@@ -1,0 +1,113 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>Login</span></h2>
+<h3><a name="2-6"></a>Login Error</h3>
+
+<p>
+  When you fail in log in, the error message is displayed. <br />
+  The content and the coping process of the error are as follows.<br />
+  <img src="../../help-images/view-en/2-6.gif" class="view" alt="Login Error" /><br />
+</p>
+
+<h5>Usual error</h5>
+<dl>
+
+  <dt>The account or the password is not correct.</dt>
+  <dd style="margin-bottom:15px;">
+    When input account or password is wrong, the message is displayed.
+  </dd>
+
+  <dt>This account expired.</dt>
+  <dd style="margin-bottom:15px;">
+    When the expiration date is set to each account, as for the account that the expiration date ended, log in is not possible.<br />
+    Please inquire of system administrator., if you want to log it in again.
+
+  </dd>
+
+  <dt>This account is not effective yet.</dt>
+  <dd>
+    When the expiration date is set to each account, the account before the expiration date is not able to log in. <br />
+    Please inquire of system administrator if you want to log in at once.
+
+  </dd>
+
+</dl>
+<br />
+
+<h5>Error displayed in case of cooperation with AD(Active Directory) server</h5>
+<p style="line-height:1.3em;margin:10px 0 15px 30px;width:530px;">
+  The AD(ActiveDirectory) server is a server that manages users.<br />
+  This system authenticates the user in cooperation with the Active Directory server.
+</p>
+<dl>
+  <dt class="position20">The system failed in the connection of the AD server.<br />Please inquire of system administrator.</dt>
+  <dd style="margin-bottom:15px;">
+    The system is not able to connect with the AD(Active Directory) server.
+  </dd>
+
+  <dt>The account or the password is not correct.</dt>
+  <dd style="margin-bottom:15px;">
+    Account (ID) and the password are wrong in the AD(Active Directory) attestation.
+    Or, it fails in the attestation because the setting of the system is wrong.
+  </dd>
+
+  <dt class="position20">The AD account has been locked.<br />Please inquire of system administrator.</dt>
+  <dd style="margin-bottom:15px;">
+    The account of the AD(Active Directory) server is locked.
+    Please inquire of system administrator.
+  </dd>
+
+  <dt class="position20">The AD account has been disabled.<br />Please inquire of system administrator.</dt>
+  <dd style="margin-bottom:15px;">
+    The account of the AD(Active Directory) server is disabled.
+    Please inquire of system administrator.
+  </dd>
+
+  <dt class="position20">The AD account has no login authority to system.<br />Please inquire of system administrator.</dt>
+  <dd style="margin-bottom:15px;">
+    As for this account, the login to WebFile has not been permitted with the AD(Active Directory) server.
+    Please inquire of system administrator.
+  </dd>
+
+  <dt class="position10">Failed to initialize your account.<br />The number of users that can be registered is exceeded.<br />Please inquire of system administrator.</dt>
+  <dd style="margin-bottom:15px;">
+    Because the number of accounts exceeds the number of contract users, log in cannot be done.<br />
+    Please inquire of system administrator.
+  </dd>
+
+  <dt class="position10">Failed to initialize your account.<br />The capacity of this system is insufficient.<br />Please inquire of system administrator.</dt>
+  <dd style="margin-bottom:15px;">
+    Please inquire of system administrator.
+  </dd>
+
+  <dt class="position8">Failed to initialize your account.<br />User information on the AD account is insufficient. <br />(Name and the Email address are necessary. )<br />Please inquire of system administrator.</dt>
+  <dd style="margin-bottom:15px;">
+    Because user information on the AD(Active Directory) account is insufficient, you are not able to log in.<br />
+    Please inquire of system administrator.
+  </dd>
+
+  <dt class="position10">Failed to initialize your account.<br />The Email address of the AD account overlaps with other accounts.<br />Please inquire of system administrator.</dt>
+
+  <dd style="margin-bottom:15px;">
+    Because the Email address of the AD(Active Directory) account overlaps with the Email address of other accounts, you are not able to log in.<br />
+    Please inquire of system administrator.
+  </dd>
+</dl>
+
+<h5>Error displayed in case of the authentication method is Google SSO authentication or [##SAML_NAME##]</h5>
+<dl>
+  <dt>Account is not registered.</dt>
+  <dd style="margin-bottom:15px;">
+    Input account is wrong.<br />
+    Or, it fails in the attestation because the setting of the system is wrong.
+  </dd>
+  <dt class="position20">Failed to get login information.<br />Please login again.</dt>
+  <dd style="margin-bottom:15px;">
+    A problem occurs temporarily in Google SSO or [##SAML_NAME##] service.<br />
+    Or, it fails in the attestation because the setting of the system is wrong.
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

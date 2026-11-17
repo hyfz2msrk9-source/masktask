@@ -1,0 +1,239 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+<h2><span>日志</span></h2>
+<p>
+  文件操作记录。<br />
+  使用共享选项时，点击[共享组记录]按钮可以确认关于共享组的操作记录。<br />
+  目录：点击日志。<br />
+  <img src="../../../images-cn/sysmenu_log.gif" class="view" alt="目录：日志" />
+</p>
+
+<p>
+  下面的画面是用户操作日志。<br />
+  <img src="../../help-images/view-cn/8_1.gif" class="view" alt="用户操作日志" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[共享组日志]</th>
+      <td>只有在使用共享选项时才显示。可以确认关于共享组的操作记录。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[部门组日志]</th>
+      <td>只有在使用共享选项时才显示。可以确认关于部门组的操作记录。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />文件名</th>
+      <td>
+        在操作的文件名。<br />
+        （有与文件无关的操作记录，比如登录时，将显示操作内容。）
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />操作内容</th>
+      <td>所操作的内容。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />操作日期</th>
+      <td>所操作的日期。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />IP地址</th>
+      <td>操作者的IP地址。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />备注</th>
+      <td>
+        显示关于各种操作的备注。
+        <table class="data-s">
+          <tbody>
+            <tr>
+              <td><img src="../../help-images/btn_resend-cn.gif" alt="再送" /></td>
+              <td>
+                使用SMTP发送邮件的话，出现发送错误时会显示再发送按钮。<br />
+                点击再发送后，打开邮件发送前的页面。进行安全性设置后，可以再次发送出现发送错误邮件。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <a name="share"></a>下面的画面是共享组里的文件操作记录。<br />
+  <img src="../../help-images/view-cn/8_2.gif" class="view" alt="共有グループファイル操作履歴" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[用户操作日志]</th>
+      <td>可以确认用户的文件操作记录。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[部门组日志]</th>
+      <td>只有在使用共享选项时才显示。可以确认关于部门组的操作记录。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />组名</th>
+      <td>操作过的组名。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />用户名</th>
+      <td>实行操作的用户名。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />文件名</th>
+      <td>在操作的文件名。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />操作内容</th>
+      <td>所操作的内容。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />操作日期</th>
+      <td>所操作的日期。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />IP地址</th>
+      <td>操作者的IP地址。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />备注</th>
+      <td>显示关于各种操作的备注。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <a name="section"></a>下面的画面是部门组里的文件操作记录。<br />
+  <img src="../../help-images/view-cn/8-2-1.gif" class="view" alt="部署グループファイル操作履歴" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[用户操作日志]</th>
+      <td>可以确认用户的文件操作记录。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[共享组日志]</th>
+      <td>只有在使用共享选项时才显示。可以确认关于共享组的操作记录。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />用户名</th>
+      <td>实行操作的用户名。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />文件名</th>
+      <td>在操作的文件名。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />操作内容</th>
+      <td>所操作的内容。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />操作日期</th>
+      <td>所操作的日期。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />IP地址。</th>
+      <td>操作者的IP地址。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />备注</th>
+      <td>显示关于各种操作的备注。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  鼠标移至各项目的目录栏右侧会显示「▼」，从「▼」显示各个项目的下拉选单。<br />
+  通过下拉选单内的复选框，可切换各个项目的显示/不显示功能。<br />
+  <img src="../../help-images/view-cn/8_3.gif" class="view" alt="各項目の表示・非表示" />
+</p>
+
+<p>
+  另外，点击「操作日期」的标题栏可以切换升序和降序。<br />
+  <img src="../../help-images/view-cn/8_4.gif" class="view" alt="昇順・降順切替" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th colspan="2">查找记录</th>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+      <td>
+        点击放大镜图标打开用户查找表。<br />
+        <img src="../../help-images/view-cn/8_5.gif" class="view" alt="検索フォーム" />
+        <table class="data-s">
+          <tbody>
+            <tr>
+              <td>项目下拉框</td>
+              <td>：选择查找的项目。</td>
+            </tr>
+            <tr>
+              <td>查找栏</td>
+              <td>：输入想要查找的语句。</td>
+            </tr>
+            <tr>
+              <td>查找</td>
+              <td>：开始查找。</td>
+            </tr>
+            <tr>
+              <td>清空</td>
+              <td>：解除查找。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+      <td>更改一页中显示的一览件数。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+      <td>移动到第一页。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+      <td>移动到前一页。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+      <td>移动到所输入的页面。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+      <td>移动到下一页。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+      <td>移动到尾页。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/load.png" alt="一覧を最新の状態にする" /></th>
+      <td>更新一览页面。</td>
+    </tr>
+  </tbody>
+</table>
+<h4>共享组里的文件操作记录CSV文件下载</h4>
+<p class="h4-p">
+  在共享小组的文件操作履历画面可以以CSV形式下载共享小组对数(记录)的。请选择与小组名下载的履历的日期。<br />
+  选择后全部，单击[CSV下载]按钮的话共享小组对数(记录)被下载。<br />
+  <br/>
+  <span class="attention">
+    只有管理员的共有组才可以下载共享日志。
+  </span>
+  <img src="../../help-images/view-cn/logcsvdl-1.gif" class="view" alt="共有グループログCSVダウンロード" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

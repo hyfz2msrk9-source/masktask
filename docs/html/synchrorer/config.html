@@ -1,0 +1,55 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/synchrorer/header.html');
+?>
+
+<h2><span>設定</span></h2>
+<p>
+  設定画面では、同期するフォルダの指定や、自動起動、同期の周期などを設定することができます。<br />
+  <img src="../../help-images/view/synchrorer/4-0-0.gif" class="view" alt="設定画面" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />アカウント</th>
+      <td>
+        アカウント情報を表示します。<br />
+        [アカウントの接続を切断]をクリックすると、アカウント設定も含め、設定がすべて破棄されます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />同期フォルダ</th>
+      <td>
+        WebFileと同期するフォルダを指定します。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />パソコンの起動時に自動的に起動する</th>
+      <td>
+        パソコン起動時にシンクローラーを自動起動する場合は、チェックをつけてください。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />同期フォルダに変更があった時に通知する</th>
+      <td>
+        ファイルのダウンロード、アップロードが実行された場合に通知させる場合は、チェックをつけてください。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />WebFile側の変更をn分毎に確認する</th>
+      <td>
+        WebFile側の変更を確認する間隔を1～60分の間で指定してください。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />プロキシ設定</th>
+      <td>
+        WebFileと通信する際のプロキシ設定を指定してください。<br />
+        [プロキシ設定を自動的に検出]を指定すると、使用しているPCの設定を使用して通信します。<br />
+        [プロキシ設定の変更]をクリックすると使用しているPCのプロキシ設定画面が表示されます。
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

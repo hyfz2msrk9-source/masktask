@@ -1,0 +1,17 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>ヘルプ</span></h2>
+<p>
+  メニュー：ヘルプをクリックすると、マニュアルが別画面で開きます。<br />
+  操作に迷った際はご参照ください。<br />
+  <img src="../../help-images/view/menu_help.png" class="view" alt="メニュー：ヘルプ" />
+</p>
+
+<p>
+  ヘルプのクリック時は、現在開いているページに該当するマニュアルが別画面で表示されます。<br />
+  例えば、ファイル一覧画面でメニュー：ヘルプをクリックすると、ファイル一覧画面のマニュアルが表示されます。
+  <img src="../../help-images/view/help_window.png" class="view" alt="メニュー：サポート" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

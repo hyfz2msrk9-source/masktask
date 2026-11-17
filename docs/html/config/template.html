@@ -1,0 +1,237 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>設定</span></h2>
+<h3><a name="9-1"></a>テンプレート一覧</h3>
+<p>
+  メールのテンプレートです。[メール]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-1_1.gif" class="view" alt="設定画面：メールテンプレート" />
+</p>
+
+<p>
+  メールテンプレート一覧画面を表示します。<br />
+  <img src="../../help-images/view/9-1_2.gif" class="view" alt="メールテンプレート画面" />
+</p>
+
+<h4><a name="9-1-1"></a>テンプレート作成・編集</h4>
+<p class="h4-p">
+  メールテンプレートを作成・編集します。<br />
+  作成する場合は[追加]ボタンを、編集する場合は編集したいメールテンプレートの[詳細]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-1-1_1.gif" class="view" alt="テンプレート画面：作成する" />
+</p>
+
+<p class="h4-p">
+  ＊編集の場合<br />
+  メールテンプレート詳細画面の下段[編集]をクリックすると、編集できるようになります。<br />
+  <img src="../../help-images/view/9-1-1_2.gif" class="view" alt="テンプレート画面：編集する" />
+</p>
+
+<p class="h4-p">
+  メールテンプレートの作成・編集画面に遷移します。項目を入力し、[保存]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-1-1_3.gif" class="view" alt="メールテンプレートの作成・編集画面" />
+  <img src="../../help-images/view/9-1-1_4.gif" class="view" alt="メールテンプレートの作成・編集画面2" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />テンプレート名</th>
+      <td>
+        メールテンプレートの名前です。<br />
+        メールには挿入されません。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />種別</th>
+      <td>
+        テンプレートを使用する機能を選択します。
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>配布</th>
+              <td>配布、フォルダ公開、ファイルありの一斉配信で使用できます。</td>
+            </tr>
+            <tr>
+              <th>収集</th>
+              <td>収集、一斉収集で使用できます。</td>
+            </tr>
+            <tr>
+              <th>ファイルなしの一斉配信</th>
+              <td>ファイルなしの一斉配信で使用できます。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />メール件名</th>
+      <td>
+        メールの件名に挿入されます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />本文</th>
+      <td>
+        メールの本文に挿入されます。
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>[##mail##]</th>
+              <td>宛先のメールアドレスに置換されます。</td>
+            </tr>
+            <tr>
+              <th>[##name##]</th>
+              <td>宛先のお名前に置換されます。</td>
+            </tr>
+            <tr>
+              <th>[##addr_list##]</th>
+              <td>宛先リストに置換されます。</td>
+            </tr>
+            <tr>
+              <th>[##dl_limit##]</th>
+              <td>ダウンロードの有効期限に置換されます。</td>
+            </tr>
+            <tr>
+              <th>[##url##]</th>
+              <td>ダウンロードURLに変換されます。</td>
+            </tr>
+            <tr>
+              <th>[##file_list##]</th>
+              <td>収録ファイル一覧に置換されます。</td>
+            </tr>
+            <tr>
+              <th>[##upload##]</th>
+              <td>アップロードURLに置換されます。</td>
+            </tr>
+            <tr>
+              <th>[##up_limit##]</th>
+              <td>アップロードの有効期限に置換されます。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />ダウンロードの<br />　セキュリティ設定</th>
+      <td>
+        ダウンロード時のセキュリティ設定です。
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>ダウンロードの有効期間</th>
+              <td>ファイルがダウンロード可能な期間を設定できます。</td>
+            </tr>
+            <tr>
+              <th>ダウンロード回数の上限</th>
+              <td>ファイルをダウンロードできる最大回数を設定できます。</td>
+            </tr>
+            <tr>
+              <th>パスワードを設定しない</th>
+              <td>誰でもURLを知っていればダウンロード可能になります。</td>
+            </tr>
+            <tr>
+              <th>ワンタイムパスワードを設定する</th>
+              <td>URLへのアクセス時に、一度だけ利用可能なワンタイムパスワードが宛先に送信されます。</td>
+            </tr>
+            <tr>
+              <th>ワンタイムパスワードを設定する<br />（別経路で送信）</th>
+              <td>ワンタイムパスワードを宛先以外のメールアドレスやSMS経由で送信します。※ご利用にはSMS認証オプションが必要です。</td>
+            </tr>
+            <tr>
+              <th>指定パスワードを設定する</th>
+              <td>ダウンロード時に必要なパスワードを設定できます。</td>
+            </tr>
+            <tr>
+              <th>開封通知</th>
+              <td>ダウンロードURLにアクセスがあるたびに通知を受け取ることができます。</td>
+            </tr>
+            <tr>
+              <th>ダウンロード通知</th>
+              <td>実際にファイルがダウンロードされたときに通知を受け取ることができます。</td>
+            </tr>
+            <tr>
+              <th>ファイルの自動削除</th>
+              <td>ダウンロード期間が終了すると、ファイルが自動で削除されます。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />アップロードの<br />　セキュリティ設定</th>
+      <td>
+        アップロード時のセキュリティ設定です。
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>アップロードの有効期間</th>
+              <td>アップロード用のURLが有効な期間を設定できます。</td>
+            </tr>
+            <tr>
+              <th>パスワードを設定しない</th>
+              <td>誰でもアップロード可能な設定です。</td>
+            </tr>
+            <tr>
+              <th>ワンタイムパスワードを設定する</th>
+              <td>アップロード時に必要な、一度だけ有効なパスワードが生成されます。</td>
+            </tr>
+            <tr>
+              <th>指定パスワードを設定する</th>
+              <td>アップロード時に必要なパスワードを設定できます。</td>
+            </tr>
+            <tr>
+              <th>アップロード者への通知</th>
+              <td>ファイルのアップロードのたび、アップロード者にファイル情報の通知が届きます。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />文字エンコーディング</th>
+      <td>
+        ISO-2022-JPとUTF-8を切り替えることができます。
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="9-1-2"></a>テンプレート複製・削除</h4>
+<p class="h4-p">
+  対象のメールテンプレートの[詳細]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-1-2_1.gif" class="view" alt="メールテンプレート画面" />
+</p>
+
+<p class="h4-p">
+    ＊複製の場合<br />
+    内容を確認し、[複製]ボタンをクリックしてください。<br />
+    その後は、メールテンプレート編集と同じ手順で、新しいテンプレートを作成できます。
+    <img src="../../help-images/view/9-1-2_4.gif" class="view" alt="メールテンプレート複製画面" />
+</p>
+
+<p class="h4-p">
+  ＊削除の場合<br />
+  内容を確認し、[削除]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/9-1-2_2.gif" class="view" alt="メールテンプレート削除画面" />
+</p>
+
+<p class="h4-p">
+  [削除]ボタンをクリックすると、確認メッセージが表示されます。<br />
+  [OK]をクリックするとメールテンプレートは削除されます。<br />
+  <img src="../../help-images/view/9-1-2_3.gif" class="view" alt="メールテンプレート削除確認メッセージ" />
+</p>
+
+<h4><a name="9-1-3"></a>テンプレートの呼び出し</h4>
+<p class="h4-p">
+  メール作成画面の[テンプレート]から作成したテンプレートを選択できます。<br />
+  <img src="../../help-images/view/9-1-3_1.gif" class="view" alt="メールテンプレート画面" />
+</p>
+
+<p class="h4-p">
+  選択したテンプレートがメール作成画面に反映されます。<br />
+  <img src="../../help-images/view/9-1-3_2.gif" class="view" alt="メールテンプレート画面" />
+  <img src="../../help-images/view/9-1-3_3.gif" class="view" alt="メールテンプレート画面2" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

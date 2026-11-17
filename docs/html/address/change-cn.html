@@ -1,0 +1,133 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+
+<h2><span>邮箱地址簿</span></h2>
+<h3><a name="6-2"></a>追加邮箱地址</h3>
+<h4><a name="6-2-1"></a>在表格里新建联系人</h4>
+<p class="h4-p">
+  追加邮箱地址。请点击[追加邮箱地址]按钮。<br />
+  显示邮箱地址追加表。<br />
+  <img src="../../help-images/view-cn/6-2_1.gif" class="view" alt="アドレスフォーム：アドレス追加" />
+</p>
+
+<p class="h4-p">
+  显示邮箱地址簿（登录）空间容量。<br />
+  输入项目、选择、点击[追加]按钮。<br />
+  <img src="../../help-images/view-cn/6-2_2.gif" class="view" alt="アドレス帳登録エリア" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>名字</th>
+      <td>邮箱地址所登录的人名。</td>
+    </tr>
+    <tr>
+      <th>名字（片假名）</th>
+      <td>邮箱地址所登录的用户的片假名。</td>
+    </tr>
+    <tr>
+      <th>组</th>
+      <td>
+        邮箱地址的分类组。<br />
+        如果从属于到已经有的小组邮件地址，请单击「更改组成员」。表示更改组成员。<br />
+        请选择上部的小组。如果小组能选择请单击[↓]按钮。单击[更改組成員身份]按钮的话，对邮件地址设定小组。<br />
+        <img src="../../help-images/view-cn/6-2_3.gif" class="view" alt="グループ選択" /><br />
+        制作新的小组。单击[追加组]按钮的话，表示输入栏。请输入小组名。<br />单击保存按钮的话，保存小组。<br />
+        <img src="../../help-images/view-cn/6-2_4.gif" class="view" alt="新規グループ作成" />
+      </td>
+    </tr>
+    <tr>
+      <th>邮箱地址</th>
+      <td>登录的邮箱地址。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="6-2-2"></a>从CSV文件里追加・从CSV文件里下载</h4>
+<h5>从CSV文件里追加</h5>
+<p class="h4-p">
+  请点击[用CSV文件追加邮箱地址]按钮。<br />
+  <img src="../../help-images/view-cn/6-2-2_1.gif" class="view" alt="CSVファイルでアドレスを追加ボタン" />
+</p>
+
+<p class="h4-p">
+  选择存有邮箱地址信息的CSV文件，点击[导入]按钮追加到邮箱地址簿里。<br />
+  <img src="../../help-images/view-cn/6-2-2_2.png" class="view" alt="CSVファイルでの追加画面：個人／共通" />
+</p>
+
+<p class="h4-p">
+  设定不显示共通时，能登录共通以外的邮箱地址。<br />
+  设定不显示部门邮箱时，能登录部门邮箱以外的邮箱地址。<br />
+  设定不显示共通和部门邮箱时，只能登录个人的邮箱地址。<br />
+  选择存有邮箱地址信息的CSV文件，点击[导入]按钮追加到邮箱地址簿里。<br />
+  <img src="../../help-images/view-cn/6-2-2_2_2.png" class="view" alt="CSVファイルでの追加画面：個人" />
+</p>
+
+<p class="h4-p">
+  CSV文件请按照<span class="attention">「名字、名字（片假名）、组、邮箱地址、登录到的位置」</span>的顺序作成。<br />
+  保存位置是，保存到个人邮箱地址簿时输入"个人"或者"0"，保存到共通邮箱地址簿时输入"共通"或者"1"，保存到部门邮箱地址簿时输入"部门"或者"2"。<br />
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+    "smaple-name1","name1","sales","name1@example.com","0"<br>
+    "smaple-name2","name2","sales;marketing","name2@example.com","1"<br>
+    "smaple-name3","name3","section¥grpup1","name2@example.com","2"
+  </div>
+</p>
+
+<p class="h4-p">
+  设定不显示共通和部门邮箱时，CSV文件请按照<span class="attention">「名字、名字（片假名）、组、邮箱地址」</span>的顺序作成。<br />
+  只登录到个人的邮箱地址。<br />
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+    "smaple-name1","name1","sales","name1@example.com"<br>
+    "smaple-name2","name2","sales;marketing","name2@example.com"
+  </div>
+</p>
+
+<p class="h4-p">
+  导入成功后会显示完成页面。点击[返回]按钮，返回到邮箱地址簿页面。<br />
+  <img src="../../help-images/view-cn/6-2-2_4.gif" class="view" alt="CSVファイルでの追加完了画面" />
+</p>
+
+<h5>从CSV文件里下载</h5>
+<p class="h4-p">
+  请点击[用CSV文件下载邮箱地址]按钮。请下载CSV文件<br />
+  <img src="../../help-images/view-cn/6-2-2_1_2.gif" class="view" alt="CSVファイルでアドレスを追加ボタン" />
+</p>
+
+
+<h3><a name="6-3"></a>编辑邮箱地址</h3>
+<p>
+  编辑邮箱地址。在邮箱地址簿里点击选择要编辑的邮箱地址。<br />
+  选择后点击[编辑邮箱地址]按钮。<br />
+  <img src="../../help-images/view-cn/6-3_1.gif" class="view" alt="アドレスフォーム：アドレス編集" />
+</p>
+
+<p>
+  显示邮箱地址编辑栏。进行编辑后，请点击[追加]按钮。<br />
+  <img src="../../help-images/view-cn/6-2_2.gif" class="view" alt="アドレス編集エリア" />
+</p>
+
+<h3><a name="6-4"></a>删除邮箱地址</h3>
+<p>
+  在邮箱地址簿里点击选择要删除的邮箱地址。<br />
+  邮箱地址可以选择多个。<br />
+  选择后，点击[删除邮箱地址]按钮。<br />
+<p>
+  系统会显示确认信息，如果没有问题请点击[OK]按钮。<br />
+  所选择的邮箱地址会被删除。<br />
+</p>
+<img src="../../help-images/view-cn/6-4_1.gif" class="view" alt="アドレスフォーム：アドレス削除" />
+
+<p>
+  想要删除邮箱地址簿里所有邮箱地址时，请点击[删除所有邮箱地址]按钮。<br />
+  在「个人／共有分页标签」里选择为个人时显示「删除所有个人邮箱地址」，选择为共有时显示「删除所有共有邮箱地址」。
+</p>
+<p>
+  系统会显示确认信息，如果没有问题请点击[OK]按钮。<br />
+  所选择的邮箱地址会被删除。<br />
+  <img src="../../help-images/view-cn/6-4_3.gif" class="view" alt="アドレスフォーム：アドレス全削除" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

@@ -1,0 +1,53 @@
+<?php 
+	include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+	$path = "../../";
+	}else{
+	$customer_flg = 0;
+	$path = "../";
+	}
+	$image_path = "../" . $path . "help-images/view-cn/";
+	include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+
+<h2><span>关于文件下载</span></h2>
+<h3><a name="13-1"></a>文件下载</h3>
+<p>点击访问邮件内的URL链接，在下载页面中选择需要的文件点击下载按钮的简单操作。</p>
+
+<dl>
+	<dt><a name="normal"></a>标准下载</dt>
+	<dd style="width:530px;margin-bottom:35px;">
+		<div>
+			收到数据发送的通知邮件后，点击邮件中的下载用URL链接。
+			<img src=" <?php echo $image_path; ?>13-1-1.png" class="view" alt="通常ファイルダウンロード：メール本文" />
+		</div>
+		<a name="normal_download" id="normal_download"></a><div>
+			打开下载界面后，点击文件名或屏幕右侧的下载按钮即可下载文件。<br />
+			<img src="<?php echo $image_path; ?>download-marked.png" class="view" alt="通常ファイルダウンロード" /><br />
+		</div>
+	</dd>
+
+	<dt><a name="zip"></a>ZIP文件下载</dt>
+	<dd style="width:530px;margin-bottom:35px;">
+		收到数据发送的通知邮件后，点击邮件中的下载用URL链接。<br />
+		点击文件名或屏幕右侧的下载按钮即可下载文件。<br />
+		被压缩为ZIP文件的文件有设置密码。<br />
+		如果不知道密码，请联系发件人。<br />
+		<img src="<?php echo $image_path; ?>zip_dl.png" class="view" alt="ZIPファイルダウンロード" /><br />
+	</dd>
+
+	<dt><a name="folder"></a>文件夹公开</dt>
+	<dd style="width:530px;">
+		收到文件夹公开的通知邮件后，点击邮件中的下载用URL链接。<br />
+		打开了文件夹公开页面，点击想要下载的文件右侧的下载按钮，或者点击文件名开始下载。<br /><br />
+		<img src="<?php echo $image_path; ?>openfolder.png" class="view" alt="フォルダ公開：ダウンロード画面" /><br />
+		要下载所有显示的文件请点击[下载全部文件]按钮。移动至下载压缩文件夹页面。<br />
+		<img src="<?php echo $image_path; ?>openfolder_dl_all.png" class="view" alt="フォルダ公開：一括ダウンロード確認画面" /><br />
+		确认可以打包下载请点击[下载压缩文件夹]按钮。开始压缩文件。<br />
+		<img src="<?php echo $image_path; ?>openfolder_dl_all_zipping.png" class="view" alt="フォルダ公開：圧縮中" /><br />
+		文件压缩完毕后点击[下载压缩文件夹]按钮进行下载。<br />
+		<img src="<?php echo $image_path; ?>openfolder_dl_all_done.png" class="view" alt="フォルダ公開：圧縮完了" />
+	</dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

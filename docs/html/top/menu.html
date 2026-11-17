@@ -1,0 +1,124 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>メニュー</span></h2>
+<p>ユーザ画面のメニューです。<br />
+  <img src="../../help-images/view/menu.png" class="view" alt="ユーザメニュー" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>ロゴ</th>
+      <td>
+        WebFileのロゴです。
+      </td>
+</tr>
+    <tr>
+      <th>お知らせ</th>
+      <td>
+        WebFileの使い方や新機能などのお知らせを確認できます。
+      </td>
+</tr>
+<tr>
+  <th>ヘルプ</th>
+  <td>
+    現在操作をしている画面のヘルプページが開きます。
+  </td>
+</tr>
+<tr>
+  <th>サポート</th>
+  <td>
+    専用のサポートへ、問合せのメールを送信します。
+  </td>
+</tr>
+    <tr>
+      <th>ファイル一覧</th>
+      <td>
+  アップロードしたファイル一覧です。<br />
+        ファイルの配布やフォルダ移動など、アップロードしたファイルの操作を行います。
+      </td>
+    </tr>
+    <tr>
+      <th>引取り(収集)</th>
+      <td>
+  収集したファイル一覧です。<br />
+  ファイルの引取りや、ファイルのファイル一覧への保存など、引取ったファイルの操作を行います。
+      </td>
+    </tr>
+    <tr>
+      <th>一斉配信<br /><span class="attention">(※オプション)</span></th>
+      <td>
+        一斉配信の一覧です。<br />
+        宛先ファイルのインポートを使ったメール一斉送信や一斉配信の履歴確認など、一斉配信の操作を行います。
+      </td>
+    </tr>
+    <tr>
+      <th>一斉収集<br /><span class="attention">(※オプション)</span></th>
+      <td>
+        一斉収集の一覧です。<br />
+        CSV形式の宛先ファイルを使ったファイルの一斉収集や、一斉収集の履歴確認など、一斉収集関連の操作を行います。
+      </td>
+  </tr>
+    <tr>
+      <th>待機メール一覧</th>
+      <td>
+        送信待機メールの一覧です。<br />
+      </td>
+    </tr>
+    <tr>
+      <th>アドレス帳</th>
+      <td>
+        アドレス帳の管理を行います。
+      </td>
+    </tr>
+    <tr>
+      <th>上長承認一覧<br /><span class="attention">(※オプション)</span></th>
+      <td>
+  上長の承認待ちメールや承認済み、却下済みの一覧です。
+      </td>
+    </tr>
+    <tr>
+      <th>履歴</th>
+      <td>
+  ユーザの操作履歴や、ファイルの履歴の一覧です。
+      </td>
+    </tr>
+    <tr>
+      <th>設定</th>
+      <td>
+  使いやすくするための設定ができます。テンプレートや署名を編集することができます。
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>アカウント名にカーソルを当てると、サブメニューが開きます。<br />
+  <img src="../../help-images/view/submenu.png" class="view" alt="ユーザメニュー" />
+</p>
+
+<table>
+<tbody>
+<tr>
+  <th>プロフィール</th>
+  <td>
+    ユーザのプロフィールです。登録されている名前やメールアドレスを確認できます。
+  </td>
+</tr>
+<tr>
+  <th>パスワード変更</th>
+  <td>
+    パスワードを変更できます。
+  </td>
+</tr>
+<tr>
+  <th>ログアウト</th>
+  <td>
+    ログアウトします。
+  </td>
+</tr>
+</tbody>
+</table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,21 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+<h2><span>ユーザ管理</span></h2>
+<h3>エクスポート</h3>
+<p>
+  登録されている全てのユーザ情報を、CSVファイルの形式でダウンロードします。<br />
+  このCSVファイルを編集し、[CSVファイルで追加]を行うと、情報が変更されている登録済みユーザに対しては更新を行うので、大量の更新作業が軽減されます。<br />
+  ユーザ管理画面のユーザ一覧の上にある、[エクスポート]ボタンをクリックしてください。<br />
+  <img src="../../images/view/4-4-1.gif" class="view" alt="ユーザ管理：エクスポート"  />
+</p>
+
+<p>
+  [エクスポート]ボタンをクリックすると、登録されている全てのユーザ情報をCSVファイルでエクスポートします。ファイルをダウンロードしますので、お使いのパソコンに保存してください。 <br />
+  <img src="../../images/view/4-4-2.gif" class="view" alt="ユーザ管理：エクスポートファイルのダウンロード" />
+</p>
+
+<p class="attention">[注意]<br />
+  エクスポートされたCSVファイルは、毎回同じファイル名がつきます。ダウンロードする時は、前回のCSVファイルとの混合にご注意ください。
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

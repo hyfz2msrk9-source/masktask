@@ -1,0 +1,164 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+<h2><span>邮箱地址簿</span></h2>
+<p>
+  是邮箱地址通讯录。邮箱地址登录到该通讯录后，发送文件或收集文件时，可以从通信录中直接选择邮箱地址，省去输入的麻烦。<br />
+菜单：请点击“邮箱地址簿”按键。<br />
+  <img src="../../../images-cn/sysmenu_address.gif" class="view" alt="菜单：邮箱地址簿" />
+</p>
+
+<h3><a name="6-1"></a>邮箱地址一览</h3>
+<p>
+  目录：点击邮箱地址簿移动至邮箱地址簿页面。<br />
+  <img src="../../help-images/view-cn/6-1_1.png" class="view" alt="邮箱地址簿画面" />
+</p>
+<p>
+  左侧显示组一览。点击后根据所登录的组显示邮箱地址到右侧。<br />
+  现在显示中的组背景颜色会变，并带有图标。(<img src="../../help-images/ico-group-active.gif" alt="表示グループ" />)<br />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />使用CSV文件<br />追加邮箱地址・<br />使用CSV文件下载<br />邮箱地址</th>
+      <td>
+        使用CSV文件追加新邮箱地址。使用CSV文件下载邮箱地址(<a href="change-cn.html#6-2-2">→从CSV文件追加、从CSV文件下载</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />个人/共通/部门</th>
+      <td>
+        您可以切换地址簿类型。<br />
+        设定不显示共通时，显示共通以外的。<br />
+        设定不显示部门邮箱地阯簿时，显示部门邮箱以外的。<br />
+        设定不显示共通和部门邮箱时，只显示个人的。<br />
+        如果选择部门邮箱地阯簿，显示每箇部门的组。<br />
+        <img src="../../help-images/view-cn/address_group_list.png" class="view" alt="アドレス帳グループ一覧" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />组的追加</th>
+      <td>
+        显示组追加区。(<a href="group-cn.html#6-6">→追加组</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />邮箱地址的追加</th>
+      <td>
+        显示邮箱地址追加区。(<a href="change-cn.html#6-2">→追加邮箱地址</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />邮箱地址编辑</th>
+      <td>
+        从邮箱地址一览中选择想要编辑的邮箱地址后，显示邮箱地址编辑区。编辑邮箱地址只能是1个。(<a href="change-cn.html#6-3">→编辑邮箱地址</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />删除邮箱地址</th>
+      <td>
+        在邮箱地址一览中选择想要删除的邮箱地址后，删除邮箱地址。(<a href="change-cn.html#6-4">→删除邮箱地址</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />更改组成员</th>
+      <td>
+        表示登记的邮件地址从属于的小组。(<a href="group-cn.html#6-5">→更改邮箱地址组</a>)<br />
+        如果选择部门邮箱地址簿，则还显示[复制到另一个部门组]按钮。(→<a href="group-cn.html#6-10">复制到另一个部门组</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />邮箱地址全删除</th>
+      <td>
+        在邮箱地址一览中删除所有的邮箱地址。(<a href="change-cn.html#6-4">→删除邮箱地址</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />邮箱地址一览</th>
+      <td>
+        表示登记的邮件地址一览。
+        <table class="data">
+          <tr>
+            <th>名字（片假名）</th>
+            <td>邮箱地址所登录的人名（片假名）。点击标题可以按照人名来排列。</td>
+          </tr>
+          <tr>
+            <th>组</th>
+            <td>邮箱地址的分类组。点击标题可以按照组名来排列。</td>
+          </tr>
+          <tr>
+            <th>邮箱地址</th>
+            <td>邮箱地址。点击标题可以按照邮箱地址来排列。</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />邮箱地址检索</th>
+      <td>
+        <table class="data">
+          <tbody>
+            <tr>
+              <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+              <td>
+                点击放大镜图标打开用户查找表。<br />
+                <img src="../../help-images/view-tcn/6-1_2-s.gif" class="view" alt="検索フォーム" />
+                <table class="data-s">
+                  <tbody>
+                    <tr>
+                      <td>项目下拉框</td>
+                      <td>：选择查找的项目。</td>
+                    </tr>
+                    <tr>
+                      <td>查找栏</td>
+                      <td>：输入想要查找的语句。</td>
+                    </tr>
+                    <tr>
+                      <td>查找</td>
+                      <td>：开始查找。</td>
+                    </tr>
+                    <tr>
+                      <td>清空</td>
+                      <td>：解除查找。</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+              <td>更改一页中显示的一览件数。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+              <td>移动到第一页。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+              <td>移动到前一页。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+              <td>移动到所输入的页面。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+              <td>移动到下一页。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+              <td>移动到尾页。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/load.png" alt="一覧を最新の状態にする" /></th>
+              <td>更新一览页面。</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

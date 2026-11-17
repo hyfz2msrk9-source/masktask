@@ -1,0 +1,71 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-en/";
+  include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+
+<h2><span>Download files</span></h2>
+<h3><a name="13-3"></a>Download with the one-time password(another destination)</h3>
+
+<p>
+  One-time password is a kind of password that can be used 1 time and after that the same password is not available. You can get the one-time password and download the files with the password.
+  <span class="attention">You have to get the password every time you want to download. You can get the password with SMS(or Email).</span><br />
+</p>
+
+<h4>Confirmation of destination</h4>
+<p>
+  Please Check the phone number (or email address) to which you want to send the one-time password, and click the [Enter] button.<br />
+  <span class="attention">At this time, if it is not your own address, click the "Wrong phone number (or e-mail address)" button. </span>Notify the sender of any mistakes.
+</p>
+
+<p>
+  <img src="<?php echo $image_path; ?>onetimesms-mail.png" class="view" alt="get one-time passoward" />
+</p>
+
+<a name="pass"></a><h4>Input form for password</h4>
+<p>
+  When you press the enter button, an SMS (or email in the case of an email address) containing the password will be sent to the one-time password destination.
+  <img src="<?php echo $image_path; ?>13-3-4.gif" class="view" alt="Email:Notification of password for downloading" />
+  </p>
+
+  <p>
+  Please enter the password which is given in the password, and click the [Enter] button.
+  <img src="<?php echo $image_path; ?>onetime-pass-marked.png" class="view" alt="send password" />
+</p>
+
+<dl>
+  <dt>In case that the password is correct</dt>
+  <dd>The download files screen is opened.<br />
+    <img src="<?php echo $image_path; ?>download.png" class="view" alt="in case that the password is correct" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>In case that the password is not correct</dt>
+  <dd>The error message is displayed and the screen to download files is not open.<br />
+    Click [Redo from beginning] button, you can redo from getting one-time password.<br />
+    <img src="<?php echo $image_path; ?>onetime-error-pass.png" class="view" alt="in case that the password is incorrect" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>Restarting from getting a one-time password</dt>
+  <dd>If you want to start over from obtaining a one-time password, click [Phone number confirmatio(or Confirm E-mail Address)] in the procedure list displayed at the top of the screen. You can start over from the confirmation screen.
+  <img src="<?php echo $image_path; ?>onetimesms-tomail.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:パスワードの取得からやり直す" />
+  </dd>
+</dl>
+
+<a name="dl"></a> <h4>Download page</h4>
+<p>
+When the download screen opens, click on the name of the file you want to download or the download button on the right side of the table.
+The download will begin.<br />
+  <img src=" <?php echo $image_path; ?>download-marked.png" class="view" alt="通常ファイルダウンロード" /><br />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

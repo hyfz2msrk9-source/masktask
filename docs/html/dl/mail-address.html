@@ -1,0 +1,36 @@
+<?php 
+	include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+	$path = "../../";
+	}else{
+	$customer_flg = 0;
+	$path = "../";
+	}
+	$image_path = "../" . $path . "help-images/view/";
+	include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+
+<h2><span>ファイルのダウンロード</span></h2>
+<h3><a name="13-2"></a>メールアドレスの入力を求められる場合</h3>
+<p>メールに記載されているダウンロードURLへアクセスした際、メールアドレスの入力を求められる場合があります。<br />
+  正しい相手がダウンロードを行ったかどうかを確認するものですので、<span class="attention">メールを受け取られたご本人のメールアドレスを入力してください。</span>
+  </p>
+  <p>別の方のメールアドレスや、メールを転送している場合に、転送先のメールアドレスを入力しても、データはダウンロードできません。そのような場合は、最初にメールを受け取られた方の、転送前のメールアドレスを入力して下さい。<br />
+  例えば、「○○＠sample.co.jp」のメールアドレスでメールを受信し、「▲▲@mailaddress.com」に自動転送して、メールを確認した場合、「○○＠sample.co.jp」の方を、入力してください。<br />
+  <img src="<?php echo $image_path; ?>mailer.png" class="view" alt="メールアドレスの入力を求められる場合のファイルダウンロード" />
+</p>
+
+<h5><span class="line">正しいメールアドレスを入力した場合</span></h5>
+<p class="h4-p">
+  正しいメールアドレスを入力後、ダウンロード画面に遷移します。<br />
+  ダウンロードしたいファイルの右横に表示されている[ダウンロード]ボタン、または、ファイル名をクリックしてください。ダウンロードが開始されます。
+  <img src="<?php echo $image_path; ?>download.png" class="view" alt="メールアドレスの入力を求められる場合のファイルダウンロード:正しいメールアドレスを入力した場合" />
+</p>
+
+<h5><span class="line">誤ったメールアドレスを入力した場合</span></h5>
+<p class="h4-p">
+  エラーメッセージが表示され、ダウンロード画面に進めません。<br />
+  <img src="<?php echo $image_path; ?>mailer-error-mail.png" class="view" alt="メールアドレスの入力を求められる場合のファイルダウンロード:誤ったメールアドレスを入力した場合" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

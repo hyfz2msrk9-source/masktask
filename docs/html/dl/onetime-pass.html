@@ -1,0 +1,94 @@
+<?php
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+  $path = "../../";
+}else{
+  $customer_flg = 0;
+  $path = "../";
+}
+$image_path = "../" . $path . "help-images/view/";
+include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+
+<?php if($customer_flg): ?>
+<h2><span>配布メールを受け取った方（ダウンロード）</span></h2>
+<?php else:?>
+<h2><span>ファイルのダウンロード</span></h2>
+<?php  endif; ?>
+
+<h3><a name="13-3"></a>ワンタイムパスワードを求められる場合</h3>
+
+<p>
+  ワンタイムパスワード（一度利用すると、二度目からは同じパスワードが利用できなくなる形式）を取得し、パスワード付きデータをダウンロードします。<span class="attention">パスワードは、ダウンロードの度にメールで取得します。</span><br />
+  </p>
+  
+<h4 id="pass">メールアドレス入力画面</h4>
+  <p>
+  メールアドレスを入力し、[送信]ボタンをクリックしてください。<br />
+  この際、<span class="attention">メールを受け取られたご本人のメールアドレスを入力してください。</span>
+  </p>
+  <p>
+  メールを受け取られた方とは別の方のメールアドレスや、メールを転送している場合、転送先のメールアドレスを入力しても、パスワードは届きません。そのような場合は、最初にメールを受け取られた方の、転送前のメールアドレスを入力してください。<br />
+  例えば、「○○＠sample.co.jp」のメールアドレスでメールを受信し、「▲▲@mailaddress.com」に自動転送してメールを確認した場合、「○○＠sample.co.jp」を入力してください。
+</p>
+
+<p>
+  <img src="
+  <?php echo $image_path; ?>onetime-mail.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:パスワード取得" />
+</p>
+
+<dl>
+  <dt>正しいメールアドレスを入力した場合</dt>
+  <dd>
+    入力されたメールアドレス宛てにメールでパスワードが送信され、パスワードの入力画面が開きます。<br />
+    <img src="<?php echo $image_path; ?>onetime-pass.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:正しいメールアドレスを入力した場合" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>誤ったメールアドレスを入力した場合</dt>
+  <dd>
+    エラーメッセージが表示され、パスワード入力画面に進めません。正しいメールアドレスを入力し直してください。<br />
+    <img src="<?php echo $image_path; ?>onetime-error-mail.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:誤ったメールアドレスを入力した場合" />
+  </dd>
+</dl>
+
+<a name="pass"></a> <h4>パスワード入力画面</h4>
+<p>正しいメールアドレスを入力すると、入力されたメールアドレス宛てに、「ダウンロード用パスワードのお知らせ」という件名のメールが届きます。
+<img src="<?php echo $image_path; ?>13-3-4.gif" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:ダウンロード用パスワードのお知らせ" />
+</p>
+
+<p>
+  メール内に記載されているパスワードをパスワード送信画面に入力し、
+  [送信]ボタンをクリックしてください。<br />
+  <img src="<?php echo $image_path; ?>onetime-pass-marked.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:ダウンロード用パスワード送信" />
+</p>
+
+<dl>
+  <dt>正しいパスワードを入力した場合</dt>
+  <dd>ファイルのダウンロード画面が開きます。<br />
+  <img src="<?php echo $image_path; ?>download.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:正しいパスワードを入力した場合" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>誤ったパスワードを入力した場合</dt>
+  <dd>エラーメッセージが表示され、ダウンロード画面に進めません。「最初からやり直す」を押すと、メールアドレス入力段階に戻ります。
+  <img src="<?php echo $image_path; ?>onetime-error-pass.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:誤ったパスワードを入力した場合" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>ワンタイムパスワードの取得からやり直したい場合</dt>
+  <dd>ダウンロード用パスワードのお知らせを誤って削除してしまったなど、ワンタイムパスワードの取得からやり直したい場合は、画面上部に表示された手順リストの[メールアドレス入力]をクリックしてください。メールアドレスの入力からやり直せます。
+  <img src="<?php echo $image_path; ?>onetime-tomail.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:パスワードの取得からやり直す" />
+  </dd>
+</dl>
+
+<a name="dl"></a> <h4>ダウンロード画面</h4>
+<p>
+ダウンロード画面が開きましたら、ダウンロードしたいファイルのファイル名か、表の右端に表示されたダウンロードボタンをクリックしてください。ダウンロードが開始されます。<br />
+  <img src=" <?php echo $image_path; ?>download-marked.png" class="view" alt="通常ファイルダウンロード" /><br />
+  </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

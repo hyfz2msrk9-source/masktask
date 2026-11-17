@@ -1,0 +1,73 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>設定</span></h2>
+<h3><a name="reportmail"></a>レポートメール設定</h3>
+<p>
+  活動状況を定期的に送るレポートメールの設定をおこないます。<br />
+  レポーメール設定の[設定]ボタンをクリックしてください。<br />
+  レポートメール設定画面に遷移します。<br />
+  <img src="../../help-images/view/config_reportmail.gif" class="view" alt="設定画面：レポートメール設定" />
+</p>
+
+<h4><a name="9-6-1"></a>レポートメールの設定をおこなう</h4>
+<p class="h4-p">
+  <img src="../../help-images/view/config_reportmail-form.gif" class="view" alt="メール配布設定画面" />
+
+<table>
+  <tbody>
+    <tr>
+      <th class="bLnone">レポートメール</th>
+      <td>
+        レポートメール利用の有無を変更します。<br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="bLnone">送信間隔</th>
+      <td>
+        レポートメールを配信する間隔を変更します。
+      </td>
+    </tr>
+    <tr>
+      <th class="bLnone">送信時間</th>
+      <td>
+        レポートメールを配信する時間を変更します。
+      </td>
+    </tr>
+    <tr>
+      <th class="bLnone">レポート内容</th>
+      <td>
+        レポート内容では、レポートする内容の選択とその順番を変更します。<br />
+        レポート内容に含める場合は項目横のチェックボックスを選択し<br />
+        お好みの順番をご選択ください。
+        <div>
+          <dl>
+            <dt>ファイル</dt>
+            <dd style="width:auto;">
+              ・アップロードしたファイル<br>
+              ・定期削除したファイル<br>
+              ・10日以内に定期削除を予定するファイル
+            </dd>
+            <dt>配布</dt>
+            <dd style="width:auto;">配布メールを通知した日時やファイル情報</dd>
+            <dt>収集</dt>
+            <dd style="width:auto;">収集メールを通知した日時やファイル情報</dd>
+            <dt>パスワード</dt>
+            <dd style="width:auto;">パスワード変更履歴</dd>
+          </dl>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</p>
+
+<p class="h4-p">
+  変更した内容でよろしければ[完了]ボタンをクリックしてください。完了画面へ遷移します。
+  <img src="../../help-images/view/config_reportmail-success.gif" class="view" alt="メール配布設定画面：完了画面" />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

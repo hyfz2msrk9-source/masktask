@@ -1,0 +1,73 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-en/";
+  include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+
+<h2><span>Download files</span></h2>
+<h3><a name="13-1"></a>About download files</h3>
+<p>It is a very simple operation that the receivers of the distribution Email access the URL in the Email and click the [Download] button to download files.
+</p>
+
+<dl>
+  <dt><a name="normal"  id="normal"></a>The ordinary download</dt>
+  <dd style="width:530px;margin-bottom:35px;">
+    <div>
+      When you receive the Email that inform you the distribution of the data, please click the URL to download files.<br />
+      <img src="<?php echo $image_path; ?>13-1-1.gif" class="view" alt="Download files" />
+    </div>
+    <a name="normal_download" id="normal_download"></a>
+    <div>
+      When the download page opens, click on the name of the file you want to download or the download button on the right side of the table.
+      The download will begin.<br />
+      <img src="<?php echo $image_path; ?>download-marked.png" class="view" alt="Download files" /><br />
+    </div>
+  </dd>
+
+  <dt><a name="zip"></a>Zip file download</dt>
+  <dd style="width:530px;margin-bottom:35px;">
+   <div>
+      When you receive the Email that inform you the distribution of the data, please click the URL to download files.<br />
+      <img src="<?php echo $image_path; ?>13-1-1.gif" class="view" alt="Usually file download" /><br />
+      When the download screen opens, click on the name of the file you want to download or the download button on the right side of the table.
+      The download will begin.<br />
+      The file is compressed into the zip file. And, the password is set. <br />
+      Please ask the sender when you do not know the password.
+    </div>
+    <div>
+      <img src="<?php echo $image_path; ?>zip_dl.png" class="view" alt="Zip file download" /><br />
+    </div>
+  </dd>
+
+  <dt><a name="folder"></a>Folder publication</dt>
+  <dd>
+  <div>
+    Please click URL for download in email after receiving the notification of folder publication.<br />
+    <img src="<?php echo $image_path; ?>13-1-3.gif" class="view" alt="Folder publication" /><br />
+  </div> 
+  <div>
+    When the folder publication page opens, please click on the name of the file you want to download or the download button on the right side of the table.
+    The download will begin.<br />
+  </div>
+  <div>
+    <img src="<?php echo $image_path; ?>openfolder.png" class="view" alt="Folder publication" />
+  </div>
+
+  <div>
+    Please click on [Download all files] button if you want to download the files to which you are displayed by the batch. After that it changes to the confirmation screen.<br />
+    <img src="<?php echo $image_path; ?>openfolder_dl_all.png" class="view" alt="Folder publication" /><br />
+    Please click on a button when you execute download after you confirm. The file will be compressed.<br />
+    <img src="<?php echo $image_path; ?>openfolder_dl_all_zipping.png" class="view" alt="Folder publication" /><br />
+    After the compression of the file ended, please click the [Download the zip folder] button and download the file.<br />
+    <img src="<?php echo $image_path; ?>openfolder_dl_all_done.png" class="view" alt="Folder publication" />
+  </dd>
+</dl>
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

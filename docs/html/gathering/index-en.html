@@ -1,0 +1,319 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span><a name="gathering-top"></a>Gathering</span></h2>
+<p>
+  Gathering is a function to collect multiple files from multiple destinations. You can easily send Gathering emails by importing a CSV file with multiple recipients.<br />
+  <span class="attention">※ Gathering is only available in the Japanese and English versions, not the Chinese version.<br />
+  </span>
+</p>
+
+<p>
+  Click [Gathering] from the menu.<br />
+  <img src="../../../images-en/sysmenu_gathering.gif" class="view" alt="menu: Gathering" />
+</p>
+
+<h3><a name="list"></a>Gathering list</h3>
+<p class="h4-p">
+  In the Gathering list, you can view a list of all the Gathering mails you have sent before.
+</p>
+<img src="../../help-images/view-en/gathering-list.png" class="view" alt="Gathering list" />
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[Send a Gathering<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email] button</th>
+      <td>
+        Moves to the page for sending Gathering emails.<br />
+        (→<a href="send.html">Sending a Gathering email</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[Download a sample <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination file] button</th>
+      <td>
+        You can download a sample of the destination file required for sending mail.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Checkboxes</th>
+      <td>This checkbox is used to select emails for the [Delete all selected logs] function. <br />
+        Multiple selections can be made across pages.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Sending time</th>
+      <td>The time when the Gathering email was sent.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />Subject</th>
+      <td>The email subject will be displayed.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />Sent</th>
+      <td>
+        The number of destinations to which mail has been sent will be displayed.<br />
+        This number includes those to which mail could not be sent.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt=78" />Error</th>
+      <td>
+        The number of destinations to which the mail failed to be sent.<br />
+        The time required to obtain errors may vary depending on the destination.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />State</th>
+      <td>The status will be displayed as "Uploadable", "Stopped", or "Expired".</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />Folder name</th>
+      <td>The folder where the uploaded files will be stored will be displayed.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />Log</th>
+      <td>
+        You can download the details as a log file in CSV format.<br />
+        If no log file has been created, the [Download] button will not be displayed.<br />
+        (→<a href="#gathering-log">Download logs</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-11.gif" alt="11" /><img src="../../../images-en/btn_detail.gif" alt="[Detail] button" /></th>
+      <td>
+        Display the detail page in a another window.<br />
+        (→<a href="#gathering-detail">Details of Gathering</a>)
+      </td>
+    </tr>
+    <tr>
+      <th>　 <img src="../../../images-en/icon_stop.gif" alt="[Stop] button" /></th>
+      <td>
+        By clicking on this button, the page for stopping Gathering e-mail will be displayed. The stop function is only available for emails whose status is “Uploadable".<br />
+        (→<a href="#gathering-stop">Stop Gathering</a>)
+      </td>
+    </tr>
+    <tr>
+      <th>　 <img src="../../../images-en/icon_delete.gif"" alt=" [Delete] button" /></th>
+      <td>
+        You can delete the Gathering information from the list. <br />The saved log file will also be deleted at the same time.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-12.gif" alt="12" />[Delete all selected<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logs] button</th>.
+      <td>This button deletes all Gathering information and log files selected by the check box.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <th colspan="2">Address list</th>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/magnifier.png" alt="Search" /></th>
+      <td>
+        Click the magnifying glass icon to open the search form.<br />
+        <img src="../../help-images/view-en/delivery_confirm-search.gif" class="view" alt="Search form" />
+        <table class="data-s">
+          <tbody>
+            <tr>
+              <td>Pull-down menu</td>
+              <td>: Select the item you want to search for.</td>
+            </tr>
+            <tr>
+              <td>Text box</td>
+              <td>: Enter the key words to search for.</td>
+            </tr>
+            <tr>
+              <td>[Search] button</td>
+              <td>: Start to search.</td>
+            </tr>
+            <tr>
+              <td>[Clear] button</td>
+              <td>: Clear the text box and the result.</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_3.gif" alt="Number of items to be displayed per page" /></th>
+      <td>Set the number of lines to be displayed per page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/first.gif" alt="Move to the first page." /></th>
+      <td>Move to the first page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/prev.gif" alt="Move to the previous page." /></th>
+      <td>Move to the previous page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_4.gif" alt="Move to the page you enter" /></th>
+      <td>Move to the page you enter.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/next.gif" alt="Move to the next page" /></th>
+      <td>Move to the next page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/last.gif" alt="Move to the last page" /></th>
+      <td>Move to the last page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/load.png" alt="Update the list" /></th>
+      <td>Update the list.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="gathering-log"></a>Download logs</h4>
+<p class="h4-p">
+  You can download the details of Gathering as a log file in CSV format.<br />
+  Click the [Download] button to download the log file. <br />
+  If no log file has been created, the [Download] button will not be displayed.<br />
+  The log file contains the name of the recipient, the recipient's email address, the delivery result, the name of the first file collected, the time it was uploaded, the name of the second file collected, the time it was uploaded... in that order.<br />
+  <img src="../../help-images/view-en/gathering_log.gif" class="view" alt="Download logs" />
+</p>
+
+<h4><a name="gathering-detail"></a>Details of Gathering</h4>
+<p class="h4-p">
+  The Gathering Details page displays the details of the Gathering email.<br />
+  <img src="../../help-images/view-en/gathering_detail.gif" class="view" alt=" Details of Gathering" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />Sending time</th>
+      <td>Displays the time the mail was sent.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />Destination File</th>
+      <td>
+        Displays the file name of the imported destination file. <br />
+        Click the [Download] button next to the file name to download the imported destination file.<br />
+        If it fails to save the destination file on sending a mail, the [Download] button will not be displayed.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Upload folder</th>
+      <td>
+        The name of the folder where the uploaded file will be saved is displayed. <br />
+        If the folder has been deleted or you do not have access to the folder, the folder name will not be displayed.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Replaced file name</th>
+      <td>
+        Displays the format of the file name to be collected, which is set at the time of sending.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />Email address</th>
+      <td>Moves to the address list page.(→<a href="#gathering-detail-to">About address list</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />Sender</th>
+      <td>The sender's name and email address.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />Subject</th>
+      <td>Displays the subject of the email.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />Body</th>
+      <td>Clicking on the link will take you to the email body page.(→<a href="#gathering-detail-message">About body of email</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />Security settings</th>
+      <td>
+        You can check the security settings (upload expiration date, password lock) that you set when sending email.<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />Encoding</th>
+      <td>You can check the character encoding of the email you have sent.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="gathering-detail-to"></a>About address list</h4>
+<p class="h4-p">
+  Address list is a list of Gathering destination information.<br />
+  <img src="../../help-images/view-en/gathering_detail-to.png" class="view" alt="Address list" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>name</th>
+      <td>Displays the name of the destination.</td>
+    </tr>
+    <tr>
+      <th>Email address</th>
+      <td>Displays the e-mail address of the destination.</td>
+    </tr>
+    <tr>
+      <th>Unsubscription Request</th>
+      <td>
+        A "○" will be displayed for recipients who have requested to unsubscribe from emails.
+      </td>
+    </tr>
+    <tr>
+      <th>Upload URL</th>
+      <td>
+        You can copy the upload URL sent to the recipient by clicking 
+        the "Copy to Clipboard" button or hover the mouse cursor over it to view the URL.
+      </td>
+    </tr>
+    <tr>
+      <th>Sending</th>
+      <td>
+        It displays the results of sending email for each destination.<br />
+        In case of success, it is "○"; in case of failure, it is "×". <br />
+        The time required to obtain errors may vary depending on the destination.
+      </td>
+    </tr>
+    <tr>
+      <th>File name</th>
+      <td>
+        The name of the collected file and the uploaded time will be displayed.
+        You can preview a file by clicking the blue file name.
+        Click the download icon <img src="../../../images/dl_icon.svg" class="icon_18" alt="Download" /> to download the file.<br />
+      </td>
+    </tr>
+    <tr>
+      <th>note</th>
+      <td>
+        Displays the message that was entered as a note to the sender during file collection.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="gathering-detail-message"></a>About body of email</h4>
+<p class="h4-p">
+  The body of the email you have sent will be displayed.<br />
+  <img src="../../help-images/view-en/gathering_detail-message.gif" class="view" alt="About body of email" />
+</p>
+
+<h4><a name="gathering-stop"></a>Stop Gathering</h4>
+<p class="h4-p">
+  You can stop the Gathering. The stop function is only available for emails whose status is “Uploadable".<br />
+  On the Gathering list page, click the [Stop] button on the row of the Gathering you want to stop.
+  You will be redirected to the confirmation page for stopping the Gathering.<br />
+  <img src="../../help-images/view-en/gathering_stop-confirm.gif" class="view" alt="confirmation for stopping the Gathering" /><br />
+  When you stop Gathering, the upload URL in the email will be disabled.<br />
+  Once the Gathering is stopped, the upload URL cannot be enabled again. <br />
+  Please check the Gathering information, and if there is no problem, click the [Stop] button.
+  <br />
+  <img src="../../help-images/view-en/gathering_stop-done.gif" class="view" alt="Gathering stop completed." />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,383 @@
+<?php
+   if ($customer_flg) {
+   $path = $path."customer/";
+   }
+?>
+<div id="sideMenu">
+  <ul class="index-1">
+    <li>
+      <a href="<?php echo $path; ?>index.html">本マニュアルについて</a>
+    </li>
+    <?php if (!$customer_flg) : ?>
+    <li>
+      <a href="<?php echo $path; ?>login/index.html">ログイン</a>
+      <ul class="index-2">
+        <li>
+          <a href="<?php echo $path; ?>login/index.html#2-1">ログイン</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>login/index.html#2-2">ログアウト</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>login/index.html#2-3">アカウント・パスワードを忘れた場合</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>login/index.html#2-6">二要素認証</a>
+        </li>
+        <li>
+            <a href="<?php echo $path; ?>login/index.html#2-7">Google SSO認証</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>login/index.html#2-8">[##SAML_NAME##]</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>login/index.html#2-4-2">Windows統合認証</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>login/index.html#2-5">クライアント認証</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>login/lock.html">アカウントロック</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>login/news.html">お知らせ機能</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>login/login-error.html">ログインエラー</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>top/menu.html">メニュー</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>top/index.html">ファイル一覧</a>
+      <ul class="index-2">
+        <li>
+          <a href="<?php echo $path; ?>top/index.html#4-1">ファイル一覧画面</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>top/upload.html">ファイルのアップロード</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>top/preview.html">プレビュー</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>top/shortcut_and_rightclick.html">ショートカット・右クリック</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>top/send.html">ファイルの配布</a>
+          <ul class="index-3">
+            <li>
+              <a href="<?php echo $path; ?>top/send.html#4-3-1">メール本文について</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>top/send.html#4-3-2">セキュリティ設定について</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>top/send.html#4-3-3">自分のメーラーから送信する</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>top/send-collect.html#4-3-4">引取りと配布メール送信</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>top/send-collect.html#4-3-5">引取りと配布メールの本文について</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>top/send-collect.html#4-3-6">引取りと配布メールのセキュリティ設定について</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>top/send-collect.html#send-collect-mailer">メーラーから引取りと配布を送信する</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>top/send-status.html#4-3-8">ファイルの配布状況を確認する</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>top/group.html">グループ共有機能</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>top/folder.html">フォルダ公開機能</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>top/thumbnail.html">サムネイル表示機能</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>collecting/index.html">引き取り(収集)</a>
+      <ul class="index-2">
+        <li>
+          <a href="<?php echo $path; ?>collecting/index.html#5-1">収集ファイル一覧</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>collecting/collect.html#5-2">ファイルの収集</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>collecting/collect.html#collect-mailer">メーラーからファイルの収集</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>collecting/save.html#5-4">ファイルの保管</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="<?php echo $path; ?>delivery/index.html">一斉配信<span style="font-size:90%; font-weight:normal;">(オプション)</span></a>
+      <ul class="index-2">
+        <li>
+          <a href="<?php echo $path; ?>delivery/index.html#delivery-confirm">一斉配信履歴の確認</a>
+          <ul class="index-3">
+            <li>
+              <a href="<?php echo $path; ?>delivery/index.html#delivery-list">一斉配信一覧</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/index.html#delivery-log">ログのダウンロード</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/index.html#delivery-detail">一斉配信の詳細</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/index.html#delivery-detail-to">宛先一覧</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/index.html#delivery-detail-message">メール本文</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/index.html#delivery-detail-unsubscribe">一斉配信の配信停止リンク</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/index.html#delivery-stop">一斉配信の配布停止</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>delivery/nofile.html">ファイルなしの配信</a>
+          <ul class="index-3">
+            <li>
+              <a href="<?php echo $path; ?>delivery/nofile.html#delivery-nofile">ファイルなしのメールについて</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/nofile.html#delivery-nofile-csv">宛先ファイルについて</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/nofile.html#delivery-nofile-message">メール本文について</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/nofile.html#delivery-nofile-to">宛先一覧について</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>delivery/send.html">ファイルありの配信</a>
+          <ul class="index-3">
+            <li>
+              <a href="<?php echo $path; ?>delivery/send.html#delivery-send">ファイルありのメールについて</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/send.html#delivery-csv">宛先ファイルについて</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/send.html#delivery-send-message">メール本文について</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/send.html#delivery-send-security">セキュリティ設定について</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>delivery/send.html#delivery-send-to">宛先一覧について</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>delivery/sample.html">宛先ファイルサンプルのダウンロード</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="<?php echo $path; ?>gathering/index.html">一斉収集<span style="font-size:90%; font-weight:normal;">(オプション)</span></a>
+      <ul class="index-2">
+        <li>
+          <a href="<?php echo $path; ?>gathering/index.html#list">一斉収集一覧</a>
+          <ul class="index-3">
+            <li>
+              <a href="<?php echo $path; ?>gathering/index.html#gathering-log">ログのダウンロード</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/index.html#gathering-detail">一斉収集の詳細</a>
+            <li>
+              <a href="<?php echo $path; ?>gathering/index.html#gathering-detail-to">宛先一覧</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/index.html#gathering-detail-message">メール本文</a>
+            </li>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/index.html#gathering-detail-unsubscribe">一斉収集の配信停止リンク</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/index.html#gathering-stop">一斉収集の停止</a>
+            </li>
+          </ul><!-- //.index-3 -->
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>gathering/send.html">一斉収集メールを送る</a>
+          <ul class="index-3">
+            <li>
+              <a href="<?php echo $path; ?>gathering/send.html#gathering-csv">宛先ファイルについて</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/send.html#gathering-send-message">メール本文について</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/send.html#gathering-send-security">セキュリティ設定について</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/send.html#gathering-send-to">宛先一覧について</a>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>waitmail/index.html">待機メール一覧</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>address/index.html">アドレス帳</a>
+      <ul class="index-2">
+        <li>
+          <a href="<?php echo $path; ?>address/index.html#6-1">アドレス帳一覧</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>address/change.html#6-2">アドレスの追加・ダウンロード</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>address/change.html#6-3">アドレスの編集</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>address/change.html#6-4">アドレスの削除</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>address/group.html#6-5">アドレスのグループ変更</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>address/group.html#6-6">グループの追加</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>address/group.html#6-7">グループの編集</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>address/group.html#6-8">グループの削除</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>address/group.html#6-9">グループ並び順の変更</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>superior/index.html">
+        上長承認一覧<span style="font-size:90%; font-weight:normal;">(オプション)</span>
+      </a>
+      <ul class="index-2">
+        <li>
+          <a href="<?php echo $path; ?>superior/index.html#7-1">ユーザの上長承認機能</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>superior/index.html#7-2">上長の承認機能</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>log/index.html">履歴</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>config/index.html">設定</a>
+      <ul class="index-2">
+        <li>
+          <a href="<?php echo $path; ?>config/template.html">テンプレート</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>config/sign.html">署名</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>config/user.html">グループ共有</a>
+          <ul class="index-3">
+            <li>
+              <a href="<?php echo $path; ?>config/user.html#9-3-1">ユーザ管理</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>config/user.html#9-3-2">IP制限</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>config/from.html">送信者設定</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>config/mailsend.html">メール配布設定</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>config/synchrorer.html">Synchrorer</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>config/reportmail.html">レポートメール設定</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>news/index.html">お知らせ</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>profile/index.html">プロフィール</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>support/index.html">サポート</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>help/index.html">ヘルプ</a>
+    </li>
+    <?php endif; ?>
+    <li>
+      <a href="<?php echo $path; ?>dl/index.html">ファイルのダウンロード</a>
+      <ul class="index-2">
+        <li>
+          <a href="<?php echo $path; ?>dl/index.html#13-1">通常ダウンロード</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>dl/onetime-pass.html">ワンタイムパスワードを求められる場合</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>dl/onetimesms-pass.html">ワンタイムパスワード（別経路）を求められる場合</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>dl/pass.html">指定パスワードを求められる場合</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>dl/mail-address.html">メールアドレスの入力を求められる場合</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>dl/error.html">ダウンロードできない場合</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>up/index.html">ファイルのアップロード</a>
+      <ul class="index-2">
+        <li>
+          <a href="<?php echo $path; ?>up/index.html#14-1">通常アップロード</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>up/onetime-pass.html">ワンタイムパスワードを求められる場合</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>up/pass.html">指定パスワードを求められる場合</a>
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>up/error.html">アップロードできない場合</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div><!-- sidemenu -->

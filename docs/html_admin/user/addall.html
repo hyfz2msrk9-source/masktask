@@ -1,0 +1,27 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+          <h2><span>ユーザ管理</span></h2>
+          <h3>ADユーザ一括登録</h3>
+          <p>
+            ADに登録されているユーザを一括追加します。<br />
+            ユーザ管理が面のユーザ一覧の上にある、[ADユーザ一括追加]ボタンをクリックしてください。<br />
+            <img src="../../images/view/ad-1.gif" class="view" alt="ADユーザ一括追加ボタン" />
+          </p>
+
+          <p>
+            ユーザ管理>ADユーザの一括登録画面に遷移します。<br />
+            新規ユーザがいる場合一括で登録されます。<br />
+            アクティブユーザ数(現在利用中ユーザ)が上限に達している場合は、新規ユーザの登録は行えません。また、ADに接続していない場合も新規ユーザの登録は行えません。
+          </p>
+
+          <p>
+            一括登録してもよろしければ[登録する]ボタンをクリックしてください。<br />
+            <img src="../../images/view/ad-2.gif" class="view" alt="ADユーザの一括登録画面" />
+          </p>
+
+          <p>
+            ADユーザ一括登録でユーザの追加が完了しました。<br />
+            <img src="../../images/view/ad-3.gif" class="view" alt="ADユーザの一括登録完了画面" />
+          </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,68 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+          <h2><span>文件一覽</span></h2>
+          <h3><a name="4-6"></a>縮略圖顯示功能</h3>
+          <p>
+            縮略圖表示功能，使用中的資料夾內有圖片時，為了便於管理您可以把圖片登錄為該資料夾內文件的縮略圖。<br />
+            資料夾公開功能有效並且縮略圖顯示功能開啟時，資料夾公開時，公開的資料夾內如有帶縮略圖的文件，可以連同縮略圖發送給指定用戶。<br />
+            共用資料夾不具備資料夾公開功能，不能連同縮略圖發送。請注意！（<a href="group-tcn.html#4-4">→組共用功能</a>）
+          </p>
+          <p>
+            接收人可以把分發資料夾的內容用縮略圖來表示。為了資料夾的內容更直觀，請使用縮略圖圖片。<br />
+            而且，把資料夾內的文件作為縮略圖使用的圖片檔案，不可以利用公開檔案夾功能分發。請注意。
+          </p>
+          <p>
+            另外，分發単個帶縮略圖的檔案時，接收人將看不到“帶縮略圖”的顯示。請注意。<br />
+            <img src="../../help-images/view-tcn/3-6_1.gif" class="view" alt="ファイル一覧：サムネイル表示" />
+          </p>
+
+          <table>
+            <tbody>
+              <tr>
+                <th><img src="../../help-images/no-s-1.gif" alt="1" /><img src="../../help-images/icon_changenm.gif" alt="ファイル名の変更とサムネイルの指定" /></th>
+                <td>
+                  文件名變更和指定縮略圖的按鈕。<br />
+                  需要變更文件名請先輸入新文件名點擊[確定編輯]按鍵。（<a href="index-tcn.html#4-1-3">→關於文件一覽</a>）<br />
+                  資料夾公開功能為有效，縮略圖功能開啟時，可以登錄或編輯縮略圖。要指定縮略圖請選擇您想要顯示的縮略圖。<br />
+                  <img src="../../help-images/view-tcn/3-6_2.gif" class="view" alt="ファイル編集画面" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-2.gif" alt="2" /><img src="../../help-images/thumbnail-icon.gif" alt="サムネイル設定されている状態" /></th>
+                <td>
+                  表示設有縮略圖的文件。<br />
+                  點擊顯示所設定的縮略圖。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-3.gif" alt="3" /><img src="../../help-images/thumbnail-none.gif" alt="サムネイル設定されていない状態" /></th>
+                <td>表示文件沒有設定縮略圖。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-4.gif" alt="4" />顯示縮略圖</th>
+                <td>
+                  顯示可否顯示縮略圖。
+                  <table class="data">
+                    <tbody>
+                      <tr>
+                        <th>顯示縮略圖：ON</th>
+                        <td>
+                          資料夾公開功能為有效，設有縮略圖顯示功能的狀態。公開資料夾時，可以將指定文件顯示為縮略圖發送。
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>顯示縮略圖：OFF</th>
+                        <td>
+                          資料夾公開功能為有效，沒有設定縮略圖顯示功能的狀態。公開資料夾時，不能將指定文件顯示為縮略圖。
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

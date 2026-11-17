@@ -1,0 +1,177 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+    <h2><span>各種設定</span></h2>
+
+    <h3>ドメイン送信制限</h3>
+    <p>
+      ドメイン送信制限とは、配布メールや引取り(収集)依頼メールの宛先に指定するメールアドレスのドメインを、フィルタリングできる機能です。<br />
+      個人別のホワイトリスト・ブラックリスト、全ユーザ共通のホワイトリスト・ブラックリストの4種類を設定できます。<br />
+      <img src="../../images/view/domain_1.gif" class="view" alt="ドメイン制限" />
+    </p>
+
+    <h4>フィルタリングの順序について</h4>
+    <p class="h4-p">
+      配布や引取りメールの送信時は、下記の順番でリストを参照してフィルタリングを行います。<br />
+      個人と共通のリストに重複してドメインが登録されていた場合は、個人リストの設定が優先されます。<br />
+
+      <dl>
+        <dt class="imgnone"><img src="../../images/no-1.gif" alt="1" />個人のホワイトリストに合致&nbsp;&nbsp;→&nbsp;&nbsp;<span class="posColor">○送信可</span></dt>
+        <dd class="marginLeft30"><img src="../../images/domain-ya.gif" alt="↓">リストに合致しない場合</dd>
+        <dt class="imgnone"><img src="../../images/no-2.gif" alt="2" />個人のブラックリストに合致&nbsp;&nbsp;→&nbsp;&nbsp;<span class="imposColor">×送信不可</span></dt>
+        <dd class="marginLeft30"><img src="../../images/domain-ya.gif" alt="↓">リストに合致しない場合</dd>
+        <dt class="imgnone"><img src="../../images/no-3.gif" alt="3" />共通のホワイトリストに合致&nbsp;&nbsp;→&nbsp;&nbsp;<span class="posColor">○送信可</span></dt>
+        <dd class="marginLeft30"><img src="../../images/domain-ya.gif" alt="↓">リストに合致しない場合</dd>
+        <dt class="imgnone"><img src="../../images/no-4.gif" alt="4" />共通のブラックリストに合致&nbsp;&nbsp;→&nbsp;&nbsp;<span class="imposColor">×送信不可</span></dt>
+        <dd class="marginLeft30"><img src="../../images/domain-ya.gif" alt="↓">リストに合致しない場合</dd>
+        <dt class="imgnone"><img src="../../images/no-5.gif" alt="5" />全てのリストに合致しない&nbsp;&nbsp;→&nbsp;&nbsp;<span class="posColor">○送信可</span></dt>
+      </dl>
+    </p>
+
+    <h4><a name="10-4-2_domain">CSVファイルで設定</a></h4>
+    <p class="h4-p">
+      CSVファイルで追加する場合は、CSVファイル(→<a href="#domain_csv_make">CSVファイルの作成</a>)を用いて、ドメインを一括登録します。<br />
+      <br />
+      ドメイン送信制限に関する設定画面から[CSVファイルで設定]ボタンをクリックします。 <br />
+      <img src="../../images/view/domain_2.gif" class="view" alt="ドメイン制限:CSVファイルで設定" /><br />
+      ドメイン送信制限に関する設定>CSVインポート画面に移動します。<br />
+      [選択･･･]ボタンをクリックして、CSVファイルを選択してください。選択したCSVファイルが正しければ、[インポート実行]ボタンをクリックしてください。<br />
+      <img src="../../images/view/domain_3.gif" class="view" alt="ドメイン制限:CSVファイルで設定:CSVインポート" /><br />
+      CSVファイルがインポートされ、ドメインの設定が登録されました。<br />
+      <img src="../../images/view/domain_4.gif" class="view" alt="ドメイン制限:CSVファイルで設定:CSVインポート完了" /><br />
+    </p>
+
+    <h5><a name="domain_csv_make">CSVファイルの作成</a></h5>
+    <p class="h4-p">
+      ホワイトリスト、ブラックリストへドメインを登録するためのCSVファイルを用意します。<br />
+      <br />
+      CSVファイルは、 <span style="color:red;">一行目から「アカウント,リスト種別,ドメイン」</span>のように、各項目を半角カンマ区切りでご記入ください。<br />
+      ※アカウントは、<span style="color:red;">「個人設定」を行う場合は設定するユーザのアカウント</span>、<span style="color:red;">「共通設定」を行う場合は"共通"</span>と記載してください。<br />
+      ※リスト種別は、<span style="color:red;">「ホワイトリスト」に登録する場合は"ホワイトリスト"または"0"</span>、<span style="color:red;">「ブラックリスト」に登録する場合は"ブラックリスト"または"1"</span>と記載してください。<br />
+      1行につき、1つの設定を記入してください。次の設定は改行して記入してください。<br />
+      ※ドメインの入力フォーマットは、<a href="#10-4-6_domain">ドメインの入力フォーマット</a>を参照してください。<br />
+      <img src="../../images/view/domain_5.gif" class="view" alt="ドメイン制限:CSVファイルで設定:CSVファイル" /><br />
+      <br />
+      また、Microsoft Excelを用いて、CSVファイルを作成することもできます。<br />
+      Microsoft Excelでは、 <span style="color:red;">一行目からセルごとに「アカウント,リスト種別,ドメイン」</span>のように、各項目を半角カンマ区切りでご記入ください。<br />
+      ※アカウントは、<span style="color:red;">「個人設定」を行う場合は設定するユーザのアカウント</span>、<span style="color:red;">「共通設定」を行う場合は"共通"</span>と記載してください。<br />
+      ※リスト種別は、<span style="color:red;">「ホワイトリスト」に登録する場合は"ホワイトリスト"または"0"</span>、<span style="color:red;">「ブラックリスト」に登録する場合は"ブラックリスト"または"1"</span>と記載してください。<br />
+      1行につき、1つの設定を記入してください。次の設定は改行して記入してください。<br />
+      ※ドメインの入力フォーマットは、<a href="#10-4-6_domain">ドメインの入力フォーマット</a>を参照してください。<br />
+      <img src="../../images/view/domain_6.gif" class="view" alt="ドメイン制限:CSVファイルで設定:CSVファイル" /><br />
+      Microsoft Excelでは、保存時にファイルの種類を「CSV(カンマ区切り)（*.csv）」を選択し、保存してください。<br />
+      <img src="../../images/view/domain_7.gif" class="view" alt="ドメイン制限:CSVファイルで設定:CSVファイル" /><br />
+    </p>
+
+    <h4><a name="10-4-3_domain"></a>エクスポート</h4>
+    <p class="h4-p">
+      ドメイン制限設定の一覧をCSVファイル形式でエクスポートします。<br />
+      ドメイン送信制限に関する設定画面から[CSVエクスポート]ボタンをクリックしてください。 <br />
+      <img src="../../images/view/domain_16.gif" class="view" alt="ドメイン制限:CSVエクスポート" />
+    </p>
+
+    <h4><a name="10-4-4_domain"></a>個人設定</h4>
+    <p class="h4-p">
+      ドメイン送信制限に関する設定画面から[個人設定]ボタンをクリックします。 <br />
+      <img src="../../images/view/domain_8.gif" class="view" alt="ドメイン制限:個人設定" /><br />
+      <br />
+      ユーザ検索欄に「アカウント」「メールアドレス」「ユーザ氏名」「メモ」を入力し、ドメイン制限設定を行いたいユーザを検索します。<br />
+      検索結果の一覧からユーザを選択し、[編集]ボタンをクリックしてください。<br />
+      <img src="../../images/view/domain_10.gif" class="view" alt="ドメイン制限:個人設定検索" /><br />
+      <br />
+      <img src="../../images/view/domain_9.gif" class="view" alt="ドメイン制限:個人設定全体" /><br />
+      <table>
+  <tr>
+    <th><img src="../../images/no-s-1.gif" alt="1" />ホワイトリストの設定</th>
+    <td>
+      個人のホワイトリストです。<br />
+      ドメインを追加する場合は、[ドメイン入力]欄にドメインを入力し、[+追加]ボタンを押します。<br />
+        ※ドメインの入力フォーマットは、<a href="#10-4-6_domain">ドメインの入力フォーマット</a>を参照してください。<br />
+      <img src="../../images/view/domain_11.gif" class="view" alt="ドメイン制限:個人設定追加" /><br />
+      ドメインを削除する場合は、[ドメイン一覧]から削除するドメインを選択し、[×削除]ボタンを押します。<br />
+      <img src="../../images/view/domain_12.gif" class="view" alt="ドメイン制限:個人設定削除" />
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../images/no-s-2.gif" alt="2" />ブラックリストの設定</th>
+    <td>
+      個人のブラックリストです。<br />
+      ドメインを追加する場合は、[ドメイン入力]欄にドメインを入力し、[+追加]ボタンを押します。<br />
+        ※ドメインの入力フォーマットは、<a href="#10-4-6_domain">ドメインの入力フォーマット</a>を参照してください。ドメインを削除する場合は、[ドメイン一覧]から削除するドメインを選択し、[×削除]ボタンを押します。<br />
+    </td>
+  </tr>
+      </table>
+    </p>
+
+    <h4><a name="10-4-5_domain">共通設定</a></h4>
+    <p class="h4-p">
+      ドメイン送信制限に関する設定画面から[共有設定]ボタンをクリックします。 <br />
+      <img src="../../images/view/domain_13.gif" class="view" alt="ドメイン制限:共通設定" /><br />
+      <br />
+      <img src="../../images/view/domain_17.gif" class="view" alt="ドメイン制限:共通設定全体" /><br />
+      <table>
+  <tr>
+    <th><img src="../../images/no-s-1.gif" alt="1" />ホワイトリストの設定</th>
+    <td>
+      全ユーザ共通のホワイトリストです。<br />
+      ドメインを追加する場合は、[ドメイン入力]欄にドメインを入力し、[+追加]ボタンを押します。<br />
+        ※ドメインの入力フォーマットは、<a href="#10-4-6_domain">ドメインの入力フォーマット</a>を参照してください。<br />
+      <img src="../../images/view/domain_11.gif" class="view" alt="ドメイン制限:共通設定追加" /><br />
+      ドメインを削除する場合は、[ドメイン一覧]から削除するドメインを選択し、[×削除]ボタンを押します。<br />
+      <img src="../../images/view/domain_12.gif" class="view" alt="ドメイン制限:共通設定削除" />
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../images/no-s-2.gif" alt="2" />ブラックリストの設定</th>
+    <td>
+      全ユーザ共通のブラックリストです。<br />
+      ドメインを追加する場合は、[ドメイン入力]欄にドメインを入力し、[+追加]ボタンを押します。<br />
+        ※ドメインの入力フォーマットは、<a href="#10-4-6_domain">ドメインの入力フォーマット</a>を参照してください。<br />
+      ドメインを削除する場合は、[ドメイン一覧]から削除するドメインを選択し、[×削除]ボタンを押します。<br />
+    </td>
+  </tr>
+      </table>
+    </p>
+
+    <h4><a name="10-4-6_domain">ドメインの入力フォーマット</a></h4>
+    <p class="h4-p">
+      個人別のホワイトリスト・ブラックリスト、全ユーザ共通のホワイトリスト・ブラックリストに設定するドメインの入力フォーマットは下記の通りです。<br />
+      <table>
+  <tr>
+    <th>入力ドメイン</th>
+      <th>対象メールアドレス</th>
+  </tr>
+  <tr>
+    <td>abc@example.jp</td>
+    <td>
+      メールアドレスが abc@example.jp のときに対象となります。
+    </td>
+  </tr>
+  <tr>
+    <td>example.jp</td>
+    <td>
+      メールアドレスのドメイン（"@"マークの右側）が example.jp のときに対象となります。
+    </td>
+  </tr>
+  <tr>
+    <td>*.example.jp</td>
+    <td>
+      メールアドレスのドメイン（"@"マークの右側）が example.jp のとき、および、 *.example.jp のときに対象となります。
+    </td>
+  </tr>
+  <tr>
+    <td>*.jp</td>
+    <td>
+      メールアドレスのドメイン（"@"マークの右側）が *.jp のときに対象となります。<br />
+        「jp」のトップドメイン部分は、4文字まで登録可能です。
+    </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td>
+      全てのメールアドレスが対象となります。<br />
+    </td>
+  </tr>
+      </table>
+    </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

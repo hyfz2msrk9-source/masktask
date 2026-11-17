@@ -1,0 +1,74 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+  $path = "../../";
+}else{
+  $customer_flg = 0;
+  $path = "../";
+}
+$image_path = "../" . $path . "help-images/view/";
+include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+
+<?php if($customer_flg): ?>
+<h2><span>配布メールを受け取った方（ダウンロード）</span></h2>
+<?php else:?>
+<h2><span>ファイルのダウンロード</span></h2>
+<?php  endif; ?>
+
+<h3><a name="13-3"></a>ワンタイムパスワード（別経路）を求められる場合</h3>
+
+<p>
+  ワンタイムパスワード（一度利用すると、二度目からは同じパスワードが利用できなくなる形式）を取得し、パスワード付きデータをダウンロードします。<span class="attention">パスワードは、ダウンロードの度にSMS（もしくはメール）で取得します。</span><br />
+  </p>
+  
+<h4 id="pass">送信先の確認</h4>
+  <p>
+  ワンタイムパスワード送信先となる携帯電話番号（もしくはメールアドレス）を確認し、[送信]ボタンをクリックしてください。<br />
+  <span class="attention">この際、ご自身の宛先ではない場合、「電話番号（もしくはメールアドレス）が間違っている」ボタンを押してください。</span>誤っていることを送信者に連絡し、対応させて頂きます。
+  </p>
+
+<p>
+  <img src="
+  <?php echo $image_path; ?>onetimesms-mail.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:パスワード取得" />
+</p>
+
+<a name="pass"></a> <h4>パスワード入力画面</h4>
+<p>送信ボタンを押すと、ワンタイムパスワード送信先に、パスワードが記載されたSMS（メールアドレスの場合はメール）が届きます。
+<img src="<?php echo $image_path; ?>13-3-4.gif" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:ダウンロード用パスワードのお知らせ" />
+</p>
+
+<p>
+  SMS（メールアドレスの場合はメール）内に記載されているパスワードをパスワード送信画面に入力し、
+  [送信]ボタンをクリックしてください。<br />
+  <img src="<?php echo $image_path; ?>onetime-pass-marked.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:ダウンロード用パスワード送信" />
+</p>
+
+<dl>
+  <dt>正しいパスワードを入力した場合</dt>
+  <dd>ファイルのダウンロード画面が開きます。<br />
+  <img src="<?php echo $image_path; ?>download.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:正しいパスワードを入力した場合" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>誤ったパスワードを入力した場合</dt>
+  <dd>エラーメッセージが表示され、ダウンロード画面に進めません。「最初からやり直す」を押すと、メールアドレス入力段階に戻ります。
+  <img src="<?php echo $image_path; ?>onetime-error-pass.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:誤ったパスワードを入力した場合" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>ワンタイムパスワードの取得からやり直したい場合</dt>
+  <dd>ワンタイムパスワードの取得からやり直したい場合は、画面上部に表示された手順リストの[電話番号確認（もくはメールアドレス確認）]をクリックしてください。確認画面からやり直せます。
+  <img src="<?php echo $image_path; ?>onetimesms-tomail.png" class="view" alt="ワンタイムパスワードの入力を求められる場合のファイルダウンロード:パスワードの取得からやり直す" />
+  </dd>
+</dl>
+
+<a name="dl"></a> <h4>ダウンロード画面</h4>
+<p>
+ダウンロード画面が開きましたら、ダウンロードしたいファイルのファイル名か、表の右端に表示されたダウンロードボタンをクリックしてください。ダウンロードが開始されます。<br />
+  <img src=" <?php echo $image_path; ?>download-marked.png" class="view" alt="通常ファイルダウンロード" /><br />
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>
+</p>

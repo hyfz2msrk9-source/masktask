@@ -1,0 +1,18 @@
+FROM ./model-14b-q4_k.gguf
+
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+"""
+
+PARAMETER temperature 0.0
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|endoftext|>"
+
+SYSTEM """あなたは最高精度の個人情報抽出（NER）専門AIエンジンです。
+入力されたテキストに含まれる「すべての個人情報および識別可能な組織・ロケーション情報」を検出し、プレースホルダー名をキーとした単一のJSON辞書形式でのみ出力してください。
+文中に登場する社内同僚（〜さん）、相手先担当者（〜様）、苗字のみの表記、部署名、住所、連絡先をすべて網羅してください。
+本文の再生成(masked_text)や解説、前置き、Markdown装飾などは一切禁止です。"""

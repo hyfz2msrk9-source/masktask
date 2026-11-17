@@ -1,0 +1,68 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+          <h2><span>文件一览</span></h2>
+          <h3><a name="4-6"></a>缩略图显示功能</h3>
+          <p>
+            缩略图表示功能，使用中的文件夹内有图片时，为了便于管理您可以把图片登录为该文件夹内文件的缩略图。<br />
+            文件夹公开功能有效并且缩略图显示功能开启时，文件夹公开时，公开的文件夹内如有带缩略图的文件，可以连同缩略图发送给指定用户。<br />
+            共享文件夹不具备文件夹公开功能，不能连同缩略图发送。请注意！（<a href="group-cn.html#4-4">→组共享功能</a>）
+          </p>
+          <p>
+            接收人可以把分发文件夹的内容用缩略图来表示。请使用让文件夹的内容看起来更加直观的缩略图图片。<br/>
+            把文件夹内的文件作为缩略图使用的图片文件，不能通过文件夹公开功能发送。请注意。
+          </p>
+          <p>
+            另外，单独发送带缩略图的文件时，接收人将看不到“带缩略图”的显示。请注意。<br />
+            <img src="../../help-images/view-cn/3-6_1.gif" class="view" alt="ファイル一覧：サムネイル表示" />
+          </p>
+
+          <table>
+            <tbody>
+              <tr>
+                <th><img src="../../help-images/no-s-1.gif" alt="1" /><img src="../../help-images/icon_changenm.gif" alt="ファイル名の変更とサムネイルの指定" /></th>
+                <td>
+                  文件名变更和指定缩略图的按钮。<br />
+                  需要变更文件名请先输入新文件名点击[确定编辑]按键。（<a href="index-cn.html#4-1-3">→文件一览</a>）<br />
+                  文件夹公开功能为有效，缩略图功能开启时，可以登录或编辑缩略图。要指定缩略图请选择您想要显示的缩略图。<br />
+                  <img src="../../help-images/view-cn/3-6_2.gif" class="view" alt="ファイル編集画面" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-2.gif" alt="2" /><img src="../../help-images/thumbnail-icon.gif" alt="サムネイル設定されている状態" /></th>
+                <td>
+                  表示设有缩略图的文件。<br />
+                  点击显示所设定的缩略图。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-3.gif" alt="3" /><img src="../../help-images/thumbnail-none.gif" alt="サムネイル設定されていない状態" /></th>
+                <td>表示文件没有设定缩略图。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-4.gif" alt="4" />显示缩略图</th>
+                <td>
+                  显示可否显示缩略图。<br />
+                  <table class="data">
+                    <tbody>
+                      <tr>
+                        <th>显示缩略图：ON</th>
+                        <td>
+                          文件夹公开功能为有效，设有缩略图显示功能的状态。公开文件夹时，可以将指定文件显示为缩略图发送。
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>显示缩略图：OFF</th>
+                        <td>
+                          文件夹公开功能为有效，没有设定缩略图显示功能的状态。公开文件夹时，不能将指定文件显示为缩略图。
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

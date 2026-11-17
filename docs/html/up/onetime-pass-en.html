@@ -1,0 +1,69 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-en/";
+  include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>Upload files</span></h2>
+<h3>Upload with the one-time password</h3>
+
+<p>
+  One-time password is a kind of password that can be use 1 time and after that the same password is not available. You can get the one-time password and upload the files with the password.<br />
+
+  <span class="attention">You have to get the password every time you want to download. You can get the password with Email.</span>
+</p>
+
+<p>Please enter the Email address that is the original of receive the Email with URL to download files.<br />
+
+  If you enter the Email address that is different address of the original receiver or the address that is forwarded for not the original, it is impossible to get the one-time password. If you receive the forwarded Email, please enter the address of the original receiver.
+</p>
+
+<p>
+  If the Email was received “○○@sample.co.jp” first, and Ms. / Mr. Green forwards this Email to you as “▲▲@mailaddress.com.” In this case, you enter “○○@sample.co.jp “ to get one-time password.<br />
+
+  <img src="<?php echo $image_path; ?>upload_onepass.png" class="view" alt="password acquistion" />
+</p>
+
+<dl>
+  <dt>In case that the Email address is correct</dt>
+  <dd>
+    The one-time password is sent to the address that you entered, and the screen to enter the password is open.<br />
+    <img src="<?php echo $image_path; ?>onetime-pass.png" class="view" alt="In case that the Email address is correct" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>In case that the Email address is incorrect</dt>
+  <dd>
+    The error message is displayed and the screen to enter the password is not open.<br />
+    <img src="<?php echo $image_path; ?>onetime-error-mail.png" class="view" alt="In case that the Email address is incorrect" />
+  </dd>
+</dl>
+
+<p>When the address that you enter is correct, the password is sent by Email “Notification of password for downloading.” Please enter the password which is given in the password, and click the [Send password] button.<br />
+  <img src="<?php echo $image_path; ?>13-3-4.gif" class="view" alt="mail for upload" />
+
+  <img src="<?php echo $image_path; ?>onetime-pass-marked.png" class="view" alt="send password for upload" />
+</p>
+
+<dl>
+  <dt>In case that the password is correct</dt>
+  <dd> The upload files screen is opened. When you click [Upload] files, the upload files screen is opened and you can upload files.<br />
+    <img src="<?php echo $image_path; ?>upload.png" class="view" alt=">In case that the password is correct" />
+  </dd>
+</dl>
+
+<dl>
+  <dt>In case that the password is not correct</dt>
+  <dd>The error message is displayed and the screen to upload files is not open.<br />
+    Click [Redo from beginning] button, you can redo from getting one-time password.<br />
+    <img src="<?php echo $image_path; ?>onetime-error-pass.png" class="view" alt="In case that the password is not correct" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

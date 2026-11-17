@@ -1,0 +1,327 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>File list</span></h2>
+<p>
+  In the area of the system, you can operate like as follows: see the list of files, distribute files, upload files, download files, delete files, create folders, edit folders, delete folders, move files into another folder, see the details of files, change file’s name and so on.
+</p>
+
+<p>
+  Please click Menu:File list.<br />
+  <img src="../../../images-en/sysmenu_top.gif" class="view" alt="menu: File list" /><br />
+</p>
+
+<h3><a name="4-1"></a>File list</h3>
+<p>When you click Menu: file list, you will see all of files uploaded on the system as a list.<br />
+  In this area, you can manage each file. And you also be able to check the maximum capacity and occupied volume.<br />
+  <img src="../../help-images/view-en/4-1_1.gif" class="view" alt="File list" /><br />
+</p>
+
+<table>
+  <tr>
+    <th><img src="../../help-images/no-s-1.gif" alt="1" />Capacity</th>
+    <td>
+      display a capacity you can use.<br />
+      <span class="bold">The maximum capacity means "the basic capacity" + "the expand capacity"</span>.<br />
+      ※If the rest of the expand capacity falls below the expand capacity that is set in the user setting, the The maximum capacity means "the basic capacity" + "the rest of the expand capacity of the system".<br />
+      <span class="attention">notice;</span><br />
+      When you see a shared folder on the file list, the expand capacity is not reflected. The capacity of the shared folder set by the administrator is displayed.
+      <table class="table-s">
+        <tr>
+          <th>the basic capacity</th>
+          <td>It is a capacity peculiar to the user.</td>
+        </tr>
+        <tr>
+          <th>the expand capacity</th>
+          <td>If the system has a rest of capacity(unallocation),user can use the expand capacity. The expand capacity is able to be allocated to users.</td>
+        </tr>
+      </table>
+      In the right hand, the instrument reads how much you occupied(When the administrator set it as non-display, the instrument is not displayed.).
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-2.gif" alt="2" />Folder list</th>
+    <td>Folders registered as favorites, shared folders, and personal folders are displayed.(→<a href="index-en.html#4-1-1">About folders</a>)</td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-3.gif" alt="3" />File List</th>
+    <td>display files uploaded.(→<a href="index-en.html#4-1-4">About file list</a>)</td>
+  </tr>
+</table>
+
+<h4><a name="4-1-1"></a>About folders</h4>
+<p class="h4-p">
+  In the top side of file list, you can check the current folder in a list box, and there are buttons for operate.<br />
+  You can use the list box when you see the folder except the top folder. Please see the follow to know how to operate files and folders.<br />
+  About shared folders, please see <a href="index-en.html#4-1-3">About folder list</a> and <a href="group-en.html#4-4">Group sharing folder function</a>.<br />
+  <img src="../../help-images/view-en/4-1-1_1.gif" class="view" alt="" /><br />
+</p>
+
+<dl>
+  <dt>Current folder</dt>
+  <dd>
+    The folder you see at present. When you choose another folder in the list, you can see in that folder.<br />
+    <img src="../../help-images/view-en/4-1-1_2.gif" class="view" alt="The current folder" />
+  </dd>
+
+  <dt>Change folder name</dt>
+  <dd>
+    You can change the folder name. You cannot change the shared folder only your personal folder.<br />
+    <img src="../../help-images/view-en/4-1-1_3.gif" class="view" alt="change folder name" />
+  </dd>
+
+  <dt>Delete folder</dt>
+  <dd>
+    You can delete the folder you see at present. When you delete a folder, all of files and folders in the folder are also delete.<br />
+    Please be careful to delete folders. You cannot delete shared folders.<br />
+    <img src="../../help-images/view-en/4-1-1_4.gif" class="view" alt="delete folder" />
+  </dd>
+
+  <dt>Create folder</dt>
+  <dd>
+    You can Create a new folder. You cannot create a new shared folder.<br />
+    <img src="../../help-images/view-en/4-1-1_5.gif" class="view" alt="create folder" />
+  </dd>
+
+  <dt>Move folder</dt>
+  <dd>
+    You can move the folder with drugging the folder as you like.And drop the folder where you want to put in.<br />
+    The favorite folder list does not support this function.<br />
+    <img src="../../help-images/view-en/4-1-1_6.gif" class="view" alt="Move folder" />
+  </dd>
+
+</dl>
+
+<h4><a name="4-1-2"></a>Create folder</h4>
+<p class="h4-p">
+  You can Create a new folder.Please select the location for creating a folder and enter a name for the newly created folder.<br />
+  Please enter a folder name and click the [Create folder] button.
+  <img src="../../help-images/view-en/folder-add-1.gif" class="view" alt="Create folder" />
+</p>
+
+<p class="h4-p">
+  It moves to a folder Create folder(completion). Please Click each button. <br />
+  <img src="../../help-images/view-en/folder-add-2.gif" class="view" alt="Create folder(completion)" />
+</p>
+
+<dl>
+  <dt>Move to parent folder</dt>
+  <dd>
+    It moves to parent folder.<br />
+    Since a parent folder is Top if you create a folder to Top, it will move to the Top.<br />
+    <img src="../../help-images/view-en/folder-add-3.gif" class="view" alt="Create folder-Move to parent folder" />
+  </dd>
+
+  <dt>Move to create folder</dt>
+  <dd>
+    It moves to the created folder.<br />
+    <img src="../../help-images/view-en/folder-add-4.gif" class="view" alt="Create folder-Move to create folder" />
+  </dd>
+
+  <dt>Creating more</dt>
+  <dd>
+    You create a folder further.<br />
+    If it clicks the button you [Creating more], it will move to a Create folder.
+  </dd>
+</dl>
+
+<h4><a name="4-1-3"></a>About folder list</h4>
+
+<p class="h4-p">
+  The left side of file list is folder list.<br />
+  Varieties of folder, about function, about icon, please see the follow;<br />
+  <img src="../../help-images/view-en/4-1-2.gif" class="view" alt="" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />Favorite folder</th>
+      <td>
+        Click the icon to the right of the folder name to register or delete the folder as a favorite folder.<br />
+        <img src="../../../images/ico-favorite-on.svg" alt="favorite-on" class="favorite-icon" /> is displayed for folders
+        registered as favorites, and , and <img src="../../../images/ico-favorite.svg" alt="favorite-off"
+          class="favorite-icon" /> for other folders.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />Shared folder</th>
+      <td>
+        folders in this area, they are shared folder. You can share files with another users belong to the same group with you. If you are not the user be able to use shared folders, there is no display “▼Shared Folder”. <br />
+        About group share function, please see <a href="group-en.html#4-4">Group sharing folder function</a>.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Search shared folder</th>
+      <td>
+        search files in a shared folder.<br />
+        If you are not the user belong to groups or be able to use share folders, or if the search shared folder function is not
+        available, it does not display on your screen.<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Personal folder</th>
+      <td>
+        folders in this area, you can use as for personal. You can create, edit, delete folders at will.<br />
+        If you are not the user be able to use shared folders, there is no display “▼Personal Folder” on the top of folder list,
+        all of the folders you see are your private folder.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/folder_open.gif" alt="a folder you select at present in personal folder" /><span class="normalWeight">(folder name)</span></th>
+      <td>
+        a folder you see in at present in personal folder.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/folder_close.gif" alt="a folder you do not select in personal folder" /><span class="normalWeight">(folder name}</span></th>
+      <td>
+        a folder you do not see in at present in personal folder.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/sfolder_open.gif" alt="a folder you select at present in shared folder" /><span class="normalWeight">(folder name)</span></th>
+      <td>
+        a folder you see in at present in shared folder.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/sfolder_close.gif" alt="a folder you do not select in shared folder." /><span class="normalWeight">(folder name)</span></th>
+      <td>
+        a folder you do not see in at present in shared folder.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="4-1-4"></a>About file list</h4>
+<p class="h4-p">
+  On the right side of file list, you can see all of files which are uploaded on the system. <br />
+  About functions of the file list and buttons are as follows.<br />
+  <img src="../../help-images/view-en/4-1-3.gif" class="view" alt="" /><br />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />File name</th>
+      <td>name of a uploaded file.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />Modified</th>
+      <td>date of file uploaded or modified.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Size</th>
+      <td>size of file uploaded.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Notification</th>
+      <td>the numbers of you have sent the file.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_up-en.gif" alt="button to file upload" /></th>
+      <td>button to file upload. (→<a href="upload-en.html#4-2">file upload</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_folder_dl-en.gif" alt="button to download a whole folder that you select at present" /></th>
+      <td>
+  button to download a whole folder that you select at present.<br />
+  Notice: This function is depend on your environment of your system, so that it is not all of users can use it.<br />
+  <img src="../../help-images/view-en/3-1-3_2.gif" class="view" alt="screen to download a whole folder that you select at present" /><br />
+      </td>
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/icon_changenm.gif" alt=" button to change a file name and set about thumbnail images." /></th>
+    <td>
+      button to change a file name and set about thumbnail images.<br />
+      To change file name, please enter a new file name and after that click.(→<a href="thumbnail-en.html#4-6">show thumbnail image function</a>)
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/icon_detail.gif" alt="button to see details of a file" /></th>
+    <td>
+      button to see details of a file. You can see a memo about the file and last updated date. <br />
+      To close the details, please click <img src="../../help-images/icon_close-en.gif" alt="button to close the details" />.<br />
+      And you click "click to edit...", you can edit the content of the memo about the file.
+      If you have already had the memo, you can edit the content of the memo by clicking the characters of the memo.<br />
+
+      <img src="../../help-images/view-en/3-1-3_3.gif" class="view" alt="screen of the details" />
+  </tr>
+      <tr>
+      <th><img src="../../../images/icon_preview.svg" class="icon_18" alt="Preview" /></th>
+      <td>
+        The file preview button. Click it to open the preview window.<br />
+        <a href="./preview-en.html">(→Preview)</a>
+      </td>
+    </tr>
+  <tr>
+    <th><img src="../../help-images/icon_sanitization-en.gif" alt="Sanitization" />(Option)</th>
+    <td>
+      The [Sanitize] button. Files that have not yet been sanitized will be sanitized.(<a href="#sanitize">→Sanitization</a>)
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/icon_send-en.gif" alt="button to distribute file" /></th>
+    <td>
+      [Distribute] is a button to distribute files. (→<a href="send-en.html#4-3">File distribution</a>)
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/icon_dl-en.gif" alt="button to download files" /></th>
+    <td>
+      [Download] is a button to download files.<br />
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/icon_delete-en.gif" alt="delete" /></th>
+    <td>
+      [Delete] is a button to delete files. <br />
+      Once you delete files, files are completely deleted from the system. So a person received an Email to download the files will not be able to download those files. Please be careful to delete files.
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<dl>
+  <dt>Operate files you select at present</dt>
+  <dd>
+    You can operate all files you select with check box at once. <br />
+    Click the [Distribute] button to distribute the files.<br />
+    Select a destination folder and click the [Move] button to move the files to another folder.<br />
+    Click the [Download] button to download the files.<br />
+    Click the [Delete] button to delete the files.<br />
+    When you click [Distribute] button, all selected files can be sent for person you want to send.<br />
+    <img src="../../help-images/view-en/3-1-3_4.gif" class="view" alt="Operate files you select at present" />
+  </dd>
+  <dt id="dragdrop">File upload (Drag & Drop)</dt>
+  <dd>
+    If you have write permission for a folder, you can upload files by dragging and dropping them onto the file list.<br />
+    <img src="../../help-images/view-en/drag-new-file.png" class="view" alt="Drag a new file onto the list"><br />
+    <img src="../../help-images/view-en/drop-new-file.png" class="view" alt="Drop a new file onto the list to upload">
+  </dd>
+  <dt>Move files (Drag & Drop)</dt>
+  <dd>
+    You can move files with dragging and dropping files. <br />
+    Please drag file name you want to move, and drop files on the folder you want files move in.<br />
+    The favorite folder list does not support this function.<br />
+    <img src="../../help-images/view-en/3-1-4.gif" class="view" alt="Move files (Drug & Drop)" />
+  </dd>
+  <dt>Search files</dt>
+  <dd>You can search for registered files by entering part of the file name as a keyword.<br />
+    Enter the keywords and click the [Search] button.<br />
+    Multiple keywords can be entered by opening a space.<br />
+    <img src="../../help-images/view-en/3-1-5.gif" class="view" alt="Search files" />
+  </dd>
+  <dt id="sanitize">Sanitization（Option）</dt>
+  <dd>
+    Sanitize uploaded files by removing potentially harmful macro components.<br />
+    Depending on the administrator's settings, either both the original and sanitized files will be kept, or only the sanitized files will be saved.<br />
+    If both the original and sanitized files will be kept,「_unsanitized」will be added to the file name automatically.<br />
+    <img style="width:500px" src="../../help-images/view-en/3-1-6.gif" class="view" alt="Sanitization" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

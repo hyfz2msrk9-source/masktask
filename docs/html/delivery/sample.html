@@ -1,0 +1,41 @@
+<?php
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+  if(!isset($path)){
+    $path = "../";
+    include_once(WF_HELP_PATH.'/html/common/header.html');
+  }; 
+?>
+<h2><span><a name="delivery-top"></a>一斉配信</span></h2>
+<h3><span>宛先ファイルサンプルのダウンロード</span></h3>
+<p>
+  配信メール作成時に必要な宛先ファイルのサンプルをダウンロードする機能です。<br />
+  一斉配信一覧画面で、[宛先ファイルサンプルのダウンロード]ボタンをクリックしてください。<br />
+  宛先ファイルサンプルのダウンロード画面へ遷移します。<br />
+  <img src="../../help-images/view/delivery_sample.png" class="view" alt="[宛先ファイルサンプルのダウンロード]ボタン" /><br />
+
+  宛先ファイルは、配信の種類によりフォーマットが異なります。<br />
+  ファイルなし、またはファイルありをご選択の上、[ダウンロード]ボタンをクリックしてください。<br />
+  ご選択いただいた配信の宛先ファイルがダウンロードされます。<br />
+  ダウンロード後は、[戻る]ボタン、または[close]をクリックすると一覧画面に戻ります。<br />
+  <img src="../../help-images/view/delivery_sample-dl.png" class="view" alt="宛先ファイルサンプルのダウンロード画面" /><br />
+
+  宛先ファイルサンプルには、サンプル用のデータがあらかじめ入力されています。<br />
+  ご利用の際は、サンプル用のデータを削除してからご入力ください。<br />
+<p class="view">
+  <?php if(!defined("DELIVERY_CHECKWORD_FLG") || DELIVERY_CHECKWORD_FLG): ?>
+"チェックワード","名前","メールアドレス","会社名","担当者","ファイル名"<br />
+    "A","お名前A","sampleA@example.com","A社","a山a太郎","sampleA.pdf","sampleA.docx","sampleA.csv"<br />
+    "B","お名前B","sampleB@example.com","B社","b山b太郎","sampleB.pdf","","sampleB.csv"<br />
+    "C","お名前C","sampleC@example.com","C社","c山c太郎","","sampleC.docx",""<br />
+  <?php else: ?>
+"名前","メールアドレス","会社名","担当者","ファイル名"<br />
+    "お名前A","sampleA@example.com","A社","a山a太郎","sample.pdf","sample.docx","sample.csv"<br />
+    "お名前B","sampleB@example.com","B社","b山b太郎","sample.pdf","","sample.csv"<br />
+    "お名前C","sampleC@example.com","C社","c山c太郎","","sample.docx",""<br />
+  <?php endif; ?>
+</p>
+
+<?php 
+  if(!isset($path)){include_once(WF_HELP_PATH.'/html/common/footer.html'); 
+  }; 
+?>

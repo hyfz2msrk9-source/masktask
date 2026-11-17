@@ -1,0 +1,175 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>Address book</span></h2>
+<p>
+  This is your address book. When you want to distribute or collect file, you can select the address that you want to send your file from the address book.
+  You can enter the address easily without miss typing.
+</p>
+
+<p>
+  Please click Menu:Address book.<br />
+  <img src="../../../images-en/sysmenu_address.gif" class="view" alt="menu：address book" />
+</p>
+
+<h3><a name="6-1"></a>Address book</h3>
+<p>
+  Please click Menu:Address book, the address list will appear.<br />
+  <img src="../../help-images/view-en/6-1_1.png" class="view" alt="address book" />
+</p>
+
+<p>
+  On the left side, there is a list of groups. If you click a group, addresses that is belonging to the group will appear on the right.<br />
+  The group that you see their addresses now have <img src="../../help-images/ico-group-active.gif" alt="sellect group" />mark and its back color is different from others.
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1"/>Add with <br />the CSV file</th>
+      <td>
+        You can enter the new address to this address book with the CSV file.You can download the address to this address book with the CSV file.<br />
+        (<a href="change-en.html#6-2-2">→CSV Add with the CSV file, CSV Download with the CSV file</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />Private/Common/Section</th>
+      <td>
+        You can switch the address book type.<br />
+        When you set not to display the commons, you can register to email addresses other than the commons.<br />
+        When you set not to display the section address book, you can register to email addresses other than the section address book.<br />
+        Only an individual mail address can be registered when setting not to display commons and the section address book.<br />
+        When you select section address book, groups are displayed by section.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Add group</th>
+      <td>To add group, area to enter the new group will appear.(<a href="group-en.html#6-6">→Add group</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Add address</th>
+      <td>To add address, area to enter the new address will appear.(<a href="change-en.html#6-2">→Add address</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />Edit address</th>
+      <td>
+        You can edit address that you want to edit. Please select the address you want edit from the address list, and click here. You can edit only one address at once.
+        (<a href="change-en.html#6-3">→Edit address</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />Delete address</th>
+      <td>
+        If you want to delete address from address book, please select the address you want to delete, and click here.
+        (<a href="change-en.html#6-4">→Delete address</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />Select group<br />affiliation</th>
+      <td>You can change the group of the address. (<a href="group-en.html#6-5">→Change group of address</a>)<br />
+        When you select section address book, [Copy to other section group] button is displayed too.(→<a href="group-en.html#6-10">Copy to other section group</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />Delete all addresses</th>
+      <td>
+        You can delete all addresses from the address list.(<a href="change-en.html#6-4">→Delete address</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />Mail address list</th>
+      <td>
+        The list of mail addresses is displayed.
+        <table class="data">
+          <tr>
+            <th>Name(Handle)</th>
+            <td>Name and Handle of the address. You can sort by the name with clicking this title. </td>
+          </tr>
+          <tr>
+            <th>Group</th>
+            <td>Group to classify addresses. You can sort by the group with clicking this title.</td>
+          </tr>
+          <tr>
+            <th>Email address</th>
+            <td>Email address. You can sort by the Email address with clicking this title.</td>
+          </tr>
+          <?php if(SMS_PASS_FLG>0): ?>
+          <tr>
+            <th>Phone number</th>
+            <td>Phone number. You can sort by the Email address with clicking this title.</td>
+          </tr>
+          <tr>
+            <th>Email address<br>for another route</th>
+            <td>Email address for another route. You can sort by the Email address with clicking this title.</td>
+          </tr>
+          <?php endif; ?>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />Search<br /> Address</th>
+      <td>
+  <table class="data">
+          <tbody>
+            <tr>
+              <th><img src="../../help-images/magnifier.png" alt="search" /></th>
+              <td>
+    Click the magnifier icon and open the search form.<br />
+                <img src="../../help-images/view-en/6-1_2.gif" class="view" alt="search form" />
+                <table class="data-s">
+                  <tbody>
+                    <tr>
+                      <td>Pull-down menu</td>
+                      <td>：Select the item you want to search about.</td>
+                    </tr>
+                    <tr>
+                      <td>Text box</td>
+                      <td>：Enter the key words to search user or section.</td>
+                    </tr>
+                    <tr>
+                      <td>[Quick Search]</td>
+                      <td>：Start to search.</td>
+                    </tr>
+                    <tr>
+                      <td>[Clear]</td>
+                      <td>：Clear the text box and the result.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/view/6-1_3.gif" alt="the number of be able to display in a page" /></th>
+              <td>You can change the number of the Email that can be able to display in a page.</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/first.gif" alt="move to the top page" /></th>
+              <td>Move to the first page.</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/prev.gif" alt="move to before page" /></th>
+              <td>Move to the previous page.</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/view/6-1_4.gif" alt="move to the page you enter the text area" /></th>
+              <td>MOve to the page you enter.</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/next.gif" alt="move to forward page" /></th>
+              <td>Move to the next page.</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/last.gif" alt="move to the last page" /></th>
+              <td>Move to the last page.</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/load.png" alt="renew this list" /></th>
+              <td>Update the list.</td>
+            </tr>
+          </tbody>
+  </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

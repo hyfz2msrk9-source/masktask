@@ -1,0 +1,180 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>アドレス帳</span></h2>
+
+<h3><a name="6-2"></a>アドレスの追加</h3>
+<h4><a name="6-2-1"></a>フォームからの追加</h4>
+<p class="h4-p">
+  アドレスを追加します。[アドレス追加]ボタンをクリックしてください。<br />
+  アドレス追加エリアが表示されます。<br />
+  <img src="../../help-images/view/6-2_1.gif" class="view" alt="アドレスフォーム：アドレス追加" />
+</p>
+
+<p class="h4-p">
+  アドレス帳(登録)エリアが表示されます。<br />
+  項目を入力、選択し、[追加]ボタンをクリックしてください。<br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <img src="../../help-images/view/6-2_2.png" class="view" alt="アドレス帳登録エリア" />
+  <?php else: ?>
+  <img src="../../help-images/view/6-2_2.gif" class="view" alt="アドレス帳登録エリア" />
+  <?php endif; ?>
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>名前</th>
+      <td>アドレスを登録する方の名前です。</td>
+    </tr>
+    <tr>
+      <th>名前(カナ)</th>
+      <td>アドレスを登録する方のカナです。</td>
+    </tr>
+    <tr>
+      <th>グループ</th>
+      <td>
+        アドレスの分類グループです。<br />
+        既存のグループを設定する場合は、「所属グループを変更」をクリックすると所存グループ変更画面が表示されます。<br />上側のグループにチェックを入れてグループを選択し[↓]ボタンをクリックしてください。<br />その後[所属グループを変更する]ボタンをクリックするとグループが設定されます。<br />
+        <img src="../../help-images/view/6-2_3.gif" class="view" alt="グループ選択" /><br />
+        新規のグループを作成して設定する場合は、[グループ追加]ボタンをクリックすると入力欄が表示されますので、グループ名を入力してください。<br />右側にある保存アイコンをクリックするとグループが保存されます。<br />
+        <img src="../../help-images/view/6-2_4.gif" class="view" alt="新規グループ作成" />
+      </td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td>登録するメールアドレスです。</td>
+    </tr>
+    <?php if(SMS_PASS_FLG>0): ?>
+    <tr>
+      <th>電話番号</th>
+      <td>ワンタイムパスワードの送信先として別経路を利用する時、電話番号を配布時のワンタイムパスワード送付先として自動登録します。</td>
+    </tr>
+    <tr>
+      <th>別経路用<br>メールアドレス</th>
+      <td>ワンタイムパスワードの送信先として別経路を利用する時、別経路用メールアドレスを配布時のワンタイムパスワード送付先として自動登録します</td>
+    </tr>
+    <?php endif; ?>
+  </tbody>
+</table>
+
+<h4><a name="6-2-2"></a>CSVファイルからの追加・ダウンロード</h4>
+<h5>CSVファイルからの追加</h5>
+<p class="h4-p">
+  [CSVファイルでアドレスを追加]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/6-2-2_1.gif" class="view" alt="CSVファイルでアドレスを追加ボタン" />
+</p>
+
+<p class="h4-p">
+  アドレス帳へ登録するメールアドレスの情報が入ったCSVファイルを選択し、[インポート実行]ボタンをクリックしてください。<br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <img src="../../help-images/view/6-2-2_2_sms.png" class="view" alt="CSVファイルでの追加画面：個人／共通" />
+  <?php else: ?>
+  <img src="../../help-images/view/6-2-2_2.png" class="view" alt="CSVファイルでの追加画面：個人／共通" />
+  <?php endif; ?>
+</p>
+
+<p class="h4-p">
+  共通を表示しないよう設定されている場合は、共通のメールアドレス以外を登録することができます。<br />
+  部署アドレス帳を表示しないよう設定されている場合は、部署のメールアドレス以外を登録することができます。<br />
+  共有アドレス帳と部署アドレス帳を表示しないよう設定されている場合は、個人のメールアドレスのみを登録することができます。<br />
+  アドレス帳へ登録するメールアドレスの情報が入ったCSVファイルを選択し、[インポート実行]ボタンをクリックしてください。<br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <img src="../../help-images/view/6-2-2_2_2_sms.png" class="view" alt="CSVファイルでの追加画面：個人" />
+  <?php else: ?>
+  <img src="../../help-images/view/6-2-2_2_2.png" class="view" alt="CSVファイルでの追加画面：個人" />
+  <?php endif; ?>
+</p>
+
+<p class="h4-p">
+  CSVファイルは、一行目から、<span class="attention">「名前、名前(カナ)、グループ、メールアドレス、<?php if(SMS_PASS_FLG>0): ?>電話番号、別経路用メールアドレス、<?php endif; ?>登録先」</span>の順番で作成してください。<br />
+  登録先は、個人のアドレス帳に登録する場合は、"個人"または"0"、共通のアドレス帳に登録する場合は、"共通"または"1"、部署のアドレス帳に登録する場合は、"部署"または"2"と記載してください。<br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+      "佐藤一郎","サトウイチロウ","営業フループ","sato@example.com","090-1111-1111","","0"<br>
+      "鈴木次郎","スズキジロウ","営業グループ;企画グループ","suzuki@example.com","","suzuki2@example.com","1"<br>
+      "山田太郎","ヤマダタロウ","総務部￥第一課","yamada@example.com","090-1111-1111","yamada2@example.com","2"
+  </div>
+  <?php else: ?>
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+    "佐藤一郎","サトウイチロウ","営業フループ","sato@example.com","0"<br>
+    "鈴木次郎","スズキジロウ","営業グループ;企画グループ","suzuki@example.com","1"<br>
+    "山田太郎","ヤマダタロウ","総務部￥第一課","yamada@example.com","2"
+  </div>
+  <?php endif; ?>
+</p>
+
+<p class="h4-p">
+  共通または部署アドレス帳を表示しないよう設定されている場合は、CSVファイルは、一行目から、<span class="attention">「名前、名前(カナ)、グループ、メールアドレス<?php if(SMS_PASS_FLG>0): ?>、電話番号、別経路用メールアドレス<?php endif; ?>」</span>の順番で作成してください。<br />
+  個人のアドレスのみ登録します。<br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+      "佐藤一郎","サトウイチロウ","営業フループ","sato@example.com","090-1111-1111",""<br>
+      "鈴木次郎","スズキジロウ","営業グループ","suzuki@example.com","","suzuki2@example.com"
+  </div>
+  <?php else: ?>
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+    "佐藤一郎","サトウイチロウ","営業フループ","sato@example.com"<br>
+    "鈴木次郎","スズキジロウ","営業グループ","suzuki@example.com"
+</div>
+  <?php endif; ?>
+</p>
+
+<p class="h4-p">
+  インポートが成功すると完了画面が表示されます。[戻る]ボタンで、アドレス帳の画面へ戻ります。<br />
+  <img src="../../help-images/view/6-2-2_4.gif" class="view" alt="CSVファイルでの追加完了画面" />
+</p>
+
+<h5>CSVファイルでダウンロード</h5>
+<p class="h4-p">
+  [CSVファイルでアドレスをダウンロード]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/6-2-2_1_2.gif" class="view" alt="CSVファイルでアドレスをダウンロードボタン" />
+</p>
+<p class="h4-p">
+  CSVファイルのダウンロード画面が表示されますので、ダウンロードを行ってください。<br />
+  <img src="../../help-images/view/6-2-2_1_3.gif" class="view" alt="CSVダウンロード画面" />
+</p>
+
+<h3><a name="6-3"></a>アドレスの編集</h3>
+<p>
+  アドレスを編集します。アドレス帳一覧の、編集を行うアドレスをクリックし、選択してください。<br />
+  選択後、[アドレス編集]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/6-3_1.gif" class="view" alt="アドレスフォーム：アドレス編集" />
+</p>
+
+<p>
+  アドレス帳編集エリアが表示されます。編集を行い、[変更]ボタンをクリックしてください。<br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <img src="../../help-images/view/6-3_2.png" class="view" alt="アドレス編集エリア" />
+  <?php else: ?>
+  <img src="../../help-images/view/6-3_2.gif" class="view" alt="アドレス編集エリア" />
+  <?php endif; ?>
+</p>
+
+<h3><a name="6-4"></a>アドレスの削除</h3>
+<p>
+  アドレス一覧より削除を行うアドレスをクリックし、選択してください。<br />
+  アドレスは複数選択可能です。<br />
+  選択後、[アドレス削除]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/6-4_1.gif" class="view" alt="アドレスフォーム：アドレス削除" />
+</p>
+
+<p>
+  確認メッセージが表示されますので、よろしければ[OK]ボタンをクリックしてください。<br />
+  選択したアドレスが削除されます。<br />
+  <img src="../../help-images/view/6-4_2.gif" class="view" alt="アドレス削除確認メッセージ" />
+</p>
+
+<p>
+  アドレス一覧にあるアドレスを全て削除する場合は、[アドレス全削除]ボタンをクリックしてください。<br />
+  「個人／共通タブ」で個人を選択されている場合は[個人アドレス全削除]、共通を選択されている場合は[共通アドレス全削除]と表示されます。<br />
+  <img src="../../help-images/view/6-4_3.gif" class="view" alt="アドレスフォーム：アドレス全削除" />
+</p>
+
+<p>
+  確認メッセージが表示されますので、よろしければ[OK]ボタンをクリックしてください。<br />
+  選択したアドレスが削除されます。<br />
+  <img src="../../help-images/view/6-4_4.gif" class="view" alt="アドレス削除確認メッセージ" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,254 @@
+ˇ<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+<h2><span><a name="7"></a>上级确认一览(※选项功能)</span></h2>
+<p>
+  上级确认功能是选项功能。<br />
+  上级确认功能是指，登录文件的发送(包括管理器)、领取及登录文件的通知的同时发送(包括管理器)、文件夹公开(包括管理器)的通知时，选择上级并只允许发送已得到上级确认的通知邮件的功能。从管理器中发布的通知，下载URL经许可后才有效。
+</p>
+
+<p>
+  目录：点击上级确认一览。<br />
+  <img src="../../../images-cn/sysmenu_superior.gif" class="view" alt="メニュー：上長承認一覧" />
+</p>
+
+<h3><a name="7-1"></a>申请者功能（用户端）</h3>
+<h4><a name="7-1-1"></a>申请一览</h4>
+<p class="h4-p">
+  在申请一览中，您可以根据申请状态（待审批、进行中、已完成、驳回、已取消）切换列表，也可以查看汇总了所有状态的列表。<br />
+  “待审批”和“进行中”的合计件数会显示在“申请一览”的旁侧。<br />
+  以下是“待审批”一览的界面示例。<br />
+  <img src="../../help-images/view-cn/7-1-1_1.png" class="view" alt="ユーザ用承認待ち一覧画面" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[批准一览]</th>
+      <td>
+        您被设置为其他用户的上级时会显示。点击转换到批准一览。(<a href="#7-2-1">→批准一览</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />状态</th>
+      <td>通过选择状态（待审批、进行中、已完成、驳回、已取消、全部），可以切换显示的一览列表。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />上级</th>
+      <td>发送通知邮件时所选择的上级。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />类别</th>
+      <td>通知邮件的方法的类别。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />目的地</th>
+      <td>通知邮件的收件人。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />主题</th>
+      <td>通知邮件的主题。（从管理器中发送的邮件不显示）</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />确认请求日期</th>
+      <td>申请上级确认的日期。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/btn_detail-cn.gif" alt="详细" /></th>
+      <td>点击显示已发送的邮件详细。(<a href="#7-2-2">→详细页面</a>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  以下是汇总显示了所有状态的一览列表。<br />
+  <img src="../../help-images/view-cn/7-1-1_3.png" class="view" alt="用户申请一览（全部）" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />状态</th>
+      <td>会显示以下任意一种状态：待审批、进行中、已完成、驳回、已取消。</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <th colspan="2">一览显示</th>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_3.gif" alt="一页中显示的一览件数" /></th>
+      <td>更改一页中显示的一览件数。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/first.gif" alt="移动到第一页" /></th>
+      <td>移动到第一页。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/prev.gif" alt="移动到前一页" /></th>
+      <td>移动到前一页。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_4.gif" alt="移动到所输入的页面" /></th>
+      <td>移动到所输入的页面。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/next.gif" alt="移动到下一页" /></th>
+      <td>移动到下一页。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/last.gif" alt="移动到尾页" /></th>
+      <td>移动到尾页。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/load.png"  alt="更新一览页面" /></th>
+      <td>更新一览页面。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="7-1-2"></a>已批准/已驳回/已取消通知</h4>
+<p class="h4-p">
+  需要批准的通知邮件上級批准后将发送给每个收件人。<br />
+  电子邮件被批准并发送后，申请人收到通知邮件。
+</p>
+<dl>
+  <dt>得到上级批准的邮件</dt>
+  <dd><img src="../../help-images/view-cn/7-1-2_1.png" class="view" alt="得到上级批准的邮件" /></dd>
+</dl>
+
+<p class="h4-p">
+  邮件被上级驳回时，不发送通知邮件。<br />
+  另外，被驳回后，会邮件通知申请人。邮件里会记载被驳回的理由，请确认。
+</p>
+<dl>
+  <dt>被上级驳回的邮件</dt>
+  <dd><img src="../../help-images/view-cn/7-1-2_2.png" class="view" alt="被上级驳回的邮件" /></dd>
+</dl>
+
+<p class="h4-p">
+  您可以取消批准请求，直到您的上级批准或驳回。在这种情况下，将不会发送通知邮件。<br />
+  另外，取消后，会邮件通知上级。邮件里会记载被取消的理由。
+</p>
+<dl>
+  <dt>取消时发送给上级的邮件</dt>
+  <dd><img src="../../help-images/view-cn/7-1-2_3.png" class="view" alt="取消时发送给上级的邮件" /></dd>
+</dl>
+
+<h3><a name="7-2"></a>审批者功能（上级侧）</h3>
+<h4><a name="7-2-1"></a>批准一览</h4>
+<p class="h4-p">
+  若您被设置为上级，除了可以根据受托申请的状态（待审批、进行中、已完成、驳回、已取消）查看分类列表外，还可以查看汇总了所有状态的列表。<br />
+  “待审批”的件数会显示在“批准一览”的旁侧。<br />
+  以下是“待审批”一览的界面示例。<br />
+  <img src="../../help-images/view-cn/7-2-1_1.png" class="view" alt="上级用等待批准一览">
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[申请一览]</th>
+      <td>
+        设定有上级的情况下显示。点击转换到申请一览。(<a href="#7-1-1">→申请一览</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />请求者</th>
+      <td>提交申请的用户。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="7-2-2"></a>详细页面</h4>
+<p class="h4-p">
+  在详细页面上，您可以查看通知邮件的内容。 <br />
+  显示项目根据审批请求的类型而有所不同。<br />
+  状态为“待审批”时，上级可以进行审批或驳回，用户可以进行取消。<br />
+  状态为“进行中”、“已完成”、“驳回”或“已取消”时，可以查看已处理邮件的详情。<br /><br />
+  <img src="../../help-images/view-cn/superior_detail-1.png" class="view" alt="等待批准・已批准/已驳回/已取消详细页面1" />
+  <img src="../../help-images/view-cn/superior_detail-2.png" class="view" alt="等待批准・已批准/已驳回/已取消详细页面2" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />用户名</th>
+      <td>对于上级，显示等待上级确认的用户（对于用户不显示）</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />上级</th>
+      <td>显示创建通知邮件时选择的上级和批准状态。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />类别</th>
+      <td>通知邮件的方法的类别。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />状态</th>
+      <td>会显示以下任意一种状态：待审批、进行中、已完成、驳回、已取消。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />收件人</th>
+      <td>通知邮件的收件人。<br /><br />
+      在得到批准前，指定收件人的送信被禁止时会显示红色。<br />
+      <img src="../../help-images/view-cn/7-2-2_3.png" class="view" alt="使用禁止メールアドレス" /></td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />保存到的文件夹</th>
+      <td>收集文件的保存到的文件夹。它只有在出现收据。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />接收标签</th>
+      <td>这是管理接收邮件的标签。它只有在出现收据。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />文件名</th>
+      <td>已发送的文件及公开文件夹内的文件。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />发件人</th>
+      <td>通知是电子邮件发件人。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />邮件件名</th>
+      <td>通知邮件的件名。（从管理器中发送的邮件不显示）</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-11.gif" alt="11" />邮件正文</th>
+      <td>通知邮件的正文。（从管理器中发送的邮件不显示） </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-12.gif" alt="12" />安全性设定</th>
+      <td>通知邮件的安全性设定。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-13.gif" alt="13" />字符编码</th>
+      <td>是被设定的字符编码。</td>
+    </tr>
+    <tr>
+        <th><img src="../../help-images/no-s-14.gif" alt="14">驳回/取消理由<br />（被驳回/取消的情况下）</th>
+        <td>用于驳回/取消。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="h4-p">
+  要驳回的，在理由栏里输入理由点击[驳回]按钮。批准的话点击[批准]按钮。<br />
+  要取消的，在理由栏里输入理由点击[取消]按钮。
+</p>
+<br />
+
+<dl>
+  <dt>分发文件下载检查功能启用时</dt>
+  <dd>
+    上级批准后，除非下载所有分发文件，否则上级不能批准。<br />
+    ※此功能不适用于文件夹发布。
+    <img src="../../help-images/view-cn/7-2-2_4.gif" class="view" alt="配布ファイルダウンロードチェック" />
+  </dd>
+</dl>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

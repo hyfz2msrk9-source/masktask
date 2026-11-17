@@ -1,0 +1,299 @@
+<?php
+   if ($customer_flg) {
+   $path = $path."customer/";
+   }
+?>
+<div id="sideMenu">
+  <ul class="index-1">
+    <li>
+      <a href="<?php echo $path; ?>index-en.html">About this manual</a>
+    </li>
+    <?php if (!$customer_flg) : ?>
+    <li>
+      <a href="<?php echo $path; ?>login/index-en.html">Login</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>login/index-en.html#2-1">Login</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/index-en.html#2-2">Logout</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/index-en.html#2-3">When forgot your account,password</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/index-en.html#2-6">Two-factor authentication</a>
+  </li>
+  <li>
+      <a href="<?php echo $path; ?>login/index-en.html#2-7">Google SSO authentication</a>
+  </li>
+  <li>
+      <a href="<?php echo $path; ?>login/index-en.html#2-8">[##SAML_NAME##]</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/index-en.html#2-4-2">Windows Integrated Authentication</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/index-en.html#2-5">Client authentication</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/lock-en.html">Account lock</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/news-en.html">Information Function</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>login/login-error-en.html">Login Error</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>top/menu-en.html">Menu</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>top/index-en.html">File list</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>top/index-en.html#4-1">File list</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>top/upload-en.html">Upload files</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>top/preview-en.html">Preview</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>top/shortcut_and_rightclick-en.html">Shortcuts and Right-Click</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>top/send-en.html">File Distribution</a>
+    <ul class="index-3">
+            <li>
+        <a href="<?php echo $path; ?>top/send-en.html#4-3-1">About Email text</a>
+      </li>
+            <li>
+        <a href="<?php echo $path; ?>top/send-en.html#4-3-2">About security settings</a>
+      </li>
+            <li>
+        <a href="<?php echo $path; ?>top/send-en.html#4-3-3">Send from own mailer</a>
+      </li>
+            <li>
+        <a href="<?php echo $path; ?>top/send-collect-en.html#4-3-4">Email to Receiving (collecting) and distribution</a>
+      </li>
+            <li>
+        <a href="<?php echo $path; ?>top/send-collect-en.html#4-3-5">About Email text of the Email to collect and distribute</a>
+      </li>
+            <li>
+        <a href="<?php echo $path; ?>top/send-collect-en.html#4-3-6">About security settings of the Email to collect files and distribute files</a>
+      </li>
+            <li>
+        <a href="<?php echo $path; ?>top/send-collect-en.html#send-collect-mailer">Notification of file and collection Email send from own mailer</a>
+      </li>
+            <li>
+        <a href="<?php echo $path; ?>top/send-status-en.html#4-3-8">Check on how many people the file was sent</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>top/group-en.html">Group sharing folder function</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>top/folder-en.html">Folder publication</a>
+  </li>
+        <li>
+    <a href="<?php echo $path; ?>top/thumbnail-en.html">Display thumbnail image function</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>collecting/index-en.html">Receive (collect)</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>collecting/index-en.html#5-1">Collected file list</a>
+  </li>
+    <li>
+    <a href="<?php echo $path; ?>collecting/collect-en.html#5-2">Receive (collect) files</a>
+  </li>
+    <li>
+    <a href="<?php echo $path; ?>collecting/collect-en.html#collect-mailer">Receive (collect) files from own mailer</a>
+  </li>
+    <li>
+    <a href="<?php echo $path; ?>collecting/save-en.html#5-4">Store files</a>
+    </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>gathering/index-en.html">Gathering<span style="font-size:90%; font-weight:normal;">(※Option)</span></a>
+      <ul class="index-2">
+        <li>
+          <a href="<?php echo $path; ?>gathering/index-en.html#list">Gathering list</a>
+          <ul class="index-3">
+            <li>
+              <a href="<?php echo $path; ?>gathering/index-en.html#gathering-log">Download logs</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/index-en.html#gathering-detail">Details of Gathering</a>
+              <ul>
+                <li>
+                  <a href="<?php echo $path; ?>gathering/index-en.html#gathering-detail-to">About address list</a>
+                </li>
+                <li>
+                  <a href="<?php echo $path; ?>gathering/index-en.html#gathering-detail-message">About body of email</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/index-en.html#gathering-stop">Stop Gathering</a>
+            </li>
+          </ul><!-- //.index-3 -->
+        </li>
+        <li>
+          <a href="<?php echo $path; ?>gathering/send-en.html">Send a Gathering Email</a>
+          <ul class="index-3">
+            <li>
+              <a href="<?php echo $path; ?>gathering/send-en.html#gathering-csv">About destination files</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/send-en.html#gathering-send-message">About Email text</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/send-en.html#gathering-send-security">About security settings</a>
+            </li>
+            <li>
+              <a href="<?php echo $path; ?>gathering/send-en.html#gathering-send-to">About address list</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      </li>
+      <li>
+      <a href="<?php echo $path; ?>waitmail/index-en.html">Mail standby</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>address/index-en.html">Address book</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>address/index-en.html#6-1">Address book</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>address/change-en.html#6-2">Add address</a>
+  </li>
+        <li>
+    <a href="<?php echo $path; ?>address/change-en.html#6-3">Edit address</a>
+  </li>
+        <li>
+    <a href="<?php echo $path; ?>address/change-en.html#6-4">Delete address</a>
+  </li>
+        <li>
+    <a href="<?php echo $path; ?>address/group-en.html#6-5">Change group of address</a>
+  </li>
+        <li>
+    <a href="<?php echo $path; ?>address/group-en.html#6-6">Add group</a>
+  </li>
+        <li>
+    <a href="<?php echo $path; ?>address/group-en.html#6-7">Edit group</a>
+  </li>
+        <li>
+    <a href="<?php echo $path; ?>address/group-en.html#6-8">Delete group</a>
+  </li>
+        <li>
+    <a href="<?php echo $path; ?>address/group-en.html#6-9">Change the order of groups</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>superior/index-en.html">
+  Approval list<span style="font-size:90%; font-weight:normal;">(※Option)</span>
+      </a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>superior/index-en.html#7-1">Approval list for the user</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>superior/index-en.html#7-2">Approval list for the superior</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>log/index-en.html">History</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>config/index-en.html">Settings</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>config/template-en.html">Template</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>config/sign-en.html">Sign-off name</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>config/user-en.html">Group sharing</a>
+    <ul class="index-3">
+            <li>
+        <a href="<?php echo $path; ?>config/user-en.html#9-3-1">User management</a>
+      </li>
+            <li>
+        <a href="<?php echo $path; ?>config/user-en.html#9-3-2">IP Restrictions</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>config/from-en.html">Sender setting</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>config/mailsend-en.html">Mail Distribution Setting</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>profile/index-en.html">Profile</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>support/index-en.html">Support</a>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>help/index-en.html">Help</a>
+    </li>
+    <?php endif; ?>
+    <li>
+      <a href="<?php echo $path; ?>dl/index-en.html">Download files</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>dl/index-en.html#13-1">The ordinary download</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>dl/onetime-pass-en.html">Download with the one-time password</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>dl/onetimesms-pass-en.html">Download with the one-time password(another destination)</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>dl/pass-en.html">Download with specified password</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>dl/mail-address-en.html">Download with the mail address</a>
+  </li>
+        <li>
+    <a href="<?php echo $path; ?>dl/error-en.html">In case you cannot download files</a>
+  </li>
+      </ul>
+    </li>
+    <li>
+      <a href="<?php echo $path; ?>up/index-en.html">Upload files</a>
+      <ul class="index-2">
+  <li>
+    <a href="<?php echo $path; ?>up/index-en.html#14-1">The ordinary upload</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>up/onetime-pass-en.html">Upload with the one-time password</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>up/pass-en.html">Upload with specified password</a>
+  </li>
+  <li>
+    <a href="<?php echo $path; ?>up/error-en.html">In case you cannot upload files</a>
+  </li>
+      </ul>
+    </li>
+  </ul>
+</div><!-- sidemenu -->

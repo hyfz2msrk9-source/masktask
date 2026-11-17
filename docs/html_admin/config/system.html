@@ -1,0 +1,110 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+<h2><span>各種設定</span></h2>
+<h3>システム設定</h3>
+<p>
+  メニュー：各種設定の中のシステム設定をクリックしてください。<br />
+  システム設定画面へ遷移します。<br />
+  システム設定画面は、管理者管理で新しく追加された管理者は設定することが出来ません。設定内容の確認のみとなります。<br />
+</p>
+<div class="caption-big">システム設定の確認のみ可能な場合</div>
+<p><img src="../../images/view/system-3.gif" class="view" alt="システム設定画面：確認のみ" /></p>
+
+<div class="caption-big">システム設定可能な場合</div>
+<p><img src="../../images/view/system-1.gif" class="view" alt="システム設定画面：設定可能" /></p>
+
+<dl>
+  <dt><a name="user"></a><img src="../../images/no-s-1.gif" alt="1" />ユーザ側に関する設定</dt>
+  <dd>
+    <table class="table-s">
+      <tr>
+        <th>マニュアルとヘルプ表示可否</th>
+        <td>ユーザ側画面で操作マニュアルを表示する可否を設定します。</td>
+      </tr>
+      <tr>
+        <th>グループ管理者による<br />ユーザ作成時の容量</th>
+        <td>グループ管理者に設定されているユーザが、ユーザ側画面で新しくユーザを作成する際に設定できる容量を設定します。</td>
+      </tr>
+      <tr>
+        <th>未ログインアカウント削除日数</th>
+        <td>ログインしていないアカウントを削除する日数を設定します。<br />0を設定するとアカウント削除は行われません。</td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+
+<dl>
+  <dt><a name="admin"></a><img src="../../images/no-s-2.gif" alt="2" />管理側に関する設定</dt>
+  <dd>
+    <table class="table-s">
+      <tr>
+        <th>マニュアルとヘルプ表示可否</th>
+        <td>管理側画面で操作マニュアルを表示する可否を設定します。</td>
+      </tr>
+      <tr>
+        <th>送信待機機能の利用可否</th>
+        <td>送信待機機能の利用可否を設定します。<br />
+          「利用する」を選択すると、配布に関する設定と引取り(収集)に関する設定に、送信待機機能が追加されます。</td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+
+<dl>
+  <dt><a name="logo"></a><img src="../../images/no-s-3.gif" alt="3" />ロゴに関する設定</dt>
+  <dd>
+    <table class="table-s">
+      <tr>
+        <th>英語版</th>
+        <td>
+          英語版で使用するロゴを登録します。画面上の「全て英語版を利用する」にチェックすると、日本語版も英語版と同じロゴが使用されます。<br />
+          <img src="../../images/view/system-2.gif" class="view" alt="チェックボックス：全て英語版を利用する" />
+        </td>
+      </tr>
+      <tr>
+        <th>日本語版</th>
+        <td>日本語版で使用するロゴを登録します。</td>
+      </tr>
+      <tr>
+        <th>中国語版&nbsp;&nbsp;簡体字</th>
+        <td>中国語版(簡体字)で使用するロゴを登録します。中国語版の設定が有効の場合のみ設定可能です。</td>
+      </tr>
+      <tr>
+        <th>中国語版&nbsp;&nbsp;簡体字</th>
+        <td>中国語版(繁体字)で使用するロゴを登録します。中国語版の設定が有効の場合のみ設定可能です。</td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+
+<dl>
+  <dt><a name="api"></a><img src="../../images/no-s-4.gif" alt="4" /><?php echo API_CLIENT_NAME; ?>に関する設定(※オプション)</dt>
+  <dd>
+    <span class="attention">
+      <?php echo API_CLIENT_NAME; ?>はオプション機能です。別途、お申込みが必要となります。<br />
+      また、Google SSO認証、SAML認証のユーザはご利用頂けません。
+    </span><br />
+    <?php echo API_CLIENT_NAME; ?>が有効でない場合「<?php echo API_CLIENT_NAME; ?>に関する設定」は表示されません。
+    <table class="table-s">
+      <tr>
+        <th><?php echo API_CLIENT_NAME; ?>機能の利用</th>
+        <td>
+          <?php echo API_CLIENT_NAME; ?>機能の利用設定を行います。<br />
+          「利用しない」に設定すると、ユーザの<?php echo API_CLIENT_NAME; ?>機能を利用を停止します。
+          <img src="../../images/view/system-api-1.gif" class="view" alt="システム設定画面：<?php echo API_CLIENT_NAME; ?>に関する設定" />
+        </td>
+      </tr>
+    </table>
+  </dd>
+</dl>
+
+<dl id="outlook">
+  <dt><a name="logo"></a>Outlook アドインに関する設定</dt>
+  <dd>
+  Outlookアドインの利用に必要なマニフェストファイルをダウンロードできます。
+<img src="../../images/view/system_outlook.png" class="view" style="max-width:95%" alt="システム設定画面：Outlook アドインに関する設定" />
+</td>
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

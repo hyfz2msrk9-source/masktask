@@ -1,0 +1,41 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>引取り(収集)</span></h2>
+<h3><a name="5-4"></a>ファイルの保管</h3>
+<p>
+  引取り機能によって、アップロードしてもらったファイルを、ファイル一覧に保管します。<br />
+  保管するまでは、何度でもファイルをアップロードできます。保管すると、ファイルの収集依頼メールを送信した人からのファイルのアップロードができなくなります。<br />
+</p>
+
+<div class="caption-big">保管先フォルダ指定機能の設定が有効の場合</div>
+<p><img src="../../help-images/view/5-3_1-1.gif" class="view" alt="収集ファイル一覧：フォルダ指定有効" /></p>
+<p>
+  「保管先フォルダ指定機能」の設定が有効になっている場合のみ、収集メールで指定したフォルダに保管することができます。<br />
+  指定フォルダ名をクリックしてください。<br /><br />
+  指定フォルダ名をクリックすると、ファイル一覧の指定されたフォルダにファイルが移動します。<br />
+  <img src="../../help-images/view/5-3_4.gif" class="view" alt="収集ファイル保管完了画面" /></p>
+
+
+<div class="caption-big">保管先フォルダ指定機能の設定が無効の場合</div>
+<p><img src="../../help-images/view/5-3_1.gif" class="view" alt="収集ファイル一覧：フォルダ指定無効" /></p>
+
+<p>
+  「保管先フォルダ指定機能」の設定が無効の場合は、ファイル一覧のトップに保管されます。<br />
+  [保管]ボタンをクリックしてください。
+</p>
+
+<p>
+  [保管]ボタンをクリックすると、収集ファイル保管(確認)画面に遷移します。
+  保管するファイルを確認してください。
+  [保管する]ボタンをクリックすると、ファイル一覧に保管します。<br />
+  <img src="../../help-images/view/5-3_2.gif" class="view" alt="収集ファイル保管確認画面" />
+</p>
+
+<p>
+  収集ファイルを保管しました。<br />
+  <img src="../../help-images/view/5-3_3.gif" class="view" alt="収集ファイル保管完了画面" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,33 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/synchrorer/header.html');
+?>
+
+<h2><span>インストール</span></h2>
+<p>WebFileからインストーラーをダウンロードして、お使いのパソコンにインストールします。</p>
+<p>
+  メニュー：設定をクリックしてください。<br />
+  <img src="../../../images/sysmenu_config.gif" class="view" alt="メニュー：設定" />
+</p>
+
+<p>
+  <?php echo API_CLIENT_NAME; ?>：ダウンロードをクリックしてください。<br />
+  <img src="../../help-images/view/synchrorer/2-0-0.gif" class="view" alt="Synchrorerメニュー" />
+</p>
+
+<p>
+  お使いのパソコンのOSに応じたインストーラーをクリックしてダウンロードしてください。<br />
+  <img src="../../help-images/view/synchrorer/2-0-1.gif" class="view" alt="Synchrorerダウンロード" />
+</p>
+
+<p>
+  ダウンロードしたインストーラーを起動し、インストールを実行します。<br />
+  <img src="../../help-images/view/synchrorer/2-0-2.gif" class="view" alt="インストーラ起動" />
+</p>
+
+<p>
+  インストールが完了すると、初期設定画面が表示されます。(→<a href="config-account.html">アカウント設定</a>)<br />
+  <img src="../../help-images/view/synchrorer/2-0-4.gif" class="view" alt="初期設定画面" />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,61 @@
+<?php 
+  include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+  if(isset($customer_flg) && $customer_flg){
+    $path = "../../";
+  }else{
+    $customer_flg = 0;
+    $path = "../";
+  }
+  $image_path = "../" . $path . "help-images/view-tcn/";
+  $icon_path = "../" . $path . "help-images/";
+  include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+  <h2><span>上傳文件</span></h2>
+  <p>
+    接收文件的接收申請郵件後，可在WEB系統上傳文件，併發送給對方。<br />
+    <?php if(!$customer_flg): ?>(<a href="../collecting/index-tcn.html">→接收（收集）</a>)
+    <?php endif; ?></p>
+
+  <h3><a name="14-1"></a>標準上傳</h3>
+  <p>
+    收到資料發送請求郵件，使用郵件裡的上傳用URL連結進行資料上傳。<br />
+    點擊訪問郵件裡的上傳URL連結。
+  </p>
+
+  <a name="upload"></a>
+  <p>
+    在上傳頁面裡進行文件上傳。<br />
+    點擊[文件追加]按鈕選擇想要上傳的資料，點擊[上傳]按鈕完成上傳。<br />
+    <img src="<?php echo $image_path; ?>upload.png" class="view" alt="通常アップロード" /><br />
+  </p>
+
+  <table>
+    <tr>
+      <th><img src="<?php echo $icon_path; ?>no-s-1.gif" alt="1" />[文件追加]</th>
+      <td>
+        使用[文件追加]請選擇你要上傳的文件。<br/>打開文件選擇窗口。請選擇一個文件。<br/>
+        <img src="<?php echo $image_path; ?>top-upload-1.gif" class="view" alt="上傳文件選擇" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="<?php echo $icon_path; ?>no-s-2.gif" alt="1" />[刪除]</th>
+      <td>刪除所選文件。</td>
+    </tr>
+    <tr>
+      <th><img src="<?php echo $icon_path; ?>no-s-3.gif" alt="1" />給寄件者的信息</th>
+      <td>文件上傳的同時，可以給對方發送資訊。</td>
+    </tr>
+    <tr>
+      <th><img src="<?php echo $icon_path; ?>no-s-4.gif" alt="1" />[上傳]</th>
+      <td>完成文件上傳。</td>
+    </tr>
+  </table>
+  <dl>
+    <dt>您可以通過拖放選擇資料夾</dt>
+    <dd>
+      在Edge、Google Chrome、Firefox和Safari中,可以通過從資源管理器（Mac上的Finder）拖放來選擇文件夾。<br/>
+      <img src="<?php echo $image_path; ?>upload_dragdrop.png" class="view" alt="您可以通過拖放選擇多個文件" />
+    </dd>
+  </dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

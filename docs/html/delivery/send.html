@@ -1,0 +1,345 @@
+<?php
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+  if(!isset($path)){
+    $path = "../";
+    include_once(WF_HELP_PATH.'/html/common/header.html');
+  }; 
+?>
+<h2><span><a name="delivery-top"></a>一斉配信</span></h2>
+<h3><span>ファイルありの配信</span></h3>
+<h4><a name="delivery-send"></a>ファイルありの配信について</h4>
+<p class="h4-p">
+  多くの宛先に一斉にファイルの配布をおこなう機能です。<br />
+  宛先情報の書かれたファイルをインポートすることで、1回の配信で宛先ごとに異なるファイルを配布することができます。<br />
+
+  一斉配信一覧画面で、[ファイルありの配信]ボタンをクリックしてください。
+<img src="../../help-images/view/delivery_send" class="view width_95" alt="[ファイルありの配信]ボタン" /><br />
+  ファイルありの配信画面へ遷移します。<br />
+  <?php if(!defined("DELIVERY_CHECKWORD_FLG") || DELIVERY_CHECKWORD_FLG): ?>
+<img src="../../help-images/view/delivery_send-form-with-keyword.png" class="view width_95" alt="ファイルありの配信画面" />
+  <?php else: ?>
+<img src="../../help-images/view/delivery_send-form.png" class="view width_95" alt="ファイルありの配信画面" />
+  <?php endif; ?>
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />テンプレート</th>
+        <td>
+          ご自身の作成したテンプレートを挿入します。<br />
+          テンプレートをご選択いただくと、メール本文に挿入されます。<br />
+          テンプレートを作成していない場合は表示されません。(→<a href="../config/template.html">テンプレート</a>)<br />
+          <img src="../../help-images/view/3-3-1_2.gif" class="view" alt="テンプレート選択" style="width:50%; height:auto;" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />配布用フォルダ</th>
+      <td>
+        配布したいファイルのあるフォルダをご選択ください。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />宛先ファイル</th>
+      <td>
+        [選択]ボタンをクリックし、宛先情報が記されたCSVファイルをご選択ください。
+(→<a href="#delivery-csv">宛先ファイルについて</a>)<br />
+        <img src="../../help-images/view/delivery_send-import.png" class="view" alt="宛先ファイルのインポート" /><br />
+        一度インポートが完了した宛先ファイルを変更される場合は、「＞＞別の宛先ファイルをインポート」リンクをクリックし、新しい宛先ファイルをご選択ください。<br />
+        宛先情報は新しい宛先ファイルの情報に上書きされ、以前にインポートした情報は削除されます。<br />
+<img src="../../help-images/view/delivery_send-import-change.png" class="view" alt="別の宛先ファイルをインポート" /><br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />差出人</th>
+      <td>
+        配信ごとに、送信者名や送信者メールアドレスを変更することができます。<br />
+        送信者名の登録は、送信者設定(→<a href="../config/from.html">送信者設定</a>)でおこないます。<br />
+        送信者設定機能が無効の場合は表示されません。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />メール件名</th>
+      <td>メールの件名をご入力ください。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />メール本文</th>
+      <td>
+        メールの本文に必要事項をご入力ください。<br />
+        (→<a href="#delivery-send-message">メール本文について</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />セキュリティ設定</th>
+      <td>
+        セキュリティの設定をそれぞれご選択ください。
+        状況に応じたセキュリティをご設定ください。<br />
+        (→<a href="#delivery-send-security">セキュリティ設定について</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />送信予定日時</th>
+      <td>
+        一斉配信メールを送信する時刻を設定できます。<br />
+        上長承認が有効な場合、承認期限としても利用されるため、予約なしでの送信はできません。<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />文字エンコーディング</th>
+      <td>送信するメールの文字エンコーディングを「ISO-2022-JP」または「UTF-8」からご選択ください。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="h4-p">
+宛先ファイルをインポートし、項目を入力・選択した後、[確認画面へ]ボタンをクリックしてください。ファイルありの配信確認画面に遷移します。
+  <br /><br />
+  インポートした宛先情報を確認する場合は、[宛先一覧を表示]をクリックすると宛先一覧画面に遷移します。(→<a href="#delivery-send-to">宛先一覧について</a>)<br />
+  宛先ファイルに問題があった場合は、[選択]ボタンから再アップロードしていただけます。<br />
+  ご確認いただいた内容に問題がなければ、[配信内容を登録]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/delivery_send-confirm.png" class="view width_95" alt="ファイルありの配信確認画面" />
+</p>
+
+<p class="h4-p">
+  ファイルありの配信登録完了画面に遷移します。<br />
+  これで入力した配信内容の登録が完了し、宛先へ順次メールが配信されます。<br />
+  <img src="../../help-images/view/delivery_send-done.png" class="view" alt="ファイルありの配信完了画面" />
+</p>
+
+<h4><a name="delivery-csv"></a>宛先ファイルについて</h4>
+<p class="h4-p">
+宛先ファイルには、1行目に以下の見出しを<span class="attention">カンマ区切りのCSV形式</span>で入力し、2行目以降に内容を記入してください。<br />
+<span class="attention">
+  <?php if(!defined("DELIVERY_CHECKWORD_FLG") || DELIVERY_CHECKWORD_FLG): ?>チェックワード,
+<?php endif; ?>名前,メールアドレス,置換文字列1,置換文字列2...
+</span><br />
+ファイル作成時には、サンプルファイルもご利用いただけます。(→<a href="../delivery/sample.html
+">宛先ファイルサンプルのダウンロード</a>)<br /><br />
+<?php if(!defined("DELIVERY_CHECKWORD_FLG") || DELIVERY_CHECKWORD_FLG): ?>
+  <b>チェックワード</b>には、ファイル名に必須の文字列(会社名、年度など)を入力してください。<br />空欄にした場合、ファイル名のチェックは行われません。<br />
+チェックワードを含まないファイルを配信しようとした場合、誤送信防止のために宛先一覧画面で宛先が赤く表示されます。(→<a href="#delivery-send-to">宛先一覧について</a>)<br /><br />
+<?php endif; ?>
+  <b>置換文字列</b>は0~<?php echo REPLACEMENT_MAX_NUM; ?>個設定でき、任意の項目名をつけることができます。<br /><br />
+1件の配信で送信できる人数やファイル数は、ご契約内容によります。詳しくは管理者へお問い合わせください。<br />
+<br />
+<b>CSVファイル例（会社名・担当者を置換文字列に指定）</b><br />
+<p class="view  h4-p">
+  <?php if(!defined("DELIVERY_CHECKWORD_FLG") || DELIVERY_CHECKWORD_FLG): ?>
+"チェックワード","名前","メールアドレス","会社名","担当者","ファイル名"<br />
+  "A","お名前A","sampleA@example.com","A社","a山a太郎","sampleA.pdf","sampleA.docx","sampleA.csv"<br />
+  "B","お名前B","sampleB@example.com","B社","b山b太郎","sampleB.pdf","","sampleB.csv"<br />
+  "C","お名前C","sampleC@example.com","C社","c山c太郎","","sampleC.docx",""<br />
+  <?php else: ?>
+"名前","メールアドレス","会社名","担当者","ファイル名"<br />
+  "お名前A","sampleA@example.com","A社","a山a太郎","sample.pdf","sample.docx","sample.csv"<br />
+  "お名前B","sampleB@example.com","B社","b山b太郎","sample.pdf","","sample.csv"<br />
+  "お名前C","sampleC@example.com","C社","c山c太郎","","sample.docx",""<br />
+  <?php endif; ?>
+</p>
+<p class="h4-p">
+  <b>Excelで開いたイメージ</b><br />
+  <?php if(!defined("DELIVERY_CHECKWORD_FLG") || DELIVERY_CHECKWORD_FLG): ?>
+<img src="../../help-images/view/delivery_excel-with-checkword.gif" class="view"
+    alt="ファイルあり：置換文字列のある宛先ファイル(Excelで開いた場合)" />
+  <?php else: ?>
+  <img src="../../help-images/view/delivery-excel.gif" class="view" alt="ファイルあり：置換文字列のある宛先ファイル(Excelで開いた場合)" />
+  <?php endif; ?>
+</p>
+<h4><a name="delivery-send-message"></a>メール本文について</h4>
+<p class="h4-p">
+  メールの本文は、配布に必要なダウンロードURLや有効期限、各宛先のお名前、メールアドレスを変換する変換文字を挿入することによって、効率的に作成することができます。<br />
+  また、サンプル文やテンプレート、署名の挿入も可能です。<br />
+  <img src="../../help-images/view/delivery_send-message.png" class="view" alt="メール本文の詳細" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[サンプル文を挿入]ボタン</th>
+      <td>
+        あらかじめ用意されているサンプル文を挿入します。<br />
+        [サンプル文を挿入]ボタンをクリックすると、メール本文に挿入されます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />テンプレート</th>
+      <td>
+        ご自身の作成したテンプレートを挿入します。<br />
+        テンプレートをご選択いただくと、メール本文に挿入されます。<br />
+        テンプレートを作成していない場合は表示されません。(→<a href="../config/template.html">テンプレート</a>)<br />
+        <img src="../../help-images/view/3-3-1_2.gif" class="view" alt="テンプレート選択" style="width:50%; height:auto;" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />署名</th>
+      <td>
+        ご自身の作成した署名を挿入します。<br />
+        署名をご選択いただくと、メール本文に挿入されます。<br />
+        署名を作成していない場合は表示されません。(→<a href="../config/sign.html">署名</a>)<br />
+        <img src="../../help-images/view/3-3-1_3.gif" class="view" alt="署名選択" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />変換文字</th>
+      <td>
+        メールの本文に入力すると、各宛先に合わせて変換します。<br />
+        各変換文字の左にある（挿入)をクリックすると、メール本文に挿入します。<br />
+        <img src="../../help-images/view/delivery_replace.png" class="view" alt="変換文字" /><br />
+
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>[##name##]</th>
+              <td>各宛先のお名前に変換します。</td>
+            </tr>
+            <tr>
+              <th>[##mail##]</th>
+              <td>各宛先のメールアドレスに変換します。</td>
+            </tr>
+            <tr>
+              <th>[##url##]</th>
+              <td>各宛先のファイルダウンロードURLに変換します。</td>
+            </tr>
+            <tr>
+              <th>[##dl_limit##]</th>
+              <td>ファイルダウンロード有効期限に変換します。</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="h4-p">
+  <b>置換文字列を含む本文例</b>
+</p>
+<p class="view h4-p">
+  [##会社名##] [##name##]様<br />
+  <br />
+お世話になっております。xx株式会社の[##担当者##]です。<br />
+  <br />
+  今月分の報告書の用意ができましたので、<br />
+  [##url##] からダウンロードしてください。<br /><br />
+  以上、よろしくお願いします。
+</p>
+<p class="h4-p">
+  <b>実際に届くメール例</b>
+</p>
+<p class="view  h4-p">
+  A社 お名前A様<br />
+  <br />
+  お世話になっております。xx株式会社のa山a太郎です。<br />
+  <br />
+  今月分の報告書の用意ができましたので、<br />
+  https://example.com/ddl.php?xxxxxxxxxxxx からダウンロードしてください。<br /><br />
+  以上、よろしくお願いします。
+</p>
+
+<h4><a name="delivery-send-security"></a>セキュリティ設定について</h4>
+<p class="h4-p">
+  セキュリティの設定をそれぞれご選択いただき、状況に応じたセキュリティを設定することができます。<br />
+  <img src="../../help-images/view/delivery_send-security.png" class="view" alt="セキュリティ設定" />
+</p>
+
+<dl>
+  <dt>ダウンロードの有効期限</dt>
+  <dd>ファイルのダウンロード有効期限をご選択ください。</dd>
+
+  <dt>ダウンロード回数</dt>
+  <dd>ファイルのダウンロード回数をご選択ください。</dd>
+
+  <dt>パスワードロックをかけない</dt>
+  <dd>配布するファイルに、パスワードロックが不要の場合にご選択ください。</dd>
+
+  <dt>ワンタイムパスワードロックをかける</dt>
+  <dd>配布するファイルに、ワンタイムパスワードのロックをかける場合にご選択ください。<br />
+    パスワードには、メールアドレスを限定したワンタイムパスワードを採用し、高いセキュリティを確保しています。</dd>
+
+  <dt>指定パスワードロックをかける</dt>
+  <dd>配布するファイルに、ご自身の入力したパスワードのロックをかける場合はご選択ください。
+    配布メール送信の際に、別途、指定パスワードをお知らせするメールも通知します。</dd>
+
+  <dt>zipパスワードをファイルに設定する</dt>
+  <dd>配布するファイルをzipファイルに圧縮して1つにし、ご自身の入力したパスワードのロックをかける場合はご選択ください。</dd>
+</dl>
+
+<h4><a name="delivery-send-to"></a>宛先一覧について</h4>
+<p class="h4-p">
+  宛先一覧画面では、宛先ファイルからインポートした宛先情報を一覧で確認することができます。<br />
+<?php if(!defined("DELIVERY_CHECKWORD_FLG") || DELIVERY_CHECKWORD_FLG): ?>
+<img src="../../help-images/view/delivery_send-to-with-keyword.png" class="view" alt="ファイルあり配信の宛先一覧" /><br />
+<span class="attention">配布するファイルに一つでもチェックワードを含まないものがある</span>と、誤送信防止のために行全体が赤く強調されます。<br />
+このままでもメールは送信できますが、修正する場合は確認画面から宛先ファイルをアップロードし直してください。
+<?php else: ?>
+  <img src="../../help-images/view/delivery_send-to.png" class="view" alt="ファイルあり配信の宛先一覧" />
+<?php endif; ?>
+
+  <table>
+    <tbody>
+      <tr>
+        <th colspan="2">一覧表示</th>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+        <td>
+          虫眼鏡アイコンで、検索フォームを開きます。<br />
+          <img src="../../help-images/view/delivery_to-search.png" class="view" alt="検索フォーム" />
+          <table class="data-s">
+            <tbody>
+              <tr>
+                <td>項目のプルダウン</td>
+                <td>：検索する項目を選択します。</td>
+              </tr>
+              <tr>
+                <td>[検索]欄</td>
+                <td>：検索する文言を入力します。</td>
+              </tr>
+              <tr>
+                <td>[検索]ボタン</td>
+                <td>：検索を開始します。</td>
+              </tr>
+              <tr>
+                <td>[クリア]ボタン</td>
+                <td>：検索を解除します。</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+        <td>1ページに表示する一覧の件数を変更します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+        <td>先頭ページに移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+        <td>1ページ前に移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+        <td>入力されたページに移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+        <td>1ページ次に移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+        <td>最終ページに移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/load.png"  alt="一覧を最新の状態にする" /></th>
+        <td>一覧画面を最新の状態に更新します。</td>
+      </tr>
+    </tbody>
+  </table>
+
+</p>
+<?php 
+  if(!isset($path)){include_once(WF_HELP_PATH.'/html/common/footer.html'); 
+  }; 
+?>

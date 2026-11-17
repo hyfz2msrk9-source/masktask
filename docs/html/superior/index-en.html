@@ -1,0 +1,270 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span><a name="7"></a>Approval list(※Option)</span></h2>
+<p>
+  Approval function is an option.<br />
+  Approval function is that: when you send Email to inform file distribution(including mailer), distribution and collection(including mailer), folder publication(including mailer), if your leader or superior approve your Email, the Email will be sent. If your leader or superior reject your operation, the Email will not be sent. When you use mailer, only the URL that is approved by your leader or superior is valid.
+</p>
+
+<p>
+  Please click “Menu: Approval list”.<br />
+  <img src="../../../images-en/sysmenu_superior.gif" class="view" alt="Menu: Approval list" />
+</p>
+
+<h3><a name="7-1"></a>Applicant Functions (User Side)</h3>
+<h4><a name="7-1-1"></a>Request List</h4>
+<p class="h4-p">
+  The Request List allows you to filter requests by status (Pending, Processing, Completed, Rejected, or Cancelled), or view all statuses together in a consolidated list.<br />
+  The combined total of "Pending" and "Processing" requests is displayed next to the "Request".<br />
+  The following is a sample image of the "Pending" list.<br />
+  <img src="../../help-images/view-en/7-1-1_1.png" class="view" alt="the Waiting approval list of user" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[Approval]</th>
+      <td>
+        If you are the superior of someone, this button appears. Click this button, you can see the approval list.(<a href="#7-2-1">→Approval list</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />State</th>
+      <td>Select a status (Pending, Processing, Completed, Rejected, Cancelled, or All) to switch the view of the request list.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Superior</th>
+      <td>This is your superior whom you select when you sent Email.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Type</th>
+      <td>
+          This is a type of how to send your notification.<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />Destination</th>
+      <td>This is a destination address of Email.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />Subject</th>
+      <td>This is a subject of Email. (If you sent Email from your own mailer, will not be displayed here.)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />Requested at</th>
+      <td>This is a request date to approve Email for your leader or superior.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/btn_detail-en.gif" alt="detail" /></th>
+      <td>When you click this button, details of the Email will appear.(<a href="#7-2-2">→Details screen</a>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  The following image shows a list of all statuses displayed together.<br />
+  <img src="../../help-images/view-en/7-1-1_3.png" class="view" alt="Request list" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />State</th>
+      <td>Indicates the status (Pending, Processing, Completed, Rejected, or Cancelled).</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <th colspan="2">The items for displaying list</th>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_3.gif" alt="the number of be able to display in a page" /></th>
+      <td>Set how many rows are displayed in a page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/first.gif" alt="Move to the first page" /></th>
+      <td>Move to the first page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/prev.gif" alt="Move to the previous page" /></th>
+      <td>Move to the previous page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_4.gif" alt="Move to the page you enter" /></th>
+      <td>Move to the page you enter.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/next.gif" alt="Move to the next page" /></th>
+      <td>Move to the next page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/last.gif" alt="Move to the last page" /></th>
+      <td>Move to the last page.</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/load.png"  alt="Update the list" /></th>
+      <td>Update the list.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="7-1-2"></a>Approved/Rejected/Canceled notice</h4>
+<p class="h4-p">
+  Emails requiring approval will be sent after approval by superiors.<br />
+  When the Email approved and sent, the user get the information by Email.
+</p>
+<dl>
+  <dt>The approved Email by the superior</dt>
+  <dd><img src="../../help-images/view-en/7-1-2_1.png" class="view" alt="the approved Email by the superior" /></dd>
+</dl>
+
+<p class="h4-p">
+  If the superior reject your Email to inform file distribution, the Email will not be sent.<br />
+  And, when your Email is rejected, the system will send you Email to inform about that. In the Email, the reason why the Email was rejected, please read the massage.
+</p>
+<dl>
+  <dt>The rejected Email by the superior</dt>
+  <dd><img src="../../help-images/view-en/7-1-2_2.png" class="view" alt="the rejected Email by the superior" /></dd>
+</dl>
+
+<p class="h4-p">
+  You can cancel the approval request until your superior approves or rejects it. In this case, notification emails will not be delivered.<br />
+  And, when your Email is canceled, the system will send your superior Email to inform about that. In the Email, the reason why the Email was canceled.
+</p>
+<dl>
+  <dt>The canceled Email to the superior</dt>
+  <dd><img src="../../help-images/view-en/7-1-2_3.png" class="view" alt="the canceled Email to the superior" /></dd>
+</dl>
+
+<h3><a name="7-2"></a>Approver Functions (Superior Side)</h3>
+<h4><a name="7-2-1"></a>Approval List</h4>
+<p class="h4-p">
+  If you are the superior of someone, you can check the status of requests assigned to you (Pending, Processing, Completed, Rejected, and Cancelled) or view all requests at once.<br />
+  The number of "Pending" requests is displayed next to the "Approval"<br />
+  The following is a sample image of the "Pending" list.<br />
+  <img src="../../help-images/view-en/7-2-1_1.png" class="view" alt="the Waiting approval list of superior" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[Approval]</th>
+      <td>
+        If you have a superior, this button appears. Click this button, you can see the approval list.(<a href="#7-1-1">→Approval list</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />Requester</th>
+      <td>The name of the user who submitted the request is displayed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="7-2-2"></a>Details screen</h4>
+<p class="h4-p">
+  On the detail screen, you can check the content of Email to inform file distribution.<br />
+  Display items vary depending on the type of approval request.<br />
+  When the status is "Pending," the superior can approve or reject the request, while the requester can cancel it.<br />
+  For requests with "Processing," "Completed," "Rejected," or "Cancelled" status, you can view the details of the processed request.<br /><br />
+  <img src="../../help-images/view-en/superior_detail-1.png" class="view" alt="the detail screen of Email that is unapproval, approved, rejected or canceled" />
+  <img src="../../help-images/view-en/superior_detail-2.png" class="view" alt="the detail screen of Email that is unapproval, approved, rejected or canceled" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>User name</th>
+      <td>In the case of superior, the name of the user waiting for approval is displayed.<br />
+          In the case of user, this field is not displayed.</td>
+    </tr>
+    <tr>
+      <th>Superior</th>
+        <td>The name and status of the specified superiors are displayed.</td>
+    </tr>
+    <tr>
+      <th>Kind</th>
+      <td>This is a kind of how to send your notification.</td>
+    </tr>
+    <tr>
+      <th>State</th>
+      <td>Displays one of the following statuses: Pending, Processing, Completed, Rejected, or Cancelled.</td>
+    </tr>
+    <tr>
+      <th>Destination address</th>
+      <td>This is a destination address of Email.<br/><br/>
+        If the destination address of Email is prohibited by domain limited after registration, it is displayed in red.<br />
+        <img src="../../help-images/view-en/7-2-2_3.png" class="view" alt="Prohibited email address" />
+      </td>
+    </tr>
+    <tr>
+      <th>Save folder</th>
+      <td>Save folder for collect files. It appears receipt when only.</td>
+    </tr>
+    <tr>
+      <th>Tag of the file collection</th>
+      <td>You can manage the Email to collect files with tags. It appears receipt when only.</td>
+    </tr>
+    <tr>
+      <th>File name</th>
+      <td>
+        The file distributed and the files in the publication folder.
+        Click the preview icon <img src="../../../images/icon_preview.svg" class="icon_18" alt="Preview" /> to preview thefile.<br />
+      </td>
+    </tr>
+    <tr>
+      <th>From address</th>
+      <td>Notification is the e-mail sender.</td>
+    </tr>
+    <tr>
+      <th>Email subject</th>
+      <td>This is a subject of Email. (If you sent Email from your own mailer, will not be displayed here.)</td>
+    </tr>
+    <tr>
+      <th>Email text</th>
+      <td>This is a text of Email. (If you sent Email from your own mailer, will not be displayed here.)</td>
+    </tr>
+    <tr>
+      <th>Security settings</th>
+      <td>They are security settings about this Email.</td>
+    </tr>
+    <tr>
+      <th>Character encoding</th>
+      <td>It is set-up character encoding of e-mail.</td>
+    </tr>
+    <tr>
+      <th>Rejection / Cancel reason<br />(only rejected / canceled)</th>
+      <td>This is used to reject / cancel.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="h4-p">
+  If you want to reject the Email, please enter the reason why this Email is rejected and click the [Reject] button. If you want to approve the Email, please click the [Approve] button.<br />
+  If you want to cancel the Email, please enter the reason why this Email is canceled and click the [Cancel] button.
+</p>
+<br />
+
+<dl>
+<dt>When the distribution file check function is enabled</dt>
+  <dd>
+    To approve the distribution request, the approver must confirm all distributed files.<br />
+    ※This function does not apply to folder publishing.<br />
+    <p>
+      <b>If "It is not downloaded." is displayed:</b><br />
+      To approve, you must download all distributed files.
+      <img src="../../help-images/view-en/7-2-2_4.gif" class="view" alt="the distribution file check" />
+    </p>
+    <p>
+      <b>If "It is not downloaded or previewed" is displayed:</b><br />
+      To approve, you must download or preview all distributed files.
+      <img src="../../help-images/view-en/7-2-2_5.gif" class="view" alt="the distribution file check" />
+    </p>
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

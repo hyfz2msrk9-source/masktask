@@ -1,0 +1,135 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+<h2><span>文件一览</span></h2>
+<h3><a name="4-2"></a>上传文件</h3>
+<p>
+  在文件一览页面，可以直接拖放文件进行上传（→<a href="../top/index-cn.html#dragdrop">文件的上传（拖放）</a>）。<br />
+如果需要在上传时设置共享组成员通知或添加备注，请点击文件一览中的[上传]按钮。<br />
+  <img src="../../help-images/view-cn/3-2.gif" class="view" alt="文件一览：文件上传" />
+</p>
+<p>
+  移动到文件上传页面。选择要上传的文件点击[上传]按钮。<br />
+  <img src="../../help-images/view-cn/3-2_2.png" class="view" alt="文件上传页面" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-1.gif" alt="1" /></th><th class="bLnone">[文件追加]</th>
+      <td>
+        使用[文件追加]请选择你要上传的文件。<br/>在选择要上传的文件对话框打开时，单击[添加文件]按钮。<br/>
+        <img src="../../help-images/view-cn/top-upload-1.gif" class="view" alt="上传文件选择" />
+        <br/>
+        请检查屏幕上的文件的最大数量和最大上传容量。
+        <br/>
+        <img src="../../help-images/view-cn/top-upload-1_2.gif" class="view" alt="上傳容量，上傳" /><br />
+        根据文件的扩展名过滤，有文件不能上载的情况。<br />关于文件格式请询问给管理者。<br />
+        <img src="../../help-images/view-cn/fileformat-1.gif" class="view" alt="文件扩展名" />
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-2.gif" alt="2" /></th><th class="bLnone">[删除]</th>
+      <td>
+        删除您所选择的上传文件。
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-3.gif" alt="3" /></th><th class="bLnone">选择上传到的文件夹</th>
+      <td>
+        你可以选择你想要上传文件的文件夹英寸。
+        <img src="../../help-images/view-cn/top-upload-2.gif" class="view" alt=">選擇上傳到的資料夾" />
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-4.gif" alt="4" /></th><th class="bLnone">记事本</th>
+      <td>
+        上傳時可以附加備忘錄。可以在文件詳細中確認。<br />
+        文件發送後第三者是無法閱覽的。<br />
+        <img src="../../help-images/view-cn/3-2_6.gif" class="view" alt="记事本" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p style="margin-top:30px;">文件上传完毕。</br>
+  </br>当无害化选项启用时，在点击 [上传] 按钮时文件将自动进行无害化。<a href="index-cn.html#sanitize">→无害化</a>)
+</p>
+<img src="../../help-images/view-cn/3-2_5.gif" class="view" alt="文件上传完毕。" />
+<p>
+  要发送已上传的文件请点击[文件发送]。移动到文件通知页面。
+  (<a href="send-cn.html#4-3">→文件发送</a>)
+</p>
+<h4><a name="4-2-1"></a>选择要上传的文件</h4>
+<dl>
+  <dt>选择多个文件</dt>
+  <dd>
+    在文件选择窗口中可以选择多个文件。<br/>
+    按住Ctrl或Shift键可以选择多个文件。<br/>
+    <img src="../../help-images/view-cn/top-upload-3.gif" class="view" alt="您可以选择多个文件" />
+  </dd>
+  <dt>通过拖放选择文件</dt>
+  <dd>
+    可以通过从资源管理器（Mac上的Finder）拖放选择多个文件。<br/>
+    选择要上传的文件，并将其拖放至[添加文件]按钮。<br/>
+    <img src="../../help-images/view-cn/top-upload-4.gif" class="view" alt="您可以通过拖放选择多个文件" />
+  </dd>
+  <dt>通过拖放选择文件夹</dt>
+  <dd>
+    文件夹可以通过从资源管理器（或Mac上的Finder）拖放来选择。<br/>
+    选择包含你要上传的文件的文件夹，并把它们拖放到[添加文件]按钮上。<br/>
+    <img src="../../help-images/view-cn/top-upload-5.gif" class="view" alt="您可以通过拖放选择文件夹" />
+  </dd>
+
+</dl>
+<?php
+if (defined("VIRUS_CHECK_FLG") && (VIRUS_CHECK_FLG == 1)):
+?>
+  <h4><a name=""></a>关于文件上传时病毒扫描</h4>
+  <p class="h4-p">
+    <?php
+    if (!defined("VIRUS_CHECK_SIZE_LIMIT")) {
+      $virus_check_size_limit = 2000;
+    } else {
+      $virus_check_size_limit = VIRUS_CHECK_SIZE_LIMIT;
+    }
+    ?>
+    病毒检查适用于<?= number_format($virus_check_size_limit) ?>MB以下的文件。大于<?= number_format($virus_check_size_limit) ?>MB的文件将不被检查病毒而被上传。
+  </p>
+<?php endif; ?>
+
+<h4><a name="4-2-3"></a>关于上传共享文件夹。</h4>
+<p class="h4-p">
+  如果您选择将文件上传到共享文件夹，您可以发送通知邮件到该组的成员。<br/>
+  您可以编辑通知邮件的主题和正文。
+  <br/>
+  <img src="../../help-images/view-cn/top-upload-share-1.png" class="view" alt="关于上传共享文件夹。" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-1.gif" alt="1" /></th><th class="bLnone">选择上传到的资料夹</th>
+      <td>
+        如果您在文件列表中选择一个共享文件夹你将不能改变“上传文件夹”。<br/>
+        请在一个点击的材料夹览页面文件。<br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-2.gif" alt="2" /></th><th class="bLnone">邮件通知</th>
+      <td>
+        您可以发送通知邮件到该组的成员。请所有成员或成员的选择选择。<br/>
+        请点击[>>选择一个成员]，显示成员名单。选择从成员列表成员。<br/>
+        <img src="../../help-images/view-cn/top-upload-share-2.png" class="view" alt="选择该组成员共享" /><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-3.gif" alt="3" /></th><th class="bLnone">邮件通知 编辑</th>
+      <td>
+        您可以编辑的电子邮件通知的主题和内容，当您单击编辑按钮。<br/>编辑完成后，请单击“编辑”按钮。<br/>
+        <img src="../../help-images/view-cn/top-upload-share-3.gif" class="view" alt="邮件通知 编辑" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

@@ -1,0 +1,23 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+
+<h2><span>ユーザ管理</span></h2>
+  <h3>管理者削除</h3>
+    <p>
+      管理者の削除を行います。<br />[削除]ボタンをクリックしてください。<br />
+      <img src="../../images/view/4-12-1.gif" class="view"  alt="ユーザ管理：管理者削除" />
+    </p>
+    <p>
+      削除確認画面に遷移します。<br />
+      <span class="atenntion">管理者の削除を行うと、管理者情報が削除され、管理者画面にログインすることができなくなります。
+      削除を行う場合は、注意してください。</span><br />
+      削除してもよければ [削除する]ボタンをクリックしてください。<br />
+      <img src="../../images/view/4-12-2.gif" class="view"  alt="ユーザ管理：管理者削除確認" />
+    </p>
+    <p>
+      管理者の削除が完了しました。<br />
+      <img src="../../images/view/4-12-3.gif" class="view"  alt="ユーザ管理：管理者削除完了" /><br />
+    </p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

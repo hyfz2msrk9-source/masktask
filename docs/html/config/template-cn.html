@@ -1,0 +1,111 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+          <h2><span>设定</span></h2>
+          <h3><a name="9-1"></a>文本</h3>
+          <p>
+            邮件的文本。请点击[邮件]按钮。<br />
+            <img src="../../help-images/view-cn/9-1_1.gif" class="view" alt="設定画面：メールテンプレート" />
+          </p>
+
+          <p>
+            显示邮件文本一览页面。<br />
+            <img src="../../help-images/view-cn/9-1_2.gif" class="view" alt="メールテンプレート画面" />
+          </p>
+
+          <h4><a name="9-1-1"></a>制作、编辑文本</h4>
+          <p class="h4-p">
+            新建、编辑邮件文本。<br />
+            需要制作时请点击[追加]按钮，要编辑时请点击想要编辑的邮件文本名。<br />
+            <img src="../../help-images/view-cn/9-1-1_1.gif" class="view" alt="テンプレート画面：作成する" />
+          </p>
+
+          <p class="h4-p">
+            移动到邮件文本的制作、编辑、删除页面。输入项目、点击[确定编辑]按钮。<br />
+            <img src="../../help-images/view-cn/9-1-1_2.gif" class="view" alt="メールテンプレートの作成・編集・削除画面" />
+          </p>
+
+          <table>
+            <tbody>
+              <tr>
+                <th><img src="../../help-images/no-s-1.gif" alt="1" />文本名</th>
+                <td>
+                  邮件文本的名字。<br />
+                  不能在文件发送或文件收集时的邮件正文中使用。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-2.gif" alt="2" />件名</th>
+                <td>
+                  是件名。<br />
+                  插入文件发送或文件收集时的邮件主题。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-3.gif" alt="3" />正文</th>
+                <td>
+                  邮件的正文。插入文件发送或文件收集时的邮件正文。
+                  <table class="data">
+                    <tbody>
+                      <tr>
+                        <th>[##name##]</th>
+                        <td>变换为各收件人的名字。</td>
+                      </tr>
+                      <tr>
+                        <th>[##mail##]</th>
+                        <td>变换为各收件人的邮箱地址。</td>
+                      </tr>
+                      <tr>
+                        <th>[##addr_list##]</th>
+                        <td>变换为目的地列表。</td>
+                      </tr>
+                      <tr>
+                        <th>[##file_list##]</th>
+                        <td>变换为要分发的文件名列表。</td>
+                      </tr>
+                      <tr>
+                        <th>[##url##]</th>
+                        <td>变换为各收件人下载文件的URL。</td>
+                      </tr>
+                      <tr>
+                        <th>[##upload##]</th>
+                        <td>变换为各收件人上传文件的URL。</td>
+                      </tr>
+                      <tr>
+                        <th>[##dl_limit##]</th>
+                        <td>变换为各收件人的文件下载有效期限。</td>
+                      </tr>
+                      <tr>
+                        <th>[##up_limit##]</th>
+                        <td>变换为各收件人的收集（上传）有效期限。</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="h4-p">
+            点击[确定编辑]按钮，系统会显示确认信息。<br />
+            点击[OK]按钮完成文本制作/编辑并保存。
+          </p>
+
+          <h4><a name="9-1-2"></a>删除文本</h4>
+          <p class="h4-p">
+            删除邮件文本。点击想要删除的邮件文本名。<br />
+            <img src="../../help-images/view-cn/9-1-2_1.gif" class="view" alt="メールテンプレート画面" />
+          </p>
+
+          <p class="h4-p">
+            移动至邮件文本制作、编辑、删除页面。确认内容后，点击[删除]按钮。<br />
+            <img src="../../help-images/view-cn/9-1-2_2.gif" class="view" alt="メールテンプレート作成・編集・削除画面" />
+          </p>
+
+          <p class="h4-p">
+            点击[删除]按钮后，系统会显示确认信息。<br />
+            点击[OK]按钮删除邮件文本。
+          </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

@@ -1,0 +1,26 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+  <h2><span>ユーザ管理</span></h2>
+  <h3>ユーザ削除</h3>
+  <p>
+    登録したユーザを削除します。<br />
+    登録したユーザ一覧から、削除したいユーザの行にある[削除]ボタンをクリックしてください。<br />
+    <span class="attention">※認証方式によって、表示される設定項目が変わります。</span>
+    <img src="../../images/view/4-8-1.gif" class="view"  alt="ユーザ管理：ユーザ削除" />
+  </p>
+
+  <p>
+    ユーザ管理＞ユーザの削除画面へ遷移します。<br />
+    <span class="attention">削除したユーザの情報、アップロードしたファイルや引き取ったファイル、ファイル配布したときのダウンロードURLなどは削除されます。慎重に作業してください。</span><br />
+    ユーザが他のユーザの上長に設定されており、承認待ちの依頼がある場合は、依頼は全て却下されます。<br />
+    <br />
+    削除してもよければ、[削除する]ボタンをクリックしてください。ユーザの削除完了画面へ遷移します。<br />
+    <img src="../../images/view/4-8-1-1.gif" class="view"  alt="ユーザ管理：ユーザ削除確認" />
+  </p>
+
+  <p>
+    ユーザの削除が完了しました。<br />
+    <img src="../../images/view/4-8-1-2.gif" class="view" alt="ユーザ管理：ユーザ削除完了" />
+  </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

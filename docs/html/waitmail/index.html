@@ -1,0 +1,111 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>待機メール一覧</span></h2>
+<p>
+  待機メール一覧は待機状態でまだ送信されていないメールの一覧です。<br />
+  配付、引取りと配付メール同時送信、引取りのメールを送るときに設定した送信待機時間が経つと自動的にメールが送られます。<br />
+  メニュー：待機メール一覧をクリックしてください。<br />
+  <img src="../../../images/sysmenu_waitmail.gif" alt="メニュー：待機メール一覧" class="view" />
+</p>
+
+<p>
+  以下の画面は、待機メールの一覧です。<br />
+  <img src="../../help-images/view/standbymail-5.gif" alt="待機メール一覧" class="view" />
+</p>
+
+<table>
+  <tr>
+    <th><img src="../../help-images/no-s-1.gif" alt="1" />動作</th>
+    <td>
+      送るメールの種類が表示されます。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-2.gif" alt="2" />宛先</th>
+    <td>
+      送るメールの宛先が表示されます。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-3.gif" alt="3" />ファイル名</th>
+    <td>
+      送るメールへ送付するファイルの名前が表示されます。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-4.gif" alt="4" />件名</th>
+    <td>
+      送るメールの件名が表示されます。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-5.gif" alt="5" />送信予定時間</th>
+    <td>
+      メールが送信される時間が表示されます。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-6.gif" alt="6" />送信状態</th>
+    <td>
+      メールの状態が表示されます。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-7.gif" alt="7" />詳細</th>
+    <td>
+      送信待機中のメールの編集と確認を行います。
+    </td>
+  </tr>
+</table>
+
+<a name="detail"></a>
+<h3>待機メール詳細</h3>
+<p>
+  一覧から確認したいメールの[詳細]ボタンをクリックします。<br />
+  <img src="../../help-images/view/standbymail-6.gif" alt="待機メール：詳細ボタン" class="view" />
+</p>
+
+<p>
+  メールの詳細画面が表示されます。<br />
+  詳細画面では、メールの編集、削除、送信停止解除を行います。<br />
+  <img src="../../help-images/view/wait_detail.png" alt="待機メール：詳細" class="view" />
+</p>
+
+<a name="edit"></a>
+<h3>待機メール編集</h3>
+<p>
+  詳細画面の[編集する]ボタンをクリックすると、編集画面が表示されます。<br />
+  <img src="../../help-images/view/standbymail-7-2.gif" alt="詳細：編集ボタン" class="view" />
+</p>
+<p>
+  内容を変更し[確認画面へ]ボタンをクリックしてください。確認画面へ遷移します。<br />
+  確認が完了すると待機メール一覧に遷移します。<br />
+  送信待機時間を設定してあると、その設定した時間に更新しますので、送信される時間が変更されます。<br />
+  <img src="../../help-images/view/wait_form.png" alt="待機メール：編集画面" class="view" />
+</p>
+
+<a name="release"></a>
+<h3>送信停止解除</h3>
+<p>
+  待機メールの編集中にメニュー等から他の画面へ遷移してしまうと、編集中の待機メールは送信停止状態になります。送信停止解除では、送信停止状態になった待機メールの解除を行います。<br />
+  詳細画面の[送信停止解除]ボタンをクリックすると、送信停止解除画面へ遷移します。<br />
+  <img src="../../help-images/view/standbymail-8-2.gif" alt="待機メール：送信停止解除ボタン" class="view" />
+</p>
+
+<p>
+  送信停止解除画面に遷移します。<br />
+  解除してもよろしければ、[編集確定]ボタンをクリックしてください。送信停止解除が完了します。<br />
+  <img src="../../help-images/view/standbymail-9.gif" alt="待機メール：送信停止解除確認" class="view" />
+</p>
+
+<a name="del"></a>
+<h3>待機メール削除</h3>
+<p>
+  詳細画面の[削除する]ボタンをクリックすると待機メール削除のダイアログボックスが表示されます。<br />
+  削除してもよろしければ、[OK]ボタンをクリックしてください。待機メールが削除されます。<br />
+  <img src="../../help-images/view/standbymail-10.gif" alt="待機メール：削除" class="view" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,50 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+  $path = "../../";
+}else{
+  $customer_flg = 0;
+  $path = "../";
+}
+$image_path = "../" . $path . "help-images/view/";
+include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+
+<?php if($customer_flg): ?>
+<h2><span>配布メールを受け取った方（ダウンロード）</span></h2>
+<?php else:?>
+<h2><span>ファイルのダウンロード</span></h2>
+<?php  endif; ?>
+
+<h3><a name="13-5"></a>ダウンロードできない場合</h3>
+
+<p>以下のような画面やメッセージが表示される場合は、ファイルのダウンロードが出来ません。メールの送信者までお問合せください。</p>
+
+
+<dl>
+  <dt>ダウンロードが規定回数を超えています</dt>
+  <dd>
+    送信者が指定したダウンロード回数に達したため、ダウンロードができません。<br />
+    <img src="<?php echo $image_path; ?>error-over.png" class="view" alt="ダウンロードが規定回数を超えています" />
+  </dd>
+
+  <dt>ダウンロード有効期限を過ぎています</dt>
+  <dd>
+    送信者が指定したダウンロード期限を過ぎたため、ダウンロードができません。<br />
+    <img src="<?php echo $image_path; ?>error-limit.png" class="view" alt="送信者が指定したダウンロード期限を過ぎたため、ダウンロードが出来ません" />
+  </dd>
+  <dt>ダウンロードが中止されています</dt>
+  <dd>
+    送信者によってファイルの削除が行われたか配布が中止されたため、ダウンロードできません。<br />
+    <img src="<?php echo $image_path; ?>error-stop.png" class="view" alt="ダウンロードが中止されています" />
+  </dd>
+
+  <dt>URLが正しくありません</dt>
+  <dd>
+    通知されたダウンロードURLに誤りがあり、ダウンロード画面に正しくアクセスできません。<br />
+    <img src="<?php echo $image_path; ?>error-url.png" class="view" alt="URLが正しくありません" />
+  </dd>
+
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

@@ -1,0 +1,398 @@
+
+// =======================================================
+// 1.wf側設定値基本項目
+// =======================================================
+// URL
+define("APP_URL","https://localhost");
+define("APP_PATH","/acb");
+
+// Session
+define("SESSION_SAVEPATH","/var/lib/php/acb/wf");
+define("SESSION_SECURE",1);
+
+// DB
+define("DB_HOST","db");
+define("DB_NAME","wf-asp");
+define("DB_USER","wf-asp");
+define("DB_PASS","webfile");
+
+// システムのメール設定
+define("MAIL_DOMAIN","webfile.jp");
+define("SYS_FROM","wf-notification@".MAIL_DOMAIN);
+define("ENVELOPE_FROM", SYS_FROM); //配布メール、ワンタイムパスワードメールのエンベローブFromを固定に
+//define('MAIL_EXTRA_HEADERS', 'X-SMX-Token:対象のトークン');//カンマ区切りで複数設定可能。
+
+// テスト環境の場合は1
+define("TEST_MODE", 1);
+
+// パスの設定
+define("SAVE_PATH","/var/wf-file/acb");
+define("TMP_PATH","/var/tmp/zip"); //ダウンロード時のzipファイルを置く一時フォルダ
+
+// コマンドパス
+define("COM_PHP_PATH","/usr/bin/php");
+define("COM_ZIP_PATH","/usr/bin/zip");
+
+// システム環境
+define('SYSTEM_COPY',    "大容量ファイル管理・受け渡し・ネットワークファイル共有システム");             //コピー
+define('SYSTEM_COPY_EN', "Large-capacity file management, handover and network file sharing system");   //コピー（英語版）
+define('SYSTEM_COPY_CN', "大容量文件管理、交接、网络文件夹共享系统");              //コピー（中国語簡体版）
+define('SYSTEM_COPY_TCN', "大容量檔案管理、交接、網路資料夾共用系統");  //コピー（中国語繁体版）
+define("SYS_NAME",    "WebFile");   //システム名称
+define("SYS_NAME_EN", "WebFile");   //システム名称（英語版）
+define("SYS_NAME_CN", "WebFile");   //システム名称（中国語簡体版）
+define("SYS_NAME_TCN", "WebFile");  //システム名称（中国語繁体版）
+define("SYS_NAME_SUB",    "ASP");   //システムサブ名
+define("SYS_NAME_SUB_EN", "ASP");   //システムサブ名（英語版）
+define("SYS_NAME_SUB_CN", "ASP");   //システムサブ名（中国語簡体版）
+define("SYS_NAME_SUB_TCN", "ASP");  //システムサブ名（中国語繁体版）
+define("LOGO_PREFIX","");   	    //ロゴの変更の時 標準の時は、""で サイズは、310×80が標準です
+define("NOUSER_LOGO_PREFIX","");   	//第三者画面のロゴ変更の時 標準の時は、""で サイズは、310×80が標準です nouser_logo.gifの前につける接頭語
+define("SYS_MAX_SIZE",10);   	    // システム総容量(単位はGBです)
+define("DOWNLOAD_SIZE_LIMIT", 500); // 一括ダウンロードの容量制限(M)
+
+// =======================================================
+// 2.準項目
+// =======================================================
+// サーバチェック
+define("ZIPDL_TYPE","1"); // Windowsサーバの場合は0か、消して下さい。
+
+// アップロード制限容量 ※64bitサーバでは最大6000まで指定可
+// define( "UPLOAD_LIMIT_1", 100 );
+// ダウンロード制限容量 ※nullは無制限
+define( "DOWNLOAD_LIMIT_1", null );
+
+// ブラウザ毎にUPLOAD_LIMIT_1の値を制限する ※詳しくはcommon.php内の同定数を参照
+//define("BROWSER_UPLOAD_LIMIT_FORMAT", "IE<=8:2000,IE9:3000");
+// ブラウザ毎にDOWNLOAD_LIMIT_1の値を制限する ※詳しくはcommon.php内の同定数を参照
+//define("BROWSER_DOWNLOAD_LIMIT_FORMAT", "IE<=6:2000,IE7:4000");
+
+// HTML5分割アップロード試行時の分割サイズ(MB) ※0は分割アップロードしない
+//define("UPLOAD_CHUNK_SIZE", 100);
+
+// サポート送信先（サポート係）
+//define("SUPPORT_MAIL_STOP_FLG", 0); // サポート問い合わせ機能 0:有効 1:停止 2:無効
+//define("SUPPORT_MAIL_STOP_MESSAGE","この機能は、ご利用いただけません。");
+//define("SUPPORT_MAIL_STOP_MESSAGE_EN","This function is not available.");
+//define("SUPPORT_MAIL_STOP_MESSAGE_CN","此功能无法使用。");
+//define("SUPPORT_MAIL_STOP_MESSAGE_TCN","此功能無法使用。");
+//define("SUPPORT_TEL",""); // 問い合わせ先-電話番号など
+//define("SUPPORT_TEL_EN",""); // 問い合わせ先-電話番号など
+//define("SUPPORT_TEL_CN",""); // 問い合わせ先-電話番号など
+//define("SUPPORT_TEL_TCN",""); // 問い合わせ先-電話番号など
+define("SUPPORT_MAIL_TO", "help@".MAIL_DOMAIN); // To送信先
+define("SUPPORT_MAIL_CC",""); // Cc送信先
+define("SUPPORT_MAIL_BCC",""); // Bcc送信先
+
+// IPアドレス取得時に、WebサーバがProxy構成かを考慮
+define("REVERSE_PROXY_FLG", 0); // 0: プロキシサーバを使わない($_SERVER["REMOTE_ADDR"]優先), 1: プロキシサーバを使う($_SERVER["HTTP_X_FORWARDED_FOR"]優先)
+
+// =======================================================
+// 3.オプション
+// =======================================================
+// 共有機能契約容量
+define("SHARE_GROUP_FLG",1);      // 共有オプション 0:無効 1:有効
+define("SHARE_SPACE_FLG" , 0); //共有容量制限機能ON/OFF 0:割当て有り 1:割当て無し ※コメントアウト禁止
+define("SHARE_MAX_CAPACITY",5);  // 共有機能の容量（単位は、GB）必ず管理者側と同じにすること
+//共有フォルダの有効期限設定
+define("SHARE_FOLDER_TERM_REQUIRED_FLG",0);   //有効期限機能を必須にするかどうかのフラグ 0:任意 1:必須
+define("SHARE_FOLDER_TERM_DEFAULT_SPAN",365); //延長のデフォルト期間(日)
+//共有アップロード通知
+//define("SHARE_UPLOAD_COMP_SUBJECT",          "[" . SYS_NAME . "] 共有ファイルのアップロード通知");
+//define("SHARE_UPLOAD_COMP_SUBJECT_EN",       "[" . SYS_NAME_EN . "] Notification of upload of the shared file");
+//define("SHARE_UPLOAD_COMP_SUBJECT_CN",       "[" . SYS_NAME_CN . "] 共享文件上传通知");
+//define("SHARE_UPLOAD_COMP_SUBJECT_TCN",      "[" . SYS_NAME_TCN . "] 共用檔案上傳通知");
+
+// グループ管理者によるユーザ作成時の容量
+define("MAX_FILE_SIZE",100);
+
+// ウイルスチェック
+define("VIRUS_CHECK_FLG", 0); //ウイルスチェック機能 0 or not define:無効 1:有効
+// ウイルスチェックを行なうファイルのサイズ上限(MB)  ※詳しくはcommon.php内の同定数を参照
+//define("VIRUS_CHECK_SIZE_LIMIT", 2000);
+// ウイルススキャンモジュールの選択
+define("VIRUS_SCAN_MOD_USE",   VIRUS_SCAN_ESET);
+
+// 上長承認
+define("SUPERIOR_OPTION_FLG", 1);   //上長承認機能 0 or not define:無効 1:有効
+// 上長最大登録数
+define('MAX_SUPERIOR',15);
+define('DEFAULT_CAN_LOGIN_WITHOUT_SUPERIOR', 1);
+
+// EVI
+define("EVI_ARCHIVE_FLG", 1); // アーカイブ（Evi）0:無効 ／ 1:有効
+define("EVI_ARCHIVE_PATH","/var/wf-file/acb/archive"); // アーカイブファイルの保存先
+define("EVI_ARCHIVE_MAX_SIZE",10); // アーカイブ保存領域の容量（単位はGB）
+define("EVI_ARCHIVE_AUTONOTICE", 70); // アーカイブ：この設定容量を超える場合は警告メールを送ります（単位は%・1〜100で指定）
+define("EVI_ARCHIVE_AUTODELETE", 90); // アーカイブ：この設定容量を超える場合はデータを削除します（単位は%・1〜100で指定）
+define("EVI_DELETE_ACTION_PATH", "/var/www/asp/wf-admin/bin"); // アーカイブファイル超過分削除アクション(管理側)のパス
+
+// 中国語
+define("CHINESE_FLG",1);                    // 0:無効 1:有効
+
+// API
+define('API_FLG', 1);   // API機能 0:無効 1:有効
+define("API_CLIENT_NAME", "Synchrorer"); //APIクライアント表示
+define("API_PATH", "/api/1.0"); // APIのバージョン
+
+// OUTLOOKアドイン
+define("OUTLOOK_ADDIN_FLG", 1);//0:無効 1:有効
+
+// Google Chrome拡張機能
+define("CHROME_ADDIN_FLG", 1);//0:無効 1:有効
+
+// WebFile Synchrorer
+//define('WF_SYNCHRORER_FLG', 0); // WebFile Synchrorerダウンロードページの表示 0:非表示 1:表示(API_FLGも1でなければ表示されない)
+//define('WF_SYNCHRORER_FILE_64', 'webfilesynchrorer1.0.1_x64.msi'); // 64bit版WebFile Synchrorerのファイル名
+
+// クライアント認証機能
+//define("CLIENT_AUTH_FLG", 0); // 0:利用しない 1:利用する
+//define("CLIENT_CN","www.webfile.jp");  // クライアント証明書のCNを設定
+//define("CLIENT_OU", "WebFileTeam"); // クライアント証明書のOUを設定
+//define("CLIENT_EMAIL","webfile@webfile.jp"); // クライアント証明書のEmailを設定
+//define("CLIENT_DL_PASSWORD","samplepass1156"); // クライアント証明書ダウンロードパスワード(ダウンロード機能が必要な場合のみ)
+//define("CLIENT_PFX_FILE","MPS201404280101.pfx"); // クライアント証明書ファイル(ダウンロード機能が必要な場合のみ)
+
+// APNs
+//define('APNS_PATH', realpath(dirname(__FILE__).'/../../../maple/lib/apns-php')); // 注意：APIからも使用するため、MAPLE_DIR等system.php以外で定義している定数を使用しないこと
+//define('APNS_PROVIDER_CERTIFICATE_FILE', APNS_PATH.'/WFViewerPush_Develop.pem'); // 開発用証明書パス(AppStore)
+//define('APNS_PROVIDER_CERTIFICATE_FILE', APNS_PATH.'/WFViewerPush_Product.pem'); // 本番証明書パス(AppStore)
+//define('APNS_ROOT_CERTIFICATION_AUTHORITY', APNS_PATH.'/entrust_root_certification_authority.pem');
+//define('APN_CONNECT_RETRY_TIMES', 3); //接続試行回数
+//define('APN_CONNECT_RETRY_INTERVAL', 1000000); // 再接続間隔（マイクロ秒)
+
+// 一斉配信機能
+define("DELIVERY_FLG", 1); // 一斉配信機能 0:無効 1:有効
+//define("DELIVERY_CHECKWORD_FLG", 1); // 一斉配信の誤送信防止機能 0:無効 1:有効
+//define("DELIVERY_MAIL_MAX_LIMIT", 100); // 一斉配信の最大送信人数 0:任意 1以上:人数（100以上で設定）
+//define("DELIVERY_FILE_MAX_LIMIT", 10); // 一斉配信の最大送信ファイル数 0:任意 1以上:ファイル数（10以下で設定）
+//define("REPLACEMENT_MAX_NUM", 5); //置換文字列の最大設定数
+//define("DELIVERY_TONAME_CHECK_FLG", 0); // 一斉配信の宛先名必須チェック 0:なしも可 1:必須
+define("DELIVERY_RETURN_PATH", "example@example.com");  // 一斉配信のエラーメール取得先
+define("DELIVERY_LOG_PATH", "/var/wf-file/delivery/log"); // 一斉配信のログ保存場所
+define("DELIVERY_ADDRESS_PATH", "/var/wf-file/acb/delivery/address"); // 一斉配信の宛先ファイル保存場所
+//define("DELIVERY_DL_LOG_FLG", 0); //一斉配信したファイルのダウンロード履歴 0:保存しない 1:保存する
+//define("DELIVERY_FILE_DIFF_MESSAGE_FLG", 1); //CSVで指定したファイルと配信用フォルダ内に存在するファイルとの差分があった場合、メッセージを表示するか 0:表示しない 1:表示する デフォルト1
+
+//一斉収集機能
+define("GATHERING_FLG",1); //一斉収集機能 0:無効 1:有効
+//define("GATHERING_MAIL_MAX_LIMIT", 100); // 一斉収集の最大送信人数 0:任意 1以上:人数（100以上で設定）
+//define("GATHERING_FILE_MAX_LIMIT", 10); // 一斉収集の最大同時アップロードファイル数 0:任意 1以上:ファイル数（10以下で設定）
+//define("GATHERING_TONAME_CHECK_FLG", 0); // 一斉収集の宛先名必須チェック 0:なしも可 1:必須
+define("GATHERING_RETURN_PATH", "example@example.com");  // 一斉収集のエラーメール取得先
+define("GATHERING_LOG_PATH", "/var/wf-file/gathering/log"); // 一斉収集のログ保存場所
+define("GATHERING_ADDRESS_PATH", "/var/wf-file/gathering/address"); // 一斉収集の宛先ファイル保存場所
+//define("GATHERING_UP_LOG_FLG", 0); //一斉収集したファイルのアップロード履歴 0:保存しない 1:保存する
+//define("GATHERING_OVERWRITE_FLG",0); //一斉収集で同名ファイルをアップロードした場合 0:上書きしない 1:上書きする
+
+define("USE_FROM_AS_RETURN_PATH", 0); //一斉配信・一斉収集でreturn-pathをfromに合致させるかどうか。0ならDELIVERY_RETURN_PATHとGATHERING_RETURN_PATHを使う。デフォルト0
+define("USE_RETURN_PATH_AS_FROM", 0);
+
+// 二要素認証
+//define("TWO_STEP_AUTH_FLG", 0); // 二要素認証機能 0:無効 1:有効 デフォルト1
+
+// ファイル無害化
+// define("FILE_SANITIZE_FLG", 1); //デフォルト0
+//define("SANITIZE_TIMEOUT_SPAN",  55); //無害化のタイムアウト時間
+//define("FILE_SANITIZE_COMMAND_PATH", "/usr/local/lib/dhklib/binLinux/dhkmmcmd"); //無害化に使うdhkmmcmdのフルパス
+//define("SAVE_SANITIZE_LOG", 1); //無害化のログを残す場合は1
+//define("SPOOFING_CHECK_OPTION", 1); //拡張子偽装チェックオプション 0:無効 1:有効(デフォルト)
+
+// メール本文の最大文字数
+define("EMAIL_BODY_MAX_LENGTH", 20000); //デフォルト20000
+
+// =======================================================
+// 4.標準機能
+// =======================================================
+// 未ログインアカウント削除　日
+//define("USER_DELETE_LIMIT_DT",365);
+
+// ユーザアカウントの有効期限
+//define("TERM_OF_VALIDITY",1); // 0:無効、1:有効
+
+// フォルダ上書き
+define("OVERWRITE_FLG", 1); // 0:上書きしない（同名OK）、1:上書きする（名前ユニーク）
+// フォルダ上書き時の優先パターン
+define("OVERWRITE_ORDER",0); // 0:上書きする方のデータを優先 1:上書きされる方のデータを優先
+
+// ファイルロック機能
+define("FILE_LOCK_OPTION_FLG",1); //0:OFF 1:ON 上書きモード&共有利用のみ1が設定可能
+
+// 定期削除の対象に引取りファイルも含めるか
+//define("REGULARDEL_COLLECT_FLG", 0); //0: 含めない 1:引き取りファイルも削除する
+
+// アップロードできるファイル名の最大文字数
+// define("FILE_NAME_MAX_LENGTH", 85); // デフォルト85文字
+
+// =======================================================
+// 5.特別な設定
+// =======================================================
+// メール送信時に改行コードを変更するドメイン 追加、編集は「,」区切りで
+//define("HEADER_CHANGE_DOMAIN_ORG","");
+
+// メーラーからのメール送信時にURLと有効期限にラベルをつける
+//define("MAILER_LABEL_FLG",1); //0:ラベルをつけない 1:ラベルをつける デフォルトは1
+
+// URL(複数ある場合): APP_URL未定義時に有効な設定
+// (APP_URLはリクエストURLから自動的にセットされる。APP_URL_*が未定義のときは、APP_URLの値が定義される。common.php参照)
+//define("APP_URL_INSIDE" ,"https://www1.webfile.jp"); // イントラネットから接続されるURL(カンマ区切り複数指定可能)
+//define("APP_URL_OUTSIDE","https://www2.webfile.jp"); // インターネットから接続されるURL(カンマ区切り複数指定可能)
+
+// ログインフォーム名を変更する場合は有効にして指定する
+//define("LOGIN_FORM_NAME","login");
+// ログアウト完了画面が必要なときは有効にして指定する
+//define("LOGOUT_DISPLAY",1);
+
+// SMTPサーバを指定してメール送信
+define("SMTP_FLG", 1);            // SMTPサーバ指定 0:指定しない 1:指定する
+define("SMTP_HOST", "mail.key-p.com"); // 接続するサーバ名
+define("SMTP_PORT", 587);          // 接続するポート番号
+define("SMTP_AUTH", 'PLAIN');       // SMTP認証を使用するかどうか
+define("SMTP_USERNAME", "nishikawa@dev.grpmail.jp");      // SMTP認証で使用するユーザ名
+define("SMTP_PASSWORD", "mon1089jin!");      // SMTP認証で使用するパスワード
+
+// // SMTPサーバを指定してメール送信
+// define("SMTP_FLG", 1);            // SMTPサーバ指定 0:指定しない 1:指定する
+// define("SMTP_HOST", "ssl://smtp.gmail.com"); // 接続するサーバ名
+// define("SMTP_PORT", 465);          // 接続するポート番号
+// define("SMTP_AUTH", TRUE);       // SMTP認証を使用するかどうか
+// define("SMTP_USERNAME", "senda@key-p.jp");      // SMTP認証で使用するユーザ名
+// define("SMTP_PASSWORD", "vfjyeljtbgqbuvxm");      // SMTP認証で使用するパスワード
+
+// 認証方式 通常ログイン
+//define("LOGIN_FLG", 1); // 0: 無効 、1: 有効
+
+// 認証方式 Google SSO認証
+define("SSO_FLG", 1); // 0: 無効 、1: 有効
+// Google SSO認証用情報
+// Google OAuth クライアントID
+//define("G_CLIENT_ID", "");
+// Google OAuth クライアントシークレット
+//define("G_CLIENT_SECRET", "");
+// SSO認証エラーログ出力フラグ
+//define("SSO_ERROR_LOG", 0);
+
+// 認証方式 SAML認証
+define("SAML_FLG", 1);  // 0: 無効 、1: 有効
+define("SAML_NAME", "SAML認証");  //日本語版でのSAML認証の名称
+//define("SAML_NAME_EN", "SAML authentication"); //英語版でのSAML認証の名称
+//define("SAML_NAME_CN", "SAML身份验证"); //簡体字版でのSAML認証の名称
+//define("SAML_NAME_TCN", "SAML身份驗證"); //繁体字版でのSAML認証の名称
+// X.509 Certificateのパス
+//define("SAML_IDP_X509CERTIFICATE_FILE", "/var/wf-file/saml/IdP_X509_Certificate.pem");
+// SAML認証エラーログ出力フラグ
+//define("SAML_ERROR_LOG", 0);
+//define("SAML_EXTERNAL_FLG",1);      // SAML連携ユーザの自動登録 0:OFF 1:ON
+//define("SAML_MAX_FILE_SIZE", 10);  // SAML連携ユーザの容量初期値（MB）
+//define("SAML_EXTRA_FILE_SIZE", 20);  // SAML連携ユーザの拡張容量初期値（MB）※無制限に設定する場合は、-1を指定してください
+//define("SAML_MAX_UP_SIZE", 30);      // SAML連携ユーザのアップロード容量初期値（MB）
+//define("SAML_BUTTON_NAME", "SAMLでログイン");  // SAMLボタンの名前
+//define("SAML_BUTTON_NAME_EN", "Sign in with SAML");  // SAMLボタンの名前（英語用）
+//define("SAML_BUTTON_NAME_CN", "SAML登录");  // SAMLボタンの名前（英語用）
+//define("SAML_BUTTON_NAME_TCN", "SAML登錄");  // SAMLボタンの名前（英語用）
+//define("SAML_STRICT_MODE", 1);   // SAML strict_mode設定 0:OFF 1:ON
+
+// AD連携
+define("AD_FLG", 1);
+define("AD_HOST_1", "192.168.2.152");
+define("AD_PORT_1", "389");
+define("AD_DC_1", "ad.253.kp");
+define("AD_PROTO_1", 0);	// ADサーバの設定でLDAP署名を 0:利用しない / 1:利用する
+// 予備ADサーバの情報
+//define("AD_HOST_2", "");
+//define("AD_PORT_2", "389");
+//define("AD_DC_2", "");
+//define("AD_PROTO_2", 0);	// ADサーバの設定でLDAP署名を 0:利用しない / 1:利用する
+// ADの情報
+// ※OUの階層がある場合はパスで指定してください。パスは/で区切って下さい。
+// ※OUやグループが複数ある場合はカンマ区切りで設定してください。例:define("AD_GROUP","Agroup,Bgroup,Cgroup")
+define("AD_USER_OU", "");	    // ユーザ情報が保管されているOU（複数可）
+define("AD_GROUP_OU", "");        // 認証許可グループのあるOU（※複数不可）
+define("AD_GROUP", "");           // 認証許可グループ（複数可）
+//define("AD_ADMIN_USER","");       // AD管理者ユーザ
+//define("AD_ADMIN_PASS","");       // AD管理者パスワード
+//define("AD_MAX_FILE_SIZE", 100);  // AD連携ユーザの容量初期値（MB）
+//define("AD_EXTRA_FILE_SIZE", 0);  // AD連携ユーザの拡張容量初期値（MB）※無制限に設定する場合は、-1を指定してください
+//define("AD_MAX_UP_SIZE", 0);      // AD連携ユーザのアップロード容量初期値（MB）
+//define("AD_EXTERNAL_FLG",1);      // AD連携ユーザの自動登録　0:OFF 1:ON
+//define("AD_SERVER_TYPE", "AD");   // 認証サーバタイプ AD or OpenLDAP (default:AD @common.php)
+//define("AD_FILTER_RDN",  "samaccountname"); // ldap_searchのアカウントRDN samaccountname or uid (default:samaccountname @common.php)
+//注意：AD_SEARCH_FILTERは不要な場合は必ずコメントアウトすること
+//define("AD_SEARCH_FILTER", '(info=*0007*)(st=0)');  // AD連携ユーザ検索のフィルター(フィルタのフォーマットで指定する)
+
+// Windows統合認証
+//define("WIN_AUTH", 0);
+//define("WIN_AUTH_PATH","/win_auth");
+
+// WebFile Lite
+//define("AUTO_DEL_FILE_STOP_FLG", 1); // ファイルの定期削除（個人・共有） 0:有効 1:無効
+//define("SENDS_COLLECT_MAX_NUMBER", 10); // 配布ダウンロードの最大人数 0:任意 1以上:人数
+//define("SENDS_COLLECT_LOGO_LINK", "http://www.key-p.com/webfile/lite/"); // 配布ダウンロード画面のロゴリンク先 空白:リンク無し
+//define("MAX_USER",100);
+
+// Clientの有効期限　有効期限なしの場合は、以下をコメントアウト
+// Clientの有効期限　有効期限ありの場合は、第2引数に有効期限yyyy-mm-dd
+//define("WF_CLIENT_LIMIT", "2038-01-01");
+
+//ウイルスチェックのスキャンエラー時に、
+//メッセージ「複数に分けて圧縮ためして or パスワード付きzip圧縮で試して」を表示する
+// 0:表示しない、1:表示する
+//define("ERROR_SUB_INFO",0);
+
+// デモ環境
+// 使用期間を超えたら、ログインフォームを表示しません
+define("DEMO_FLG",       0); // デモ環境:1、デモ環境ではない:0
+define("DEMO_USE_DAYS", 50); // 使用できる期間(基本：50日間)
+
+// 【10GB以上のアップロード対応】
+// 10GB以上アップロードする場合、php.iniの下記パラメータは無制限(-1)にし、下記のini_set()を有効にする
+// すると、アップロード以外のアクションは下記ini_set()値が使用され、アップロード時はphp.iniの設定が使用され、アップロードがタイムアウトしなくなる
+//ini_set('max_execution_time', '600');
+//ini_set('max_input_time', '120');
+
+// フォルダツリーの展開のデフォルト
+define("FOLDER_TREE_CLOSE_FLG", 0); // 1: ローカルストレージがない場合、全て閉じる 、0(デフォルト): 開く
+// フォルダツリーのスクロールONの場合の高さ。デフォルト350
+//define("FOLDER_TREE_HEIGHT", 350);    // 個人
+//define("FOLDER_TREE_2_HEIGHT", 350);  // 共有
+
+// 別経路でのワンタイムパスワード認証
+define("SMS_PASS_FLG", 1); // 0:なし 、 1: メールアドレスによるワンタイムパスワード認証あり 、 2:メールアドレス・SMSによるワンタイムパスワード認証あり
+// define("SMS_ADDRESS", 0); // 別経路として自動登録される項目 1: 電話番号、2:パスワード送付先 、0(デフォルト): 電話番号
+// define("SMS_KEY", ""); // AWSユーザーKEY
+// define("SMS_SECRET", ""); // AWSユーザーSECRET
+// define("SMS_MAX_COUNT_PER_MONNTH", 100); // 一ヶ月あたりの最大SMS送信数
+// define("SMS_MAX_COUNT_BUFFER", 0.0); // SMS限界送信数バッファー（SMS_MAX_COUNT_PER_MONNTH*SMS_MAX_COUNT_BUFFERがバッファーになる）
+// define("SMS_SENDER_NUMBER", "0783351527"); // SMS発信者番号
+// define("SMS_SEND_TEST_FLG", 0); // 0(デフォルト): SMSでパスワード送信、1: メールでのパスワード送信、2:SMSとメールの両方でパスワード送信
+
+// ワンタイムパスワードの送信元メールアドレスを指定
+define("ONETIME_PASS_MAIL_FROM", ''); // 空の場合はメール作成者のメールアドレスを使用
+
+// define("ONETIME_PASSWORD_CHECKBOX_FLG", 1); // 第三者画面でワンタイムパスワードがクローリングで送信される対策
+
+// ファイル一覧のソートのデフォルト(最終更新日の昇順(古い順))
+define("FILE_LIST_ORDER_DEFAULT", "updated_at");// 指定可能な値 updated_at, file_size, file_name
+define("FILE_LIST_SORT_DEFAULT", "ASC");// 指定可能な値 ASC, DESC
+
+// メールアドレス重複登録許可
+define("DUPLICATE_EMAIL_ENABLE_FLG", 0); // 0:重複不可 、 1:重複可
+
+// 環境別カスタマイズ設定
+// 第三者画面でアップロードした際に過去にアップロードしたファイルを見えなくするならtrue（デフォルトはfalse）
+// define("HIDE_UPLOADED_FILE", true);
+// define("ONETIMEPASS_NOTICE_MAIL_USE_ONETIMEPASS_FROM", false); //ワンタイムパスワード通知メールでワンタイムパスワードメールのFROMを使用する
+// define("FAVICON_PREFIX", "example_"); //favicon.icoの前につける接頭語
+// define("SHOW_ENGLISH_FLG", false); //falseで英語のリンクを隠す
+// define("SHOW_LOGIN_TITLE_FLG", false); //falseでログイン時のSYS_NAMEを隠す
+// define("STOP_COMPLETION_NOTICE_MAIL", true); //trueで完了通知メールを送信しないようにする
+// define("FTF_FLG", 1); //1なら配布などに上長必須
+// define("GRPMAIL_URL", ""); //GrpMail連携時、連携先のURLを登録。収集のアップロード通知内にいれる
+// define("IS_INTERNET_ENV", 0); //イントラ環境:0、インターネット環境:1 環境分けないときは0で運用
+define("USE_ENV_SEPARATION_FLG", 1); //信用金庫対応の環境分離を使用するかどうか 0:使用しない 、 1:使用する
+// define("EXTERNALIZE_REQUEST_COMMENT_IS_REQUIRED", 0); //インターネット環境への持ち出し申請時にコメントを必須にするかどうか 0:必須ではない 、 1:必須
+
+define('IS_INTERNET_ENV', 0);
+// 開発用定数
+// define("KP_NEWS_URL", "https://www.webfile.jp/kp-dashboard/api/news/public"); //WebFileのお知らせ取得用URL。どの環境でも共通なので、開発時の動作確認以外で変更する必要はない
+define("PUBLIC_DOWNLOAD_FLG", 1); //0:利用しない  1:利用する

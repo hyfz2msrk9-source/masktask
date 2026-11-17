@@ -1,0 +1,257 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+<h2><span><a name="7"></a>上級確認一覽(※選項功能)</span></h2>
+<p>
+  上級確認功能是選項功能。<br />
+  上級確認功能是指，登錄文件的發送(包括管理器)、領取及登錄文件的通知的同時發送(包括管理器)、文件夾公開(包括管理器)的通知時，選擇上級並祇允許發送已得到上級確認的通知郵件的功能。從管理器中發佈的通知，下載URL經許可後纔有效。
+</p>
+
+<p>
+  目錄：點擊上級確認一覽。<br />
+  <img src="../../../images-tcn/sysmenu_superior.gif" class="view" alt="目錄：點擊上級確認一覽" />
+</p>
+
+<h3><a name="7-1"></a>申請者功能（用戶端）</h3>
+<h4><a name="7-1-1"></a>申請一覽</h4>
+<p class="h4-p">
+  在申請一覽中，您可以根據申請狀態（待審批、進行中、已完成、駁回、已取消）切換列表，也可以查看匯總了所有狀態的列表。<br />
+  「待審批」和「進行中」的合計件數會顯示在「申請一覽」的旁側。<br />
+  以下是「待審批」一覽的界面範例。<br />
+  <img src="../../help-images/view-tcn/7-1-1_1.png" class="view" alt="用戶用等待批准一覽" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[批准一覽]</th>
+      <td>
+        您被設置為其他用戶的上級時會顯示。點擊轉換到批准一覽。(<a href="#7-2-1">→批准一覽</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />狀態</th>
+      <td>透過選擇狀態（待審批、進行中、已完成、駁回、已取消、全部），可以切換顯示的一覽列表。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />上級</th>
+      <td>發送通知郵件時所選擇的上級。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />類別</th>
+      <td>通知郵件的方法的類別。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />目的地</th>
+      <td>通知郵件的收件人。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />主題</th>
+      <td>通知郵件的主題。（從管理器中發送的郵件不顯示）</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />確認請求日期</th>
+      <td>申請上級確認的日期。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/btn_detail-tcn.gif" alt="詳細" /></th>
+      <td>點擊顯示已發送的郵件詳細。(<a href="#7-2-2">→詳細頁面</a>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  以下是彙總顯示了所有狀態的一覽列表。<br />
+  <img src="../../help-images/view-tcn/7-1-1_3.png" class="view" alt="用戶申請一覽（全部）" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />狀態</th>
+      <td>會顯示以下任意一種狀態：待審批、進行中、已完成、駁回、已取消。</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <th colspan="2">一覽顯示</th>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_3.gif" alt="一頁中顯示的一覽件數" /></th>
+      <td>更改一頁中顯示的一覽件數。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/first.gif" alt="移動到第一頁" /></th>
+      <td>移動到第一頁。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/prev.gif" alt="移動到前一頁" /></th>
+      <td>移動到前一頁。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/view/6-1_4.gif" alt="移動到所輸入的頁面" /></th>
+      <td>移動到所輸入的頁面。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/next.gif" alt="移動到下一頁" /></th>
+      <td>移動到下一頁。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/last.gif" alt="移動到尾頁" /></th>
+      <td>移動到尾頁。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/load.png"  alt="更新一覽頁面" /></th>
+      <td>更新一覽頁面。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="7-1-2"></a>已批准/已駁回/已取消通知</h4>
+<p class="h4-p">
+  需要批准的通知郵件上級批准後將發送給每個收件人。<br />
+  電子郵件被批准並發送後，申請人收到通知郵件。
+</p>
+<dl>
+  <dt>得到上級批准的郵件</dt>
+  <dd><img src="../../help-images/view-tcn/7-1-2_1.png" class="view" alt="得到上級批准的郵件" /></dd>
+</dl>
+
+<p class="h4-p">
+  郵件被上級駁回時，不發送通知郵件。<br />
+  另外，被駁回後，會郵件通知申請人。郵件裡會記載被駁回的理由，請確認。
+</p>
+<dl>
+  <dt>被上級駁回的郵件</dt>
+  <dd><img src="../../help-images/view-tcn/7-1-2_2.png" class="view" alt="被上級駁回的郵件" /></dd>
+</dl>
+
+<p class="h4-p">
+  您可以取消批准請求，直到您的上級批准或駁回。在這種情況下，將不會發送通知郵件。<br />
+  另外，取消後，會郵件通知上級。郵件裡會記載被取消的理由。
+</p>
+<dl>
+  <dt>取消時發送給上級的郵件</dt>
+  <dd><img src="../../help-images/view-tcn/7-1-2_3.png" class="view" alt="取消時發送給上級的郵件" /></dd>
+</dl>
+
+<h3><a name="7-2"></a>審批者功能（上級側）</h3>
+<h4><a name="7-2-1"></a>批准一覽</h4>
+<p class="h4-p">
+  若您被設定為上級，除了可以根據受託申請的狀態（待審批、進行中、已完成、駁回、已取消）查看分類列表外，還可以查看匯總了所有狀態的列表。<br />
+  「待審批」的件數會顯示在「批准一覽」的旁側。<br />
+  以下是「待審批」一覽的界面範例。<br />
+  <img src="../../help-images/view-tcn/7-2-1_1.png" class="view" alt="上級用等待批准一覽" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[申請一覽]</th>
+      <td>
+        設定有上級的情況下顯示。點擊轉換到申請一覽。(<a href="#7-1-1">→申請一覽</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />請求者</th>
+      <td>提交申請的用戶。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="7-2-2"></a>詳細頁面</h4>
+<p class="h4-p">
+  在詳細頁面上，您可以查看通知郵件的內容。<br />
+  顯示項目根據審批請求的類型而有所不同。<br />
+  狀態為「待審批」時，上級可以進行審核或駁回，用戶可以進行取消。<br />
+  狀態為「進行中」、「已完成」、「駁回」或「已取消」時，可以查看已處理郵件的詳情。<br /><br />
+  <img src="../../help-images/view-tcn/superior_detail-1.png" class="view" alt="等待批准・已批准/已駁回/已取消一覽1" />
+  <img src="../../help-images/view-tcn/superior_detail-2.png" class="view" alt="等待批准・已批准/已駁回/已取消一覽2" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />用戶名/</th>
+      <td>對于上級，顯示等待上級確認的用戶。（對于用戶不顯示）</td>
+    </tr>
+    <tr>
+        <th><img src="../../help-images/no-s-2.gif" alt="2">上級</th>
+        <td>顯示創建通知郵件時選擇的上級和批准狀態。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />類別</th>
+      <td>通知郵件的方法的類別。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />狀態</th>
+      <td>會顯示以下任意一種狀態：待審批、進行中、已完成、駁回、已取消。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />收件人</th>
+      <td>
+        通知郵件的收件人。<br /><br />
+        在得到批准前，指定收件人的送信被禁止時會顯示紅色。<br />
+        <img src="../../help-images/view-tcn/7-2-2_3.png" class="view" alt="收件人的送信被禁止時" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />保存到的資料夾</th>
+      <td>收集文件的保存到的資料夾。它只有在出現收據。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />接收標籤</th>
+      <td>這是管理接收郵件的標籤。它只有在出現收據。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />檔案名</th>
+      <td>已發送的文件及公開資料夾內的文件。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />寄件者</th>
+      <td>通知是電子郵件發件人。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />郵件件名</th>
+      <td>通知郵件的件名。（從管理器中發送的郵件不顯示）</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-11.gif" alt="11" />郵件正文</th>
+      <td>通知郵件的正文。（從管理器中發送的郵件不顯示）</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-12.gif" alt="12" />安全性設定</th>
+      <td>通知郵件的安全性設定。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-13.gif" alt="13" />字符編碼</th>
+      <td>是被設定的字符編碼。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-14.gif" alt="14" />駁回/取消理由<br />（被駁回/取消的情況下）</th>
+      <td>用于駁回/取消。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="h4-p">
+  要駁回的，在理由欄裡輸入理由點擊[駁回]按鈕。批准的話點擊[批准]按鈕。<br />
+  要取消的，在理由欄裡輸入理由點擊[取消]按鈕。
+</p>
+<br />
+
+<dl>
+  <dt>分發文件下載檢查功能啟用時</dt>
+  <dd>
+    上級批准後，除非下載所有分發文件，否則上級不能批准。<br />
+    ※此功能不適用於文件夾發布。
+    <img src="../../help-images/view-tcn/7-2-2_4.gif" class="view" alt="分發文件下載檢查功能啟用時" />
+  </dd>
+</dl>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

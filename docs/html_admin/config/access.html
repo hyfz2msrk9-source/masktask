@@ -1,0 +1,84 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+    <h2><span>各種設定</span></h2>
+    <h3><a name="10-2-1"></a>アクセス制限</h3>
+
+    <p>
+      アクセス制限は、管理者画面、ユーザ画面、引取・ダウンロード画面へのアクセスをIPアドレスで制限を掛けることができる機能です。<br />
+        各画面毎にIPアドレスでのアクセス制限機能を利用するかどうかの設定と、利用する場合にアクセス可能なIPアドレスを登録する事ができます。<br />
+    「登録IPアドレスのみアクセス可能」に設定した場合に、登録されたIPアドレスのみアクセスを許可します。<br />
+    不正なアクセスがあった場合は、ユーザ画面に以下の画面が表示されます。 <br />
+    <img src="../../images/view/9-3.gif" class="view" alt="エラー画面" />
+  </p>
+
+    <h4>アクセス制限の有効・無効</h4>
+    <p class="h4-p">
+      各画面に対して、「全てのIPよりアクセス可能」または「登録したIPアドレスのみアクセス可能」かどうかの設定が行えます。
+    </p>
+    <p class="h4-p attention">
+      [注意]<br />
+    管理者画面の「登録したIPアドレスのみアクセス可能」に設定した場合は、現在アクセスされている管理者様のIPアドレスを登録を行ってない場合、アクセスできなくなります。<br />
+    <img src="../../images/view/9-3-1.gif" class="view" alt="アクセス制限に関する設定画面" />
+    </p>
+
+    <h4><a name="ip-edit"></a>IPアドレス編集</h4>
+    <p class="h4-p">
+      各画面毎の[編集]ボタンをクリックすると、IPアドレス編集画面へ遷移します。<br />
+    <img src="../../images/view/9-3-2.gif" class="view" alt="IPアドレス編集画面" />
+    </p>
+
+    <p class="h4-p">
+      IPアドレス編集画面では、「登録IPアドレスのみアクセス可能」へ設定した場合、アクセス可能なIPアドレスの追加、及び削除を行うことができます。<br />
+        IPアドレス欄に登録するIPアドレスを入力し、[追加]ボタンをクリックしてください。IPアドレス一覧に、IPアドレスが追加されます。サブネットマスクも追加することが可能です。<br /><br />
+    登録したIPアドレスを削除する場合、一覧内の削除するIPアドレスを選択し、[削除]ボタンをクリックしてください。IPアドレスが削除されます。<br />
+        <span class="attention">IPアドレスの編集は行えませんので、該当のIPアドレスを一度、削除し追加を行ってください。</span>
+    </p>
+
+    <h4><a name="ip-import"></a>CSVファイルでの追加</h4>
+    <p class="h4-p">
+      CSVファイルを用いて、IPアドレスを一括追加します。<br />
+    セキュリティ設定(アクセス制限に関する設定)画面にある、[CSVファイルで追加]ボタンをクリックしてください。<br />
+    <img src="../../images/view/9-3-4.gif" class="view" alt="CSVファイルでの追加：追加ボタン" />
+    </p>
+    <p class="h4-p">
+      CSVファイルでの追加画面に遷移します。<br />
+    [選択…]ボタンをクリックして、CSVファイルを選択してください。選択したCSVファイルが正しければ、[インポート実行]ボタンをクリックしてください。<br />
+        CSVファイルでIPアドレス情報の追加が完了します。
+      <img src="../../images/view/9-3-3.gif" class="view" alt="CSVファイルでの追加画面" />
+    </p>
+
+
+    <h4><a name="ip-import-add"></a>CSVファイルの作成</h4>
+    <p class="h4-p">
+      CSVファイルは、一行目から<span class="attention">対象,IPアドレス</span>のように、各項目を半角カンマ区切りでご記入ください。1行につき1つのIPアドレスです。2つ目からは、改行してください。<br />
+        <img src="../../images/view/9-3-3-1.gif" class="view" alt="IPアドレス：CSVファイルの作成" />
+    </p>
+
+    <p class="h4-p">
+      また、Microsoft Excelを用いて、CSVファイルを作成することもできます。<br /><br />
+        Microsoft Excelでは、一行目からセルごとに<span class="attention">対象,IPアドレス</span>をご記入ください。1行につき1つのIPアドレスです。2つ目からは、下の行のセルへ移動してください。<br />
+        <img src="../../images/view/9-3-3-2.gif" class="view" alt="IPアドレス：Microsoft ExcelでCSVファイルの作成" />
+    </p>
+
+    <p class="h4-p">
+      Microsoft Excelでは、保存時フォーマット(windowsの場合は、ファイルの種類)を「CSV(カンマ区切り)（.csv）」を選択し、保存してください。<br />
+        <img src="../../images/view/9-3-3-3.gif" class="view" alt="IPアドレス：Microsoft ExcelでCSVファイルの作成" />
+    </p>
+
+    <h4><a name="ip-export"></a>CSVエクスポート</h4>
+    <p class="h4-p">
+      登録されている全てのIPアドレス情報をCSVファイルの形式でダウンロードします。<br />
+        セキュリティ設定(アクセス制限に関する設定)画面にある、[エクスポート]ボタンをクリックしてください。<br />
+    <img src="../../images/view/9-3-5.gif" class="view" alt="CSVファイルエクスポート" />
+    </p>
+
+    <p class="h4-p">
+      [エクスポート]ボタンをクリックすると、登録されている全てのユーザ情報をCSVファイルでエクスポートします。ファイルをダウンロードしますので、お使いのパソコンに保存してください。<br />
+    <img src="../../images/view/9-3-6.gif" class="view" alt="CSVファイルエクスポート" />
+    </p>
+
+    <p class="attention h4-p">[注意]<br />
+      エクスポートされたCSVファイルは、毎回同じファイル名がつきます。ダウンロードする時は、前回のCSVファイルとの混合にご注意ください。
+  </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

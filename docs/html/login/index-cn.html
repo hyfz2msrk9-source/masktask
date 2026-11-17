@@ -1,0 +1,120 @@
+
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+
+<h2><span>登录与认证</span></h2>
+<p>
+  登录界面和可用操作会因您的环境而异。
+</p>
+<img src="../../help-images/view-cn/login.png" class="view" alt="登录画面" /><br />
+<p>要登录WebFile，请使用以下任一认证方式：</p>
+<dl>
+  <dt>账号登录（账号・密码）</dt>
+  <dt>Google SSO身份验证</dt>
+  <dt>[##SAML_NAME##]</dt>
+  <dt>Windows综合验证</dt>
+  <dt>用户端身份验证（证书）</dt>
+</dl>
+
+<h3>共通操作</h3>
+<h4  id="2-1">登录</h4>
+<p>
+  进入登录界面，根据认证方式登录。认证后会跳转到文件一览页面。
+</p>
+
+<h4 id="2-2">退出</h4>
+<p>
+  点击菜单中的“退出”即可退出并返回登录界面。
+  <img src="../../help-images/view-cn/logout.png" class="view" alt="菜单：退出" />
+</p>
+
+<h4  id="2-3">忘记账号或密码时</h4>
+<p>
+  如果忘记登录信息，请输入注册邮箱并点击“登录信息再发行”按钮。<br />
+  <span class="attention">※使用Google SSO身份验证或[##SAML_NAME##]的用户无法重新发布密码。</span><br />
+  <img src="../../help-images/view-cn/2-3.gif" class="view" alt="登录信息再发行" />
+</p>
+
+<h3>各认证方式的详细说明</h3>
+
+<h4>账号登录（账号・密码）</h4>
+<p>
+  按照画面指示输入账号和密码进行登录。
+</p>
+<h5 id="2-6">双因素认证（可选）</h5>
+<p>
+  启用双因素认证时，账号登录后需通过认证应用或邮件输入验证码。<br />
+  <span class="attention">※使用Google SSO身份验证或[##SAML_NAME##]的用户无法使用WebFile的双因素认证。</span>
+</p>
+<dl>
+  <dt>使用认证应用</dt>
+  <dd>
+    输入验证码后点击“确认”。可选择一段时间内免认证。<br />
+    <img src="../../help-images/view-cn/two_step_auth.png" class="view" alt="双因素认证" />
+  </dd>
+  <dt>使用邮件</dt>
+  <dd>
+    输入邮件中的验证码后点击“发送”。可重新发送验证码。<br />
+    <img src="../../help-images/view-cn/two_step_auth_mail.png" class="view" alt="双因素认证 邮件" />
+  </dd>
+</dl>
+
+<h4  id="2-7">Google SSO身份验证</h4>
+<p>
+  启用Google SSO身份验证时，请点击“Google登录”按钮。<br />
+  <img src="../../help-images/view-cn/login.png" class="view" alt="登录画面" /><br />
+  出现Google登录界面后，选择账号并输入密码即可登录WebFile。<br />
+  <img src="../../help-images/view-cn/2-7_3.gif" class="view" alt="Google账号选择画面" />
+  <img src="../../help-images/view-cn/2-7_4.gif" class="view" alt="Google登录画面" />
+</p>
+
+<h4 id="2-8">[##SAML_NAME##]认证</h4>
+<p>
+  点击[SAML登录]按钮，在服务登录界面输入必要信息后登录。认证后进入WebFile。
+  <img src="../../help-images/view-cn/login.png" class="view" alt="登录画面" /><br />
+  <img src="../../help-images/view-cn/2-8_2.png" class="view" alt="[##SAML_NAME##]服务登录画面" />
+</p>
+
+<h4  id="2-4-2">Windows综合验证</h4>
+<p>
+  AD用户点击“Windows综合验证”按钮后，下次起会自动跳转到认证界面。
+  <img src="../../help-images/view-cn/win-auth.gif" class="view" alt="Windows综合验证" />
+</p>
+
+<h4 id="2-5">用户端身份验证（证书）</h4>
+<p>
+  用户端身份验证是通过客户端证书识别用户的可选功能。<br />
+  使用证书登录时，请按以下步骤操作：<br />
+</p>
+<p>1. 双击证书文件，打开导入界面。</p>
+<img src="../../help-images/view-cn/client-1.gif" class="view" alt="客户端认证-1" /><br />
+<p>2. 选择要导入的文件，点击“下一步”。</p>
+<img src="../../help-images/view-cn/client-2.gif" class="view" alt="客户端认证-2" />
+<p>3. 输入密码，点击“下一步”。</p>
+<img src="../../help-images/view-cn/client-3.gif" class="view" alt="客户端认证-3" /><br />
+<p>如有需要，请勾选以下选项：</p>
+<dl>
+  <dt>启用强私钥保护</dt>
+  <dd>勾选后，每次登录使用私钥时都会提示确认。</dd>
+  <dt>标志此密钥为可导出的密铜</dt>
+  <dd>勾选后，可导出私钥。</dd>
+  <dt>包括所有扩展属性</dt>
+  <dd>勾选后，包含所有扩展属性。</dd>
+</dl>
+<p>4. 出现证书存储界面时，按需设置后点击“下一步”。</p>
+<img src="../../help-images/view-cn/client-4.gif" class="view" alt="客户端认证-4" />
+<dl>
+  <dt>根据证书类型自动选择证书存储</dt>
+  <dd>如需自动放置证书，请选择此项。</dd>
+  <dt>将所有证书放入以下存储</dt>
+  <dd>如需指定证书存储位置，请选择此项。</dd>
+</dl>
+<p>5. 导入完成后，点击“完成”关闭向导。</p>
+<img src="../../help-images/view-cn/client-5.gif" class="view" alt="客户端认证-5" />
+<p>6. 下次登录时会出现证书选择界面，选择证书即可登录。</p>
+<img src="../../help-images/view-cn/client-6.gif" class="view" alt="客户端认证-6" />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

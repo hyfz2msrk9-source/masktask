@@ -1,0 +1,34 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+    <h2><span>ユーザ管理</span></h2>
+    <h3>ユーザ情報の通知</h3>
+    <p>
+      パスワード未設定のユーザにログイン情報を通知します。<br />
+      <span class="attention">※Google SSO認証、SAML認証のユーザには通知されません。</span>
+    </p>
+    <p>
+      パスワード未設定のユーザがいる場合、ユーザ管理画面のユーザ一覧の上に、[ユーザ情報追加]ボタンが表示されますのでクリックしてください。
+      <img src="../../images/view/inform-1.gif" class="view" alt="ユーザ画面:ユーザ情報追加" />
+    </p>
+    <p>
+      ユーザ管理>ユーザ情報の通知に遷移します。<br />
+      パスワード未設定のユーザがいる場合、通知ユーザ数が表示されログイン情報の送信が可能です。<br />
+      <img src="../../images/view/inform-2.gif" class="view" alt="ユーザ情報の通知画面" />
+    </p>
+    <p>
+      また[保存]ボタンをクリックするとテンプレートの編集内容を保存することができます。<br/>
+      <img src="../../images/view/inform-4.gif" class="view" alt="ユーザ情報の通知テンプレート保存完了" />
+    </p>
+    <p>
+      ログイン情報を送信してもよろしければ[送信する]ボタンをクリックしてください。
+    </p>
+    <p>
+      ログイン情報の通知が完了しました。
+      <img src="../../images/view/inform-3.gif" class="view" alt="ユーザ情報の通知画面完了画面" />
+    </p>
+    <p>
+      パスワード未設定のユーザがいない場合、テンプレートの編集のみ可能です。<br />
+      <img src="../../images/view/inform-5.gif" class="view" alt="ユーザ情報の通知:パスワード未設定ユーザがいない場合" />
+    </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

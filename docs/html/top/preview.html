@@ -1,0 +1,45 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>プレビュー機能について</span></h2>
+<p>ファイル一覧からファイル名をダブルクリック、または<img src="../../../images/icon_preview.svg" class="icon_18"/>をクリックすることで、プレビュー画面が開きます（プレビュー可能なファイルのみ）<br/>
+1シートあたり50000セル以上のCSV・Excelファイルはプレビューできません。<br/>
+200MB以上のファイルはプレビューできません。<br/>
+Excelのファイルでは、レイアウトが正しく反映されないことがあります。<br/>
+ダウンロード権限のないファイルはプレビューできません。<br/>
+プレビューできるファイルは以下です。</p>
+<table>
+  <tr>
+    <th>ファイル形式</th>
+    <th>拡張子</th>
+  </tr>
+  <tr>
+    <td>PDF</td>
+    <td>.pdf</td>
+  </tr>
+  <tr>
+    <td>テキスト</td>
+    <td>.txt</td>
+  </tr>
+  <tr>
+    <td>CSV・Excel</td>
+    <td>.csv, .xlsx, xls</td>
+  </tr>
+  <tr>
+    <td>画像</td>
+    <td>.jpeg, jpg, .png, .bmp, .gif</td>
+  </tr>
+  <tr>
+    <td>オーディオファイル</td>
+    <td>.mp3, .ogg, .opus, .wav, m4a</td>
+  </tr>
+  <tr>
+    <td>動画</td>
+    <td>.mov, .mp4</td>
+  </tr>
+</table>
+
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

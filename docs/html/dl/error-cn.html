@@ -1,0 +1,43 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+if(isset($customer_flg) && $customer_flg){
+	$path = "../../";
+}else{
+	$customer_flg = 0;
+	$path = "../";
+}
+$image_path = "../" . $path . "help-images/view-cn/";
+include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+
+	<h2><span>关于文件下载</span></h2>
+	<h3><a name="13-5"></a>遇到无法下载的情况</h3>
+	<p>显示以下页面或提示信息时，文件无法下载。请联系邮件发件人。</p>
+
+	<dl>
+	<dt>超过下载规定次数</dt>
+	<dd>
+		超过了发件人指定的下载次数，无法进行下载。<br />
+		<img src="<?php echo $image_path; ?>error-over.png" class="view" alt="ダウンロードが規定回数を超えています" />
+	</dd>
+
+	<dt>此文件的下载有效期限已过期。</dt>
+	<dd>
+		发件人指定的下载期限过期，无法进行下载。<br />
+		<img src="<?php echo $image_path; ?>error-limit.png" class="view" alt="送信者が指定したダウンロード期限を過ぎたため、ダウンロードが出来ません" />
+	</dd>
+
+	<dt>下载已被中止。</dt>
+	<dd>
+		因发件人已删除或中止发送该文件，无法进行下载。<br />
+		<img src="<?php echo $image_path; ?>error-stop.png" class="view" alt="ダウンロードが中止されています" />
+	</dd>
+
+	<dt>URL不正确。</dt>
+	<dd>
+		收到通知里的下载URL链接错误，无法访问到下载页面。<br />
+		<img src="<?php echo $image_path; ?>error-url.png" class="view" alt="URLが正しくありません" />
+	</dd>
+	</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

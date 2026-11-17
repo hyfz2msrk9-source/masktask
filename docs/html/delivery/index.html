@@ -1,0 +1,357 @@
+<?php
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+if(!isset($path)){
+    $path = "../";
+    include_once(WF_HELP_PATH.'/html/common/header.html');
+}; 
+?>
+<h2><span><a name="delivery-top"></a>一斉配信</span></h2>
+<p>
+    一斉配信では、宛先ファイルのインポートを使ったメールの一斉配信、一斉配信した履歴の確認、一斉配信で通知したファイルの配布停止をおこなうことができます。<br />        <span class="attention">※現在は日本語のみの対応となっており、他言語には対応しておりません。 </span>
+</p>
+
+<p>
+    メニュー：[一斉配信]をクリックしてください。<br />
+<img src="../../../images/sysmenu_delivery.gif" class="view" alt="メニュー：一斉配信" />
+</p>
+
+<h3><a name="delivery-confirm"></a>一斉配信履歴の確認</h3>
+<h4><a name="delivery-list"></a>一斉配信一覧</h4>
+<p class="h4-p">
+    一斉配信一覧では、今までに送信した一斉配信の履歴を一覧で閲覧することができます。
+</p>
+<img src="../../help-images/view/delivery_confirm.png" class="view" alt="一斉配信一覧" />
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[ファイルなしの配信]ボタン</th>
+      <td>
+        ファイルなしの配信画面に遷移します。<br />
+        (→<a href="nofile.html#delivery-nofile">ファイルなしの配信</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[ファイルありの配信]ボタン</th>
+      <td>
+        ファイルありの配信画面に遷移します。<br />
+        (→<a href="send.html#delivery-send">ファイルありの配信</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />[宛先ファイルサンプルの<br />　　ダウンロード]ボタン</th>
+      <td>
+        配信時に必要な宛先ファイルのサンプルをダウンロードする画面に遷移します。<br />
+        (→<a href="sample.html">宛先ファイルサンプルのダウンロード</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />チェックボックス</th>
+      <td>[選択したメールのログを全て削除]機能でメールを選択するためのチェックボックスです。<br />
+      ページをまたいだ複数選択が可能です。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />配信日時</th>
+      <td>配信の日時を表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />メール件名</th>
+      <td>配信のメール件名を表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />差出人メールアドレス</th>
+      <td>配信の差出人メールアドレスを表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />配信総数</th>
+      <td>
+        配信した宛先の件数を表示します。<br />
+        件数には、配信に失敗した宛先も含まれています。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />エラー数</th>
+      <td>
+        配信に失敗した宛先の件数を表示します。<br />
+        宛先により配信失敗の情報を取得する時間に差が出る場合があります。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />配信状況</th>
+      <td>配信状況をファイルなし・配布中・配布終了・配布停止・送信待機中・送信予約取消しの6つのステータスで表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-11.gif" alt="11" />ログ</th>
+      <td>
+        配信の詳細をCSV形式のログファイルでダウンロードします。<br />
+        ログファイルが作成されていない場合、[ダウンロード]ボタンは表示されません。<br />
+        (→<a href="#delivery-log">ログのダウンロード</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-12.gif" alt="12" /><img src="../../help-images/btn_detail.gif" alt="[詳細]ボタン" />
+      </th>
+      <td>
+        配信の詳細画面を別ウィンドウで表示します。<br />
+        (→<a href="#delivery-detail">一斉配信の詳細</a>)
+      </td>
+    </tr>
+    <tr>
+      <th>　 <img src="../../help-images/icon_stop.gif" alt="[停止]ボタン" /></th>
+      <td>
+        配信状況が「配布中」となっている配信の場合、配信の配布停止画面に遷移します。<br />
+        (→<a href="#delivery-stop">一斉配信の配布停止</a>)<br />
+        配信状況が「送信待機中」となっている配信の場合、配信の予約取り消し画面に遷移します。<br />
+        (→<a href="#delivery-scheduled-stop">一斉配信の予約取り消し</a>)<br />
+      </td>
+    </tr>
+    <tr>
+      <th>　 <img src="../../help-images/icon_delete.gif"" alt="[削除]ボタン" /></th>
+      <td>
+        一覧から配信の情報を削除します。<br />同時に保存されていたログファイルも削除されます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-13.gif" alt="13" />[選択したメールの<br />　　ログを全て削除]ボタン</th>
+      <td>チェックボックスで選択した配信の情報とログファイルをまとめて削除します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+    <tbody>
+        <tr>
+            <th colspan="2">一覧表示</th>
+        </tr>
+        <tr>
+            <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+            <td>
+                虫眼鏡アイコンで、検索フォームを開きます。<br />
+                <img src="../../help-images/view/delivery_confirm-search.png" class="view" alt="検索フォーム" />
+                <table class="data-s">
+                    <tbody>
+                        <tr>
+                            <td>項目のプルダウン</td>
+                            <td>：検索する項目を選択します。</td>
+                        </tr>
+                        <tr>
+                            <td>[検索]欄</td>
+                            <td>：検索する文言を入力します。</td>
+                        </tr>
+                        <tr>
+                            <td>[検索]ボタン</td>
+                            <td>：検索を開始します。</td>
+                        </tr>
+                        <tr>
+                            <td>[クリア]ボタン</td>
+                            <td>：検索を解除します。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+            <td>1ページに表示する一覧の件数を変更します。</td>
+        </tr>
+        <tr>
+            <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+            <td>先頭ページに移動します。</td>
+        </tr>
+        <tr>
+            <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+            <td>1ページ前に移動します。</td>
+        </tr>
+        <tr>
+            <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+            <td>入力されたページに移動します。</td>
+        </tr>
+        <tr>
+            <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+            <td>1ページ次に移動します。</td>
+        </tr>
+        <tr>
+            <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+            <td>最終ページに移動します。</td>
+        </tr>
+        <tr>
+            <th><img src="../../help-images/load.png"  alt="一覧を最新の状態にする" /></th>
+            <td>一覧画面を最新の状態に更新します。</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4><a name="delivery-log"></a>ログのダウンロード</h4>
+<p class="h4-p">
+    ログのダウンロードでは、配信の詳細をCSV形式のログファイルでダウンロードします。<br />
+    [ダウンロード]ボタンをクリックすると、ログファイルをダウンロードします。<br />
+    ログファイルが作成されていない場合、[ダウンロード]ボタンは表示されません。<br />
+    ログファイルは、宛先のお名前・宛先のメールアドレス・1件目のファイル名・1件目のファイルダウンロード回数・1件目の最終ダウンロード日時・2件目のファイル名…（ファイル関連情報はファイルありの配信のみ記載）の順で記載されています。<br />
+    <img src="../../help-images/view/delivery_log.png" class="view" alt="ログファイル" />
+</p>
+
+<h4><a name="delivery-detail"></a>一斉配信の詳細</h4>
+<p class="h4-p">
+    一斉配信の詳細では、配信の詳細情報を表示します。<br />
+    <img src="../../help-images/view/delivery_detail.png" class="view" alt="一斉配信の詳細" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />配信日時</th>
+      <td>
+      配信の日時を表示します。<br />
+      送信待ちの場合、代わりに配信予定日時を表示します。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />配信の種類</th>
+      <td>配信の種類（ファイルなし・ファイルあり）を表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />宛先ファイル</th>
+      <td>
+        インポートした宛先ファイルのファイル名を表示します。<br />
+        ファイル名の横にある[ダウンロード]ボタンをクリックすると、インポートした宛先ファイルをダウンロードします。<br />
+        配信中に宛先ファイルの保存に失敗した場合は、[ダウンロード]ボタンは表示されません。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />配布フォルダ</th>
+      <td>
+        ファイルありの配信で選択したフォルダ名を表示します。<br />
+        フォルダが削除された場合やフォルダへのアクセス権がない場合は、フォルダ名が表示されません。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />宛先</th>
+      <td>宛先一覧画面に遷移します。(→<a href="#delivery-detail-to">宛先一覧</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />差出人</th>
+      <td>差出人の名前とメールアドレスを表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />メール件名</th>
+      <td>メールの件名を表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />メール本文</th>
+      <td>メール本文画面に遷移します。(→<a href="#delivery-detail-message">メール本文</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />セキュリティ設定</th>
+      <td>
+        ファイルありの配信で設定したセキュリティ設定（ダウンロード有効期限・ダウンロード制限回数・パスワードロック・ZIPパスワード）を表示します。<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />文字エンコーディング</th>
+      <td>配信で設定したメールの文字エンコーディングを表示します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="delivery-detail-to"></a>宛先一覧</h4>
+<p class="h4-p">
+    宛先一覧では、配信の宛先情報を一覧で表示します。<br />
+        <img src="../../help-images/view/delivery_detail_to-with_keyword.png" class="view" alt="宛先一覧" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th>チェックワード</th>
+      <td>
+        ※システム側でチェックワード機能が有効な場合のみ表示されます。<br />
+        ファイル名のチェックに使ったチェックワードを確認できます。<br />
+        デフォルトでは非表示ですが、見出し行の▼をクリックして「チェックワード」にチェックを入れると表示されます。
+      </td>
+    </tr>
+    <tr>
+      <th>配信結果</th>
+      <td>
+        宛先ごとのメール配信結果が、成功なら○、失敗なら×で表示されます。<br />
+        宛先により配信失敗の情報を取得する時間に差が出る場合があります。<br />
+        送信に成功した宛先には配信状況があわせて表示され、<br />
+        「配布中」の場合は「停止」ボタンからダウンロードURLを無効化できます。（→<a href="#delivery-detail-stop">一斉配信の配布停止（宛先ごと）</a>）
+      </td>
+    </tr>
+    <tr>
+      <th>名前</th>
+      <td>宛先の名前を表示します。</td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td>宛先のメールアドレスを表示します。</td>
+    </tr>
+    <tr>
+      <th>配信停止希望</th>
+      <td>
+        メールを受け取ったユーザが配信停止を希望している場合、○が表示されます。
+      </td>
+    </tr>
+    <tr>
+      <th>ファイル名</th>
+      <td>
+        ファイルありの配信で宛先に配布したファイル名、ダウンロード回数、ダウンロード最終日時を表示します。<br />
+        青字のファイル名をクリックするとプレビューが可能です。<br />
+        <img src="../../../images/dl_icon.svg" class="icon_18" alt="ダウンロード" />をクリックするとファイルのダウンロードができます。
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="delivery-detail-message"></a>メール本文</h4>
+<p class="h4-p">
+    メール本文では、配信のメール本文を表示します。<br />
+    <img src="../../help-images/view/delivery_detail-message.png" class="view" alt="メール本文" />
+</p>
+
+<h4><a name="delivery-detail-unsubscribe"></a>一斉配信の配信停止リンク</h4>
+<p class="h4-p">
+    管理者側で配信停止リンクを付加する設定にしている場合、メール本文に配信停止リンクが挿入されます。<br />
+    <img src="../../help-images/view/delivery_detail-unsubscribe-url.png" class="view" alt="一斉配信の配信停止リンクがあるメール本文" />
+    リンクをクリックすると、メール配信停止ページに遷移します。<br />
+    <img src="../../help-images/view/delivery_detail-unsubscribe.png" class="view" alt="一斉配信の配信停止リンク先" />
+</p>
+
+<h4><a name="delivery-detail-stop"></a>一斉配信の配布停止（宛先ごと）</h4>
+<p class="h4-p">
+    ファイルありの配信で通知したファイルの配布を宛先ごとに停止する機能です。<br />
+    配信状況が「配布中」となっている宛先でのみ有効です。<br />
+    一斉配信の宛先一覧画面から宛先の配信結果欄の[停止]ボタンをクリックすると、確認のポップアップ表示後に配布を宛先ごとに停止できます。<br />
+    <img src="../../help-images/view/delivery_detail_stop.png" class="view" alt="配布停止の確認" /><br />
+    配布を停止すると、配信したメールに記載されているダウンロードURLからファイルをダウンロードすることができなくなります。<br />
+    また、一度停止すると、再度ダウンロードURLを有効にすることはできません。<br />
+    <img src="../../help-images/view/delivery_detail_stop_done.png" class="view" alt="配布停止の完了" />
+</p>
+
+<h4><a name="delivery-stop"></a>一斉配信の配布停止（一括）</h4>
+<p class="h4-p">
+    ファイルありの配信で通知したファイルの配布を配信単位で停止する機能です。<br />
+  配布停止は、配信状況が「配布中」となっている配信のみ有効です。<br />
+  一斉配信一覧画面で、配布を停止したい配信の欄にある[停止]ボタンをクリックすると配布停止確認画面に遷移します。<br />
+  <img src="../../help-images/view/delivery_stop-confirm.png" class="view" alt="配布停止の確認" /><br />
+  配布を停止すると、配信したメールに記載されているダウンロードURLからファイルをダウンロードすることができなくなります。<br />
+  また、一度停止すると、再度ダウンロードURLを有効にすることはできません。<br />
+  配信情報をご確認いただき、停止しても問題がない場合は[停止する]ボタンをクリックし、配布を停止できます。<br />
+  <img src="../../help-images/view/delivery_stop-done.png" class="view" alt="配布停止の完了" />
+  </p>
+  <h4><a name="delivery-scheduled-stop"></a>一斉配信の予約取り消し</h4>
+  <p class="h4-p">
+    送信待機中の配信予約を取り消しする機能です。<br />
+    配信予約の取り消しは、配信状況が「送信待機中」となっている配信のみ有効です。<br />
+    一斉配信一覧画面で、送信予約を取り消したい配信の欄にある[停止]ボタンをクリックすると配信予約の取り消し確認画面に遷移します。<br />
+    <img src="../../help-images/view/delivery_scheduled_stop-confirm.png" class="view" alt="配信予約の取り消し" /><br />
+    配信予約の取り消しをすると、送信予定日時になっても一斉配信が送信されなくなります。<br />
+    また、一度配信予約を取り消すと、再度配信を有効にすることはできません。<br />
+    配信情報をご確認いただき、配信予約の取り消しをしても問題がない場合は[取り消し]ボタンをクリックすると、配信予約の取り消しができます。<br />
+    <img src="../../help-images/view/delivery_scheduled_stop-done.png" class="view" alt="配信予約取り消しの完了" />
+  </p>
+
+<?php 
+  if(!isset($path)){include_once(WF_HELP_PATH.'/html/common/footer.html'); 
+  }; 
+?>

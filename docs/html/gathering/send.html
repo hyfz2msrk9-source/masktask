@@ -1,0 +1,316 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span><a name="gathering-top"></a>一斉収集</span></h2>
+<h3><span>一斉収集メールを送る</span></h3>
+<p class="h4-p">
+  複数の宛先から一斉にファイルの収集（回収）をおこなう機能です。<br />
+  宛先情報の書かれたCSV形式のファイルをインポートすることで、1回の送信で複数の宛先にファイルの収集依頼をすることができます。<br />
+  一斉収集一覧画面で、[一斉収集メールを送信する]ボタンをクリックしてください。
+  <img src="../../help-images/view/gathering-send_button.png" class="view" alt="[一斉収集メールを送信する]ボタン" /><br />
+  一斉収集メール送信画面へ遷移します。<br />
+<img src="../../help-images/view/gathering_send-form.png" class="view" alt="一斉収集メール送信画面" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />テンプレート</th>
+      <td>
+        ご自身の作成したテンプレートを挿入します。<br />
+        テンプレートをご選択いただくと、メール本文に挿入されます。<br />
+        テンプレートを作成していない場合は表示されません。(→<a href="../config/template.html">テンプレート</a>)<br />
+        <img src="../../help-images/view/3-3-1_2.gif" class="view" alt="テンプレート選択" style="width:50%; height:auto;" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />宛先ファイル</th>
+      <td>
+        [選択]ボタンをクリックし、宛先情報が記されたCSVファイルをご選択ください。
+(→<a href="#gathering-csv">宛先ファイルについて</a>)<br />
+        <img src="../../help-images/view/gathering_send-import.png" class="view" alt="宛先ファイルのインポート" /><br />
+        一度インポートが完了した宛先ファイルを変更される場合は、「＞＞宛先ファイルを変更する」リンクをクリックし、新しい宛先ファイルをご選択ください。<br />
+        宛先情報は新しい宛先ファイルの情報に上書きされ、以前にインポートした情報は削除されます。<br />
+<img src="../../help-images/view/gathering_send-import-change.png" class="view" alt="別の宛先ファイルをインポート" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />差出人</th>
+      <td>
+        用途に合わせて、送信者名や送信者メールアドレスを変更することができます。<br />
+        送信者名の登録は、送信者設定(→<a href="../config/from.html">送信者設定</a>)でおこないます。<br />
+        送信者設定機能が無効の場合は表示されません。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />収集先フォルダ</th>
+      <td>
+        アップロードされたファイルの収集先フォルダを指定します。 指定したフォルダに直接アップロードファイルが保管されます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />収集後のファイル名</th>
+      <td>
+        収集したファイルの名前に追加する文字列を設定できます。<br />
+        例えば、収集後のファイル名を<strong>[##name##]-○年-ファイル名</strong>と設定した場合、田中太郎さんが利用事例.pdfをアップロードすると、<strong>田中太郎-○年-利用事例.pdf</strong>という名前でファイルが保存されます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />メール件名</th>
+      <td>メールの件名をご入力ください。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />メール本文</th>
+      <td>
+        メールの本文に必要事項をご入力ください。<br />
+        (→<a href="#gathering-send-message">メール本文について</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />セキュリティ設定</th>
+      <td>
+        セキュリティに関する設定を状況に応じてご選択ください。<br />
+        (→<a href="#gathering-send-security">セキュリティ設定について</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />文字エンコーディング</th>
+      <td>送信するメールの文字エンコーディングを「ISO-2022-JP」または「UTF-8」からご選択ください。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="h4-p">
+  宛先ファイルをインポートし、項目を入力・選択した後、[メール確認]ボタンをクリックしてください。確認画面に遷移します。<br />
+  インポートした宛先情報を確認する場合は、[宛先一覧を表示]をクリックすると宛先一覧画面に遷移します。(→<a href="#gathering-send-to">宛先一覧について</a>)<br />
+  ご確認いただいた内容に問題がなければ、[メール送信]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/gathering_send-confirm.png" class="view" alt="確認画面" />
+</p>
+
+<p class="h4-p">
+  完了画面に遷移します。<br />
+  これで入力した内容の登録が完了し、宛先へ順次メールが送信されます。<br />
+  <img src="../../help-images/view/gathering_send-done.png" class="view" alt="完了画面" />
+</p>
+
+<h4><a name="gathering-csv"></a>宛先ファイルについて</h4>
+<p class="h4-p"><br />
+宛先ファイルには、1行目に以下の見出しを<span class="attention">カンマ区切りのCSV形式</span>で入力し、2行目以降に内容を記入してください。<br />
+<span class="attention">名前,メールアドレス,置換文字列1,置換文字列2...</span><br />
+ファイル作成時には、サンプルファイルもご利用いただけます。(→<a href="../gathering/index.html#list">一斉収集一覧</a>)<br /><br />
+  <b>置換文字列</b>は0~
+  <?php echo REPLACEMENT_MAX_NUM; ?>個設定でき、任意の項目名をつけることができます。<br /><br />
+1件の配信で送信できる人数やファイル数は、ご契約内容によります。詳しくは管理者へお問い合わせください。<br /><br />
+
+  <b>CSVファイル例（団体名・部門を置換文字列に指定）</b><br />
+<p class="view  h4-p">
+"名前","メールアドレス","会社名","担当者"<br />
+  "a山a太郎","sampleA@example.com","A社","A田A子"<br />
+  "b山b太郎","sampleB@example.com","B社","B田B子"<br />
+"c山c太郎","sampleC@example.com","C社","C田C子"
+</p>
+<p class="h4-p">
+  <b>Excelで開いたイメージ</b><br />
+<img src="../../help-images/view/gathering-excel.gif" class="view" alt="置換文字列のある宛先ファイル(Excelで開いた場合)" />
+</p>
+<h4><a name="gathering-send-message"></a>メール本文について</h4>
+<p class="h4-p">
+  メールの本文は、収集に必要なアップロードURLや有効期限、各宛先のお名前、メールアドレスを変換する変換文字を挿入することによって、効率的に作成することができます。<br />
+  また、サンプル文やテンプレート、署名の挿入も可能です。<br />
+  <img src="../../help-images/view/gathering_send-message.png" class="view" alt="メール本文の詳細" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />テンプレート</th>
+      <td>
+        ご自身の作成したテンプレートを挿入します。<br />
+        テンプレートをご選択いただくと、メール本文に挿入されます。<br />
+        テンプレートを作成していない場合は表示されません。(→<a href="../config/template.html">テンプレート</a>)<br />
+        <img src="../../help-images/view/3-3-1_2.gif" class="view" alt="テンプレート選択" style="width:50%; height:auto;" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[サンプル文を挿入]ボタン</th>
+      <td>
+        あらかじめ用意されているサンプル文を挿入します。<br />
+        [サンプル文を挿入]ボタンをクリックすると、メール本文に挿入されます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />署名</th>
+      <td>
+        ご自身の作成した署名を挿入します。<br />
+        署名をご選択いただくと、メール本文に挿入されます。<br />
+        署名を作成していない場合は表示されません。(→<a href="../config/sign.html">署名</a>)<br />
+        <img src="../../help-images/view/3-3-1_3.gif" class="view" alt="署名選択" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />変換文字</th>
+      <td>
+        メールの本文に入力すると、各宛先の情報に合わせて変換します。<br />
+        各変換文字の左にある（挿入)をクリックすると、メール本文に挿入します。<br />
+        <img src="../../help-images/view/gathering_convert-characters.png" class="view" alt="変換文字" /><br />
+
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>[##name##]</th>
+              <td>各宛先のお名前に変換します。</td>
+            </tr>
+            <tr>
+              <th>[##mail##]</th>
+              <td>各宛先のメールアドレスに変換します。</td>
+            </tr>
+            <tr>
+              <th>[##upload##]</th>
+              <td>各宛先のファイルのアップロードURLに変換します。</td>
+            </tr>
+            <tr>
+              <th>[##up_limit##]</th>
+              <td>ファイルアップロード有効期限に変換します。</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="h4-p">
+  <b>置換文字列を含む本文例</b>
+</p>
+<p class="view h4-p">
+[##会社名##] [##name##]様<br />
+<br />
+お世話になっております。<br />
+OO株式会社の[##担当者##]です。<br />
+<br />
+この度は弊社サービスへの利用事例提供にご協力くださり<br />
+誠にありがとうございます。<br />
+作成いただきました原稿は、下記URLよりアップロードしてください。<br />
+アップロード期限は[##up_limit##]です。<br />
+<br />
+[アップロードURL]<br />
+[##upload##]<br /><br />
+以上、よろしくお願いします。
+</p>
+<p class="h4-p">
+  <b>実際に届くメール例</b>
+</p>
+<p class="view h4-p">
+A社 a山a太郎様<br />
+<br />
+お世話になっております。<br />
+OO株式会社のA田A子です。<br />
+<br />
+この度は弊社サービスへの利用事例提供にご協力くださり<br />
+誠にありがとうございます。<br />
+作成いただきました原稿は、下記URLよりアップロードしてください。<br />
+アップロード期限は20xx/01/01 12:00です。<br />
+<br />
+[アップロードURL]<br />
+  https://example.com/gup.php?xxxxxxxxxxxx<br /><br />
+  以上、よろしくお願いします。
+</p>
+
+<h4><a name="gathering-send-security"></a>セキュリティ設定について</h4>
+<p class="h4-p">
+  セキュリティの設定をそれぞれご選択いただき、状況に応じたセキュリティを設定することができます。<br />
+  <img src="../../help-images/view/gathering_send-security.png" class="view" alt="セキュリティ設定" />
+</p>
+
+<dl>
+  <dt>アップロードの有効期限</dt>
+  <dd>アップロードの有効期限をご選択ください。</dd>
+
+  <dt>パスワードロックをかけない</dt>
+  <dd>収集するアップロードURLに、パスワードロックが不要の場合にご選択ください。</dd>
+
+  <dt>ワンタイムパスワードロックをかける</dt>
+  <dd>
+    収集するアップロードURLに、ワンタイムパスワードでロックをかける場合にご選択ください。
+    パスワードには、メールアドレスを限定したワンタイムパスワードを採用し、高いセキュリティを確保しています。
+  </dd>
+
+  <dt>指定パスワードロックをかける</dt>
+  <dd>
+    収集するアップロードURLに、ご自身の入力したパスワードでロックをかける場合はご選択ください。
+    管理者側の設定によっては、メール送信の際に、指定パスワードをお知らせするメールを別途送信します。
+  </dd>
+</dl>
+
+<h4><a name="gathering-send-to"></a>宛先一覧について</h4>
+<p class="h4-p">
+  宛先一覧画面では、宛先ファイルからインポートした宛先情報を一覧で確認することができます。<br />
+  <img src="../../help-images/view/gathering_send-to.png" class="view" alt="宛先一覧" />
+
+  <table>
+    <tbody>
+      <tr>
+        <th colspan="2">一覧表示</th>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+        <td>
+          虫眼鏡アイコンで、検索フォームを開きます。<br />
+          <img src="../../help-images/view/delivery_to-search.png" class="view" alt="検索フォーム" />
+          <table class="data-s">
+            <tbody>
+              <tr>
+                <td>項目のプルダウン</td>
+                <td>：検索する項目を選択します。</td>
+              </tr>
+              <tr>
+                <td>[検索]欄</td>
+                <td>：検索する文言を入力します。</td>
+              </tr>
+              <tr>
+                <td>[検索]ボタン</td>
+                <td>：検索を開始します。</td>
+              </tr>
+              <tr>
+                <td>[クリア]ボタン</td>
+                <td>：検索を解除します。</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+        <td>1ページに表示する一覧の件数を変更します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+        <td>先頭ページに移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+        <td>1ページ前に移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+        <td>入力されたページに移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+        <td>1ページ次に移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+        <td>最終ページに移動します。</td>
+      </tr>
+      <tr>
+        <th><img src="../../help-images/load.png"  alt="一覧を最新の状態にする" /></th>
+        <td>一覧画面を最新の状態に更新します。</td>
+      </tr>
+    </tbody>
+  </table>
+
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

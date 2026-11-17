@@ -1,0 +1,102 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>ログイン</span></h2>
+<h3><a name="2-7"></a>ログインエラー</h3>
+<p>
+  ログインに失敗したときにエラーメッセージが表示されます。<br />
+  そのエラーの内容と対応方法です。<br />
+  <img src="../../help-images/view/2-6.gif" class="view" alt="アカウントまたはパスワードが正しくありません。" /><br />
+</p>
+
+<h5>通常表示されるエラー</h5>
+<dl>
+  <dt>アカウントまたはパスワードが正しくありません。</dt>
+  <dd style="margin-bottom:15px;">
+    入力したアカウント、またはパスワードが間違っている場合に表示されます。
+  </dd>
+
+  <dt>このアカウントは有効期限が切れています。</dt>
+  <dd style="margin-bottom:15px;">
+    各アカウントに有効期限が設定されている場合、有効期限の終了したアカウントはログインできません。<br />
+    再度ログインする必要がある場合は、管理者に問い合わせてください。
+  </dd>
+
+  <dt>このアカウントはまだ有効ではありません。</dt>
+  <dd>
+    各アカウントに有効期限が設定されている場合、有効期限前のアカウントはログインできません。<br />
+    今すぐログインする必要がある場合は、管理者に問い合わせてください。
+  </dd>
+</dl>
+<br />
+
+<h5>AD(ActiveDirectory)サーバと連携している場合に表示されるエラー</h5>
+<p style="line-height:1.3em;margin:10px 0 15px 30px;width:530px;">
+  AD(ActiveDirectory)サーバとは、ユーザ管理を行うサーバです。<br />
+  システムはActive Directoryサーバと提携してユーザを認証します。
+</p>
+<dl>
+  <dt class="position20">ADサーバに接続できませんでした。<br />管理者にお問い合わせください。</dt>
+  <dd style="margin-bottom:15px;">
+    システムサーバから、AD(Active Directory)サーバへの接続ができません。
+  </dd>
+
+  <dt>アカウントまたはパスワードが正しくありません。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(Active Directory)認証においてID/PWが間違っています。<br />
+    もしくは、システムの設定が間違っているため、認証に失敗しています。
+  </dd>
+
+  <dt class="position20">ADアカウントにロックがかかっています。<br />管理者にお問い合わせください。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(Active Directory)サーバのアカウントにロックがかかっています。管理者に問い合わせてください。
+  </dd>
+
+  <dt class="position20">ADアカウントが無効になっています。<br />管理者にお問い合わせください。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(Active Directory)サーバのアカウントが無効になっています。管理者に問い合わせてください。
+  </dd>
+
+  <dt class="position20">ADアカウントにシステムへのログイン権限がありません。<br />管理者にお問い合わせください。</dt>
+  <dd style="margin-bottom:15px;">
+    このアカウントは、AD(Active Directory)サーバでシステムへのログインが許可されていません。管理者に問い合わせてください。
+  </dd>
+
+  <dt class="position10">システムアカウントの初期化に失敗しました。<br />登録可能ユーザ数を超えています。<br />管理者にお問い合わせください。</dt>
+  <dd style="margin-bottom:15px;">
+    アカウント数が契約ユーザ数を超えるため、ログインできません。<br />
+    管理者に問い合わせてください。
+  </dd>
+
+  <dt class="position10">システムアカウントの初期化に失敗しました。<br />システムの容量が不足しています。<br />管理者にお問い合わせください。</dt>
+  <dd style="margin-bottom:15px;">
+    容量が足りないためログインができません。管理者に問い合わせてください。
+  </dd>
+
+  <dt class="position8">システムアカウントの初期化に失敗しました。<br />ADアカウントのユーザ情報が不足しています。<br />（表示名、メールアドレスが必要です）<br />管理者にお問い合わせください。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(Active Directory)アカウントのユーザ情報が不足しているため、ログインできません。管理者に問い合わせてください。
+  </dd>
+
+  <dt class="position10">システムアカウントの初期化に失敗しました。<br />ADアカウントのメールアドレスが他のアカウントのメールアドレスと重複しています。<br />管理者にお問い合わせください。</dt>
+  <dd style="margin-bottom:15px;">
+    AD(Active Directory)アカウントのメールアドレスが、他のアカウントのメールアドレスと重複しているため、ログインすることができません。管理者に問い合わせてください。
+  </dd>
+</dl>
+
+<h5>認証方式がGoogle SSO認証または[##SAML_NAME##]の場合に表示されるエラー</h5>
+<dl>
+  <dt>アカウントが登録されていません。</dt>
+  <dd style="margin-bottom:15px;">
+    入力したアカウントが間違っています。<br />
+    もしくは、システムの設定が間違っているため、認証に失敗しています。
+  </dd>
+  <dt class="position20">ログイン情報の取得に失敗しました。<br />再度ログインを行なってください。</dt>
+  <dd style="margin-bottom:15px;">
+    一時的にGoogle SSOまたは[##SAML_NAME##]サービスにて問題が発生しています。<br />
+    もしくは、システムの設定が間違っているため、認証に失敗しています。
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

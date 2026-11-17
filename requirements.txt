@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+langchain==0.2.16
+langchain-community==0.2.16
+langchain-ollama
+langchain-huggingface
+sentence-transformers
+chromadb
+python-docx
+docx2txt

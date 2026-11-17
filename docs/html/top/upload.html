@@ -1,0 +1,141 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>ファイル一覧</span></h2>
+<h3><a name="4-2"></a>ファイルのアップロード</h3>
+<p>
+ファイル一覧画面では、直接ドラッグ＆ドロップ（→<a href="../top/index.html#dragdrop">ファイルのアップロード(ドラッグ&ドロップ)</a>）することで、ファイルをアップロードできます。<br />
+ファイルのアップロード時に共有グループメンバーへの通知やメモを設定したい場合は、ファイル一覧にある[アップロード]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/3-2.gif" class="view" alt="ファイル一覧：アップロード" />
+</p>
+
+<p>
+  ファイルのアップロードフォームに遷移します。<br/>
+  ファイルを選択し、[アップロード]ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/3-2_2.png" class="view" alt="ファイルのアップロード画面" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-1.gif" alt="1" /></th><th class="bLnone">[ファイル追加]</th>
+      <td>
+        アップロードしたいファイルを選択します。[ファイル追加]ボタンをクリックするとファイル選択ウィンドウが開きますので、ファイルを選択してください。<br/>
+        <img src="../../help-images/view/top-upload-1.gif" class="view" alt="アップロードファイル選択" />
+        <br/>
+        一度にアップロードできるファイルサイズやファイル数はアップロード画面を確認してください。
+        ファイルサイズ、ファイル数は管理者によって制限されています。容量が足りない場合は管理者へ問い合わせてください。<br/>
+        <img src="../../help-images/view/top-upload-1_2.gif" class="view" alt="アップロード容量、アップロード数について" /><br />
+        アップロードするファイルの形式によりフィルタリングが設定されていると、アップロードできない場合があります。<br />
+        設定されているファイル形式については管理者へ問い合わせてください。<br />
+        <img src="../../help-images/view/fileformat-1.gif" class="view" alt="ファイル形式フィルタ" />
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-2.gif" alt="2" /></th><th class="bLnone">[削除]</th>
+      <td>
+        選択したアップロードファイルを削除します。誤って選択した場合にご利用頂けます。
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-3.gif" alt="3" /></th><th class="bLnone">アップロード先<br/>フォルダ選択</th>
+      <td>
+        ファイルをアップロードするフォルダを選択します。
+        <img src="../../help-images/view/top-upload-2.gif" class="view" alt="アップロード先フォルダ選択" />
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-4.gif" alt="4" /></th><th class="bLnone">メモ</th>
+      <td>
+        アップロード時にメモを付加できます。ファイル詳細で確認できます。<br />
+        ファイル配布した第三者は、閲覧できません。<br />
+        <img src="../../help-images/view/3-2_6.gif" class="view" alt="メモ" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p style="margin-top:30px;">ファイル選択、アップロード先フォルダ、メモを入力後、[アップロード]ボタンをクリックしてください。アップロードが完了すると完了画面へ遷移します。</br>
+  </br>無害化オプションがある場合、[アップロード]ボタンをクリックした時点で自動でファイルが無害化されます。(<a href="index.html#sanitize">→無害化</a>)
+</p>
+<img src="../../help-images/view/3-2_5.gif" class="view" alt="ファイルのアップロード完了画面" />
+<p>
+  アップロードしたファイルを続けて配布する場合は、[ファイル配布]ボタンをクリックしてください。
+  ファイルの通知画面に遷移します。(<a href="send.html#4-3">→ファイルの配布</a>)
+</p>
+
+<h4><a name="4-2-1"></a>アップロードファイル選択について</h4>
+<dl>
+  <dt>複数ファイルを選択する</dt>
+  <dd>
+    ファイル選択ウィンドウで複数のファイルを選択することが可能です。<br/>
+    CtrlキーやShiftキーを押しながらファイルを複数選択することが可能です。<br/>
+    <img src="../../help-images/view/top-upload-3.gif" class="view" alt="複数ファイルのアップロード" />
+  </dd>
+  <dt>ドラッグ＆ドロップでファイルを選択する</dt>
+  <dd>
+    エクスプローラー（Macの場合はFinder）からドラッグ＆ドロップで複数のファイルを選択することが可能です。<br/>
+    アップロードするファイルを選択し[ファイル追加]ボタンにドラッグ＆ドロップしてください。<br/>
+    <img src="../../help-images/view/top-upload-4.gif" class="view" alt="ドラッグ＆ドロップでアップロードファイル選択する" />
+  </dd>
+  <dt>ドラッグ＆ドロップでフォルダごとファイルを選択</dt>
+  <dd>
+    エクスプローラー（Macの場合はFinder）からドラッグ＆ドロップでフォルダを選択することが可能です。<br/>
+    アップロードしたいファイルが入っているフォルダを選択し[ファイル追加]ボタンにドラッグ＆ドロップしてください。<br/>
+    <img src="../../help-images/view/top-upload-5.gif" class="view" alt="ドラッグ＆ドロップでファイルごとファイル選択する" />
+  </dd>
+</dl>
+
+
+<?php
+if (defined("VIRUS_CHECK_FLG") && (VIRUS_CHECK_FLG == 1)):
+?>
+  <h4><a name=""></a>ウイルスチェック時のアップロードについて</h4>
+  <p class="h4-p">
+    <?php
+    if (!defined("VIRUS_CHECK_SIZE_LIMIT")) {
+      $virus_check_size_limit = 2000;
+    } else {
+      $virus_check_size_limit = VIRUS_CHECK_SIZE_LIMIT;
+    }
+    ?>
+    ウイルスチェックは、<?= number_format($virus_check_size_limit) ?>MB以下のファイルが対象です。<br>
+    <?= number_format($virus_check_size_limit) ?>MBより大きいファイルは、ウィルスチェックを受けずそのままアップロードされます。
+  </p>
+<?php endif; ?>
+
+<h4><a name="4-2-3"></a>共有フォルダのアップロードについて</h4>
+<p class="h4-p">
+  共有フォルダへファイルのアップロードを行う場合、共有グループに所属しているメンバーへアップロードの通知が可能です。<br/>
+  また、メンバーへの通知メールの件名や本文を変更することが可能です。<br/>
+  <img src="../../help-images/view/top-upload-share-1.png" class="view" alt="共有フォルダアップロード画面" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-1.gif" alt="1" /></th><th class="bLnone">アップロード先フォルダ</th>
+      <td>
+        ファイル一覧で共有フォルダを選択後、アップロード画面に遷移した場合は、「アップロード先フォルダ」の変更が行えません。他のフォルダへアップロードを行う場合は、ファイル一覧で再度、フォルダを選択してください。<br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-2.gif" alt="2" /></th><th class="bLnone">メール通知</th>
+      <td>
+        共有グループに所属しているメンバーへアップロード通知を行います。全ユーザもしくはメンバーを選択して通知することが可能です。<br/>
+        「メンバーを選択」ラジオボタンをクリックすると[>>メンバーを選択]が表示されます。[>>メンバーを選択]をクリックすると「共有グループメンバー」画面が表示されますので、通知するメンバーを選択してください。<br/>
+        <img src="../../help-images/view/top-upload-share-2.png" class="view" alt="共有グループメンバー一覧" /><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="bRnone"><img src="../../help-images/no-s-3.gif" alt="3" /></th><th class="bLnone">メール通知 編集</th>
+      <td>
+        メール通知の[編集]ボタンをクリックすると、通知メールの件名と本文の変更が可能です。<br/>
+        内容を変更後[編集する]ボタンをクリックしてください。
+        <img src="../../help-images/view/top-upload-share-3.gif" class="view" alt="通知メール編集" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

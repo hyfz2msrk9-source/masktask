@@ -1,0 +1,432 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>File List</span></h2>
+<h3>File Distribution</h3>
+<h4><a name="4-3-4"></a>Email to receiving (collecting) and distribution</h4>
+<p class="h4-p">
+  This is a function to receive files from someone and at the same time distribute files him/her with one Email.<br />
+  You can send Email to up to 10 address and send up to 10 files with one operation. (It is able to change another setting administrator have set)<br />
+  It is possible to set the security setting on every time you send files and collect files. According to your need, you can set security-function freely. It provides you to high security. This function is available when you can send Email to inform the file distribution and file collecting.<br >
+  </p>
+
+<p class="h4-p">
+  Please press the [distribute] button on the right of the file you want send. You will move to “Notification of registered file” page. Please press [The notification of file and collection Email send] button.<br />
+  <img src="../../help-images/view-en/3-3-4_1.png" class="view" alt=" [The notification of file and collection Email send]button" /><br />
+
+  Please enter and select the items, and set security-settings as your need.<br />
+  <img src="../../help-images/view-en/send-collect_form.png" class="view" alt="notification of registered file and collection Email sent" /><br />
+</p>
+
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />Template</th>
+      <td>
+        You can select template you prepared. <br />
+        When you select a template, it will be inserted into the body of the email.<br />
+        If you have not created a template, this item will not be displayed.(→<a href="../config/template-en.html">Template</a>)<br />
+        <img src="../../help-images/view-en/4-3-1_2.gif" class="view" alt="select template" style="width:50%; height:auto;" />
+      </td>
+     </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />Destination<br />address</th>
+      <td>
+        Enter the destination address or add from the address book. Up to 10 items can be set. (The number may have been changed by the administrator. Please contact the administrator for details.)<br />
+        Enter the destination address and click the [Add destination address] button. Alternatively, click [>>Add from the address book] to add from your address book.<br />
+        To delete an added destination address, click the [×Delete] button on the right of each destination address.<br />
+        <img src="../../help-images/view-en/3-3_3.png" class="view" alt="screen of selecting address" /><br />
+        <img src="../../help-images/view-en/3-3_4.png" class="view" alt="screen of adding destination address" /><br />
+        On the window of select from the address book, please click the address you want to add or check the check-box, and click [↓] button.<br />
+        <img src="../../help-images/view-en/3-3_5.gif" class="view" alt="select address" /><br />
+
+        After check on the address, please click [Add Destination address] button. <br />
+        These addresses are added to the file distribution area.<br /><br />
+
+        If you enter the address that is not on the address book, you are able to add it to your address book after you send this Email.<br />
+        (It will be registered as “No group”. If you need divide it into group, you can change the group of address. (→<a href="../address/group-en.html#6-5">Change group of address</a>)<br /><br />
+
+        If a mail address is inputted when the mail address is registered into the address book, it will come to be indicated by prediction from an address book.<br />
+        When clicking a mail address to input, the mail address clicked in the input area of the address is displayed.<br />
+        <img src="../../help-images/view-en/yosoku-1.gif" class="view" alt="address:select" /><br /><br />
+        Also, if you enter multiple email addresses separated by <span class="attention nowrap" style="font-weight:bold;">comma (,)</span> in the mail address entry field or named mail addresses like <span class="attention nowrap" style="font-weight:bold;">name &lt;mail address&gt;</span>, you can add "name" that can be added automatically We can detect the candidate "mail address" and add the checked one.
+        <img src="../../help-images/view-en/detect-address.png" class="view" alt="select address:candidate detection" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />File name</th>
+      <td>
+        <?php include './template/form_add_file_name-en.html'; ?>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Save folder</th>
+      <td>
+        When the “appoint save folder function“ is available,　you can select the save folder.<br />
+  Beforehand, you can appoint the folder in which file will be uploaded. In case you appoint the folder, a file you collect will be uploaded directly in the folder not in the file list.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />Tag of the file <br />collection</th>
+      <td>
+        With the tags, you can manage your Email to collect files. If some tags are already set, you can see the tag list with press the [select tag] button.<br />
+        <img src="../../help-images/view-en/4-3-3_8.gif" class="view" alt="引取りタグ" /><br />
+  When you want use the tag already set, please click the tag name link and the name will be set into the text box. If you want to set a new tag, please enter the name into the text box.<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />From address</th>
+      <td>
+        According to the usage, you can send email of file notification with another sender name and sender email address. <br />
+        You can register another sender name and email address in the sender settings(→<a href="../config/from-en.html">Sender setting</a>).<br />
+        When the sender setting is invalid, the From address is not displayed.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />Email subject</th>
+      <td>
+        Title of the Email.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />Email text</th>
+      <td>
+  Text of the Email. Please enter necessary items.<br />
+        (→<a href="send-collect-en.html#4-3-5">About Email text of the Email to collect and distribute</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />Security settings</th>
+      <td>
+  Security setting for the notification file sending and file collecting. Please set security function according to your need.<br />
+  (→<a href="send-collect-en.html#4-3-6">About security settings of the Email to collect files and distribute files</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-10.gif" alt="10" />Character encoding</th>
+      <td>
+        You can set up character encoding of e-mail. You can choose either for ISO-2022-JP or UTF-8.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-11.gif" alt="11" />Send Wait setting</th>
+      <td>
+        An item is displayed when a transmission standby function is effective.<br />
+        Even if a transmission standby function distributes a file, it will be in a standby state, and it is a function made to be unable to perform download of a file for a while.<br />
+        When time is set up beforehand, standby is performed in time set up.<br />
+        <img src="../../help-images/view-en/standbymail-1.gif" class="view" alt="Send Wait setting:set time" />
+        <br />
+        When a setup of transmission standby is possible, you can choose use and can do transmission standby.And time can be set up.<br />
+        Time lower than an initial value cannot be set up.<br />
+        <img src="../../help-images/view-en/standbymail-2.gif" class="view" alt="Send Wait setting:change time" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-12.gif" alt="12" />Upload<br />notification<br />settings</th>
+      <td>
+        It is a setup which can be used when having chosen the shared folder by the storage place folder. When a file uploads, the selected share member is notified of what the file uploaded.<br />
+        <br />Selection of "Notify the group members share " will display an "Notify all member of the shared group" or "Select a member" radio button.<br />
+        <img src="../../help-images/view-en/uploadsend-1.png" alt="Upload notification settings" class="view" /><br />
+        If you select "Notify all member of the shared group", make the notification to all members. If you select "Select a members", will be displayed "Select a member " link.<br/>
+        <img src="../../help-images/view-en/uploadsend-2.png" alt="Upload notification settings" class="view" /><br />
+        When clicking a link, a member selection screen is displayed.Please choose the member who notifies and click a [Add Destination address] button.<br />
+        <img src="../../help-images/view-en/uploadsend-3.png" alt="Group members share" class="view" /><br />
+        When adding a member, the member name chosen as the notice setup of upload is displayed.Please click [×Delete], when you delete a member.It is deleted from a notice member.<br />
+        <img src="../../help-images/view-en/uploadsend-4.png" alt="Member add done." class="view" />
+      </td>
+    </tr>  </tbody>
+</table>
+
+<p class="h4-p">
+  If all you entered is correct, please click [Confirm Email] button.<br />
+  You move to the "Notification of registered file and collection Email send (confirm)" page. <br />
+  <br />
+  In the case of superiors are set<span class="attention"> (*Option)</span>,
+  "Superiors infomation" or "Select your superior" area is also displayed on this page.
+  If "Select your superior"  area is displayed, please select superiors to request approval.
+  Your request to distribute files will be sent to your superior by Email.
+  The distribution Email will be sent after the superior approved your request. If the superior rejects, the Email will not be sent.
+  You can check the approval status in the Approval list. (→<a href="../superior/index-en.html">Approval list(※Option)</a>)<br />.
+</p>
+<p class="h4-p">
+  After check on items you entered or selected, please click [Send Email] button.<br />
+  <img src="../../help-images/view-en/send-collect_confirm.png" class="view" alt="screen of notification of registered file and collection Email send(confirm)." />
+</p>
+<p class="h4-p">
+  Page of notification of registered file (completed) will appear. The notification Email was sent and file distribution was completed.<br />
+  <img src="../../help-images/view-en/4-3-3_10.gif" class="view" alt="screen of notification of registered file and collection Email send (completed)" />
+</p>
+
+<h4><a name="4-3-5"></a>About Email text of the Email to collect and distribute</h4>
+<p class="h4-p">
+  You can write Email text with transformation characters more easily. Transformation characters will be change into download-URL to distribute files, upload-URL to collect files, the term of validity, names that Emails are sent to and addresses that Emails are sent to.<br />
+  In addition, you can use function as follows. Function to enter the sample text to your Email text, create Email text template, and create your signature template.
+  <img src="../../help-images/view-en/4-3-5_1.gif" class="view" alt="Email text of the Email to collect and distribute" />
+</p>
+
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />Template</th>
+      <td>
+        You can select template you prepared. <br />
+        When you select a template, it will be inserted into the body of the email.<br />
+        If you have not created a template, this item will not be displayed.(→<a href="../config/template-en.html">Template</a>)<br />
+        <img src="../../help-images/view-en/4-3-1_2.gif" class="view" alt="select template" style="width:50%; height:auto;" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[Insert sample text]</th>
+      <td>
+        You can insert sample text the system prepared in advance into your Email. Please click [Insert sample text] button.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />Sign off</th>
+      <td>
+        You can select template signature you prepared and insert it into your Email. If you do not create signature, it does not appear.<br />
+        <img src="../../help-images/view-en/4-3-1_3.gif" class="view" alt="sign off" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />Transformation<br /> characters</th>
+      <td>
+        Transformation characters are changed automatically into specific words when Email is sent. You click “Insert” on the left hand of each transformation characters, they are inserted into your Email text.<br />
+        <img src="../../help-images/view-en/4-3-5_2.gif" class="view" alt="Transformation character" /><br />
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>[##name##]</th>
+              <td>Change into each name that Emails are sent to.</td>
+            </tr>
+            <tr>
+              <th>[##mail##]</th>
+              <td>Change into Email each address that Emails are sent to. </td>
+            </tr>
+            <tr>
+              <th>[##addr_list##]</th>
+              <td>Change into the destination list.</td>
+            </tr>
+            <tr>
+              <th>[##file_list##]</th>
+              <td>Change into the sent file list.<br />※This doesn't exist in folder publication.</td>
+            </tr>
+            <tr>
+              <th>[##url##]</th>
+              <td>Change into file download URL for each addresses.</td>
+            </tr>
+            <tr>
+              <th>[##upload##]</th>
+              <td>Change into file upload URL for each addresses.</td>
+            </tr>
+            <tr>
+              <th>[##dl_limit##]</th>
+              <td>Change into the term of validity of downloading files.</td>
+            </tr>
+            <tr>
+              <th>[##up_limit##]</th>
+              <td>Change into the term of validity of uploading files.</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="4-3-6"></a>About security settings of the Email to collect files and distribute files</h4>
+<p class="h4-p">
+  You can set security function every you send Email to collect files and distribute files. It is able to use by combination according to your need.<br />
+  <img src="../../help-images/view-en/send-collect_security.png" class="view" alt="security settings of the Email to collect files and distribute files" />
+</p>
+
+<h5>About security settings to distribute files</h5>
+<dl>
+  <dt>Encryption by SSL</dt>
+  <dd>the communication is encrypted by EV-SSL. This is a standard function.(※ This is appeared when connected by EV-SSL.)</dd>
+
+  <dt>The download expiry date</dt>
+  <dd>You can set the expiry date of download files with URL written in the Email.<br />
+    After that count, it is impossible to download with the URL.
+  </dd>
+
+  <dt>The download count</dt>
+  <dd>You can set the upper limit of the frequency of downloads.<br />
+    It is impossible to download using the URL more than the frequency.
+  </dd>
+
+  <dt>Do not lock the password</dt>
+  <dd>Do not use lock function.</dd>
+
+  <dt>Enable the one-time password lock</dt>
+  <dd>You can lock one-time password lock. The password is only use one time, and it is can be used by with Email address you limit, so it is very secure.</dd>
+
+  <dt>Enable the one-time password lock.(Send to the another destination)<span class="attention">(※Option)</span></dt>
+  <dd>Set a one-time password for a destination (SMS or email address) different from the destination email address. Sending the password via a different route than the destination reduces the risk of it being stolen. <br> As shown in the figure below, an input field is displayed for each destination, so set another destination there. A one-time password will be sent to that destination (in the case of a mobile phone number, it will be sent by SMS).</dd>
+  <p class="h4-p">
+    <img src="../../help-images/view-en/send_security_sms.png" class="view" alt="セキュリティ設定" />
+  </p>
+
+  <dt>Lock specified password</dt>
+  <dd>You can lock with the word or number you decide. Please inform file-receiver the password.</dd>
+
+  <dt>Zip password</dt>
+  <dd>The file is compressed into the zip file. And, the password can be freely set.</dd>
+
+  <dt>Confirm Email was opened</dt>
+  <dd>After files are distributed, and a file-receiver access the download URL, a notification Email is sent to you.</dd>
+
+  <dt>Confirm download</dt>
+  <dd>After files are distributed, and files are downloaded, a notification Email is sent to you.</dd>
+
+  <dt>File auto delete</dt>
+  <dd>
+    Download expiration date will automatically delete the files that has expired.
+    Personal files is auto delete, but share files not done.
+    It does not auto delete even if you set the download expiration date indefinitely.
+  </dd>
+</dl>
+
+<h5>About security settings to collect files</h5>
+<dl>
+  <dt>The upload expiry date</dt>
+  <dd>You can set the expiry date of upload files with URL written in the Email.<br />
+    After that count, it is impossible to download with the URL.</dd>
+
+  <dt>Do not lock the password</dt>
+  <dd>Do not use lock function.</dd>
+
+  <dt>Enable the one-time password lock</dt>
+  <dd>You can lock one-time password lock. The password is only use one time, and it is can be used by with Email address you limit, so it is very secure.</dd>
+
+  <dt>Lock specified password</dt>
+  <dd>You can lock password with the word or number you decide. Please inform file-receiver the password.</dd>
+</dl>
+
+
+<h4><a name="send-collect-mailer"></a>Notification of file and collection Email send from own mailer</h4>
+<p class="h4-p">
+  This feature makes the receive (collect) files and distribution of files from own mailer.<br />
+  It is able to send up to 10 files to 30 addresses in total at once. (10 addresses can be sent respectively of To, Cc, and Bcc.)<br />
+  You can set security function every time. According to your need, you can set security function freely. It provides you to high security.<br/>
+  It is able to use if this function had been set on.
+</p>
+<p class="h4-p">
+  Please click [Distribute] button on the right of the file you want to send in the file list page.<br/>
+  Please click [Send email of the notification of file and collection from own mailer] button, then you will move to the page to send someone notification Email.<br/>
+  <img src="../../help-images/view-en/send-collect-mailer-1.png" class="view" alt="Send email of the notification of file and collection from own mailer button" />
+</p>
+
+<p class="h4-p">
+  Please enter and select some items, and set security function as you need.<br />
+  <img src="../../help-images/view-en/send-collect-mailer_form.png" class="view" alt="自分のメーラーから送信する場合の登録ファイル通知画面" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th>
+        <img src="../../help-images/no-s-1.gif" alt="1" />Destination address<br /><br />
+        <img src="../../help-images/no-s-2.gif" alt="2" />Cc.<br /><br />
+        <img src="../../help-images/no-s-3.gif" alt="3" />Bcc.
+      </th>
+      <td>
+        Enter the destination address, Cc, Bcc or add from the address book. Up to 10 items can be set. (The number may have been changed by the administrator. Please contact the administrator for details.)<br />
+        Enter the destination address, Cc, Bcc and click the [Add destination address] button. Alternatively, click [>>Add from the address book] to add from your address book.<br />
+        To delete an added destination address, Cc, Bcc, click the [×Delete] button on the right of each destination address.<br />
+        <img src="../../help-images/view-en/3-3-3_5.png" class="view" alt="destination" /><br />
+        <img src="../../help-images/view-en/3-3-3_3.png" class="view" alt="add distination address from address book" /><br />
+
+        When you select the address you want file to send from the address book, on the window of address book, please click the address you want to add or check in the check-box beside the address.<br />
+        <img src="../../help-images/view-en/3-3-3_4.gif" class="view" alt="select address" /><br />
+        Please click [↓] button, and the address will be added in the address area.
+        Please certain the address and please press[Add destination address] button. So, the address add to.<br />
+
+        If a mail address is inputted when the mail address is registered into the address book, it will come to be indicated by prediction from an address book.<br />
+        When clicking a mail address to input, the mail address clicked in the input area of the address is displayed.<br />
+        <img src="../../help-images/view-en/yosoku-1.gif" class="view" alt="address:select" /><br /><br />
+        Also, if you enter multiple email addresses separated by <span class="attention nowrap" style="font-weight:bold;">comma (,)</span> in the mail address entry field or named mail addresses like <span class="attention nowrap" style="font-weight:bold;">name &lt;mail address&gt;</span>, you can add "name" that can be added automatically We can detect the candidate "mail address" and add the checked one.
+        <img src="../../help-images/view-en/detect-address.png" class="view" alt="select address:candidate detection" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />File name</th>
+      <td>
+        <?php include './template/form_add_file_name-en.html'; ?>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />Save folder</th>
+      <td>
+        When the “appoint save folder function“ is available,　you can select the save folder.<br />
+  Beforehand, you can appoint the folder in which file will be uploaded. In case you appoint the folder, a file you collect will be uploaded directly in the folder not in the file list.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />Tag of the file <br />collection</th>
+      <td>
+        With the tags, you can manage your Email to collect files. If some tags are already set, you can see the tag list with press the [select tag] button.<br />
+        <img src="../../help-images/view-en/4-3-3_8.gif" class="view" alt="" /><br />
+  When you want use the tag already set, please click the tag name link and the name will be set into the text box. If you want to set a new tag, please enter the name into the text box.<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-7.gif" alt="7" />From address</th>
+      <td>
+        According to the usage, you can send email of file notification with another sender name and sender email address. <br />
+        You can register another sender name and email address in the sender settings(→<a href="../config/from-en.html">Sender setting</a>).<br />
+        When the sender setting is invalid, the From address is not displayed.
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-8.gif" alt="8" />security settings</th>
+      <td>
+  Security setting for the notification file sending and file collecting. Please set security function according to your need.<br />
+  (→<a href="send-collect-en.html#4-3-6">About security settings of the Email to collect files and distribute files</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-9.gif" alt="9" />Upload<br />notification<br />settings</th>
+      <td>
+        It is a setup which can be used when having chosen the shared folder by the storage place folder. When a file uploads, the selected share member is notified of what the file uploaded.<br />
+        <br />Selection of "Notify the group members share " will display an "Notify all member of the shared group" or "Select a member" radio button.<br />
+        <img src="../../help-images/view-en/uploadsend-1.png" alt="Upload notification settings" class="view" /><br />
+        If you select "Notify all member of the shared group", make the notification to all members. If you select "Select a members", will be displayed "Select a member " link.<br/>
+        <img src="../../help-images/view-en/uploadsend-2.png" alt="Upload notification settings" class="view" /><br />
+        When clicking a link, a member selection screen is displayed.Please choose the member who notifies and click a [Add Destination address] button.<br />
+        <img src="../../help-images/view-en/uploadsend-3.png" alt="Group members share" class="view" /><br />
+        When adding a member, the member name chosen as the notice setup of upload is displayed.Please click [×Delete], when you delete a member.It is deleted from a notice member.<br />
+        <img src="../../help-images/view-en/uploadsend-4.png" alt="Member add done." class="view" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="h4-p">
+  If all you entered is correct, please click [Confirm Email] button.
+  You will move to the “Notification of registered file (confirm)” page. <br />
+  The page is for the user sending file with their own mailer.
+</p>
+<p class="h4-p">
+  In the case of superiors are set<span class="attention"> (*Option)</span>,
+  "Superiors infomation" or "Select your superior" area is also displayed on this page.
+  If "Select your superior"  area is displayed, please select superiors to request approval.
+  Your request to distribute files will be sent to your superior by Email. <br />
+  Untill your superior approves the request, downloading files from the URL is unabled.
+  You can check the approval status in the Approval list. (→<a href="../superior/index-en.html#7">Approval list(※Option)</a>)<br />
+  <br /><br />
+  If all you entered and set are correct, please click [Generate URL] button.<br />
+  <img src="../../help-images/view-en/send-collect-mailer_confirm.png" class="view" alt="Notification of registered file:compfirm" /><br />
+</p>
+<p class="h4-p">
+  You move to the page of Notification of registered file and collection email send (completed).
+  The file distribution via your mailer is ready.<br />
+  The URLs to download and to upload files appear on this page.
+  Please copy these URLs into your Email text, and send Email to the address you have set into To, Cc, Bcc.<br />
+  To start your usual mailer software, please click [Start own mailer] button.<br />
+  <img src="../../help-images/view-en/send-collect-mailer-4.gif" class="view" alt="Notification of registered file and collection email send (completed)" />
+</p>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

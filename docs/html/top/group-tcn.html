@@ -1,0 +1,362 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+          <h2><span>文件一覽</span></h2>
+          <h3><a name="4-4"></a>組共用功能</h3>
+          <p>
+            組共用功能是在組所屬的用戶間可以共用文件的功能。<br />
+            <img src="../../help-images/view-tcn/4-4-top.gif" class="view" alt="グループ共有：ファイル一覧" />
+          </p>
+
+          <table>
+            <tr>
+              <th><img alt="1" src="../../help-images/no-s-1.gif" />資料夾許可權</th>
+              <td>
+                擁有所有權限和組成員的管理許可權的使用者會顯示在共用資料夾內。(<a href="#4-4-2">→資料夾許可權編輯</a>)
+              </td>
+            </tr>
+            <tr>
+              <th><img alt="2" src="../../help-images/no-s-2.gif" />上傳用戶</th>
+              <td>
+                在管理者正使設定有效的時候，共享文件的上傳用戶被錶示。
+              </td>
+            </tr>
+            <tr>
+              <th><img alt="3" src="../../help-images/no-s-3.gif" />加密下載</th>
+              <td>
+                選項（※收件人姓名、位址模式）及資料夾加密功能有效時將顯示，請點擊。點擊後將不可以上傳相同資料夾名的資料夾，及不可以編輯加密資料夾。(<a href="#4-4-3">→加密下載</a>）
+              </td>
+            </tr>
+          </table>
+
+          <p>
+            每個組都有專用的共用資料夾，有複數的所屬用戶。在組專用的共用資料夾內的文件供所屬用戶們共用。所屬的用戶設有許可權，分為唯讀許可權、讀寫許可權、讀寫加資料夾操作許可權的3種。 (<a href="group-tcn.html#4-4-1">→關於許可權</a>）。
+          </p>
+
+          <p>
+            在組專用的共用資料夾內實行文件刪除或文件的資料夾間移動，收到文件發送通知的人就無法再下載此文件。如果發送文件到組內的用戶退出該組，接到文件發送通知的人也無法下載此文件。請注意。<br />
+            另外，共用資料夾不能使用資料夾公開功能（<a href="folder-tcn.html#4-5">→資料夾公開功能</a>）。請注意。
+          </p>
+
+          <p>
+            在組所屬用戶的文件一覽中的資料夾一覽中會顯示▼共用資料夾、▼個人資料夾。<br />
+            <img src="../../help-images/view-tcn/3-4_1.gif" class="view" alt="フォルダ一覧" />
+          </p>
+
+          <dl>
+            <dt>共用資料夾</dt>
+            <dd>
+              這裡顯示的資料夾是共用資料夾。<br />
+              在所設定的組中可以共用文件。在組中的主資料夾是不能做成、編輯或刪除的。
+            </dd>
+
+            <dt>個人資料夾</dt>
+            <dd>
+              這裡顯示的資料夾是個人用資料夾。可以自訂新建、編輯或刪除。
+            </dd>
+          </dl>
+
+          <h4><a name="4-4-1"></a>關於許可權</h4>
+          <p class="h4-p">
+            共用組所屬的用戶分為3種許可權。<br />
+            可以進行文件發送及下載的唯讀許可權，文件發送和下載以外還可以上傳文件的讀寫許可權，可以讀寫與資料夾操作的讀寫資料夾操作許可權。<br />
+            關於受到限制的功能，可以參考下表。(○：可以&nbsp;&nbsp;×：不可以)
+          </p>
+
+          <table>
+            <tbody>
+              <tr>
+                <th></th>
+                <th colspan="3" class="title cc">許可權</th>
+              </tr>
+              <tr>
+                <th class="title cc">項目</th>
+                <th class="cc">唯讀許可權</th>
+                <th class="cc">讀寫許可權</th>
+                <th class="cc">讀寫資料夾操作許可權</th>
+              </tr>
+              <tr>
+                <td>文件發送</td>
+                <td>○</td>
+                <td>○</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件下載</td>
+                <td>○</td>
+                <td>○</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件詳細查看</td>
+                <td>○</td>
+                <td>○</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件檢索</td>
+                <td>○</td>
+                <td>○</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件上傳</td>
+                <td>×</td>
+                <td>○</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件刪除</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件名變更</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>組共用資料夾內的子資料夾名變更</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>組共用資料夾內的子資料夾名刪除</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>把文件移動至組共用的資料夾內的子資料夾</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>新建子資料夾</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4><a name="4-4-2"></a>資料夾許可權編輯</h4>
+          <p class="h4-p">
+            每個組設置有組管理員。<br />
+            組管理員是擁有所有權限和組成員管理許可權的用戶。選擇共用資料夾會顯示[資料夾許可權]。<br />
+            <img src="../../help-images/view-tcn/3-4-2_1.gif" class="view" alt="ファイル一覧：フォルダ権限" />
+          </p>
+
+          <p class="h4-p">
+            點擊[資料夾許可權]顯示資料夾許可權頁面，只有組管理員能夠設置用戶許可權及在組內追加用戶或部門。<br />
+            <img src="../../help-images/view-tcn/3-4-2_2.gif" class="view" alt="フォルダ権限画面" />
+          </p>
+
+          <h5>關於許可權的顯示</h5>
+          <dl>
+            <dt><img src="../../help-images/ico-authority-r.gif" alt="読み出しのみ" /><span class="normalWeight">(唯讀)</span></dt>
+            <dd>把該使用者許可權設置為唯讀。</dd>
+
+            <dt><img src="../../help-images/ico-authority-rw.gif" alt="読み／書き" /><span class="normalWeight">(讀寫)</span></dt>
+            <dd>把該用戶許可權設置為讀寫。</dd>
+
+            <dt><img src="../../help-images/ico-authority-rwx.gif" alt="読み／書き／フォルダ操作" /><span class="normalWeight">(讀寫+資料夾操作)</span></dt>
+            <dd>把該用戶許可權設置為讀寫及資料夾操作。</dd>
+
+            <dt><img src="../../../images/ico-authority-none.gif" alt="なし" /><span class="normalWeight">(無)</span></dt>
+            <dd>該用戶沒有許可權。</dd>
+
+            <dt><img src="../../help-images/ico-authority-del.gif" alt="削除" /><span class="normalWeight">(刪除)</span></dt>
+            <dd>把該用戶從組裡刪除。</dd>
+          </dl>
+          <table>
+            <tbody>
+              <tr>
+                <th><img src="../../help-images/no-s-1.gif" alt="1" />資料夾許可權資訊</th>
+                <td>
+                  可以查看該使用者所屬的組和資料夾資訊。<br />
+                  切換資料夾名稱或建立子資料夾時，可以切換成用戶所屬的其它群組的資訊。<br />
+                  <img src="../../help-images/view-tcn/3-4-2_3.gif" class="view" alt="グループの切替" /><br />
+                  組管理員以外的使用者只顯示資料夾資訊和使用者許可權資訊。<br />
+                  <img src="../../help-images/view-tcn/3-4-2_4.gif" class="view" alt="グループ管理者ではないユーザの権限情報" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-2.gif" alt="2" />編輯</th>
+                <td>
+                  可以編輯所屬用戶的許可權。點擊選擇想要編輯的用戶。<br />
+                  <img src="../../help-images/view-tcn/3-4-2_5.gif" class="view" alt="編集するユーザの選択" /><br />
+                  選擇使用者後點擊[編輯]按鈕，顯示編輯畫面。<br />
+                  請選擇合適的許可權。如果想把資料夾內的子資料夾也設置同樣的許可權，請在子資料夾也更新裡打鉤。<br />
+                  確定變更的內容請點擊[變更]按鈕。<br />
+                  <img src="../../help-images/view-tcn/3-4-2_6.gif" class="view" alt="ユーザの権限編集画面" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-3.gif" alt="3" />一起編輯</th>
+                <td>
+                  可以一起編輯所屬用戶的許可權。<br />
+                  點擊[一起編輯]按鈕進入一起編輯畫面。<br />
+                  <img src="../../help-images/view-tcn/3-4-2_7.gif" class="view" alt="一括編集画面" /><br />
+                  請選擇合適的許可權。如果想把資料夾內的子資料夾也設置同樣的許可權，請在子資料夾也更新裡打鉤。
+                  確定變更的內容請點擊[一起變更]按鈕。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-4.gif" alt="4" />追加用戶</th>
+                <td>
+                  可以追加用戶到組裡。<br />
+                  點擊[追加用戶]按鈕進入使用者追加畫面。<br />
+                  <img src="../../help-images/view-tcn/3-4-2_8.gif" class="view" alt="ユーザ追加画面" /><br />
+                  請在查找欄裡查找想要加到組裡的用戶。查找時只能查找郵箱地址或帳號完全一致用戶。（<a href="#search-form">→用戶查找</a>）<br />
+                  如果想把資料夾內的子資料夾也設置同樣的許可權，請在子資料夾也更新裡打鉤。<br />
+                  確定變更的內容請點擊[追加]按鈕。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-5.gif" alt="5" />所屬用戶</th>
+                <td>所顯示的專案是部門的話顯示為部門，是使用者的話顯示為使用者。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-6.gif" alt="6" />名字(郵箱地址)</th>
+                <td>
+                  顯示組所屬的用戶名和郵箱地址。<br />
+                  另外，有登錄部門的情況下，會顯示部門名連接。<br />
+                  點擊部門名連結，顯示該部門所屬的使用者一覽。<br />
+                  <img src="../../help-images/view-tcn/3-4-2_9.gif" class="view" alt="所属ユーザ一覧画面" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-7.gif" alt="7" />許可權</th>
+                <td>顯示組所屬的使用者和部門的許可權。</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <a name="search-form"></a>
+          <table>
+            <tbody>
+              <tr>
+                <th colspan="2">用戶查找</th>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+                <td>
+                  點擊放大鏡圖示打開使用者查閱資料表。<br />
+                  <img src="../../help-images/view-tcn/6-1_2.gif" class="view" alt="検索フォーム" />
+                  <table class="data-s">
+                    <tbody>
+                      <tr>
+                        <td>項目下拉清單</td>
+                        <td>：選擇查找的項目。</td>
+                      </tr>
+                      <tr>
+                        <td>查找欄</td>
+                        <td>：輸入想要查找的語句。</td>
+                      </tr>
+                      <tr>
+                        <td>[查找]</td>
+                        <td>：開始查找。</td>
+                      </tr>
+                      <tr>
+                        <td>[清空]</td>
+                        <td>：解除查找。</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+                <td>更改一頁中顯示的一覽件數。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+                <td>移動到第一頁。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+                <td>移動到前一頁。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+                <td>移動到所輸入的頁面。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+                <td>移動到下一頁。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+                <td>移動到尾頁。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/load.png" alt="一覧を最新の状態にする" /></th>
+                <td>更新一覽頁面。</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="h4-p">
+            加密資料夾功能啟動時，資料夾許可權頁面將顯示語句。<br />
+            把進行加密的用戶的資料夾許可權變更為“唯讀”、從群組刪除用戶後，資料夾即解鎖。
+            關於加密下載，請參照(<a href="#4-4-3">→加密下載</a>)
+          </p>
+
+          <h4><a name="4-4-3"></a>加密下載</h4>
+          <p class="h4-p">
+            加密下載：選項（※收件人姓名、位址模式）及資料夾加密功能有效時，下載文件夾時將同時對此資料夾進行加密。<br />
+            加密後，將不可變更資料夾，除進行加密操作的用戶外其它用戶將不可操作，不可以上傳同名資料夾。只允許進行加密操作的用戶刪除此資料夾。<br />
+            另外，許可權為唯讀的使用者的頁面，將不顯示“加密下載”按鍵。<br />
+            <img src="../../help-images/view-tcn/4-4-3-lock.gif" class="view" alt="ロック付きダウンロード：ロック中画面" />
+          </p>
+          <p class="h4-p">
+            滑鼠移至「帶鎖」的圖示處，可以確認給文件加鎖的用戶。<br />
+            <img src="../../help-images/view-tcn/4-4-3-lock5.gif" class="view" alt="ロック付きダウンロード：ロック中ユーザ" />
+          </p>
+          <p class="h4-p">
+            當給文件加鎖用戶以外的用戶上傳與帶鎖文件同文件名的文件時，上傳會自動中止。<br />
+            <img src="../../help-images/view-tcn/4-4-3-lock4.gif" class="view" alt="ロックしたファイルのエラー画面" />
+          </p>
+
+          <p class="h4-p">
+            當給文件加鎖的用戶，上傳與帶鎖文件同文件名的文件時，鎖會自動解除。<br />
+            <img src="../../help-images/view-tcn/4-4-3-lock2.gif" class="view" alt="ロック解除" />
+          </p>
+
+          <h4><a name="4-4-4"></a>共用資料夾的有效期限</h4>
+          <p class="h4-p">
+            管理方可以設定共用資料夾的有效期限。<br />
+            共用資料夾被設定有效期限時，資料夾名旁會顯示有效期限。<br />
+            <img src="../../help-images/view-tcn/4-4-4.gif" class="view" alt="共有フォルダの有効期限画面" /><br /><br />
+            被設定有效期限的共用資料夾在有效期過後，根據管理方的設定，使用者頁面有以下3中顯示方式。<br />
+            <table class="table">
+              <tr>
+                <th class="title cc">管理方的設定</th>
+                <th class="title cc">使用者頁面</th>
+              </tr>
+              <tr>
+                <th>隱藏資料夾</th>
+                <td>該共用資料夾不顯示。</td>
+              </tr>
+              <tr>
+                <th>資料夾及文件的操作不可</th>
+                  <td>可以看到共用資料夾但是無法對文件進行操作。<br />
+                    <img src="../../help-images/view-tcn/4-4-4_1.gif" class="view" alt="共有フォルダの有効期限：操作を不可にする" />
+                  </td>
+              </tr>
+              <tr>
+                <th>只允許下載和發送</th>
+                <td>
+                  只能實行下載和發送。<br />
+                  <img src="../../help-images/view-tcn/4-4-4_2.gif" class="view" alt="共有フォルダの有効期限：ダウンロードと配布のみ許可する" />
+              </td>
+              </tr>
+            </table>
+          </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

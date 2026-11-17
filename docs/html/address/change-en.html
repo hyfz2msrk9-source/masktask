@@ -1,0 +1,185 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>Address book</span></h2>
+
+<h3><a name="6-2"></a>Add address</h3>
+<h4><a name="6-2-1"></a>Add from the form</h4>
+<p class="h4-p">
+  You can add an address to your address book. <br />
+  Please click [Add address] button. The area to add an address will appear.<br />
+  <img src="../../help-images/view-en/6-2_1.gif" class="view" alt="add an address" />
+</p>
+
+<p class="h4-p">
+  Add address (registration) area will appear. Please enter or select items, and click the [Add] button.<br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <img src="../../help-images/view-en/6-2_2.png" class="view" alt="add address (registration) area" />
+  <?php else: ?>
+  <img src="../../help-images/view-en/6-2_2.gif" class="view" alt="add address (registration) area" />
+  <?php endif; ?>
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <td>It is a name that address you want to add.</td>
+    </tr>
+    <tr>
+      <th>Handle</th>
+      <td>It is a handle name that address you want to add.</td>
+    </tr>
+    <tr>
+      <th>Group</th>
+      <td>
+        You can classify a mail address to a group.<br />
+        Supposing you set up the existing group, please click [Select group affiliation] link.
+        The screen which sets up an affiliation group is displayed.<br /><br />
+        Please choose a group from a group list.And please click the [↓] button.<br />
+        [Change of group affiliation] Click a button. A setup of a group is completed. <br />
+        <img src="../../help-images/view-en/6-2_3.gif" class="view" alt="Select group" /><br />
+        When you create a new group, please click the [Add group] button.<br />
+        Since the input column is displayed, please input a group name.<br />
+        If the completion of an input is carried out, please click on the preservation icon on right-hand side.<br />
+        A group is created.<br />
+        <img src="../../help-images/view-en/6-2_4.gif" class="view" alt="Make new group" />
+      </td>
+    </tr>
+    <tr>
+      <th>Email address</th>
+      <td>Please enter the address you want to add.</td>
+    </tr>
+    <?php if(SMS_PASS_FLG>0): ?>
+    <tr>
+      <th>Phone number</th>
+      <td>When using another route as the destination of the one-time password, the "phone number" is automatically registered as the one-time password destination.</td>
+    </tr>
+    <tr>
+      <th>Email address<br>for another route</th>
+      <td>When using another route as the destination of the one-time password, the "email address for another route" is automatically registered as the one-time password destination.</td>
+    </tr>
+    <?php endif; ?>
+  </tbody>
+</table>
+
+<h4><a name="6-2-2"></a>Add with the CSV file, Download with the CSV file</h4>
+<h5>Add with the CSV file</h5>
+<p class="h4-p">
+  Please click [Add with the CSV file] button.<br />
+  <img src="../../help-images/view-en/6-2-2_1.gif" class="view" alt="button to add with the CSV file" />
+</p>
+
+<p class="h4-p">
+  Select a CSV file that have information of Email address add to address book, and click [Import] button.<br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <img src="../../help-images/view-en/6-2-2_2_sms.png" class="view" alt="button to import the CSV file:Private/Common" />
+  <?php else: ?>
+  <img src="../../help-images/view-en/6-2-2_2.png" class="view" alt="button to import the CSV file:Private/Common" />
+  <?php endif; ?>
+</p>
+
+<p class="h4-p">
+  When you set not to display the commons, you can register to email addresses other than the commons.<br />
+  When you set not to display the section address book, you can register to email addresses other than the section address book.<br />
+  Only an individual mail address can be registered when setting not to display commons and the section address book.<br />
+  Select a CSV file that have information of Email address add to address book, and click [Import] button.<br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <img src="../../help-images/view-en/6-2-2_2_2_sms.png" class="view" alt="button to import the CSV file:Private" />
+  <?php else: ?>
+  <img src="../../help-images/view-en/6-2-2_2_2.png" class="view" alt="button to import the CSV file:Private" />
+  <?php endif; ?>
+</p>
+
+<p class="h4-p">
+  Please enter <span class="attention">“name, handle, group, Email address, <?php if(SMS_PASS_FLG>0): ?>Phone number, Email address for another route, <?php endif; ?>category”</span> in turn from the first line in the CSV file.<br />
+  When the e-mail address is saved in the personal address book, please write it as "0" in "category".<br />
+  And please write it as "1" in "category" when the e-mail address is saved in the common address book. <br />
+  And please write it as "2" in "category" when the e-mail address is saved in the section address book. <br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+      "smaple-name1","name1","sales","name1@example.com","090-1111-1111","","0"<br>
+      "smaple-name2","name2","sales","name2@example.com","","name2-2@example.com"","1"<br>
+      "smaple-name3","name3","sales","name3@example.com","","name3-2@example.com"","2"
+  </div>
+  <?php else: ?>
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+    "smaple-name1","name1","sales","name1@example.com","0"<br>
+    "smaple-name2","name2","sales","name2@example.com","1"<br>
+    "smaple-name3","name3","sales","name3@example.com","2"
+  </div>
+  <?php endif; ?>
+</p>
+
+<p class="h4-p">
+  When it is set that Common and section address book are not displayed, please enter <span class="attention">“name, handle, group, Email address<?php if(SMS_PASS_FLG>0): ?>, Phone number, Email address for another route”<?php endif; ?></span> in turn from the first line in the CSV file.<br />
+  Only an individual mail address is registered.<br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+      "smaple-name1","name1","sales","name1@example.com","090-1111-1111",""<br>
+      "smaple-name2","name2","sales","name2@example.com","","name2-2@example.com"
+  </div>
+  <?php else: ?>
+  <div style="margin-left:30px;margin-bottom:30px;padding:10px;border: 1px solid #aaaaaa;width:530px;">
+    "smaple-name1","name1","sales","name1@example.com"<br>
+    "smaple-name2","name2","sales","name2@example.com"
+  </div>
+  <?php endif; ?>
+</p>
+
+<p class="h4-p">
+  When import operetion will be completed, the complete screen will appear. Click [Return] button to return to the address book.<br />
+  <img src="../../help-images/view-en/6-2-2_4.gif" class="view" alt="add address with thw CSV file(completion)" />
+</p>
+
+<h3><a name="6-3"></a>Edit address</h3>
+<p>
+  You can edit the address in the address book. Please click the address you want to edit in the address list.<br />
+  After you select and click the address, please click the [Edit address] button.<br />
+  <img src="../../help-images/view-en/6-3_1.gif" class="view" alt="edit the address" />
+</p>
+
+<p>
+  The area to edit address will appear. Please edit the address and click [Edit] button.<br />
+  <?php if(SMS_PASS_FLG>0): ?>
+  <img src="../../help-images/view-en/6-3_2.png" class="view" alt="edit address" />
+  <?php else: ?>
+  <img src="../../help-images/view-en/6-3_2.gif" class="view" alt="edit address" />
+  <?php endif; ?>
+</p>
+
+<h5>Download with the CSV file</h5>
+<p class="h4-p">
+    Please click [Download with the CSV file] button.<br />
+    Please download, when you can download a CSV file. <br />
+  <img src="../../help-images/view-en/6-2-2_1_2.gif" class="view" alt="CSV file download" />
+</p>
+
+<h3><a name="6-4"></a>Delete address</h3>
+<p>
+  Please click the address you want to delete in the address list.<br />
+  You can select more than one address.<br />
+  After selection please click [Delete address] button.<br />
+  <img src="../../help-images/view-en/6-4_1.gif" class="view" alt="delete address" />
+</p>
+
+<p>
+  Confirmation message will appear, after confirm your operation, please click [OK] button.<br />
+  The address you select will be deleted.<br />
+  <img src="../../help-images/view-en/6-4_2.gif" class="view" alt="delete address(confirm)" />
+</p>
+
+<p>
+  If you want to delete all addresses in your address list,please click the[Delete all addresses] button.<br />
+  When you select the personal address list by [Personal/Common TAB], [Delete all personal addresses] button appears. and when you select the common addres list by [Personal/Common TAB],[Delete all common addresses] buton appears.<br />
+  <img src="../../help-images/view-en/6-4_3.gif" class="view" alt="delete all address(confirm)" />
+</p>
+
+<p>
+  Confirmation message will appear, after confirm your operation, please click [OK] button.<br />
+  The address you select will be deleted.<br />
+  <img src="../../help-images/view-en/6-4_4.gif" class="view" alt="delete all address(confirm)" />
+</p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-en.html'); ?>

@@ -1,0 +1,88 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-en.html');
+?>
+<h2><span>About Shortcuts and Right-Click Functions</span></h2>
+<h3>About Shortcuts</h3>
+<p>The available keyboard shortcuts are as follows:</p>
+<table>
+  <tr>
+    <th>Shortcut</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>command/ctrl + a</td>
+    <td>Select all files</td>
+  </tr>
+  <tr>
+    <td>After selecting a file, shift + click</td>
+    <td>Selects the range up to the shift-clicked file</td>
+  </tr>
+  <tr>
+    <td>command/ctrl + click</td>
+    <td>Select/Deselect multiple files individually</td>
+  </tr>
+  <tr>
+    <td>command/ctrl + c</td>
+    <td>Copy file names (tab-separated)</td>
+  </tr>
+</table>
+
+<h3>About Right-Click Functions</h3>
+<p>When multiple files are selected and even one of them includes a file you do not have permission to operate.<br/>
+As shown below, the operation items will be disabled and cannot be clicked.</p>
+<img src="../../help-images/view-en/shortcut_rightclick_disabled.png" class="view"
+  alt="Example of disabled operations due to insufficient permissions" />
+
+<p>The functions available from the right-click menu are as follows:</p>
+<table>
+  <tr>
+    <th>Operation</th>
+    <th>Single File Selected</th>
+    <th>Multiple Files Selected</th>
+  </tr>
+  <tr>
+    <td>Distribute</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">◯</td>
+  </tr>
+  <tr>
+    <td>File Edit</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">×</td>
+  </tr>
+  <tr>
+    <td>Download</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">◯</td>
+  </tr>
+  <tr>
+    <td>Preview</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">×</td>
+  </tr>
+  <tr>
+    <td><a href="./index-en.html#sanitize">Sanitization (Option)</a></td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">×</td>
+  </tr>
+  <tr>
+    <td>Memo</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">×</td>
+  </tr>
+  <tr>
+    <td>Copy</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">◯</td>
+  </tr>
+  <tr>
+    <td>Delete</td>
+    <td style="text-align: center;">◯</td>
+    <td style="text-align: center;">◯</td>
+  </tr>
+</table>
+
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

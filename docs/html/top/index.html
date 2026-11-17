@@ -1,0 +1,307 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>ファイル一覧</span></h2>
+<p>ファイル一覧では、ファイルのアップロードや管理をおこなうことができます。<br />
+  メニュー：ファイル一覧をクリックしてください。<br />
+  <img src="../../../images/sysmenu_top.gif" class="view" alt="メニュー：ファイル一覧" />
+</p>
+
+<h3><a name="4-1"></a>ファイル一覧画面</h3>
+<p>
+  メニュー：ファイル一覧をクリックすると、ファイル一覧画面へ遷移します。アップロードしたファイルの一覧を表示します。<br />
+  ファイル一覧画面で各ファイルの操作が可能です。また、ご利用可能な容量を表示しています。<br />
+  <img src="../../help-images/view/3-1.gif" class="view" alt="ファイル一覧画面" />
+</p>
+
+<table>
+  <tr>
+    <th><img src="../../help-images/no-s-1.gif" alt="1" />使用容量</th>
+    <td>
+      ご利用可能な容量を表示しています。<br />
+      <span class="bold">「基本容量」＋「拡張容量」</span>となっています。<br />
+      ※システムの拡張容量の残容量が、ユーザ設定の拡張容量を下回った場合は、<span class="bold">「基本容量＋システムの拡張容量の残容量」</span>となります。<br />
+      <span class="attention">[注意]</span>共有フォルダを表示しているときは、拡張容量は反映されず、管理者が設定した容量を表示しています。
+      <table class="table-s">
+        <tr>
+          <th>基本容量</th>
+          <td>ユーザに設定された最低限確保された容量です。</td>
+        </tr>
+        <tr>
+          <th>拡張容量</th>
+          <td>ユーザ全体で使用していない容量がある場合（未割当分がある場合）、ユーザごとに割り当てて使用できる(拡張できる)容量です。</td>
+        </tr>
+      </table>
+      <br />
+      右に表示されているメーターは、使用容量をグラフで表示しています(管理者によって、非表示に設定されている場合があります)。
+    </td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-2.gif" alt="2" />フォルダ一覧</th>
+    <td>お気に入りに登録されたフォルダ、共有フォルダ、個人フォルダを表示しています。(<a href="index.html#4-1-1">→フォルダについて</a>)</td>
+  </tr>
+  <tr>
+    <th><img src="../../help-images/no-s-3.gif" alt="3" />ファイル一覧</th>
+    <td>アップロードされたファイルを表示しています。(<a href="index.html#4-1-3">→ファイル一覧について</a>)</td>
+  </tr>
+</table>
+
+<h4><a name="4-1-1"></a>フォルダについて</h4>
+<p class="h4-p">
+  ファイル一覧の上側は、現在のフォルダとフォルダの操作ボタンです。<br />
+  トップ以外のフォルダを表示している場合に表示します。操作については以下をご覧ください。<br />
+  共有フォルダについては<a href="index.html#4-1-3">フォルダ一覧について</a>、もしくは<a href="group.html#4-4">グループ共有機能</a>をご覧ください。<br />
+  <img src="../../help-images/view/3-1-1.gif" class="view" alt="現在のフォルダとフォルダの操作ボタン" />
+</p>
+<dl>
+  <dt>現在のフォルダ</dt>
+  <dd>
+    現在のフォルダです。他のフォルダを選択すると、選択フォルダへ移動します。<br />
+    <img src="../../help-images/view/3-1-1_2.gif" class="view" alt="現在のフォルダ" />
+  </dd>
+
+  <dt>[フォルダ名変更]ボタン</dt>
+  <dd>
+    現在のフォルダ名を変更します。共有フォルダは、変更できません。<br />
+    <img src="../../help-images/view/3-1-1_3.gif" class="view" alt="フォルダ名変更画面" />
+  </dd>
+
+  <dt>[フォルダ削除]ボタン</dt>
+  <dd>
+    現在のフォルダを削除します。フォルダを削除すると、削除するフォルダの中にあるフォルダやファイルも全て削除されます。慎重に作業を行ってください。共有フォルダは、削除できません。<br />
+    <img src="../../help-images/view/3-1-1_4.gif" class="view" alt="フォルダ削除画面" />
+  </dd>
+
+  <dt>[フォルダ作成]ボタン</dt>
+  <dd>
+    新規にフォルダを作成します。共有フォルダには、作成できません。<br />
+    <img src="../../help-images/view/3-1-1_5.gif" class="view" alt="フォルダ作成画面" />
+  </dd>
+
+  <dt>フォルダ移動</dt>
+  <dd>
+    フォルダをドラッグし、移動させたいフォルダ上でドロップすることによって、フォルダの移動が可能です。<br />
+    お気に入りフォルダ一覧はこの機能に対応していません。<br />
+    <img src="../../help-images/view/3-1-1_6.gif" class="view" alt="フォルダの移動" />
+  </dd>
+
+</dl>
+
+<h4><a name="4-1-2"></a>フォルダ作成</h4>
+<p class="h4-p">
+  フォルダを作成します。フォルダを作成する場所を選択し、新しく作成するフォルダ名を入力してください。
+  フォルダ名を入力後、[作成する]ボタンをクリックしてください。フォルダを作成します。
+  <img src="../../help-images/view/folder-add-1.gif" class="view" alt="フォルダ作成" />
+</p>
+
+<p class="h4-p">
+  フォルダ作成完了画面に遷移します。各ボタンをクリックしてください。<br />
+  <img src="../../help-images/view/folder-add-2.gif" class="view" alt="フォルダ作成" />
+</p>
+
+<dl>
+  <dt>上位フォルダへ移動</dt>
+  <dd>
+    作成したフォルダの一つ上のフォルダへ移動します。<br />
+    トップ内にフォルダを作成した場合、トップのフォルダへ移動します。<br />
+    <img src="../../help-images/view/folder-add-3.gif" class="view" alt="フォルダ作成-上位フォルダへ移動する" />
+  </dd>
+
+  <dt>作成フォルダへ移動</dt>
+  <dd>
+    作成したフォルダへ移動します。<br />
+    <img src="../../help-images/view/folder-add-4.gif" class="view" alt="フォルダ作成-作成フォルダへ移動する" />
+  </dd>
+
+  <dt>続けて作成する</dt>
+  <dd>
+    続けてさらにフォルダを作成します。<br />
+    [続けて作成する]ボタンをクリックすると、フォルダ作成画面へ遷移します。
+  </dd>
+</dl>
+
+<h4><a name="4-1-3"></a>フォルダ一覧について</h4>
+<p class="h4-p">
+  ファイル一覧画面の左側は、フォルダ一覧です。<br />
+  フォルダの種類、機能、アイコン等については以下をご覧ください。<br />
+  <img src="../../help-images/view/3-1-2.gif" class="view" alt="フォルダ一覧" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />お気に入りフォルダ</th>
+      <td>
+        フォルダ名の右にあるアイコンをクリックすることで、お気に入りフォルダに登録・削除することができます。<br />
+        登録されている時は<img src="../../../images/ico-favorite-on.svg" alt="favorite-on" class="favorite-icon"/>、されていない時は<img src="../../../images/ico-favorite.svg" alt="favorite-off" class="favorite-icon"/>で表示されています。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />共有フォルダ</th>
+      <td>
+        ここに表示されているフォルダは、共有フォルダです。<br />
+        設定されたグループの中でファイルを共有することができます。グループ共有機能でグループに所属していなければ、「▼共有フォルダ」とそのフォルダは表示されません。<br />
+        グループ共有機能については<a href="group.html#4-4">グループ共有機能</a>をご覧ください。<br />
+      </td>
+    </tr>
+
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />共有フォルダ検索</th>
+      <td>
+        共有フォルダの検索を行います。グループ共有機能で、グループに所属していない、もしくは共有フォルダ検索機能が無効に設定されている場合は表示されません。
+      </td>
+    </tr>
+
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />個人フォルダ</th>
+      <td>
+        ここに表示されているフォルダは、ユーザ個人が使用するフォルダです。<br />
+        自由にフォルダの作成、編集、削除ができます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/folder_open.gif" alt="現在選択中の個人フォルダ" /><span class="normalWeight">(フォルダ名)</span></th>
+      <td>
+        現在選択している個人フォルダ内のフォルダです。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/folder_close.gif" alt="現在選択していない個人フォルダ" /><span class="normalWeight">(フォルダ名)</span></th>
+      <td>
+        現在選択していない個人フォルダ内のフォルダです。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/sfolder_open.gif" alt="現在選択中の共有フォルダ内フォルダ" /><span class="normalWeight">(フォルダ名)</span></th>
+      <td>
+        現在選択している共有フォルダ内のフォルダです。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/sfolder_close.gif" alt="現在選択していない共有フォルダ内フォルダ" /><span class="normalWeight">(フォルダ名)</span></th>
+      <td>
+        現在選択していない共有フォルダ内のフォルダです。
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4><a name="4-1-4"></a>ファイル一覧について</h4>
+<p class="h4-p">
+  ファイル一覧画面の右側はファイル一覧です。機能、ボタンについては以下をご覧ください。<br />
+  <img src="../../help-images/view/3-1-3.gif" class="view" alt="ファイル一覧" />
+</p>
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />ファイル名</th>
+      <td>アップロードされたファイルの名前です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />最終更新日</th>
+      <td>ファイルをアップロードした年月日または時分秒です。<br />
+        アップロードした当日ならば時分秒、次の日以降なら年月日を表示します。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />サイズ</th>
+      <td>アップロードされたファイルのサイズです。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />通知</th>
+      <td>ファイル配布を通知した人数です。</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_up.gif" alt="アップロード" /></th>
+      <td>ファイルのアップロードボタンです。(<a href="upload.html#4-2">→ファイルのアップロード</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_folder_dl.gif" alt="一括ダウンロード" /></th>
+      <td>
+        現在開いているフォルダ内のファイルを一括ダウンロード行うボタンです。<br />
+        注意：フォルダ一括ダウンロードは、一部の環境のみご利用可能です。<br />
+        <img src="../../help-images/view/3-1-3_2.gif" class="view" alt="フォルダ一括ダウンロード画面" /><br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_changenm.gif" alt="ファイル名変更とサムネイルの設定" /></th>
+      <td>
+        ファイル名の変更とサムネイルの設定を行うボタンです。<br />
+        ファイル名を変更するには、新ファイル名を入力して[編集確定]ボタンをクリックしてください。フォルダ公開機能が有効でサムネイル機能がONのとき、サムネイルの登録・編集が行えます。(<a href="thumbnail.html#4-6">→サムネイル表示機能</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_detail.gif" alt="ファイル詳細" /></th>
+      <td>
+        ファイルの詳細ボタンです。クリックすると、メモとアップロード日詳細を表示します。<br />
+        <img src="../../help-images/icon_close.gif" alt="詳細閉じる" />をクリックすると、詳細を閉じます。<br />
+        また、「クリックして編集する...」をクリックすると、メモの内容を編集することができます。すでに、メモを登録している場合は、メモの文字をクリックすることで、編集することができます。
+        <img src="../../help-images/view/3-1-3_3.gif" class="view" alt="ファイル詳細画面" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../../images/icon_preview.svg" class="icon_18" alt="ファイル詳細" /></th>
+      <td>
+        ファイルのプレビューボタンです。</br>クリックすると、プレビューウィンドウが開きます。<br />
+        <a href="./preview.html">(→プレビュー機能について)</a>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_sanitization.gif" alt="無害化" />(オプション)</th>
+      <td>
+        [無害化]ボタンです。無害化前のファイルを無害化します。(<a href="#sanitize">→無害化</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_send.gif" alt="配布" /></th>
+      <td>
+        [配布]ボタンです。ファイルの配布を行います。(<a href="send.html#4-3">→ファイルの配布</a>)
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_dl.gif" alt="ダウンロード" /></th>
+      <td>
+        [ダウンロード]ボタンです。ファイルのダウンロードをします。<br />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_delete.gif" alt="削除" /></th>
+      <td>
+        [削除]ボタンです。ファイルの削除を行います。<br />
+        ファイルを削除されますと、システム上から完全に削除されます。ファイルの配布を通知した人がダウンロードできなくなります。慎重に作業を行ってください。
+      </td>
+    </tr>
+  </tbody>
+</table>
+<dl>
+  <dt>選択中のファイルを操作する</dt>
+  <dd>
+    チェックボックスで選択しているファイルをまとめて操作します。<br />
+    [配布]ボタンをクリックすると、ファイルを配布します。移動先フォルダを選択して[移動]ボタンをクリックすると、別のフォルダへ移動させます。[ダウンロード]ボタンをクリックすると、ファイルをダウンロードできます。[削除]ボタンをクリックするとファイルを削除します。<br />
+    <img src="../../help-images/view/3-1-3_4.gif" class="view" alt="選択中のファイル操作" />
+  </dd>
+  <dt id="dragdrop">ファイルのアップロード(ドラッグ&ドロップ)</dt>
+  <dd>書き込み権限のあるフォルダでは、ファイル一覧にファイルをドラッグ&ドロップすることでファイルをアップロードできます。<br />
+    <img src="../../help-images/view/drag-new-file.png" class="view" alt="新規ファイルを一覧上にドラッグした時"><br />
+    <img src="../../help-images/view/drop-new-file.png" class="view" alt="新規ファイルを一覧上にドロップするとアップロードできる">
+  </dd>
+  <dt>ファイルの移動(ドラッグ&ドロップ)</dt>
+  <dd>マウスのドラッグ＆ドロップで、ファイルの移動をします。フォルダ移動したいファイルのファイル名を、移動させたいフォルダへドラッグ＆ドロップしてください。<br />
+    お気に入りフォルダ一覧はこの機能に対応していません。<br />
+    <img src="../../help-images/view/3-1-4.gif" class="view" alt="ファイルの移動" />
+  </dd>
+  <dt>ファイルの検索</dt>
+  <dd>ファイル名の一部をキーワードとして入力することで、登録したファイルを検索できます。<br />
+  キーワードを入力し、[検索]ボタンをクリックしてください。<br />
+  スペースを開けることで、複数のキーワードを入れることも可能です。<br />
+    <img src="../../help-images/view/3-1-5.gif" class="view" alt="ファイルの検索" />
+  </dd>
+  <dt id="sanitize">無害化（オプション）</dt>
+  <dd>
+    アップロードしたファイル内の有害な可能性のある部分を取り除き無害化します。<br />
+    管理者側の設定によって無害化前ファイルを保持したり、無害化したファイルのみを残したりすることができます。<br />
+    無害化前のファイルを保持する設定の場合、無害化前のファイル名には自動的に「_無害化前」の文字が付与されます。<br />
+    <img style="width:500px" src="../../help-images/view/3-1-6.gif" class="view" alt="無害化" />
+  </dd>
+</dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

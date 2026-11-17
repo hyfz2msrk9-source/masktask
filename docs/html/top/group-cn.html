@@ -1,0 +1,362 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-cn.html');
+?>
+          <h2><span>文件一览</span></h2>
+          <h3><a name="4-4"></a>组共享功能</h3>
+          <p>
+            组共享功能是在组所属的用户间可以共享文件的功能。<br />
+            <img src="../../help-images/view-cn/4-4-top.gif" class="view" alt="グループ共有：ファイル一覧" />
+          </p>
+
+          <table>
+            <tr>
+              <th><img alt="1" src="../../help-images/no-s-1.gif" />文件夹权限</th>
+              <td>
+                拥有所有权限和组成员的管理权限的用户会显示在共享文件夹内。(<a href="#4-4-2">→文件夹权限编辑</a>)
+              </td>
+            </tr>在管理者正使设定有效的时候,共享文件的上载用户被表示。
+            <tr>
+              <th><img alt="2" src="../../help-images/no-s-2.gif" />上传用户</th>
+              <td>
+                在管理者正使设定有效的时候，共享文件的上传用户被表示。
+              </td>
+            </tr>
+            <tr>
+              <th><img alt="3" src="../../help-images/no-s-3.gif" />带锁下载</th>
+              <td>
+                选项（※收件人姓名、地址模式）及文件夹加密功能有效时将显示，请点击。点击后将不可以上传相同文件夹名的文件夹，及不可以编辑加密文件夹。(<a href="#4-4-3">→加密下载</a>）
+              </td>
+            </tr>
+          </table>
+
+          <p>
+            每个组都有专用的共享文件夹，有复数的所属用户。在组专用的共享文件夹内的文件供所属用户们共享。所属的用户设有权限，分为只读权限、读写权限、读写加文件夹操作权限的3种。 (<a href="group-cn.html#4-4-1">→关于权限</a>）
+          </p>
+
+          <p>
+            在组专用的共享文件夹内实行文件删除或文件的文件夹间移动，收到文件发送通知的人就无法再下载此文件。如果发送文件到组内的用户退出该组，接到文件发送通知的人也无法下载此文件。请注意。<br />
+            另外，共享文件夹不能使用文件夹公开功能（<a href="folder-cn.html#4-5">→文件夹公开功能</a>）。请注意。
+          </p>
+          <p>
+            在组所属用户的文件一览中的文件夹一览中会显示▼共享文件夹、▼个人文件夹。<br />
+            <img src="../../help-images/view-cn/3-4_1.gif" class="view" alt="フォルダ一覧" />
+          </p>
+
+          <dl>
+            <dt>共享文件夹</dt>
+            <dd>
+              这里显示的文件夹是共享文件夹。<br />
+              在所设定的组中可以共享文件。在组中的主文件夹是不能做成、编辑或删除的。
+            </dd>
+
+            <dt>个人文件夹</dt>
+            <dd>
+              这里显示的文件夹是个人用文件夹。可以自由地新建、编辑或删除。
+            </dd>
+          </dl>
+
+          <h4><a name="4-4-1"></a>关于权限</h4>
+          <p class="h4-p">
+            共享组所属的用户分为3种权限。<br />
+            只能进行文件发送及下载的只读权限，文件发送和下载以外还可以上传文件的读写权限，以及可以读写与操作文件夹的读写与文件夹操作权限。<br />
+            关于受到限制的功能，可以参考下表。(○：可以&nbsp;&nbsp;×：不可以)
+          </p>
+
+          <table>
+            <tbody>
+              <tr>
+                <th></th>
+                <th colspan="3" class="title cc">权限</th>
+              </tr>
+              <tr>
+                <th class="title cc">项目</th>
+                <th class="cc">只读权限</th>
+                <th class="cc">读写权限</th>
+                <th class="cc">读写文件夹操作权限</th>
+              </tr>
+              <tr>
+                <td>文件发送 </td>
+                <td>○</td>
+                <td>○</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件下载</td>
+                <td>○</td>
+                <td>○</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件详细查看</td>
+                <td>○</td>
+                <td>○</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件检索</td>
+                <td>○</td>
+                <td>○</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件上传</td>
+                <td>×</td>
+                <td>○</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件删除</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>文件名变更</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>组共享文件夹内的子文件夹名变更</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>组共享文件夹内的子文件夹名删除</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>把文件移动至组共享的文件夹内的子文件夹</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+              <tr>
+                <td>新建子文件夹</td>
+                <td>×</td>
+                <td>×</td>
+                <td>○</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4><a name="4-4-2"></a>文件夹权限编辑</h4>
+          <p class="h4-p">
+            每个组设置有组管理员。<br />
+            组管理员是拥有所有权限和组成员管理权限的用户。选择共享文件夹会显示[文件夹权限]。<br />
+            <img src="../../help-images/view-cn/3-4-2_1.gif" class="view" alt="ファイル一覧：フォルダ権限" />
+          </p>
+          <p class="h4-p">
+
+            点击[文件夹权限]显示文件夹权限页面，只有组管理员能够设置用户权限及在组内追加用户或部门。<br />
+            <img src="../../help-images/view-cn/3-4-2_2.gif" class="view" alt="フォルダ権限画面" />
+          </p>
+
+          <h5>关于权限的显示</h5>
+          <dl>
+            <dt><img src="../../help-images/ico-authority-r.gif" alt="読み出しのみ" /><span class="normalWeight">只读</span></dt>
+            <dd>把该用户权限设置为只读。</dd>
+
+            <dt><img src="../../help-images/ico-authority-rw.gif" alt="読み／書き" /><span class="normalWeight">读写</span></dt>
+            <dd>把该用户权限设置为读写。</dd>
+
+            <dt><img src="../../help-images/ico-authority-rwx.gif" alt="読み／書き／フォルダ操作" /><span class="normalWeight">读写+文件夹操作</span></dt>
+            <dd>把该用户权限设置为读写及文件夹操作。</dd>
+
+            <dt><img src="../../../images/ico-authority-none.gif" alt="なし" /><span class="normalWeight">无</span></dt>
+            <dd>该用户没有权限。</dd>
+
+            <dt><img src="../../help-images/ico-authority-del.gif" alt="削除" /><span class="normalWeight">删除</span></dt>
+            <dd>把该用户从组里删除。</dd>
+          </dl>
+          <table>
+            <tbody>
+              <tr>
+                <th><img src="../../help-images/no-s-1.gif" alt="1" />文件夹权限信息</th>
+                <td>
+                  可以查看该用户所属的组和文件夹信息。<br />
+                  切换文件夹名称或建立子文件夹时，可以切换成用户所属的其它群组的信息。<br />
+                  <img src="../../help-images/view-cn/3-4-2_3.gif" class="view" alt="グループの切替" /><br />
+                  组管理员以外的用户只显示文件夹信息和用户权限信息。<br />
+                  <img src="../../help-images/view-cn/3-4-2_4.gif" class="view" alt="グループ管理者ではないユーザの権限情報" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-2.gif" alt="2" />编辑</th>
+                <td>
+                  可以编辑所属用户的权限。<br />
+                  点击选择想要编辑的用户。<br />
+                  <img src="../../help-images/view-cn/3-4-2_5.gif" class="view" alt="編集するユーザの選択" /><br />
+                  选择用户后点击[编辑]按钮，显示编辑画面。<br />
+                  请选择合适的权限。如果想把文件夹内的子文件夹也设置同样的权限，请在子文件夹也更新里打钩。<br />
+                  确定变更的内容后请点击[变更]按钮。<br />
+                  <img src="../../help-images/view-cn/3-4-2_6.gif" class="view" alt="ユーザの権限編集画面" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-3.gif" alt="3" />一起编辑</th>
+                <td>
+                  可以一起编辑所属用户的权限。<br />
+                  点击[一起编辑]按钮进入一起编辑画面。<br />
+                  <img src="../../help-images/view-cn/3-4-2_7.gif" class="view" alt="一括編集画面" /><br />
+                  请选择合适的权限。如果想把文件夹内的子文件夹也设置同样的权限，请在子文件夹也更新里打钩。<br />
+                  确定变更的内容请点击[一起变更]按钮。<br />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-4.gif" alt="4" />用户追加</th>
+                <td>
+                  可以追加用户到组里。<br />
+                  点击[用户追加]按钮进入用户追加画面。<br />
+                  <img src="../../help-images/view-cn/3-4-2_8.gif" class="view" alt="ユーザ追加画面" /><br />
+                  请在查找栏里查找想要加到组里的用户。查找时只能查找邮箱地址或账号完全一致用户。（<a href="#search-form">→用户查找</a>）
+                  如果想把文件夹内的子文件夹也设置同样的权限，请在子文件夹也更新里打钩。
+                  确定变更的内容请点击[追加]按钮。
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-5.gif" alt="5" />所属用户</th>
+                <td>所显示的项目是部门的话显示为部门，是用户的话显示为用户。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-6.gif" alt="6" />名字(邮箱地址)</th>
+                <td>
+                  显示组所属的用户名和邮箱地址。<br /><br />
+                  另外，有登录部门的情况下，会显示部门名链接。<br />
+                  点击部门名链接，显示该部门所属的用户一览。<br />
+                  <img src="../../help-images/view-cn/3-4-2_9.gif" class="view" alt="所属ユーザ一覧画面" />
+                </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/no-s-7.gif" alt="7" />权限</th>
+                <td>显示组所属的用户和部门的权限。</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <a name="search-form"></a>
+          <table>
+            <tbody>
+              <tr>
+                <th colspan="2">用户查找</th>
+              </tr>
+              <tr>
+            <th><img src="../../help-images/magnifier.png" alt="検索" /></th>
+            <td>
+              点击放大镜图标打开用户查找表。<br />
+              <img src="../../help-images/view-cn/6-1_2.gif" class="view" alt="検索フォーム" />
+              <table class="data-s">
+                <tbody>
+                  <tr>
+                    <td>项目下拉框</td>
+                    <td>：选择查找的项目。</td>
+                  </tr>
+                  <tr>
+                    <td>查找栏</td>
+                    <td>：输入想要查找的语句。</td>
+                  </tr>
+                  <tr>
+                    <td>查找</td>
+                    <td>：开始查找。</td>
+                  </tr>
+                  <tr>
+                    <td>清空</td>
+                    <td>：解除查找。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/view/6-1_3.gif" alt="1ページに表示する一覧件数" /></th>
+                <td>更改一页中显示的一览件数。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/first.gif" alt="先頭ページに移動" /></th>
+                <td>移动到第一页。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/prev.gif" alt="1ページ前に移動" /></th>
+                <td>移动到前一页。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/view/6-1_4.gif" alt="入力ページに移動" /></th>
+                <td>移动到所输入的页面。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/next.gif" alt="1ページ次に移動" /></th>
+                <td>移动到下一页。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/last.gif" alt="最終ページに移動" /></th>
+                <td>移动到尾页。</td>
+              </tr>
+              <tr>
+                <th><img src="../../help-images/load.png" alt="一覧を最新の状態にする" /></th>
+                <td>更新一览页面。</td>
+              </tr>
+            </tbody>
+        </table>
+          <p class="h4-p">
+            文件加密功能启动时，文件夹权限页面将显示语句。<br />
+            把进行加密的用户的文件夹权限变更为“只读”、从群组删除用户后，文件即解锁。<br />
+
+            关于加密下载，请参照(<a href="#4-4-3">→加密下载</a>)
+          </p>
+
+          <h4><a name="4-4-3"></a>加密下载</h4>
+          <p class="h4-p">
+            加密下载：选项（※覆盖模式）及文件加密功能有效时，下载文件时将同时对此文件进行加密。<br />
+            加密后，将不可变更文件夹，除进行加密操作的用户外其它用户将不可操作，不可以上传同名文件夹。只允许进行加密操作的用户删除此文件。<br />
+            另外，权限为只读的用户的页面，将不显示“带锁下载”按键。<br />
+            <img src="../../help-images/view-cn/4-4-3-lock.gif" class="view" alt="ロック付きダウンロード：ロック中画面" />
+          </p>
+          <p class="h4-p">
+            鼠标移至「带锁」的图标处，可以确认给文件加锁的用户。<br />
+            <img src="../../help-images/view-cn/4-4-3-lock5.gif" class="view" alt="ロック付きダウンロード：ロック中ユーザ" />
+          </p>
+          <p class="h4-p">
+            当给文件加锁用户以外的用户上传与带锁文件同文件名的文件时，上传会自动中止。<br />
+            <img src="../../help-images/view-cn/4-4-3-lock4.gif" class="view" alt="ロックしたファイルのエラー画面" />
+          </p>
+
+          <p class="h4-p">
+            当给文件加锁的用户，上传与带锁文件同文件名的文件时，锁会自动解除。<br />
+            <img src="../../help-images/view-cn/4-4-3-lock2.gif" class="view" alt="ロック解除" />
+          </p>
+
+          <h4><a name="4-4-4"></a>共享文件夹的有效期限</h4>
+          <p class="h4-p">
+            管理方可以设定共享文件夹的有效期限。<br />
+            共享文件夹被设定有效期限时，文件夹名旁会显示有效期限。<br />
+            <img src="../../help-images/view-cn/4-4-4.gif" class="view" alt="共有フォルダの有効期限画面" /><br /><br />
+
+            被设定有效期限的共享文件夹在有效期过后，根据管理方的设定，用户页面有以下3种显示方式。
+
+            <table class="table">
+              <tr>
+                <th class="title cc">管理方的设定 </th>
+                <th class="title cc">用户页面</th></tr>
+              <tr>
+                <th>隐藏文件夹</th>
+                <td>该共享文件夹将不被显示。</td>
+              </tr>
+              <tr>
+                <th>文件夹及文件的操作不可</th>
+                <td>可以看到共享文件夹但是无法对文件进行操作。<br />
+                  <img src="../../help-images/view-cn/4-4-4_1.gif" class="view" alt="共有フォルダの有効期限：操作を不可にする" />
+                </td>
+              </tr>
+              <tr>
+                <th>只允许下载和发送</th>
+                <td>只能实行下载和发送。<br />
+                  <img src="../../help-images/view-cn/4-4-4_2.gif" class="view" alt="共有フォルダの有効期限：ダウンロードと配布のみ許可する" /></td>
+              </tr>
+            </table>
+          </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-cn.html'); ?>

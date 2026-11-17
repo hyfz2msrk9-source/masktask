@@ -1,0 +1,111 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header-tcn.html');
+?>
+          <h2><span>待機郵件一覽</span></h2>
+          <p>
+            待機郵件一覽是指待機狀態還未被發出的郵件一覽。<br />
+            分佈，傳輸並在同一時間採取回電子郵件通訊，發送郵件自動隨著時間的推移，等待時間設置為發送電子發送郵件收回。<br />
+            目錄：請點擊待機郵件一覽。<br />
+            <img src="../../../images-tcn/sysmenu_waitmail.gif" alt="目錄：待機郵件一覽" class="view" />
+          </p>
+
+          <p>
+            以下介面是待機郵件的一覽。<br />
+            <img src="../../help-images/view-tcn/standbymail-5.gif" alt="待機郵件一覽" class="view" />
+          </p>
+
+          <table>
+            <tr>
+              <th><img src="../../help-images/no-s-1.gif" alt="1" />動作</th>
+              <td>
+                顯示送信郵件的種類。
+              </td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/no-s-2.gif" alt="2" />收件人</th>
+              <td>
+                顯示送信郵件的郵箱地址。
+              </td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/no-s-3.gif" alt="3" />文件名</th>
+              <td>
+                顯示送信郵件裡附件的名字。
+              </td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/no-s-4.gif" alt="4" />件名</th>
+              <td>
+                顯示發送郵件的件名。
+              </td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/no-s-5.gif" alt="5" />發送預訂時間</th>
+              <td>
+                顯示發送郵件的時間。
+              </td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/no-s-6.gif" alt="6" />發送狀態</th>
+              <td>
+                顯示郵件的狀態。
+              </td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/no-s-7.gif" alt="7" />詳細</th>
+              <td>
+                對發送待機中的郵件進行編輯和確認。
+              </td>
+            </tr>
+          </table>
+
+          <a name="detail"></a>
+          <h3>待機郵件的詳細</h3>
+          <p>
+            在一覽中選擇想要確認的郵件點擊[詳細]按鈕。<br />
+            <img src="../../help-images/view-tcn/standbymail-6.gif" alt="待機メール：詳細ボタン" class="view" />
+          </p>
+
+          <p>
+            顯示郵件的詳細頁面。<br />
+            在詳細頁面裡可以進行郵件的編輯、刪除、發送停止解除。<br />
+            <img src="../../help-images/view-tcn/wait_detail.png" alt="待機メール：詳細" class="view" />
+          </p>
+
+          <a name="edit"></a>
+          <h3>待機郵件的編輯</h3>
+          <p>
+            在詳細頁面裡店家[編輯]按鈕，顯示編輯頁面。<br />
+            <img src="../../help-images/view-tcn/standbymail-7-2.gif" alt="詳細：編集ボタン" class="view" />
+          </p>
+          <p>
+            更改內容後點擊[移至確認頁面]按鍵。移動到確認頁面。<br />
+            確認完了後移動至待機郵件一覽頁面。<br />
+            如果你已經設置了傳輸延遲，並更新在設定的時間，它會被發送到更改時間。<br />
+            <img src="../../help-images/view-tcn/wait_form.png" alt="待機メール：編集画面" class="view" />
+          </p>
+
+          <a name="release"></a>
+          <h3>解除"發送停止"</h3>
+          <p>
+            在編輯待機郵件時移動到其他頁面，被編輯中的待機郵件會改為發送停止狀態。使用解除“發送停止”功能能夠解除發送停止狀態的待機郵件。<br />
+            點擊詳細頁面中的[解除“發送停止”]按鈕，移動至解除發送停止頁面。<br />
+            <img src="../../help-images/view-tcn/standbymail-8-2.gif" alt="待機メール：送信停止解除ボタン" class="view" />
+          </p>
+
+          <p>
+            移動至解除發送停止頁面。<br />
+            可以解除的話請點擊[確定]按鈕。完成解除發送停止。<br />
+            <img src="../../help-images/view-tcn/standbymail-9.gif" alt="待機メール：送信停止解除確認" class="view" />
+          </p>
+
+          <a name="del"></a>
+          <h3>刪除待機郵件</h3>
+          <p>
+            點擊詳細頁面裡的[刪除]按鈕，會顯示確認框。<br />
+            確認要刪除請點擊[OK]按鈕。完成待機郵件的刪除。<br />
+            <img src="../../help-images/view-tcn/standbymail-10.gif" alt="待機メール：削除" class="view" />
+          </p>
+<?php include_once(WF_HELP_PATH.'/html/common/footer-tcn.html'); ?>

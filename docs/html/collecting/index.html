@@ -1,0 +1,121 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php');
+ 
+$path = "../"; include_once(WF_HELP_PATH.'/html/common/header.html');
+?>
+<h2><span>引取り(収集)</span></h2>
+<p>
+  引取り(収集)とは、ファイル引取りスペースを確保し、ファイルを収集するためのメールを特定の人に送信し、Web上のシステムにファイルにアップロードしてもらう機能です。<br />
+  メニュー：引取り(収集)をクリックしてください。<br />
+  <img src="../../../images/sysmenu_collecting.gif" class="view" alt="メニュー：引取り(収集)" />
+</p>
+<h3><a name="5-1"></a>収集ファイル一覧</h3>
+<p>
+  メニュー：引取り(収集)をクリックすると、収集ファイル一覧画面へ遷移します。<br />
+  引取り機能でアップロードしてもらったファイルの一覧を表示します。収集ファイル一覧画面で各ファイルの操作が可能です。<br />
+  <img src="../../help-images/view/5-1_1.gif" class="view" alt="収集ファイル一覧画面" />
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th><img src="../../help-images/no-s-1.gif" alt="1" />[引取りメールを送る]</th>
+      <td>引取りメールを送るボタンです。(→<a href="collect.html#5-2">ファイルの収集</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-2.gif" alt="2" />[メーラーから<br/>引取りメールを送る]</th>
+      <td>メーラーから引取りメールを送るボタンです。<br/>(→<a href="collect.html#collect-mailer">メーラーからファイルの収集</a>)</td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-3.gif" alt="3" />タグ一覧</th>
+      <td>
+        引取メール及び引取ったファイルを管理する為のタグの一覧です。<br />
+        各タグをクリックすると、タグで振り分けられたファイル一覧が表示されます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-4.gif" alt="4" />[タグ名の変更]ボタン</th>
+      <td>
+        タグ一覧で現在選択しているタグ名の変更が行えます。<br />
+        <img src="../../help-images/view/5-1_2.gif" class="view" alt="タグ名の変更画面" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-5.gif" alt="5" />[タグの削除]ボタン</th>
+      <td>
+        タグの削除を行います。タグを削除すると、タグで管理されている収集ファイル及び収集メールも削除されます。<br />
+        収集ファイルを削除すると引取りURLが無効になりますので、ご注意ください。<br />
+        <img src="../../help-images/view/5-1_3.gif" class="view" alt="タグ削除画面" />
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/no-s-6.gif" alt="6" />ファイル一覧</th>
+      <td>
+        引取ったファイルの情報を表示しています。<br />
+        <table class="data">
+          <tbody>
+            <tr>
+              <th>ファイル名</th>
+              <td>ファイル名です。「未登録」は、まだファイルをアップロードしてもらってない状態を表します。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/icon_filemenu.gif" alt="ファイル詳細" /></th>
+              <td>
+                [ファイル詳細]ボタンです。クリックすると、引取り時に入力してもらった差出人宛てのメッセージと登録日詳細を表示します。<br />
+                <img src="../../help-images/icon_close.gif" alt="詳細閉じる" />をクリックすると、詳細を閉じます。<br />
+                <img src="../../help-images/view/5-1_4.gif" class="view" alt="ファイル詳細画面" />
+              </td>
+            </tr>
+            <tr>
+              <th>登録日</th>
+              <td>ファイルをアップロードした年月日または時分秒です。アップロードした当日ならば時分秒、次の日以降なら年月日を表示します。</td>
+            </tr>
+            <tr>
+              <th>サイズ</th>
+              <td>ファイルのサイズです。</td>
+            </tr>
+            <tr>
+              <th><img src="../../help-images/icon_dl.gif" alt="ダウンロード" /></th>
+              <td>
+                [ダウンロード]ボタンです。ファイルのダウンロードをします。<br />
+                引取り時に「フォルダ指定」をしていた場合は、引取り一覧からはダウンロードできません。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_save.gif" alt="保管" /></th>
+      <td>
+        [保管]ボタンです。ファイルの保管をします。(→<a href="save.html#5-3">ファイルの保管</a>)<br />
+        引取り時に「フォルダ指定」をしていた場合は、指定したフォルダの名前が表示されます。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/icon_delete.gif" alt="削除" /></th>
+      <td>
+        [削除]ボタンです。ファイルの削除をします。<br />
+        ファイルを削除されますと、システム上からは完全に削除されます。慎重に作業してください。
+      </td>
+    </tr>
+    <tr>
+      <th><img src="../../help-images/ico-tag-change.gif" alt="タグ変更" /></th>
+      <td>[タグ変更]ボタンです。引取ファイル、引取メールのタグを変更します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<dl>
+  <dt>選択中のファイルを操作する</dt>
+  <dd>
+    チェックボックスで選択しているファイルを、操作します。 <br />
+    [保管]ボタンをクリックすると、ファイルを保管します。<br />
+    保管したファイルは、メニュー：ファイル一覧に移ります。<br />
+    [削除]ボタンをクリックすると、ファイルおよび引取りスペースを削除します。<br />
+    「タグを変更する」では、変更するタグをクリックすると、タグを変更します。<br />
+    <img src="../../help-images/view/5-1_5.gif" class="view" alt="選択中のファイルを操作" />
+  </dd>
+</dl>
+
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>

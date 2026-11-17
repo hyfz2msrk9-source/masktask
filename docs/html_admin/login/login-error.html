@@ -1,0 +1,90 @@
+<?php 
+include_once(realpath(dirname(__FILE__)."/../").'/lib.php'); 
+include_once(WF_HELP_PATH.'/html/common/header.html'); ?>
+
+<h2><span>ログイン</span></h2>
+  <h3>ログインエラー対応</h3>
+    <p>
+      ユーザ側のシステム画面で、ログインに失敗したときにエラーメッセージが表示されます。<br />
+      そのエラーの内容と対応方法です。<br />
+    </p>
+
+    <h5>通常表示されるエラー</h5>
+      <dl>
+
+        <dt>アカウントまたはパスワードが正しくありません。</dt>
+        <dd style="margin-bottom:15px;">
+            入力したアカウント、またはパスワードが間違っている場合表示されます。
+        </dd>
+
+        <dt>このアカウントは有効期限が切れています。</dt>
+        <dd style="margin-bottom:15px;">
+            各アカウントに有効期限が設定されている場合、有効期限の終了したアカウントはログインできません。<br />
+            再度ログインする必要がある場合は、有効期限の設定を変更してください。(→<a href="../user/edit.html">ユーザ編集</a>)
+        </dd>
+
+
+        <dt>このアカウントはまだ有効ではありません。</dt>
+        <dd>
+            各アカウントに有効期限が設定されている場合、有効期限前のアカウントはログインできません。<br />
+            今すぐログインする必要がある場合は、有効期限の設定を変更してください。(→<a href="../user/edit.html">ユーザ編集</a>)
+        </dd>
+      </dl>
+      <br />
+
+
+  <h5>AD(ActiveDirectory)サーバと連携している場合に表示されるエラー</h5>
+
+      <p style="line-height:1.3em;margin:10px 0 15px 30px;width:530px;">
+            AD(ActiveDirectory)サーバとは、ユーザ管理を行うサーバです。<br />
+            システムはADサーバと提携してユーザを認証します。
+      </p>
+      <dl>
+        <dt class="position20">ADサーバに接続できませんでした。<br />管理者にお問い合わせください。</dt>
+        <dd style="margin-bottom:15px;">
+            サーバからAD(ActiveDirectory)サーバへの接続ができません。
+      ネットワークやADサーバの状態を確認してください。
+        </dd>
+
+        <dt>アカウントまたはパスワードが正しくありません。</dt>
+        <dd style="margin-bottom:15px;">
+            AD(ActiveDirectory)認証においてID/PWが間違っています。<br />
+            もしくは、AD_ADMIN_USER、AD_ADMIN_PASSの設定が間違っているため、認証に失敗しています。<br />
+            AD_ADMIN_USER、AD_ADMIN_PASSの設定を確認・変更するにはシステムのサーバ管理者にお問い合わせください。
+        </dd>
+
+        <dt class="position20">ADアカウントにロックがかかっています。<br />管理者にお問い合わせください。</dt>
+        <dd style="margin-bottom:15px;">
+            AD(ActiveDirectory)サーバのアカウントにロックがかかっています。ADサーバの管理者にお問い合わせください。
+        </dd>
+
+        <dt class="position20">アカウントにシステムへのログイン権限がありません。<br />管理者にお問い合わせください。</dt>
+        <dd style="margin-bottom:15px;">
+            このアカウントは、AD(ActiveDirectory)サーバでシステムへのログインが許可されていません。ADサーバの管理者にお問い合わせください。
+        </dd>
+
+        <dt class="position10">システムアカウントの初期化に失敗しました。<br />登録可能ユーザ数を超えています。<br />管理者にお問い合わせください。</dt>
+        <dd style="margin-bottom:15px;">
+            アカウント数が契約ユーザ数を超えるため、ログインできません。<br />
+            ユーザ管理画面(→<a href="../user/index.html">ユーザ管理</a>)より、不要なアカウントを削除してください。
+        </dd>
+
+        <dt class="position10">システムアカウントの初期化に失敗しました。<br />システムの容量が不足しています。<br />管理者にお問い合わせください。</dt>
+        <dd style="margin-bottom:15px;">
+            容量が足りないためログインができません。<br />
+      ユーザ管理画面(→<a href="../user/index.html">ユーザ管理</a>)より、不要アカウントの削除／既存アカウントの容量を削減するなどで、容量を空けてください。
+        </dd>
+
+        <dt class="position8">システムアカウントの初期化に失敗しました。<br />ADアカウントのユーザ情報が不足しています。<br />（表示名、メールアドレスが必要です）<br />管理者にお問い合わせください。</dt>
+        <dd style="margin-bottom:15px;">
+            AD(ActiveDirectory)アカウントのユーザ情報が不足しているため、ログインできません。<br />
+      ADサーバにて、表示名、メールアドレスを登録してください。
+        </dd>
+
+        <dt class="position10">システムアカウントの初期化に失敗しました。<br />ADアカウントのメールアドレスが他のアカウントのメールアドレスと重複しています。<br />管理者にお問い合わせください。</dt>
+        <dd style="margin-bottom:15px;">
+            AD(ActiveDirectory)アカウントのメールアドレスが、他のアカウントのメールアドレスと重複しているため、ログインすることができません。<br />
+      他のアカウントのメールアドレスを変更してください。
+        </dd>
+      </dl>
+<?php include_once(WF_HELP_PATH.'/html/common/footer.html'); ?>
